@@ -1,0 +1,24 @@
+{
+  "name": "math-morning-system",
+  "version": "1.0.0",
+  "description": "수학의 아침 통합 예약 시스템",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "dev": "npx http-server . -p 3000 -c-1 --cors"
+  },
+  "keywords": [
+    "수학교육",
+    "학원관리",
+    "진단검사",
+    "예약시스템"
+  ],
+  "author": "수학의 아침",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

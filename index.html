@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="i.study 수리탐구 부산 직영 교육원 - 초중등 고등연계 실전 개념 교육"
+    />
+    <title>i.study 수리탐구 | 부산 직영 교육원</title>
+
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo">
+            <img src="assets/images/logo.png" alt="i.study" class="logo-img" />
+          </a>
+          <div class="header-info">
+            <span class="header-title">부산 사직 직영점</span>
+            <span class="header-opening">2025년 12월 개원</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-books">
+          <img
+            src="assets/images/books.png"
+            alt="i.study 수리탐구 교재"
+            class="books-img"
+          />
+        </div>
+        <h1 class="hero-title">초,중등과정<br />고등연계 실전 개념</h1>
+        <div class="hero-message">
+          <p class="hero-question">등급이 오르지 않는다면,</p>
+          <p class="hero-question">고등과정 개념확장이 되지 않는다면,</p>
+          <p class="hero-warning">우리 아이의 수학공부는 소모성입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 신뢰 지표 -->
+    <section class="trust-section">
+      <div class="container">
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <div class="trust-number">
+              375<span class="trust-unit">명</span>
+            </div>
+            <div class="trust-label">대치·서초·분당·목동<br />TOP반 수강중</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">28<span class="trust-unit">%</span></div>
+            <div class="trust-label">입시 전문가<br />자녀 수강율</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">
+              2000<span class="trust-unit">강좌</span>
+            </div>
+            <div class="trust-label">온라인 VOD 판매<br />8개월만에 돌파</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-intro">
+          <h2>소모성 수학에서 벗어나는 첫걸음</h2>
+          <p>학생의 현재 실력과 목표에 맞는 단계를 선택하세요</p>
+        </div>
+
+        <div class="cta-buttons">
+          <!-- 교육 설명회 -->
+          <button
+            class="cta-button primary"
+            onclick="openModal('infoSessionModal')"
+          >
+            <div class="cta-content">
+              <div class="cta-title">설명회 예약 신청</div>
+              <div class="cta-desc">
+                i.study만의 교육 철학과 시스템을 확인하세요
+              </div>
+            </div>
+            <span class="cta-arrow">→</span>
+          </button>
+
+          <!-- 진단검사 -->
+          <button class="cta-button" onclick="openModal('diagnosticModal')">
+            <div class="cta-content">
+              <div class="cta-title">진단검사 신청</div>
+              <div class="cta-desc">정확한 실력 진단으로 맞춤 학습 설계</div>
+            </div>
+            <span class="cta-arrow">→</span>
+          </button>
+
+          <!-- 수강신청 -->
+          <button class="cta-button" onclick="openModal('enrollmentModal')">
+            <div class="cta-content">
+              <div class="cta-title">수강등록 및 상담</div>
+              <div class="cta-desc">즉시 등록 가능, 12월 개원 특별 혜택</div>
+            </div>
+            <span class="cta-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 특징 섹션 -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">왜 i.study 수리탐구인가?</h2>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">⚠️</div>
+            <div class="feature-content">
+              <h3>소모성 학습 진단</h3>
+              <p>현재 학습이 실제 실력으로 연결되고 있는지 정확히 파악합니다</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">📈</div>
+            <div class="feature-content">
+              <h3>등급 상승 보장</h3>
+              <p>체계적인 개념 확장으로 실제 등급 향상을 경험하게 됩니다</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🔗</div>
+            <div class="feature-content">
+              <h3>고등 과정 연계</h3>
+              <p>초중등부터 고등 수학의 기초를 탄탄히 다져 미래를 준비합니다</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 하단 정보 -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-content">
+          <h3>i.study 수리탐구 부산 직영점</h3>
+          <p>부산 사직동 신축 아파트 단지 인근</p>
+          <p>문의: 010-0000-0000</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 모달들 -->
+
+    <!-- 설명회 예약 모달 -->
+    <div id="infoSessionModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>교육 설명회 예약</h2>
+          <span class="close" onclick="closeModal('infoSessionModal')">×</span>
+        </div>
+        <div class="modal-body">
+          <div class="info-box">
+            <h3>설명회 안내</h3>
+            <ul>
+              <li>대상: 초4~중1 학생 및 학부모</li>
+              <li>시간: 60분 (질의응답 포함)</li>
+              <li>내용: 교육 철학 및 커리큘럼 소개</li>
+              <li>장소: 부산 사직동 직영점</li>
+            </ul>
+          </div>
+
+          <form id="infoSessionForm">
+            <div class="form-group">
+              <label>학부모 성함</label>
+              <input type="text" required />
+            </div>
+            <div class="form-group">
+              <label>연락처</label>
+              <input type="tel" placeholder="010-0000-0000" required />
+            </div>
+            <div class="form-group">
+              <label>참석 인원</label>
+              <select required>
+                <option value="">선택하세요</option>
+                <option value="1">1명</option>
+                <option value="2">2명</option>
+                <option value="3">3명 이상</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-button">설명회 예약하기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 진단검사 모달 -->
+    <div id="diagnosticModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>무료 진단검사 신청</h2>
+          <span class="close" onclick="closeModal('diagnosticModal')">×</span>
+        </div>
+        <div class="modal-body">
+          <div class="info-box">
+            <h3>진단검사 안내</h3>
+            <ul>
+              <li>대상: 초4~중1 학생</li>
+              <li>방식: 온라인 25문항</li>
+              <li>시간: 90분</li>
+              <li>결과: 상세 분석 리포트 제공</li>
+            </ul>
+          </div>
+
+          <form id="diagnosticForm">
+            <div class="form-group">
+              <label>학생 이름</label>
+              <input type="text" required />
+            </div>
+            <div class="form-group">
+              <label>학년</label>
+              <select required>
+                <option value="">선택하세요</option>
+                <option value="초4">초등 4학년</option>
+                <option value="초5">초등 5학년</option>
+                <option value="초6">초등 6학년</option>
+                <option value="중1">중등 1학년</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>학부모 연락처</label>
+              <input type="tel" placeholder="010-0000-0000" required />
+            </div>
+            <button type="submit" class="submit-button">
+              진단검사 신청하기
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 수강신청 모달 -->
+    <div id="enrollmentModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>수강신청 상담</h2>
+          <span class="close" onclick="closeModal('enrollmentModal')">×</span>
+        </div>
+        <div class="modal-body">
+          <div class="info-box">
+            <h3>수강신청 안내</h3>
+            <ul>
+              <li>상담 시간: 30분</li>
+              <li>12월 개원 특별 혜택 제공</li>
+              <li>즉시 등록 가능</li>
+            </ul>
+          </div>
+
+          <form id="enrollmentForm">
+            <div class="form-group">
+              <label>학생 이름</label>
+              <input type="text" required />
+            </div>
+            <div class="form-group">
+              <label>학년</label>
+              <select required>
+                <option value="">선택하세요</option>
+                <option value="초4">초등 4학년</option>
+                <option value="초5">초등 5학년</option>
+                <option value="초6">초등 6학년</option>
+                <option value="중1">중등 1학년</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>학부모 성함</label>
+              <input type="text" required />
+            </div>
+            <div class="form-group">
+              <label>연락처</label>
+              <input type="tel" placeholder="010-0000-0000" required />
+            </div>
+            <div class="form-group">
+              <label>상담 내용</label>
+              <textarea
+                rows="3"
+                placeholder="궁금한 점을 자유롭게 작성해주세요"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">상담 신청하기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // 모달 열기
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      // 모달 닫기
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      // 모달 외부 클릭시 닫기
+      window.onclick = function (event) {
+        if (event.target.classList.contains('modal')) {
+          event.target.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      };
+
+      // 폼 제출 처리
+      document
+        .getElementById('infoSessionForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert('설명회 예약이 완료되었습니다. 곧 연락드리겠습니다.');
+          closeModal('infoSessionModal');
+        });
+
+      document
+        .getElementById('diagnosticForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert(
+            '진단검사 신청이 완료되었습니다. 검사 링크를 문자로 발송해드리겠습니다.'
+          );
+          closeModal('diagnosticModal');
+        });
+
+      document
+        .getElementById('enrollmentForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert('상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.');
+          closeModal('enrollmentModal');
+        });
+    </script>
+  </body>
+</html>
