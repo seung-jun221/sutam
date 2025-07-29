@@ -1,4 +1,28 @@
-/* assets/css/main.css */
+/* ========== 서브 링크 ========== */
+.sub-link-container {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.sub-link {
+  display: inline-block;
+  padding: 14px 28px;
+  color: var(--primary-color);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.sub-link:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+} /* assets/css/main.css */
 /* i.study 수리탐구 직영 교육원 - 개선된 스타일시트 */
 
 /* ========== 폰트 및 전역 스타일 ========== */
