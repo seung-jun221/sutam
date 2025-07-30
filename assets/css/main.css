@@ -1,28 +1,4 @@
-/* ========== 서브 링크 ========== */
-.sub-link-container {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.sub-link {
-  display: inline-block;
-  padding: 14px 28px;
-  color: var(--primary-color);
-  background: var(--bg-secondary);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.sub-link:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-  transform: translateY(-1px);
-} /* assets/css/main.css */
+/* assets/css/main.css */
 /* i.study 수리탐구 직영 교육원 - 개선된 스타일시트 */
 
 /* ========== 폰트 및 전역 스타일 ========== */
@@ -244,6 +220,179 @@ body {
   line-height: 1.4;
 }
 
+/* ========== 누적테스트 미리보기 섹션 (새로 추가) ========== */
+.cumulative-preview {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cumulative-preview::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+.preview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.preview-title .highlight {
+  color: #fbbf24;
+}
+
+.preview-desc {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.preview-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.preview-stat {
+  text-align: center;
+}
+
+.preview-stat .stat-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 800;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.preview-stat .stat-text {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.preview-button {
+  display: inline-block;
+  padding: 16px 24px;
+  background: #fbbf24;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.preview-button:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+}
+
+.preview-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.test-structure-mini {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 280px;
+  text-align: center;
+  color: #1a365d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.structure-header {
+  background: #1a365d;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.monthly-test-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 24px;
+}
+
+.structure-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.test-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f8f9fc;
+  border-radius: 12px;
+  border-left: 4px solid #1a365d;
+}
+
+.section-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.section-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a365d;
+}
+
+.structure-footer {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 /* ========== CTA 섹션 ========== */
 .cta-section {
   padding: 60px 0;
@@ -336,7 +485,33 @@ body {
   color: white;
 }
 
-/* ========== 특징 섹션 ========== */
+/* ========== 서브 링크 ========== */
+.sub-link-container {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.sub-link {
+  display: inline-block;
+  padding: 14px 28px;
+  color: var(--primary-color);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.sub-link:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+/* ========== 특징 섹션 (수정됨) ========== */
 .features-section {
   padding: 60px 0;
   background: var(--bg-secondary);
@@ -387,6 +562,17 @@ body {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.feature-method {
+  font-size: 13px;
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 4px 12px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  display: inline-block;
 }
 
 /* ========== 하단 정보 ========== */
@@ -563,6 +749,43 @@ body {
 
 /* ========== 반응형 ========== */
 @media (max-width: 640px) {
+  .preview-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .preview-title {
+    font-size: 24px;
+  }
+
+  .preview-desc {
+    font-size: 16px;
+  }
+
+  .preview-stats {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .preview-stat .stat-number {
+    font-size: 32px;
+  }
+
+  .test-structure-mini {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .monthly-test-title {
+    font-size: 20px;
+  }
+
+  .section-count {
+    font-size: 20px;
+  }
+
   .hero-title {
     font-size: 32px;
   }
@@ -607,5 +830,50 @@ body {
 
   .trust-item {
     padding: 20px 12px;
+  }
+
+  .cumulative-preview {
+    padding: 40px 0;
+  }
+
+  .preview-title {
+    font-size: 20px;
+  }
+
+  .preview-desc {
+    font-size: 15px;
+  }
+
+  .preview-stats {
+    gap: 20px;
+  }
+
+  .preview-stat .stat-number {
+    font-size: 28px;
+  }
+
+  .preview-button {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .test-structure-mini {
+    padding: 24px 16px;
+  }
+
+  .monthly-test-title {
+    font-size: 18px;
+  }
+
+  .test-section {
+    padding: 12px 16px;
+  }
+
+  .section-count {
+    font-size: 18px;
+  }
+
+  .structure-footer {
+    font-size: 11px;
   }
 }
