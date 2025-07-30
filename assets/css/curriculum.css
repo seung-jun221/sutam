@@ -109,52 +109,84 @@
 
 /* ========== 커리큘럼 개요 ========== */
 .curriculum-overview {
-  padding: 100px 0;
+  padding: 80px 20px;
   background: #ffffff;
-  margin-top: -50px;
+  margin-top: -40px;
 }
 
 .overview-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 100px;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .overview-item {
   text-align: center;
-  flex: 1;
-  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .level-circle {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 32px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 24px;
   background: #5061fc;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  box-shadow: 0 12px 32px rgba(80, 97, 252, 0.25);
+  box-shadow: 0 10px 30px rgba(80, 97, 252, 0.25);
   transition: all 0.3s ease;
 }
 
 .level-circle:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(80, 97, 252, 0.35);
+  box-shadow: 0 15px 40px rgba(80, 97, 252, 0.35);
 }
 
 .level-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #1a1f36;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+}
+
+.stage-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+.stage {
+  padding: 8px 18px;
+  background: #f0f2ff;
+  border: 2px solid #e0e5ff;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #5061fc;
+  white-space: nowrap;
+}
+
+.arrow {
+  color: #c1c9d2;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.level-desc {
+  font-size: 15px;
+  color: #68768a;
+  line-height: 1.5;
 }
 
 .stage-flow {
