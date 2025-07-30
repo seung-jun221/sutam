@@ -1,141 +1,205 @@
 /* assets/css/curriculum.css */
-/* 커리큘럼 페이지 전용 스타일 - 여백 개선 버전 */
+/* 커리큘럼 상세 페이지 스타일 */
 
-/* ========== 페이지 타이틀 ========== */
+/* ========== 헤더 ========== */
+.header {
+  background: var(--bg-primary);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.header-info {
+  text-align: right;
+}
+
+.header-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2px;
+}
+
+.header-opening {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background: var(--accent-color);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ========== CSS 변수 추가 ========== */
+:root {
+  --primary-color: #1a365d;
+  --secondary-color: #2563eb;
+  --accent-color: #f59e0b;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: #e5e7eb;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== 페이지 레이아웃 ========== */
 .curriculum-main {
   padding: 0;
   background: #ffffff;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 140px);
 }
 
-/* 히어로 배경 */
+/* ========== 페이지 타이틀 ========== */
 .page-title {
+  padding: 80px 0 100px;
+  background: #f8f9fc;
   text-align: center;
-  padding: 40px 20px; /* 50px → 40px로 축소 */
-  background: var(--primary-color);
-  color: white;
-  position: relative;
-  overflow: hidden;
 }
 
-.page-title::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -30%;
-  width: 100%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 70%
-  );
-  animation: shine 3s ease-in-out infinite;
+.title-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5061fc;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.page-title .title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a1f36;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.page-title h1 {
-  font-size: 32px; /* 36px → 32px */
-  font-weight: 700;
-  margin-bottom: 10px; /* 12px → 10px */
-  position: relative;
-  z-index: 1;
-}
-
-.page-title p {
-  font-size: 17px; /* 18px → 17px */
-  opacity: 0.9;
-  position: relative;
-  z-index: 1;
+.page-title .subtitle {
+  font-size: 18px;
+  color: #68768a;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
 /* ========== 커리큘럼 개요 ========== */
 .curriculum-overview {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin: -30px auto 40px; /* -40px → -30px, 60px → 40px */
-  max-width: 900px;
-  position: relative;
-  z-index: 10;
+  padding: 100px 0;
+  background: #ffffff;
+  margin-top: -50px;
+}
+
+.overview-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .overview-item {
-  background: white;
-  padding: 24px 20px; /* 30px → 24px */
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
+  flex: 1;
+  max-width: 320px;
+}
+
+.level-circle {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 32px;
+  background: #5061fc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 12px 32px rgba(80, 97, 252, 0.25);
   transition: all 0.3s ease;
 }
 
-.overview-item:first-child {
-  border-radius: 12px 0 0 12px;
-}
-
-.overview-item:last-child {
-  border-radius: 0 12px 12px 0;
-}
-
-.overview-item:hover {
+.level-circle:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 40px rgba(80, 97, 252, 0.35);
 }
 
-.overview-item:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px; /* 24px → 22px */
-  color: #e5e7eb;
-  z-index: 1;
-}
-
-.overview-item .level {
-  display: block;
-  font-size: 13px; /* 14px → 13px */
-  color: var(--text-secondary);
-  margin-bottom: 10px; /* 12px → 10px */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.overview-item .classes {
-  font-size: 20px; /* 22px → 20px */
+.level-title {
+  font-size: 28px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #1a1f36;
+  margin-bottom: 28px;
+}
+
+.stage-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stage {
+  padding: 8px 20px;
+  background: #f0f2ff;
+  border: 2px solid #e0e5ff;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #5061fc;
+}
+
+.arrow {
+  color: #c1c9d2;
+  font-size: 20px;
+}
+
+.level-desc {
+  font-size: 16px;
+  color: #68768a;
 }
 
 /* ========== 커리큘럼 섹션 ========== */
 .curriculum-section {
-  margin-bottom: 0; /* 80px → 0 */
-  padding: 40px 0; /* 60px → 40px */
+  padding: 60px 0;
+  background: #ffffff;
 }
 
-.curriculum-section:nth-child(4) {
-  background: #fffbf0;
-}
-
-.curriculum-section:nth-child(6) {
-  background: #f0f4ff;
+.curriculum-section.alt-bg {
+  background: #f8f9fa;
 }
 
 .section-title {
-  font-size: 28px; /* 32px → 28px */
+  font-size: 28px;
   font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 30px; /* 40px → 30px */
+  color: #1a1f36;
+  margin-bottom: 40px;
   text-align: center;
   position: relative;
 }
@@ -143,352 +207,280 @@
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px; /* -12px → -10px */
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* 80px → 60px */
-  height: 3px; /* 4px → 3px */
-  background: var(--accent-color);
+  width: 60px;
+  height: 3px;
+  background: #5061fc;
   border-radius: 2px;
 }
 
-/* ========== 과정 카드 ========== */
-.course-card {
-  background: white;
-  border-radius: 12px;
-  margin: 0 auto 16px; /* 20px → 16px */
-  max-width: 800px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
-  overflow: hidden;
+/* ========== 코스 리스트 ========== */
+.course-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.course-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.course-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px 32px;
+  transition: all 0.3s ease;
+}
+
+.alt-bg .course-item {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.course-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
+/* ========== 코스 헤더 ========== */
 .course-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px; /* 16px 32px → 14px 24px */
-  position: relative;
-  overflow: hidden;
-}
-
-.course-header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  opacity: 0.08;
-}
-
-.course-header.elementary::before {
-  background: #1890ff;
-}
-
-.course-header.middle::before {
-  background: #eb2f96;
-}
-
-.course-header.high::before {
-  background: #52c41a;
-}
-
-.course-header.elementary {
-  background: linear-gradient(135deg, #e6f4ff 0%, #f0f9ff 100%);
-}
-
-.course-header.middle {
-  background: linear-gradient(135deg, #fff0f6 0%, #fff5fb 100%);
-}
-
-.course-header.high {
-  background: linear-gradient(135deg, #f6ffed 0%, #faffed 100%);
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .course-code {
-  padding: 8px 16px; /* 10px 20px → 8px 16px */
+  padding: 6px 14px;
   border-radius: 20px;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 15px; /* 16px → 15px */
   color: white;
   letter-spacing: 0.5px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.course-header.elementary .course-code {
-  background: #1890ff;
+.course-code.elementary {
+  background: #3498db;
 }
 
-.course-header.middle .course-code {
-  background: #eb2f96;
+.course-code.middle {
+  background: #e74c3c;
 }
 
-.course-header.high .course-code {
-  background: #52c41a;
+.course-code.high {
+  background: #27ae60;
 }
 
-.course-tag {
-  padding: 5px 14px; /* 6px 16px → 5px 14px */
-  background: #faad14;
-  color: white;
-  border-radius: 16px;
-  font-size: 12px; /* 13px → 12px */
-  font-weight: 600;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-.course-body {
-  padding: 20px 24px; /* 32px → 20px 24px */
-}
-
-.course-title {
-  font-size: 18px; /* 20px → 18px */
-  font-weight: 700;
-  color: var(--primary-color);
-  margin: 0;
-  line-height: 1.3;
-}
-
-.course-subtitle {
-  font-size: 15px; /* 16px → 15px */
-  color: #1890ff;
-  margin: 6px 0 16px 0; /* 8px 0 24px → 6px 0 16px */
+.course-duration {
+  font-size: 14px;
+  color: #666;
   font-weight: 500;
 }
 
-/* subtitle이 없는 경우 title 하단 여백 */
-.course-title:last-child {
-  margin-bottom: 16px; /* 24px → 16px */
+.course-optional {
+  font-size: 13px;
+  color: #f39c12;
+  font-weight: 600;
+  padding: 4px 10px;
+  background: #fff3cd;
+  border-radius: 12px;
+  margin-left: auto;
+}
+
+/* ========== 코스 내용 ========== */
+.course-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 8px;
+}
+
+.course-subtitle {
+  font-size: 15px;
+  color: #5061fc;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .course-content {
-  padding: 16px 20px; /* 20px 24px → 16px 20px */
-  background: #f8f9fa;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.course-content p {
-  font-size: 14px; /* 15px → 14px */
-  color: var(--text-secondary);
-  margin-bottom: 10px; /* 12px → 10px */
-  line-height: 1.7; /* 1.8 → 1.7 */
+.content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.course-content p:last-child {
-  margin-bottom: 0;
-}
-
-.course-content strong {
-  color: var(--primary-color);
+.content-label {
+  font-size: 14px;
   font-weight: 600;
-  display: inline-block;
-  min-width: 75px; /* 85px → 75px */
+  color: #666;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
-/* ========== CTA 섹션 ========== */
-.curriculum-cta {
-  text-align: center;
-  padding: 60px 20px; /* 80px → 60px */
-  background: var(--primary-color);
-  color: white;
-  margin-top: 40px; /* 80px → 40px */
-  position: relative;
-}
-
-.curriculum-cta h2 {
-  font-size: 32px; /* 36px → 32px */
-  font-weight: 700;
-  margin-bottom: 16px; /* 20px → 16px */
-}
-
-.curriculum-cta p {
-  font-size: 18px; /* 20px → 18px */
-  margin-bottom: 30px; /* 40px → 30px */
+.content-text {
+  font-size: 14px;
+  color: #333;
   line-height: 1.6;
-  opacity: 0.95;
 }
 
-.cta-contact {
-  font-size: 20px; /* 22px → 20px */
-  background: rgba(255, 255, 255, 0.1);
-  padding: 24px 36px; /* 32px 48px → 24px 36px */
-  border-radius: 16px;
-  display: inline-block;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.cta-contact strong {
+/* ========== 문의 섹션 ========== */
+.contact-section {
+  padding: 60px 0;
+  background: #1a1f36;
   color: white;
-  font-weight: 600;
-  display: inline-block;
-  margin-right: 8px;
+  text-align: center;
 }
 
-/* ========== 컨테이너 조정 ========== */
-.curriculum-main .container {
-  max-width: 1200px;
-  padding: 0 30px; /* 40px → 30px */
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact-desc {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-number {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.contact-time {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* ========== 푸터 (메인페이지와 동일) ========== */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
 }
 
 /* ========== 반응형 ========== */
 @media (max-width: 768px) {
-  .curriculum-overview {
+  .header-info {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .page-title .title {
+    font-size: 28px;
+  }
+
+  .page-title .subtitle {
+    font-size: 16px;
+  }
+
+  .overview-grid {
     grid-template-columns: 1fr;
-    gap: 12px; /* 16px → 12px */
-    margin: 20px auto 30px; /* 40px → 30px */
+    gap: 60px;
   }
 
-  .overview-item {
-    border-radius: 12px !important;
-    padding: 20px; /* 추가 축소 */
-  }
-
-  .overview-item:not(:last-child)::after {
-    content: '↓';
-    right: 50%;
-    bottom: -26px; /* -32px → -26px */
-    top: auto;
-    transform: translateX(50%);
-  }
-
-  .page-title {
-    padding: 30px 20px; /* 추가 축소 */
-  }
-
-  .page-title h1 {
-    font-size: 28px; /* 32px → 28px */
-  }
-
-  .section-title {
-    font-size: 24px; /* 26px → 24px */
-    margin-bottom: 24px;
+  .level-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
   }
 
   .curriculum-section {
-    padding: 30px 0; /* 추가 축소 */
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .course-item {
+    padding: 24px;
   }
 
   .course-header {
-    padding: 12px 20px; /* 16px 24px → 12px 20px */
+    flex-wrap: wrap;
   }
 
-  .course-body {
-    padding: 18px 20px; /* 28px → 18px 20px */
+  .course-optional {
+    margin-left: 0;
   }
 
-  .course-title {
-    font-size: 17px; /* 18px → 17px */
-  }
-
-  .course-content {
-    padding: 14px 18px; /* 18px 20px → 14px 18px */
-  }
-
-  .curriculum-cta {
-    padding: 40px 20px; /* 추가 축소 */
-  }
-
-  .curriculum-cta h2 {
-    font-size: 26px; /* 28px → 26px */
-  }
-
-  .cta-contact {
-    padding: 20px 28px; /* 24px 32px → 20px 28px */
-    font-size: 17px; /* 18px → 17px */
-  }
-
-  .curriculum-main .container {
-    padding: 0 20px;
+  .contact-info {
+    flex-direction: column;
+    gap: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .page-title {
-    padding: 24px 15px; /* 추가 축소 */
+    padding: 40px 0 30px;
   }
 
-  .page-title h1 {
-    font-size: 24px; /* 추가 축소 */
+  .page-title .title {
+    font-size: 24px;
   }
 
-  .page-title p {
-    font-size: 15px; /* 추가 축소 */
+  .overview-stages {
+    font-size: 20px;
   }
 
-  .course-card {
-    margin-bottom: 12px; /* 추가 축소 */
-  }
-
-  .course-header {
-    padding: 10px 16px; /* 14px 20px → 10px 16px */
-    flex-wrap: wrap;
-    gap: 8px; /* 12px → 8px */
-  }
-
-  .course-tag {
-    position: absolute;
-    right: 16px; /* 20px → 16px */
-    top: 10px; /* 14px → 10px */
-  }
-
-  .course-body {
-    padding: 16px; /* 24px → 16px */
+  .course-item {
+    padding: 20px;
   }
 
   .course-title {
-    font-size: 16px; /* 17px → 16px */
+    font-size: 18px;
   }
 
-  .course-subtitle {
-    font-size: 14px; /* 15px → 14px */
-    margin: 4px 0 12px 0; /* 6px 0 20px → 4px 0 12px */
+  .content-row {
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .course-title:last-child {
-    margin-bottom: 12px; /* 20px → 12px */
+  .content-label {
+    min-width: auto;
   }
 
-  .course-code {
-    font-size: 13px; /* 14px → 13px */
-    padding: 6px 14px; /* 8px 16px → 6px 14px */
-  }
-
-  .course-content {
-    padding: 12px 16px; /* 16px 20px → 12px 16px */
-  }
-
-  .course-content p {
-    font-size: 13px; /* 14px → 13px */
-    margin-bottom: 8px; /* 10px → 8px */
-  }
-
-  .curriculum-cta {
-    padding: 30px 15px; /* 추가 축소 */
-    margin-top: 30px; /* 추가 축소 */
-  }
-
-  .curriculum-cta h2 {
-    font-size: 22px; /* 추가 축소 */
-    margin-bottom: 12px; /* 추가 축소 */
-  }
-
-  .curriculum-cta p {
-    font-size: 16px; /* 추가 축소 */
-    margin-bottom: 20px; /* 추가 축소 */
-  }
-
-  .cta-contact {
-    padding: 16px 24px; /* 추가 축소 */
-    font-size: 15px; /* 추가 축소 */
+  .contact-number {
+    font-size: 20px;
   }
 }
