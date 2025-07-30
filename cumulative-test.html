@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="assets/css/cumulative-test.css" />
   </head>
   <body>
+    <!-- 알림 요소 -->
+    <div id="notification" class="notification"></div>
+
     <!-- 헤더 -->
     <header class="header">
       <div class="container">
@@ -358,7 +361,7 @@
       </div>
     </footer>
 
-    <!-- 모달들 (메인페이지와 동일) -->
+    <!-- 모달들 -->
     <!-- 설명회 예약 모달 -->
     <div id="infoSessionModal" class="modal">
       <div class="modal-content">
@@ -447,45 +450,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
-      // 모달 열기
-      function openModal(modalId) {
-        document.getElementById(modalId).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      }
-
-      // 모달 닫기
-      function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-
-      // 모달 외부 클릭시 닫기
-      window.onclick = function (event) {
-        if (event.target.classList.contains('modal')) {
-          event.target.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      };
-
-      // 폼 제출 처리
-      document
-        .getElementById('infoSessionForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert('설명회 예약이 완료되었습니다. 곧 연락드리겠습니다.');
-          closeModal('infoSessionModal');
-        });
-
-      document
-        .getElementById('diagnosticForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert(
-            '진단검사 신청이 완료되었습니다. 검사 링크를 문자로 발송해드리겠습니다.'
-          );
-          closeModal('diagnosticModal');
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -1,23 +1,22 @@
 {
-  "name": "math-morning-system",
+  "name": "istudy-suritamgu-busan",
   "version": "1.0.0",
-  "description": "수학의 아침 통합 예약 시스템",
+  "description": "i.study 수리탐구 부산 직영점 웹사이트",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server . -p 3000 -c-1",
-    "dev": "npx http-server . -p 3000 -c-1 --cors"
+    "start": "http-server -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "수학교육",
-    "학원관리",
-    "진단검사",
-    "예약시스템"
+    "수학",
+    "교육",
+    "학원",
+    "부산",
+    "수리탐구"
   ],
-  "author": "수학의 아침",
-  "license": "MIT",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.0"
-  },
+  "author": "i.study",
+  "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "http-server": "^14.1.1"
   }

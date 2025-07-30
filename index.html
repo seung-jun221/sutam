@@ -17,217 +17,258 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
-
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
-    <!-- 헤더 -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <a href="#" class="logo">
-            <img src="assets/images/logo.png" alt="i.study" class="logo-img" />
-          </a>
-          <div class="header-info">
-            <span class="header-title">부산 사직 직영점</span>
-            <span class="header-opening">2025년 12월 개원</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    <!-- 알림 요소 -->
+    <div id="notification" class="notification"></div>
 
-    <!-- 히어로 섹션 -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-books">
-          <img
-            src="assets/images/books.png"
-            alt="i.study 수리탐구 교재"
-            class="books-img"
-          />
-        </div>
-        <h1 class="hero-title">초,중등과정<br />고등연계 실전 개념</h1>
-        <div class="hero-message">
-          <p class="hero-question">등급이 오르지 않는다면,</p>
-          <p class="hero-question">고등과정 개념확장이 되지 않는다면,</p>
-          <p class="hero-warning">우리 아이의 수학공부는</p>
-          <p class="hero-warning">[소모성]입니다.</p>
-        </div>
-      </div>
-    </section>
+    <!-- 로딩 화면 -->
+    <div id="loadingScreen" class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
 
-    <!-- 신뢰 지표 -->
-    <section class="trust-section">
-      <div class="container">
-        <div class="trust-indicators">
-          <div class="trust-item">
-            <div class="trust-number">
-              375<span class="trust-unit">명</span>
-            </div>
-            <div class="trust-label">대치·서초·분당·목동<br />TOP반 수강중</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">28<span class="trust-unit">%</span></div>
-            <div class="trust-label">입시 전문가<br />자녀 수강율</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-number">
-              2000<span class="trust-unit">강좌</span>
-            </div>
-            <div class="trust-label">온라인 VOD 판매<br />8개월만에 돌파</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 누적테스트 미리보기 섹션 (새로 추가) -->
-    <section class="cumulative-preview">
-      <div class="container">
-        <div class="preview-content">
-          <div class="preview-text">
-            <h2 class="preview-title">
-              대치동 상위 0.1%의 비밀<br />
-              <span class="highlight">누적테스트 시스템</span>
-            </h2>
-            <p class="preview-desc">
-              소모성 학습에서 벗어나는 과학적 학습법<br />
-              매월 축적되는 데이터로 완성하는 진짜 실력
-            </p>
-            <div class="preview-stats">
-              <div class="preview-stat">
-                <span class="stat-number">80%</span>
-                <span class="stat-text">장기 기억 정착률</span>
-              </div>
-              <div class="preview-stat">
-                <span class="stat-number">2.7배</span>
-                <span class="stat-text">학습 효율 향상</span>
-              </div>
-            </div>
-            <a href="cumulative-test.html" class="preview-button">
-              누적테스트 자세히 보기 →
+    <!-- 메인 컨테이너 -->
+    <div id="mainContainer" style="opacity: 0; transition: opacity 0.3s ease">
+      <!-- 헤더 -->
+      <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <a href="#" class="logo">
+              <img
+                src="assets/images/logo.png"
+                alt="i.study"
+                class="logo-img"
+              />
             </a>
+            <div class="header-info">
+              <span class="header-title">부산 사직 직영점</span>
+              <span class="header-opening">2025년 12월 개원</span>
+            </div>
           </div>
-          <div class="preview-visual">
-            <div class="test-structure-mini">
-              <div class="structure-header">매월 마지막 주 금요일</div>
-              <div class="monthly-test-title">월간 누적테스트</div>
-              <div class="structure-body">
-                <div class="test-section">
-                  <span class="section-label">당월 학습</span>
-                  <span class="section-count">15문항</span>
+        </div>
+      </header>
+
+      <!-- 히어로 섹션 -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-books">
+            <img
+              src="assets/images/books.png"
+              alt="i.study 수리탐구 교재"
+              class="books-img"
+            />
+          </div>
+          <h1 class="hero-title">초,중등과정<br />고등연계 실전 개념</h1>
+          <div class="hero-message">
+            <p class="hero-question">등급이 오르지 않는다면,</p>
+            <p class="hero-question">고등과정 개념확장이 되지 않는다면,</p>
+            <p class="hero-warning">우리 아이의 수학공부는</p>
+            <p class="hero-warning">[소모성]입니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 신뢰 지표 -->
+      <section class="trust-section">
+        <div class="container">
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <div class="trust-number">
+                375<span class="trust-unit">명</span>
+              </div>
+              <div class="trust-label">
+                대치·서초·분당·목동<br />TOP반 수강중
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">
+                28<span class="trust-unit">%</span>
+              </div>
+              <div class="trust-label">입시 전문가<br />자녀 수강율</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">
+                2000<span class="trust-unit">강좌</span>
+              </div>
+              <div class="trust-label">온라인 VOD 판매<br />8개월만에 돌파</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 수리탐구 시그니처 배너 -->
+      <section class="signature-banner-section">
+        <div class="container">
+          <a href="suritamgu-signature.html" class="signature-banner">
+            <div class="banner-content">
+              <div class="banner-badge">국내 유일</div>
+              <h3 class="banner-title">
+                고등연계 중등 수학교재 <span class="highlight">수리탐구</span>
+              </h3>
+              <p class="banner-desc">
+                중1부터 고1까지 18개월로 완성하는 48권의 체계적 커리큘럼
+              </p>
+            </div>
+            <div class="banner-action">
+              <span class="action-text">자세히 보기</span>
+              <span class="action-arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 누적테스트 미리보기 섹션 -->
+      <section class="cumulative-preview">
+        <div class="container">
+          <div class="preview-content">
+            <div class="preview-text">
+              <h2 class="preview-title">
+                대치동 상위 0.1%의 비밀<br />
+                <span class="highlight">누적테스트 시스템</span>
+              </h2>
+              <p class="preview-desc">
+                소모성 학습에서 벗어나는 과학적 학습법<br />
+                매월 축적되는 데이터로 완성하는 진짜 실력
+              </p>
+              <div class="preview-stats">
+                <div class="preview-stat">
+                  <span class="stat-number">80%</span>
+                  <span class="stat-text">장기 기억 정착률</span>
                 </div>
-                <div class="test-section">
-                  <span class="section-label">누적 복습</span>
-                  <span class="section-count">10문항</span>
+                <div class="preview-stat">
+                  <span class="stat-number">2.7배</span>
+                  <span class="stat-text">학습 효율 향상</span>
                 </div>
               </div>
-              <div class="structure-footer">
-                단순 암기가 아닌 진짜 실력으로 만드는<br />과학적 학습 시스템
+              <a href="cumulative-test.html" class="preview-button">
+                누적테스트 자세히 보기 →
+              </a>
+            </div>
+            <div class="preview-visual">
+              <div class="test-structure-mini">
+                <div class="structure-header">매월 마지막 주 금요일</div>
+                <div class="monthly-test-title">월간 누적테스트</div>
+                <div class="structure-body">
+                  <div class="test-section">
+                    <span class="section-label">당월 학습</span>
+                    <span class="section-count">15문항</span>
+                  </div>
+                  <div class="test-section">
+                    <span class="section-label">누적 복습</span>
+                    <span class="section-count">10문항</span>
+                  </div>
+                </div>
+                <div class="structure-footer">
+                  단순 암기가 아닌 진짜 실력으로 만드는<br />과학적 학습 시스템
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA 섹션 -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-intro">
-          <h2>소모성 수학에서 벗어나는</h2>
-          <h2>첫걸음</h2>
+      <!-- CTA 섹션 -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-intro">
+            <h2>소모성 수학에서 벗어나는</h2>
+            <h2>첫걸음</h2>
 
-          <p>학생의 현재 실력과 목표에 맞는 단계를 선택하세요</p>
+            <p>학생의 현재 실력과 목표에 맞는 단계를 선택하세요</p>
+          </div>
+
+          <div class="cta-buttons">
+            <!-- 교육 설명회 -->
+            <button
+              class="cta-button primary"
+              onclick="openModal('infoSessionModal')"
+            >
+              <div class="cta-content">
+                <div class="cta-title">설명회 예약 신청</div>
+                <div class="cta-desc">
+                  i.study만의 교육 철학과 시스템을 확인하세요
+                </div>
+              </div>
+              <span class="cta-arrow">→</span>
+            </button>
+
+            <!-- 진단검사 -->
+            <button class="cta-button" onclick="openModal('diagnosticModal')">
+              <div class="cta-content">
+                <div class="cta-title">진단검사 응시하기</div>
+                <div class="cta-desc">정확한 실력 진단으로 맞춤 학습 설계</div>
+              </div>
+              <span class="cta-arrow">→</span>
+            </button>
+
+            <!-- 수강신청 -->
+            <button class="cta-button" onclick="openModal('enrollmentModal')">
+              <div class="cta-content">
+                <div class="cta-title">수강등록 및 상담</div>
+                <div class="cta-desc">즉시 등록 가능, 12월 개원 특별 혜택</div>
+              </div>
+              <span class="cta-arrow">→</span>
+            </button>
+          </div>
+
+          <!-- 교육과정 상세보기 링크 -->
+          <div class="sub-link-container">
+            <a href="curriculum.html" class="sub-link">교육과정 상세보기</a>
+          </div>
         </div>
+      </section>
 
-        <div class="cta-buttons">
-          <!-- 교육 설명회 -->
-          <button
-            class="cta-button primary"
-            onclick="openModal('infoSessionModal')"
-          >
-            <div class="cta-content">
-              <div class="cta-title">설명회 예약 신청</div>
-              <div class="cta-desc">
-                i.study만의 교육 철학과 시스템을 확인하세요
+      <!-- 특징 섹션 -->
+      <section class="features-section">
+        <div class="container">
+          <h2 class="section-title">왜 i.study 수리탐구인가?</h2>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">⚠️</div>
+              <div class="feature-content">
+                <h3>소모성 학습 진단</h3>
+                <p>
+                  현재 학습이 실제 실력으로 연결되고 있는지 정확히 파악합니다
+                </p>
+                <div class="feature-method">누적테스트로 객관적 측정</div>
               </div>
             </div>
-            <span class="cta-arrow">→</span>
-          </button>
 
-          <!-- 진단검사 -->
-          <button class="cta-button" onclick="openModal('diagnosticModal')">
-            <div class="cta-content">
-              <div class="cta-title">진단검사 응시하기</div>
-              <div class="cta-desc">정확한 실력 진단으로 맞춤 학습 설계</div>
+            <div class="feature-item">
+              <div class="feature-icon">📈</div>
+              <div class="feature-content">
+                <h3>등급 상승 보장</h3>
+                <p>체계적인 개념 확장으로 실제 등급 향상을 경험하게 됩니다</p>
+                <div class="feature-method">과학적 관리로 80% 기억 정착</div>
+              </div>
             </div>
-            <span class="cta-arrow">→</span>
-          </button>
 
-          <!-- 수강신청 -->
-          <button class="cta-button" onclick="openModal('enrollmentModal')">
-            <div class="cta-content">
-              <div class="cta-title">수강등록 및 상담</div>
-              <div class="cta-desc">즉시 등록 가능, 12월 개원 특별 혜택</div>
-            </div>
-            <span class="cta-arrow">→</span>
-          </button>
-        </div>
-
-        <!-- 교육과정 상세보기 링크 -->
-        <div class="sub-link-container">
-          <a href="curriculum.html" class="sub-link">교육과정 상세보기</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 특징 섹션 (수정됨) -->
-    <section class="features-section">
-      <div class="container">
-        <h2 class="section-title">왜 i.study 수리탐구인가?</h2>
-
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon">⚠️</div>
-            <div class="feature-content">
-              <h3>소모성 학습 진단</h3>
-              <p>현재 학습이 실제 실력으로 연결되고 있는지 정확히 파악합니다</p>
-              <div class="feature-method">누적테스트로 객관적 측정</div>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">📈</div>
-            <div class="feature-content">
-              <h3>등급 상승 보장</h3>
-              <p>체계적인 개념 확장으로 실제 등급 향상을 경험하게 됩니다</p>
-              <div class="feature-method">과학적 관리로 80% 기억 정착</div>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">🔗</div>
-            <div class="feature-content">
-              <h3>고등 과정 연계</h3>
-              <p>초중등부터 고등 수학의 기초를 탄탄히 다져 미래를 준비합니다</p>
-              <div class="feature-method">체계적 연계로 자연스러운 승급</div>
+            <div class="feature-item">
+              <div class="feature-icon">🔗</div>
+              <div class="feature-content">
+                <h3>고등 과정 연계</h3>
+                <p>
+                  초중등부터 고등 수학의 기초를 탄탄히 다져 미래를 준비합니다
+                </p>
+                <div class="feature-method">체계적 연계로 자연스러운 승급</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 하단 정보 -->
-    <footer class="footer-section">
-      <div class="container">
-        <div class="footer-content">
-          <h3>i.study 수리탐구 부산 직영점</h3>
-          <p>부산 사직동 신축 아파트 단지 인근</p>
-          <p>문의: 010-0000-0000</p>
+      <!-- 하단 정보 -->
+      <footer class="footer-section">
+        <div class="container">
+          <div class="footer-content">
+            <h3>i.study 수리탐구 부산 직영점</h3>
+            <p>부산 사직동 신축 아파트 단지 인근</p>
+            <p>문의: 010-0000-0000</p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
 
     <!-- 모달들 -->
 
@@ -372,53 +413,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
-      // 모달 열기
-      function openModal(modalId) {
-        document.getElementById(modalId).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      }
-
-      // 모달 닫기
-      function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-
-      // 모달 외부 클릭시 닫기
-      window.onclick = function (event) {
-        if (event.target.classList.contains('modal')) {
-          event.target.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      };
-
-      // 폼 제출 처리
-      document
-        .getElementById('infoSessionForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert('설명회 예약이 완료되었습니다. 곧 연락드리겠습니다.');
-          closeModal('infoSessionModal');
-        });
-
-      document
-        .getElementById('diagnosticForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert(
-            '진단검사 신청이 완료되었습니다. 검사 링크를 문자로 발송해드리겠습니다.'
-          );
-          closeModal('diagnosticModal');
-        });
-
-      document
-        .getElementById('enrollmentForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert('상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.');
-          closeModal('enrollmentModal');
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

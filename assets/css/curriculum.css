@@ -1,75 +1,6 @@
 /* assets/css/curriculum.css */
 /* 커리큘럼 상세 페이지 스타일 */
 
-/* ========== 헤더 ========== */
-.header {
-  background: var(--bg-primary);
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-img {
-  height: 32px;
-  width: auto;
-}
-
-.header-info {
-  text-align: right;
-}
-
-.header-title {
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 2px;
-}
-
-.header-opening {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 500;
-  color: white;
-  background: var(--accent-color);
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-
-/* ========== CSS 변수 추가 ========== */
-:root {
-  --primary-color: #1a365d;
-  --secondary-color: #2563eb;
-  --accent-color: #f59e0b;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --border-color: #e5e7eb;
-}
-
-.container {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* ========== 페이지 레이아웃 ========== */
 .curriculum-main {
   padding: 0;
@@ -331,7 +262,7 @@
   line-height: 1.5;
 }
 
-/* ========== 대상 학년 배지 (개선됨) ========== */
+/* ========== 대상 학년 배지 ========== */
 .target-grade {
   margin-top: 12px;
   padding-top: 12px;
@@ -514,20 +445,8 @@
   }
 }
 
-/* 모바일 (개선됨) */
+/* 모바일 */
 @media (max-width: 640px) {
-  .logo-img {
-    height: 28px;
-  }
-
-  .header-title {
-    font-size: 14px;
-  }
-
-  .header-opening {
-    font-size: 11px;
-  }
-
   .page-title {
     padding: 50px 20px 70px;
   }

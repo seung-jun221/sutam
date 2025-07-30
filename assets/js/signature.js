@@ -1,4 +1,4 @@
-// assets/js/suritamgu-signature.js
+// assets/js/signature.js
 // 수리탐구 시그니처 과정 페이지 전용 JavaScript
 
 // 페이지 로드 시 실행
@@ -86,66 +86,6 @@ function initializeScrollAnimations() {
     item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
   });
 }
-
-// ========== 수리탐구 전용 모달 함수 ==========
-// main.js의 showModal과 closeModal 함수를 사용하되,
-// 수리탐구 페이지에서 호출할 때를 위한 래퍼 함수
-
-function openInfoSessionModal() {
-  if (typeof showModal === 'function') {
-    showModal('infoSessionModal');
-  }
-}
-
-function openDiagnosticModal() {
-  if (typeof showModal === 'function') {
-    showModal('diagnosticModal');
-  }
-}
-
-// ========== 폼 제출 처리 ==========
-// main.js에 없는 경우를 대비한 폼 처리
-document.addEventListener('DOMContentLoaded', function () {
-  const infoSessionForm = document.getElementById('infoSessionForm');
-  if (infoSessionForm) {
-    infoSessionForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      if (typeof showNotification === 'function') {
-        showNotification('설명회 예약이 완료되었습니다. 곧 연락드리겠습니다.');
-      } else {
-        alert('설명회 예약이 완료되었습니다. 곧 연락드리겠습니다.');
-      }
-
-      if (typeof closeModal === 'function') {
-        closeModal('infoSessionModal');
-      }
-      this.reset();
-    });
-  }
-
-  const diagnosticForm = document.getElementById('diagnosticForm');
-  if (diagnosticForm) {
-    diagnosticForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      if (typeof showNotification === 'function') {
-        showNotification(
-          '진단검사 신청이 완료되었습니다. 검사 링크를 문자로 발송해드리겠습니다.'
-        );
-      } else {
-        alert(
-          '진단검사 신청이 완료되었습니다. 검사 링크를 문자로 발송해드리겠습니다.'
-        );
-      }
-
-      if (typeof closeModal === 'function') {
-        closeModal('diagnosticModal');
-      }
-      this.reset();
-    });
-  }
-});
 
 // ========== 교재 미리보기 인터랙션 ==========
 function enhancePreviewTabs() {

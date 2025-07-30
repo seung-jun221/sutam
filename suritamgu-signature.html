@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="assets/css/suritamgu-signature.css" />
   </head>
   <body>
+    <!-- 알림 요소 -->
+    <div id="notification" class="notification"></div>
+
     <!-- 헤더 -->
     <header class="header">
       <div class="container">
@@ -112,24 +115,30 @@
                   </div>
                 </div>
                 <div class="example-box">
-                  <p class="example-title">실제 연계 예시</p>
+                  <p class="example-title">🔍 실제 연계 예시</p>
                   <div class="example-compare">
-                    <div class="example-item">
-                      <span class="grade">중1</span>
+                    <div class="example-item suritamgu">
+                      <span class="grade">수리탐구 MONO 02</span>
                       <span class="problem"
-                        >"a×b=2일 때, 순서쌍 (a,b)를 모두 구하시오"</span
+                        >"a×b가 10 이하의 <strong>소수</strong>일 때, 순서쌍
+                        (a,b)를 모두 구하시오"</span
                       >
                     </div>
                     <div class="example-arrow">→</div>
-                    <div class="example-item">
+                    <div class="example-item high-school">
                       <span class="grade">고1</span>
                       <span class="problem"
-                        >"x²+3x+n이 소수일 때, n의 값을 구하시오"</span
+                        >"n²-6n+8이 <strong>소수</strong>가 되는 자연수 n을 모두
+                        구하시오"</span
                       >
                     </div>
                   </div>
                   <p class="example-insight">
-                    💡 같은 원리: 하나의 인수는 1, 나머지가 소수
+                    💡 같은 원리: 하나의 인수는 1, 나머지가 소수<br />
+                    <strong
+                      >중1부터 "소수"라는 핵심 개념을 직접적으로
+                      다룹니다</strong
+                    >
                   </p>
                 </div>
               </div>
@@ -142,10 +151,10 @@
               </div>
               <div class="feature-content">
                 <div class="realtime-connection">
-                  <h4>우리 아이가 지금 배우는 것과 고등 수학의 연결고리</h4>
+                  <h4>우리 아이가 지금 배우는 것과 교과 진도의 연결고리</h4>
                   <div class="connection-example">
                     <div class="current-learning">
-                      <span class="label">현재 진도</span>
+                      <span class="label">수리탐구 진도</span>
                       <div class="content">
                         <strong>TRI 과정 (중3-1 심화)</strong>
                         <p>이차방정식의 판별식 확장</p>
@@ -153,7 +162,7 @@
                     </div>
                     <div class="connection-arrow">⟷</div>
                     <div class="school-learning">
-                      <span class="label">학교 진도</span>
+                      <span class="label">교과 진도</span>
                       <div class="content">
                         <strong>공통수학1 (고1)</strong>
                         <p>이차함수와 판별식의 활용</p>
@@ -161,7 +170,7 @@
                     </div>
                   </div>
                   <div class="teacher-role">
-                    <span class="icon">👨‍🏫</span>
+                    <span class="icon">📚</span>
                     <div class="text">
                       <p><strong>수업 중 교사의 역할</strong></p>
                       <ul>
@@ -212,11 +221,11 @@
                       <span class="grade">고1</span>
                       <span class="suritamgu">TETRA+실전</span>
                       <span class="arrow">→</span>
-                      <span class="preview">수능 대비 완성</span>
+                      <span class="preview">고1 등급 완성</span>
                     </div>
                   </div>
                   <p class="timing-insight">
-                    💡 TRI 과정을 하는 중3 학생들은 이미 학교에서 고1 공통수학을
+                    💡 TRI 과정을 하는 중3 학생들은 이미 학원에서 고1 공통수학을
                     배우고 있어,<br />
                     수리탐구의 심화 내용이 즉시 연결되어 시너지 효과를 만듭니다.
                   </p>
@@ -306,6 +315,7 @@
               </h3>
               <div class="connection-grid">
                 <div class="grid-header">
+                  <span></span>
                   <span>MONO</span>
                   <span>DI</span>
                   <span>TRI</span>
@@ -336,6 +346,30 @@
                       <span class="flow-dot tetra"></span>
                     </div>
                   </div>
+                  <div class="grid-row">
+                    <span class="subject">방부함1</span>
+                    <div class="subject-flow">
+                      <span class="flow-dot mono"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot di"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot tri"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot tetra"></span>
+                    </div>
+                  </div>
+                  <div class="grid-row">
+                    <span class="subject">방부함2</span>
+                    <div class="subject-flow">
+                      <span class="flow-dot mono"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot di"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot tri"></span>
+                      <span class="flow-line"></span>
+                      <span class="flow-dot tetra"></span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <p class="structure-highlight">
@@ -350,72 +384,180 @@
       <section class="textbook-preview-section">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">실제 교재 미리보기</h2>
-            <p class="section-subtitle">
-              일반 문제집과는 차원이 다른 수리탐구만의 접근법
-            </p>
+            <h2 class="section-title">일반 문제집 vs 수리탐구</h2>
+            <p class="section-subtitle">같은 개념, 완전히 다른 접근법</p>
           </div>
 
-          <div class="preview-container">
-            <div class="preview-tabs">
-              <button class="tab-button active" data-tab="structure">
-                3단계 구조
-              </button>
-              <button class="tab-button" data-tab="problem">문제 예시</button>
-              <button class="tab-button" data-tab="mission">Mission+</button>
-            </div>
-
-            <div class="preview-content">
-              <div class="tab-content active" id="structure">
-                <img
-                  src="assets/images/textbook-3steps.png"
-                  alt="3단계 구조 예시"
-                />
-                <p class="preview-caption">
-                  Analysis → Description → Essay로 이어지는 3단계 심화 구조
-                </p>
+          <div class="comparison-container">
+            <div class="comparison-header">
+              <div class="comparison-title general">
+                <span class="label">일반 문제집</span>
+                <span class="desc">답을 구하는 훈련</span>
               </div>
-              <div class="tab-content" id="problem">
-                <img src="assets/images/textbook-problem.png" alt="문제 예시" />
-                <p class="preview-caption">
-                  "~을 구하시오"가 아닌 "~일 때, 가능한 모든 경우를 탐구하시오"
-                </p>
-              </div>
-              <div class="tab-content" id="mission">
-                <img
-                  src="assets/images/textbook-mission.png"
-                  alt="Mission+ 예시"
-                />
-                <p class="preview-caption">
-                  전전권 내용을 자연스럽게 복습하는 Mission+ 시스템
-                </p>
+              <div class="vs-divider">VS</div>
+              <div class="comparison-title suritamgu">
+                <span class="label">수리탐구</span>
+                <span class="desc">원리를 탐구하는 사고력</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- CTA 섹션 -->
-      <section class="cta-section">
-        <div class="container">
-          <h2 class="cta-title">
-            수리탐구 시그니처 과정으로<br />
-            진짜 수학 실력을 만들어보세요
-          </h2>
-          <p class="cta-subtitle">
-            일반 학원에서는 배울 수 없는 특별한 수학 교육<br />
-            i.study 수리탐구 시그니처 과정이 답입니다
-          </p>
-          <div class="cta-buttons">
-            <button
-              class="cta-button primary"
-              onclick="openModal('infoSessionModal')"
-            >
-              설명회 예약하기
-            </button>
-            <button class="cta-button" onclick="openModal('diagnosticModal')">
-              진단검사 신청하기
-            </button>
+            <div class="comparison-content">
+              <!-- 예시 1: 소수 문제 -->
+              <div class="comparison-row">
+                <div class="example-box general">
+                  <h4>📝 문제</h4>
+                  <p class="problem">2, 3, 5, 7 중에서 소수를 모두 고르시오.</p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 소수의 정의 암기<br />
+                      • 각 수가 소수인지 확인<br />
+                      • 답: 2, 3, 5, 7
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">단순 암기와 적용</span>
+                  </div>
+                </div>
+
+                <div class="comparison-arrow">→</div>
+
+                <div class="example-box suritamgu">
+                  <h4>🔍 문제</h4>
+                  <p class="problem">
+                    a×b가 10 이하의 <strong>소수</strong>일 때, 순서쌍 (a,b)를
+                    모두 구하시오.
+                  </p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 곱이 소수가 되는 조건 탐구<br />
+                      • 한 인수는 1, 다른 인수는 소수<br />
+                      • 모든 경우의 수 체계적 분석<br />
+                      • 고등수학 연결: 인수분해와 소수
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">논리적 사고력 + 확장성</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 예시 2: 방정식 문제 -->
+              <div class="comparison-row">
+                <div class="example-box general">
+                  <h4>📝 문제</h4>
+                  <p class="problem">x²-5x+6=0을 풀어라.</p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 인수분해: (x-2)(x-3)=0<br />
+                      • x=2 또는 x=3<br />
+                      • 끝
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">공식 적용 능력</span>
+                  </div>
+                </div>
+
+                <div class="comparison-arrow">→</div>
+
+                <div class="example-box suritamgu">
+                  <h4>🔍 문제</h4>
+                  <p class="problem">
+                    x²-5x+a=0이 정수해를 가질 때, 가능한 모든 정수 a를 구하고 그
+                    이유를 설명하시오.
+                  </p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 판별식과 근의 공식 활용<br />
+                      • 정수 조건 분석<br />
+                      • 가능한 모든 경우 탐구<br />
+                      • 일반화된 규칙 발견
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">문제 해결 능력 + 창의성</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 예시 3: 함수 문제 -->
+              <div class="comparison-row">
+                <div class="example-box general">
+                  <h4>📝 문제</h4>
+                  <p class="problem">y=2x+3의 그래프를 그려라.</p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 두 점 찾기<br />
+                      • 직선 긋기<br />
+                      • 완료
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">기계적 작업</span>
+                  </div>
+                </div>
+
+                <div class="comparison-arrow">→</div>
+
+                <div class="example-box suritamgu">
+                  <h4>🔍 문제</h4>
+                  <p class="problem">
+                    y=ax+b가 점 (1,3)을 지날 때, 기울기와 y절편의 관계를
+                    탐구하고 가능한 모든 직선의 특징을 분석하시오.
+                  </p>
+                  <div class="approach">
+                    <h5>접근법</h5>
+                    <p>
+                      • 조건 분석: 3=a+b<br />
+                      • 무수히 많은 직선의 규칙성<br />
+                      • 매개변수 관계 이해<br />
+                      • 기하학적 의미 해석
+                    </p>
+                  </div>
+                  <div class="result">
+                    <span class="result-label">결과</span>
+                    <span class="result-text">수학적 통찰력 개발</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comparison-summary">
+              <div class="summary-item">
+                <span class="icon">🎯</span>
+                <h4>핵심 차이</h4>
+                <p>
+                  수리탐구는 <strong>"왜?"</strong>와
+                  <strong>"만약에?"</strong>를 끊임없이 묻습니다
+                </p>
+              </div>
+              <div class="summary-item">
+                <span class="icon">📈</span>
+                <h4>학습 효과</h4>
+                <p>
+                  단순 문제 풀이가 아닌 <strong>수학적 사고력</strong>이
+                  성장합니다
+                </p>
+              </div>
+              <div class="summary-item">
+                <span class="icon">🔗</span>
+                <h4>미래 연결</h4>
+                <p>
+                  중등 과정부터 <strong>고등 수학의 기초</strong>를 탄탄히
+                  다집니다
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -521,6 +663,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/suritamgu-signature.js"></script>
   </body>
 </html>
