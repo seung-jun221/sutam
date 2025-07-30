@@ -10,7 +10,7 @@
 
 /* ========== 페이지 히어로 ========== */
 .page-hero {
-  padding: 100px 0;
+  padding: 80px 0 70px;
   background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 100%);
   color: white;
   text-align: center;
@@ -75,7 +75,7 @@
   border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   letter-spacing: 0.5px;
   backdrop-filter: blur(10px);
 }
@@ -85,7 +85,7 @@
 }
 
 .hero-title {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
@@ -94,7 +94,7 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .title-highlight {
@@ -105,14 +105,14 @@
 }
 
 .hero-subtitle {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .subtitle-main {
   font-size: 20px;
   font-weight: 600;
   color: #fbbf24;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .subtitle-sub {
@@ -124,8 +124,8 @@
 .credentials {
   display: flex;
   justify-content: center;
-  gap: 32px;
-  margin-bottom: 50px;
+  gap: 24px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
@@ -149,19 +149,19 @@
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 50px;
+  gap: 32px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
 .stat-item {
   text-align: center;
-  padding: 24px;
+  padding: 20px 16px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  min-width: 160px;
+  min-width: 150px;
   transition: all 0.3s ease;
 }
 
@@ -173,7 +173,7 @@
 .stat-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .stat-number {
@@ -198,13 +198,13 @@
 .trust-indicators {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .trust-item {
   text-align: center;
-  padding: 16px 24px;
+  padding: 12px 20px;
   background: rgba(251, 191, 36, 0.1);
   border: 1px solid rgba(251, 191, 36, 0.3);
   border-radius: 12px;
@@ -216,7 +216,7 @@
   font-size: 24px;
   font-weight: 700;
   color: #fbbf24;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .trust-text {
@@ -228,7 +228,7 @@
 /* ========== 경고 메시지 ========== */
 .warning-section {
   background: linear-gradient(135deg, #fff3cd 0%, #fef3c7 100%);
-  padding: 50px 0;
+  padding: 40px 0;
   border-top: 4px solid var(--warning-color);
   border-bottom: 4px solid var(--warning-color);
   position: relative;
@@ -252,7 +252,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding: 32px;
+  padding: 28px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   backdrop-filter: blur(10px);
@@ -261,24 +261,24 @@
 }
 
 .warning-title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: #92400e;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative;
 }
 
 .warning-title::before {
   content: '⚠️';
-  font-size: 32px;
+  font-size: 28px;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .warning-text {
-  font-size: 18px;
+  font-size: 17px;
   color: #92400e;
-  line-height: 1.8;
+  line-height: 1.7;
   font-weight: 500;
 }
 
@@ -747,13 +747,40 @@
     max-width: 200px;
   }
 
+  .hero-badge {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+
+  .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 24px;
+  }
+
+  .credentials {
+    margin-bottom: 24px;
+  }
+
+  .hero-stats {
+    margin-bottom: 24px;
+  }
+
   .warning-content {
-    padding: 24px;
+    padding: 20px;
     margin: 0 16px;
   }
 
   .warning-title {
     font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .warning-title::before {
+    font-size: 24px;
+    margin-bottom: 6px;
   }
 
   .warning-text {
