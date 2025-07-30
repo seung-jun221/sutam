@@ -11,7 +11,7 @@
 /* 히어로 배경 */
 .page-title {
   text-align: center;
-  padding: 80px 20px;
+  padding: 50px 20px;
   background: var(--primary-color);
   color: white;
   position: relative;
@@ -44,15 +44,15 @@
 }
 
 .page-title h1 {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
 
 .page-title p {
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0.9;
   position: relative;
   z-index: 1;
@@ -155,80 +155,147 @@
 /* ========== 과정 카드 ========== */
 .course-card {
   background: white;
-  border-radius: 16px;
-  padding: 32px;
-  margin: 0 auto 24px;
+  border-radius: 12px;
+  margin: 0 auto 20px;
   max-width: 800px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
+  overflow: hidden;
 }
 
 .course-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
 .course-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  padding: 16px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.course-header.elementary::before {
+  background: #1890ff;
+}
+
+.course-header.middle::before {
+  background: #eb2f96;
+}
+
+.course-header.high::before {
+  background: #52c41a;
+}
+
+.course-header.elementary {
+  background: linear-gradient(135deg, #e6f4ff 0%, #f0f9ff 100%);
+}
+
+.course-header.middle {
+  background: linear-gradient(135deg, #fff0f6 0%, #fff5fb 100%);
+}
+
+.course-header.high {
+  background: linear-gradient(135deg, #f6ffed 0%, #faffed 100%);
+}
+
+.course-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
 }
 
 .course-code {
-  padding: 10px 24px;
-  border-radius: 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .course-header.elementary .course-code {
-  background: #10b981;
+  background: #1890ff;
 }
 
 .course-header.middle .course-code {
-  background: #8b5cf6;
+  background: #eb2f96;
 }
 
 .course-header.high .course-code {
-  background: #ef4444;
+  background: #52c41a;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.3;
 }
 
 .course-tag {
   padding: 6px 16px;
-  background: var(--accent-color);
+  background: #faad14;
   color: white;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 16px;
+  font-size: 13px;
   font-weight: 600;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.course-body {
+  padding: 32px;
 }
 
 .course-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 8px;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .course-subtitle {
-  font-size: 18px;
-  color: var(--secondary-color);
-  margin-bottom: 24px;
+  font-size: 16px;
+  color: #1890ff;
+  margin: 8px 0 24px 0;
   font-weight: 500;
 }
 
+/* subtitle이 없는 경우 title 하단 여백 */
+.course-title:last-child {
+  margin-bottom: 24px;
+}
+
 .course-content {
-  padding-top: 24px;
-  border-top: 1px solid #f0f0f0;
+  padding: 20px 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
 
 .course-content p {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   line-height: 1.8;
 }
 
@@ -239,6 +306,8 @@
 .course-content strong {
   color: var(--primary-color);
   font-weight: 600;
+  display: inline-block;
+  min-width: 85px;
 }
 
 /* ========== CTA 섹션 ========== */
@@ -314,8 +383,20 @@
     font-size: 26px;
   }
 
+  .course-header {
+    padding: 16px 24px;
+  }
+
+  .course-body {
+    padding: 28px;
+  }
+
   .course-title {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .course-content {
+    padding: 18px 20px;
   }
 
   .curriculum-cta h2 {
@@ -333,17 +414,46 @@
 }
 
 @media (max-width: 480px) {
-  .course-card {
-    padding: 24px;
-    margin-bottom: 16px;
+  .course-header {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .course-header {
-    flex-wrap: wrap;
+  .course-tag {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+  }
+
+  .course-body {
+    padding: 24px;
+  }
+
+  .course-title {
+    font-size: 17px;
+  }
+
+  .course-subtitle {
+    font-size: 15px;
+    margin: 6px 0 20px 0;
+  }
+
+  .course-title:last-child {
+    margin-bottom: 20px;
   }
 
   .course-code {
-    font-size: 16px;
-    padding: 8px 20px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .course-content {
+    padding: 16px 20px;
+  }
+
+  .course-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
   }
 }
