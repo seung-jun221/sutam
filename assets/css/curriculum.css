@@ -1,5 +1,5 @@
 /* assets/css/curriculum.css */
-/* 커리큘럼 페이지 전용 스타일 */
+/* 커리큘럼 페이지 전용 스타일 - 여백 개선 버전 */
 
 /* ========== 페이지 타이틀 ========== */
 .curriculum-main {
@@ -11,7 +11,7 @@
 /* 히어로 배경 */
 .page-title {
   text-align: center;
-  padding: 50px 20px;
+  padding: 40px 20px; /* 50px → 40px로 축소 */
   background: var(--primary-color);
   color: white;
   position: relative;
@@ -44,15 +44,15 @@
 }
 
 .page-title h1 {
-  font-size: 36px;
+  font-size: 32px; /* 36px → 32px */
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px; /* 12px → 10px */
   position: relative;
   z-index: 1;
 }
 
 .page-title p {
-  font-size: 18px;
+  font-size: 17px; /* 18px → 17px */
   opacity: 0.9;
   position: relative;
   z-index: 1;
@@ -63,7 +63,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  margin: -40px auto 60px;
+  margin: -30px auto 40px; /* -40px → -30px, 60px → 40px */
   max-width: 900px;
   position: relative;
   z-index: 10;
@@ -71,7 +71,7 @@
 
 .overview-item {
   background: white;
-  padding: 30px 20px;
+  padding: 24px 20px; /* 30px → 24px */
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -97,30 +97,30 @@
   right: -20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 22px; /* 24px → 22px */
   color: #e5e7eb;
   z-index: 1;
 }
 
 .overview-item .level {
   display: block;
-  font-size: 14px;
+  font-size: 13px; /* 14px → 13px */
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 10px; /* 12px → 10px */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .overview-item .classes {
-  font-size: 22px;
+  font-size: 20px; /* 22px → 20px */
   font-weight: 700;
   color: var(--primary-color);
 }
 
 /* ========== 커리큘럼 섹션 ========== */
 .curriculum-section {
-  margin-bottom: 80px;
-  padding: 60px 0;
+  margin-bottom: 0; /* 80px → 0 */
+  padding: 40px 0; /* 60px → 40px */
 }
 
 .curriculum-section:nth-child(4) {
@@ -132,10 +132,10 @@
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 28px; /* 32px → 28px */
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* 40px → 30px */
   text-align: center;
   position: relative;
 }
@@ -143,11 +143,11 @@
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -12px;
+  bottom: -10px; /* -12px → -10px */
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
+  width: 60px; /* 80px → 60px */
+  height: 3px; /* 4px → 3px */
   background: var(--accent-color);
   border-radius: 2px;
 }
@@ -156,7 +156,7 @@
 .course-card {
   background: white;
   border-radius: 12px;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px; /* 20px → 16px */
   max-width: 800px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -173,7 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
+  padding: 14px 24px; /* 16px 32px → 14px 24px */
   position: relative;
   overflow: hidden;
 }
@@ -213,18 +213,11 @@
   background: linear-gradient(135deg, #f6ffed 0%, #faffed 100%);
 }
 
-.course-header-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  z-index: 1;
-}
-
 .course-code {
-  padding: 10px 20px;
+  padding: 8px 16px; /* 10px 20px → 8px 16px */
   border-radius: 20px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px; /* 16px → 15px */
   color: white;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -243,31 +236,23 @@
   background: #52c41a;
 }
 
-.course-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin: 0;
-  line-height: 1.3;
-}
-
 .course-tag {
-  padding: 6px 16px;
+  padding: 5px 14px; /* 6px 16px → 5px 14px */
   background: #faad14;
   color: white;
   border-radius: 16px;
-  font-size: 13px;
+  font-size: 12px; /* 13px → 12px */
   font-weight: 600;
   white-space: nowrap;
   z-index: 1;
 }
 
 .course-body {
-  padding: 32px;
+  padding: 20px 24px; /* 32px → 20px 24px */
 }
 
 .course-title {
-  font-size: 20px;
+  font-size: 18px; /* 20px → 18px */
   font-weight: 700;
   color: var(--primary-color);
   margin: 0;
@@ -275,28 +260,28 @@
 }
 
 .course-subtitle {
-  font-size: 16px;
+  font-size: 15px; /* 16px → 15px */
   color: #1890ff;
-  margin: 8px 0 24px 0;
+  margin: 6px 0 16px 0; /* 8px 0 24px → 6px 0 16px */
   font-weight: 500;
 }
 
 /* subtitle이 없는 경우 title 하단 여백 */
 .course-title:last-child {
-  margin-bottom: 24px;
+  margin-bottom: 16px; /* 24px → 16px */
 }
 
 .course-content {
-  padding: 20px 24px;
+  padding: 16px 20px; /* 20px 24px → 16px 20px */
   background: #f8f9fa;
   border-radius: 8px;
 }
 
 .course-content p {
-  font-size: 15px;
+  font-size: 14px; /* 15px → 14px */
   color: var(--text-secondary);
-  margin-bottom: 12px;
-  line-height: 1.8;
+  margin-bottom: 10px; /* 12px → 10px */
+  line-height: 1.7; /* 1.8 → 1.7 */
 }
 
 .course-content p:last-child {
@@ -307,36 +292,36 @@
   color: var(--primary-color);
   font-weight: 600;
   display: inline-block;
-  min-width: 85px;
+  min-width: 75px; /* 85px → 75px */
 }
 
 /* ========== CTA 섹션 ========== */
 .curriculum-cta {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px; /* 80px → 60px */
   background: var(--primary-color);
   color: white;
-  margin-top: 80px;
+  margin-top: 40px; /* 80px → 40px */
   position: relative;
 }
 
 .curriculum-cta h2 {
-  font-size: 36px;
+  font-size: 32px; /* 36px → 32px */
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px; /* 20px → 16px */
 }
 
 .curriculum-cta p {
-  font-size: 20px;
-  margin-bottom: 40px;
+  font-size: 18px; /* 20px → 18px */
+  margin-bottom: 30px; /* 40px → 30px */
   line-height: 1.6;
   opacity: 0.95;
 }
 
 .cta-contact {
-  font-size: 22px;
+  font-size: 20px; /* 22px → 20px */
   background: rgba(255, 255, 255, 0.1);
-  padding: 32px 48px;
+  padding: 24px 36px; /* 32px 48px → 24px 36px */
   border-radius: 16px;
   display: inline-block;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -352,60 +337,74 @@
 /* ========== 컨테이너 조정 ========== */
 .curriculum-main .container {
   max-width: 1200px;
-  padding: 0 40px;
+  padding: 0 30px; /* 40px → 30px */
 }
 
 /* ========== 반응형 ========== */
 @media (max-width: 768px) {
   .curriculum-overview {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 20px auto 40px;
+    gap: 12px; /* 16px → 12px */
+    margin: 20px auto 30px; /* 40px → 30px */
   }
 
   .overview-item {
     border-radius: 12px !important;
+    padding: 20px; /* 추가 축소 */
   }
 
   .overview-item:not(:last-child)::after {
     content: '↓';
     right: 50%;
-    bottom: -32px;
+    bottom: -26px; /* -32px → -26px */
     top: auto;
     transform: translateX(50%);
   }
 
+  .page-title {
+    padding: 30px 20px; /* 추가 축소 */
+  }
+
   .page-title h1 {
-    font-size: 32px;
+    font-size: 28px; /* 32px → 28px */
   }
 
   .section-title {
-    font-size: 26px;
+    font-size: 24px; /* 26px → 24px */
+    margin-bottom: 24px;
+  }
+
+  .curriculum-section {
+    padding: 30px 0; /* 추가 축소 */
   }
 
   .course-header {
-    padding: 16px 24px;
+    padding: 12px 20px; /* 16px 24px → 12px 20px */
   }
 
   .course-body {
-    padding: 28px;
+    padding: 18px 20px; /* 28px → 18px 20px */
   }
 
   .course-title {
-    font-size: 18px;
+    font-size: 17px; /* 18px → 17px */
   }
 
   .course-content {
-    padding: 18px 20px;
+    padding: 14px 18px; /* 18px 20px → 14px 18px */
+  }
+
+  .curriculum-cta {
+    padding: 40px 20px; /* 추가 축소 */
   }
 
   .curriculum-cta h2 {
-    font-size: 28px;
+    font-size: 26px; /* 28px → 26px */
   }
 
   .cta-contact {
-    padding: 24px 32px;
-    font-size: 18px;
+    padding: 20px 28px; /* 24px 32px → 20px 28px */
+    font-size: 17px; /* 18px → 17px */
   }
 
   .curriculum-main .container {
@@ -414,46 +413,82 @@
 }
 
 @media (max-width: 480px) {
+  .page-title {
+    padding: 24px 15px; /* 추가 축소 */
+  }
+
+  .page-title h1 {
+    font-size: 24px; /* 추가 축소 */
+  }
+
+  .page-title p {
+    font-size: 15px; /* 추가 축소 */
+  }
+
+  .course-card {
+    margin-bottom: 12px; /* 추가 축소 */
+  }
+
   .course-header {
-    padding: 14px 20px;
+    padding: 10px 16px; /* 14px 20px → 10px 16px */
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px; /* 12px → 8px */
   }
 
   .course-tag {
     position: absolute;
-    right: 20px;
-    top: 14px;
+    right: 16px; /* 20px → 16px */
+    top: 10px; /* 14px → 10px */
   }
 
   .course-body {
-    padding: 24px;
+    padding: 16px; /* 24px → 16px */
   }
 
   .course-title {
-    font-size: 17px;
+    font-size: 16px; /* 17px → 16px */
   }
 
   .course-subtitle {
-    font-size: 15px;
-    margin: 6px 0 20px 0;
+    font-size: 14px; /* 15px → 14px */
+    margin: 4px 0 12px 0; /* 6px 0 20px → 4px 0 12px */
   }
 
   .course-title:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 12px; /* 20px → 12px */
   }
 
   .course-code {
-    font-size: 14px;
-    padding: 8px 16px;
+    font-size: 13px; /* 14px → 13px */
+    padding: 6px 14px; /* 8px 16px → 6px 14px */
   }
 
   .course-content {
-    padding: 16px 20px;
+    padding: 12px 16px; /* 16px 20px → 12px 16px */
   }
 
   .course-content p {
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 13px; /* 14px → 13px */
+    margin-bottom: 8px; /* 10px → 8px */
+  }
+
+  .curriculum-cta {
+    padding: 30px 15px; /* 추가 축소 */
+    margin-top: 30px; /* 추가 축소 */
+  }
+
+  .curriculum-cta h2 {
+    font-size: 22px; /* 추가 축소 */
+    margin-bottom: 12px; /* 추가 축소 */
+  }
+
+  .curriculum-cta p {
+    font-size: 16px; /* 추가 축소 */
+    margin-bottom: 20px; /* 추가 축소 */
+  }
+
+  .cta-contact {
+    padding: 16px 24px; /* 추가 축소 */
+    font-size: 15px; /* 추가 축소 */
   }
 }
