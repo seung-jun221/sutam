@@ -1,0 +1,869 @@
+/* assets/css/cumulative-test.css */
+/* 누적테스트 상세 페이지 전용 스타일 */
+
+/* ========== 메인 레이아웃 ========== */
+.cumulative-main {
+  padding: 0;
+  background: #ffffff;
+  min-height: calc(100vh - 140px);
+}
+
+/* ========== 페이지 히어로 ========== */
+.page-hero {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+  animation: float 25s ease-in-out infinite;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(251, 191, 36, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 30s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(251, 191, 36, 0.2);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+  font-size: 16px;
+}
+
+.hero-title {
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.title-main {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.title-highlight {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fbbf24;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  margin-bottom: 40px;
+}
+
+.subtitle-main {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 8px;
+}
+
+.subtitle-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.credentials {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.credential-icon {
+  font-size: 14px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 160px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fbbf24;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.stat-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  text-align: center;
+  padding: 16px 24px;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.trust-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.trust-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* ========== 경고 메시지 ========== */
+.warning-section {
+  background: linear-gradient(135deg, #fff3cd 0%, #fef3c7 100%);
+  padding: 50px 0;
+  border-top: 4px solid var(--warning-color);
+  border-bottom: 4px solid var(--warning-color);
+  position: relative;
+}
+
+.warning-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    repeat;
+  opacity: 0.5;
+}
+
+.warning-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.2);
+}
+
+.warning-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.warning-title::before {
+  content: '⚠️';
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.warning-text {
+  font-size: 18px;
+  color: #92400e;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* ========== 섹션 공통 ========== */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== 시스템 소개 ========== */
+.system-intro {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--bg-secondary);
+  padding: 32px 24px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.feature-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== 테스트 구조 ========== */
+.test-structure {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.structure-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.structure-visual {
+  order: 1;
+}
+
+.test-table-card {
+  background: white;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.table-header {
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.structure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.structure-table th {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 10px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.structure-table td {
+  padding: 10px 8px;
+  border: 1px solid var(--border-color);
+  font-size: 12px;
+  text-align: center;
+  background: white;
+}
+
+.structure-table tr:nth-child(even) td {
+  background: var(--bg-secondary);
+}
+
+.structure-info {
+  order: 2;
+}
+
+.structure-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.info-list li div {
+  flex: 1;
+}
+
+.info-list li strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-list li div:not(strong) {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== 혜택 섹션 ========== */
+.benefits {
+  padding: 80px 0;
+  background: white;
+}
+
+.benefit-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  align-items: flex-start;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit-number {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.benefit-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.benefit-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== CTA 섹션 ========== */
+.cta {
+  padding: 80px 0;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cta-button {
+  padding: 16px 32px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: white;
+}
+
+.cta-button:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.cta-button.primary {
+  background: white;
+  color: var(--primary-color);
+}
+
+.cta-button.primary:hover {
+  background: #f3f4f6;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 768px) {
+  .title-main {
+    font-size: 26px;
+  }
+
+  .title-highlight {
+    font-size: 36px;
+  }
+
+  .subtitle-main {
+    font-size: 18px;
+  }
+
+  .subtitle-sub {
+    font-size: 15px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .stat-item {
+    min-width: 140px;
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .credentials {
+    gap: 16px;
+  }
+
+  .trust-indicators {
+    gap: 20px;
+  }
+
+  .trust-number {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .warning-title {
+    font-size: 22px;
+  }
+
+  .warning-text {
+    font-size: 16px;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .feature-title {
+    font-size: 18px;
+  }
+
+  .structure-table {
+    font-size: 11px;
+  }
+
+  .structure-table th,
+  .structure-table td {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+
+  .benefit-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .benefit-content h4 {
+    font-size: 16px;
+  }
+
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .cta-buttons {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .page-hero {
+    padding: 80px 0;
+  }
+
+  .title-main {
+    font-size: 22px;
+  }
+
+  .title-highlight {
+    font-size: 32px;
+  }
+
+  .subtitle-main {
+    font-size: 16px;
+  }
+
+  .subtitle-sub {
+    font-size: 14px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .credentials {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .trust-item {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .warning-content {
+    padding: 24px;
+    margin: 0 16px;
+  }
+
+  .warning-title {
+    font-size: 20px;
+  }
+
+  .warning-text {
+    font-size: 15px;
+  }
+
+  .system-intro,
+  .test-structure,
+  .benefits,
+  .cta {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+  }
+
+  .structure-info h3 {
+    font-size: 20px;
+  }
+
+  .test-table-card {
+    padding: 20px 16px;
+  }
+
+  .table-header {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .structure-table th,
+  .structure-table td {
+    padding: 4px 2px;
+    font-size: 9px;
+  }
+
+  .info-list li {
+    padding: 16px;
+  }
+
+  .info-list li strong {
+    font-size: 15px;
+  }
+
+  .benefit-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .cta-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    gap: 12px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+
+  .stat-desc {
+    font-size: 11px;
+  }
+
+  .credentials {
+    gap: 8px;
+  }
+
+  .credential-item {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .trust-number {
+    font-size: 18px;
+  }
+
+  .trust-text {
+    font-size: 11px;
+  }
+
+  .structure-table th,
+  .structure-table td {
+    padding: 3px 1px;
+    font-size: 8px;
+  }
+
+  .table-header {
+    font-size: 13px;
+  }
+
+  .benefit-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .benefit-number {
+    margin: 0 auto;
+  }
+}
