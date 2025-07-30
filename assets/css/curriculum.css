@@ -323,7 +323,15 @@
   line-height: 1.6;
 }
 
-/* ========== 대상 학년 배지 ========== */
+/* 모바일 전용 텍스트 (기본적으로 숨김) */
+.content-text-mobile {
+  display: none;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ========== 대상 학년 배지 (개선됨) ========== */
 .target-grade {
   margin-top: 12px;
   padding-top: 12px;
@@ -331,12 +339,19 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .grade-label {
   font-size: 13px;
   font-weight: 600;
   color: #666;
+}
+
+.grade-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .grade-badge {
@@ -499,7 +514,7 @@
   }
 }
 
-/* 모바일 */
+/* 모바일 (개선됨) */
 @media (max-width: 640px) {
   .logo-img {
     height: 28px;
@@ -581,6 +596,51 @@
     flex-direction: column;
     gap: 16px;
   }
+
+  /* 모바일 전용 콘텐츠 표시 */
+  .content-row {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .content-label {
+    min-width: auto;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .content-text {
+    display: none;
+  }
+
+  .content-text-mobile {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .content-special {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .target-grade {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .grade-badges {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .grade-badge {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
 }
 
 /* 작은 모바일 */
@@ -648,26 +708,8 @@
     font-size: 17px;
   }
 
-  .content-row {
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .content-label {
-    min-width: auto;
-    font-size: 13px;
-  }
-
-  .content-text {
-    font-size: 13px;
-  }
-
   .content-group {
     padding: 14px;
-  }
-
-  .content-special {
-    font-size: 13px;
   }
 
   .suritamgu-highlight {
@@ -690,11 +732,6 @@
   }
 
   .grade-label {
-    font-size: 12px;
-  }
-
-  .grade-badge {
-    padding: 3px 10px;
     font-size: 12px;
   }
 
