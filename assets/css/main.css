@@ -311,6 +311,16 @@ body {
   font-weight: 700;
 }
 
+.ceo-youtube-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.ceo-youtube-summary strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
 .ceo-highlight {
   padding: 16px 20px;
   background: var(--primary-color);
