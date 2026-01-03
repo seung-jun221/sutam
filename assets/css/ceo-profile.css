@@ -30,16 +30,14 @@
 }
 
 .ceo-detail-grid {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 60px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
-/* 왼쪽 영역 */
+/* 왼쪽 영역 (상단 프로필) */
 .ceo-left {
-  position: sticky;
-  top: 80px;
+  text-align: center;
 }
 
 .ceo-basic-info {
@@ -69,7 +67,8 @@
 
 .ceo-photo {
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
+  margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -210,20 +209,6 @@
 
 /* 반응형 */
 @media (max-width: 900px) {
-  .ceo-detail-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .ceo-left {
-    position: static;
-    text-align: center;
-  }
-
-  .ceo-photo {
-    margin: 0 auto;
-  }
-
   .ceo-name-large {
     font-size: 48px;
   }
