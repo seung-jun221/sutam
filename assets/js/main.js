@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     hideLoadingScreen();
 
     console.log('✅ 시스템 초기화 완료');
-    showNotification('페이지가 준비되었습니다!');
   } catch (error) {
     console.error('❌ 시스템 초기화 실패:', error);
     hideLoadingScreen();
