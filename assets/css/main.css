@@ -342,6 +342,43 @@ body {
   }
 }
 
+/* CEO 프로필 링크 */
+.ceo-profile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.ceo-profile-link:hover {
+  transform: translateY(-4px);
+}
+
+.ceo-profile-link:hover .ceo-profile {
+  box-shadow: var(--shadow-lg);
+}
+
+.ceo-more {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.ceo-more span {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--bg-tertiary);
+  color: var(--primary-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.ceo-profile-link:hover .ceo-more span {
+  background: var(--primary-color);
+  color: white;
+}
+
 /* ========== 전국 제휴 학원 섹션 ========== */
 .partners-section {
   padding: 60px 0;
