@@ -331,7 +331,7 @@
 .insight-label {
   display: inline-block;
   background: var(--primary-color);
-  color: white;
+  color: white !important;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 12px;
