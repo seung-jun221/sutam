@@ -331,7 +331,7 @@
 .insight-label {
   display: inline-block;
   background: var(--primary-color);
-  color: white;
+  color: white !important;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 12px;
@@ -1199,6 +1199,47 @@
   .tab-button {
     width: 100%;
   }
+
+  /* 타이밍 테이블 모바일 */
+  .timing-table {
+    padding: 16px;
+  }
+
+  .timing-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .timing-row .grade {
+    font-size: 16px;
+  }
+
+  .timing-row .suritamgu {
+    font-size: 15px;
+  }
+
+  .timing-row .arrow {
+    font-size: 18px;
+  }
+
+  .timing-row .preview {
+    font-size: 14px;
+    background: var(--bg-tertiary);
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .timing-row.highlight {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .timing-visual h4 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1243,7 +1284,34 @@
   }
 
   .grid-header {
-    font-size: 12px;
+    display: none;
+  }
+
+  .grid-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .subject {
+    font-size: 16px;
+    color: var(--primary-color);
+  }
+
+  .subject-flow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .flow-line {
+    display: none;
+  }
+
+  .flow-content {
+    text-align: center;
+    padding: 12px;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
   }
 
   .cta-title {
@@ -1262,5 +1330,69 @@
   .cta-button {
     width: 100%;
     max-width: 280px;
+  }
+
+  /* 교사 역할 섹션 모바일 */
+  .teacher-role {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .teacher-role .icon {
+    margin: 0 auto 16px;
+  }
+
+  .teacher-role .text p {
+    font-size: 15px;
+  }
+
+  .teacher-role li {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* 실시간 연결 섹션 모바일 */
+  .realtime-connection {
+    padding: 20px;
+  }
+
+  .realtime-connection h4 {
+    font-size: 16px;
+  }
+
+  /* 인사이트 박스 모바일 */
+  .example-insight,
+  .timing-insight {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .insight-label {
+    display: block;
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+
+  /* 비교 섹션 모바일 */
+  .comparison-section {
+    padding: 60px 0;
+  }
+
+  .example-box h4 {
+    font-size: 16px;
+  }
+
+  .example-box .problem {
+    font-size: 14px;
+  }
+
+  /* 요약 아이템 모바일 */
+  .summary-item h4 {
+    font-size: 18px;
+  }
+
+  .summary-item p {
+    font-size: 14px;
   }
 }

@@ -362,6 +362,23 @@
   color: white;
 }
 
+.feature-card .feature-icon-svg {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card .feature-icon-svg svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
 .feature-title {
   font-size: 20px;
   font-weight: 700;
