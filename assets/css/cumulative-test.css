@@ -81,7 +81,17 @@
 }
 
 .badge-icon {
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.badge-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #fbbf24;
 }
 
 .hero-title {
@@ -143,7 +153,17 @@
 }
 
 .credential-icon {
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.credential-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: rgba(255, 255, 255, 0.9);
 }
 
 .hero-stats {
