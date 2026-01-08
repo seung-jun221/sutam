@@ -328,6 +328,17 @@
   font-weight: 700;
 }
 
+.insight-label {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
 /* 실시간 연결 */
 .realtime-connection h4 {
   font-size: 18px;
@@ -400,7 +411,6 @@
 }
 
 .teacher-role .icon {
-  font-size: 40px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -410,6 +420,12 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-role .icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--primary-color);
 }
 
 .teacher-role .text p {
@@ -967,9 +983,20 @@
 }
 
 .summary-item .icon {
-  font-size: 48px;
-  display: block;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  border-radius: 14px;
+}
+
+.summary-item .icon svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
 }
 
 .summary-item h4 {
