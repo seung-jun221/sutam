@@ -349,9 +349,13 @@
             >
               설명회 예약 신청
             </a>
-            <button class="cta-button" onclick="openModal('diagnosticModal')">
-              진단검사 응시하기
-            </button>
+            <a
+              href="https://istudy-edu.netlify.app/consulting"
+              target="_blank"
+              class="cta-button"
+            >
+              진단검사/컨설팅 예약하기
+            </a>
           </div>
         </div>
       </section>
@@ -378,53 +382,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- 모달들 -->
-
-    <!-- 진단검사 모달 -->
-    <div id="diagnosticModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>무료 진단검사 신청</h2>
-          <span class="close" onclick="closeModal('diagnosticModal')">×</span>
-        </div>
-        <div class="modal-body">
-          <div class="info-box">
-            <h3>진단검사 안내</h3>
-            <ul>
-              <li>대상: 초4~중1 학생</li>
-              <li>방식: 온라인 25문항</li>
-              <li>시간: 90분</li>
-              <li>결과: 상세 분석 리포트 제공</li>
-            </ul>
-          </div>
-
-          <form id="diagnosticForm">
-            <div class="form-group">
-              <label>학생 이름</label>
-              <input type="text" required />
-            </div>
-            <div class="form-group">
-              <label>학년</label>
-              <select required>
-                <option value="">선택하세요</option>
-                <option value="초4">초등 4학년</option>
-                <option value="초5">초등 5학년</option>
-                <option value="초6">초등 6학년</option>
-                <option value="중1">중등 1학년</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>학부모 연락처</label>
-              <input type="tel" placeholder="010-0000-0000" required />
-            </div>
-            <button type="submit" class="submit-button">
-              진단검사 신청하기
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
 
     <!-- 플로팅 카카오톡 버튼 -->
     <a href="http://pf.kakao.com/_xaPExon/chat" target="_blank" class="floating-kakao">
