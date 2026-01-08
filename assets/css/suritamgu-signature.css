@@ -1283,35 +1283,51 @@
     font-size: 28px;
   }
 
+  /* 48권 연결 그리드 모바일 */
+  .connection-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .grid-header {
-    display: none;
+    display: grid;
+    grid-template-columns: 80px repeat(4, 50px);
+    gap: 8px;
+    font-size: 11px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .grid-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 12px;
-    text-align: center;
+    padding: 12px 0;
   }
 
   .subject {
-    font-size: 16px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--primary-color);
+    text-align: left;
   }
 
   .subject-flow {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .flow-dot {
+    width: 12px;
+    height: 12px;
   }
 
   .flow-line {
-    display: none;
-  }
-
-  .flow-content {
-    text-align: center;
-    padding: 12px;
-    background: var(--bg-tertiary);
-    border-radius: 8px;
+    flex: 1;
+    height: 2px;
+    margin: 0;
   }
 
   .cta-title {
