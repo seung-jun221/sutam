@@ -293,6 +293,20 @@
         color: #1a365d;
       }
 
+      .notice-image-section {
+        margin-bottom: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .notice-main-image,
+      .notice-venue-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
       @media (max-width: 640px) {
         .notice-title {
           font-size: 20px;
@@ -319,6 +333,11 @@
         홈으로 돌아가기
       </a>
 
+      <!-- 메인 이미지 -->
+      <div class="notice-image-section">
+        <img src="assets/images/seminar-main.png" alt="수리탐구 사직 직영점 오픈 설명회 - 대치동표 수학, 대치만 탈출중" class="notice-main-image">
+      </div>
+
       <!-- 헤더 -->
       <div class="notice-header">
         <span class="notice-badge">1차 오픈설명회</span>
@@ -339,6 +358,11 @@
           <div class="benefit-title">고등 안정등급 로드맵 제공</div>
           <div class="benefit-desc">유료 컨설팅에서만 제공되는 특별 자료</div>
         </div>
+      </div>
+
+      <!-- 설명회 장소 이미지 -->
+      <div class="notice-image-section">
+        <img src="assets/images/seminar-venue.png" alt="수리탐구 사직 직영점 - 드디어 부산 사직 직영점에서 시작됩니다" class="notice-venue-image">
       </div>
 
       <!-- 설명회 정보 -->
