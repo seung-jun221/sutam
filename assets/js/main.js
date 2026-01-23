@@ -197,8 +197,46 @@ function debugSystem() {
   console.log('폼 개수:', document.querySelectorAll('form').length);
 }
 
+// ========== 하단 팝업 관리 ==========
+function initBottomPopup() {
+  const popup = document.getElementById('bottomPopup');
+  if (!popup) return;
+
+  const POPUP_KEY = 'suritamgu_popup_closed';
+  const today = new Date().toDateString();
+
+  // 오늘 이미 닫았으면 표시하지 않음
+  if (localStorage.getItem(POPUP_KEY) === today) {
+    return;
+  }
+
+  // 2초 후 팝업 표시
+  setTimeout(() => {
+    popup.classList.add('show');
+    document.body.classList.add('popup-open');
+  }, 2000);
+}
+
+function closeBottomPopup() {
+  const popup = document.getElementById('bottomPopup');
+  if (popup) {
+    popup.classList.remove('show');
+    document.body.classList.remove('popup-open');
+
+    // 오늘 날짜 저장 (오늘 하루 안 보기)
+    const today = new Date().toDateString();
+    localStorage.setItem('suritamgu_popup_closed', today);
+  }
+}
+
+// DOMContentLoaded 이벤트에 팝업 초기화 추가
+document.addEventListener('DOMContentLoaded', function () {
+  initBottomPopup();
+});
+
 // 전역 함수로 노출 (다른 페이지에서 사용 가능)
 window.openModal = openModal;
 window.closeModal = closeModal;
 window.showNotification = showNotification;
 window.scrollToSection = scrollToSection;
+window.closeBottomPopup = closeBottomPopup;

@@ -1726,3 +1726,152 @@ body {
     font-size: 13px;
   }
 }
+
+/* ========== 하단 슬라이드 팝업 ========== */
+.bottom-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bottom-popup.show {
+  transform: translateY(0);
+}
+
+.popup-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.popup-content {
+  flex: 1;
+}
+
+.popup-badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.popup-desc {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.popup-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.popup-btn {
+  display: inline-block;
+  background: white;
+  color: #1a365d;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.popup-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: white;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 24px;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.popup-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .bottom-popup {
+    padding: 16px;
+  }
+
+  .popup-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .popup-title {
+    font-size: 16px;
+  }
+
+  .popup-desc {
+    font-size: 13px;
+  }
+
+  .popup-actions {
+    width: 100%;
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .popup-btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .bottom-popup {
+    position: relative;
+  }
+}
+
+/* 팝업이 열려있을 때 플로팅 카카오 버튼 위치 조정 */
+body.popup-open .floating-kakao {
+  bottom: 120px;
+  transition: bottom 0.4s ease;
+}
+
+@media (max-width: 640px) {
+  body.popup-open .floating-kakao {
+    bottom: 180px;
+  }
+}
