@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="사직 수리탐구 수학학원 입학 안내 - 입학 기준, 입학 절차, 문의 방법 | i.study"
+    />
+    <title>입학 안내 | 사직 수리탐구 수학학원</title>
+
+    <!-- Open Graph 메타태그 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="입학 안내 | 사직 수리탐구 수학학원" />
+    <meta property="og:description" content="입학테스트 결과를 5등급으로 평가하여 입학 여부를 결정합니다. 입학 절차를 확인하세요." />
+    <meta property="og:image" content="https://www.suritamgu.co.kr/assets/images/og-image.png" />
+    <meta property="og:url" content="https://www.suritamgu.co.kr/admission.html" />
+    <meta property="og:site_name" content="사직 수리탐구 수학학원" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/admission.css" />
+  </head>
+  <body>
+    <!-- 상단 공지 배너 -->
+    <div class="top-banner" id="topBanner">
+      <div class="top-banner-content">
+        <span class="top-banner-text"><strong>3차 오픈설명회</strong> 2/6(금) 오전10:30, 오후7:30</span>
+        <a href="notice.html" class="top-banner-link">자세히 보기 →</a>
+      </div>
+      <button class="top-banner-close" onclick="document.getElementById('topBanner').style.display='none'">×</button>
+    </div>
+
+    <!-- 알림 요소 -->
+    <div id="notification" class="notification"></div>
+
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="i.study" class="logo-img" />
+          </a>
+          <div class="header-info">
+            <span class="header-title">부산 사직 직영점</span>
+            <span class="header-opening">2026년 3월 개원</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="admission-main">
+      <!-- 히어로 섹션 -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-label">ADMISSION</p>
+            <h1 class="hero-title">입학 안내</h1>
+            <p class="hero-subtitle">사직 수리탐구 수학학원 입학 절차를 안내드립니다</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 입학 기준 섹션 -->
+      <section class="criteria-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">입학 기준</h2>
+            <p class="section-desc">입학테스트 결과를 5등급으로 평가하여 입학 여부를 결정합니다</p>
+          </div>
+
+          <div class="grade-cards">
+            <div class="grade-card grade-pass">
+              <div class="grade-badge">1~2등급</div>
+              <div class="grade-status">
+                <span class="status-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </span>
+                <span class="status-text">입학 가능</span>
+              </div>
+              <p class="grade-desc">우수한 기초 실력을 갖춘 학생으로<br>i.study 커리큘럼에 바로 적응 가능</p>
+            </div>
+
+            <div class="grade-card grade-consult">
+              <div class="grade-badge">3등급</div>
+              <div class="grade-status">
+                <span class="status-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                </span>
+                <span class="status-text">학부모 상담 후 결정</span>
+              </div>
+              <p class="grade-desc">원장님과의 상담을 통해<br>학생의 학습 의지와 가능성을 종합 평가</p>
+            </div>
+
+            <div class="grade-card grade-fail">
+              <div class="grade-badge">4~5등급</div>
+              <div class="grade-status">
+                <span class="status-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                </span>
+                <span class="status-text">입학 불가</span>
+              </div>
+              <p class="grade-desc">기초 보완 후 재도전 권장<br>다른 학원에서 기초를 다진 후 재응시 가능</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 입학 절차 섹션 -->
+      <section class="process-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">입학 절차</h2>
+            <p class="section-desc">7단계의 체계적인 입학 프로세스</p>
+          </div>
+
+          <div class="process-timeline">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3 class="step-title">문의</h3>
+                <p class="step-desc">카카오톡, 네이버톡톡, 전화로 문의해주세요</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3 class="step-title">예약 링크 수신</h3>
+                <p class="step-desc">상담 후 테스트 예약 링크를 발송해드립니다</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3 class="step-title">테스트 일정 예약</h3>
+                <p class="step-desc">원하시는 날짜와 시간을 선택해주세요</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3 class="step-title">입학테스트 응시</h3>
+                <p class="step-desc">학원에 방문하여 테스트를 응시합니다</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3 class="step-title">원장 결과상담</h3>
+                <p class="step-desc">테스트 결과를 바탕으로 상담을 진행합니다</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h3 class="step-title">반 배정</h3>
+                <p class="step-desc">학생에게 적합한 반을 배정합니다</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">7</div>
+              <div class="step-content">
+                <h3 class="step-title">등록 완료</h3>
+                <p class="step-desc">수강 등록을 완료합니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 설명회 참석자 혜택 섹션 -->
+      <section class="benefit-banner">
+        <div class="container">
+          <div class="benefit-content">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h3 class="benefit-title">설명회 참석 시 추가 혜택</h3>
+              <ul class="benefit-list">
+                <li>
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  이시용 대표 1:1 입시컨설팅 (30만원 상당)
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  고등 안정등급 로드맵 자료 제공
+                </li>
+              </ul>
+            </div>
+            <a href="notice.html" class="benefit-btn">설명회 일정 확인하기</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 문의 방법 섹션 -->
+      <section class="contact-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">문의 및 상담</h2>
+            <p class="section-desc">편하신 방법으로 문의해주세요. 예약 링크를 안내해드립니다.</p>
+          </div>
+
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-icon kakao">
+                <svg viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+              </div>
+              <h3 class="contact-title">카카오톡 상담</h3>
+              <p class="contact-desc">카카오톡으로 편하게 상담하세요</p>
+              <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="contact-btn kakao-btn">카카오톡 상담하기</a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon naver">
+                <svg viewBox="0 0 24 24"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>
+              </div>
+              <h3 class="contact-title">네이버 톡톡</h3>
+              <p class="contact-desc">네이버 톡톡으로 문의하세요</p>
+              <a href="https://talk.naver.com/ct/wskra73" target="_blank" rel="noopener noreferrer" class="contact-btn naver-btn">네이버 톡톡 상담</a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon phone">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <h3 class="contact-title">전화 상담</h3>
+              <p class="contact-desc">평일 10:00 - 19:00</p>
+              <a href="tel:051-715-1580" class="contact-btn phone-btn">051-715-1580</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-content">
+          <h3>사직 수리탐구 수학학원</h3>
+          <p>부산광역시 동래구 사직동 71-3 대영빌딩 3층</p>
+          <p>(사직역 3번 출구 도보 1분)</p>
+          <p>문의: 051-715-1580</p>
+          <div class="footer-buttons">
+            <a href="tel:051-715-1580" class="footer-btn phone-btn">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+              전화 상담
+            </a>
+            <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="footer-btn kakao-btn">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
+              카카오톡 상담
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 플로팅 카카오톡 버튼 -->
+    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
+      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
+      <span class="kakao-text">상담하기</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
