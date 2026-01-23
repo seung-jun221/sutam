@@ -1825,13 +1825,14 @@ body {
 
 @media (max-width: 640px) {
   .bottom-popup {
-    padding: 16px;
+    padding: 40px 16px 16px;
   }
 
   .popup-container {
     flex-direction: column;
     text-align: center;
     gap: 12px;
+    position: relative;
   }
 
   .popup-title {
@@ -1855,12 +1856,8 @@ body {
 
   .popup-close {
     position: absolute;
-    top: 8px;
-    right: 8px;
-  }
-
-  .bottom-popup {
-    position: relative;
+    top: -24px;
+    right: 0;
   }
 }
 
