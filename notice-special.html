@@ -473,6 +473,30 @@
         color: #1a365d;
       }
 
+      /* 플로팅 설명회 신청 버튼 */
+      .floating-cta {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+        padding: 16px 48px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+        z-index: 99;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .floating-cta:hover {
+        transform: translateX(-50%) translateY(-3px);
+        box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+      }
+
       /* 반응형 */
       @media (max-width: 640px) {
         .special-title {
@@ -498,6 +522,16 @@
           padding: 16px 32px;
           font-size: 16px;
           width: 100%;
+        }
+
+        .floating-cta {
+          bottom: 16px;
+          padding: 14px 36px;
+          font-size: 15px;
+        }
+
+        .floating-kakao {
+          bottom: 76px;
         }
       }
     </style>
@@ -716,20 +750,10 @@
       <span class="kakao-text">상담하기</span>
     </a>
 
-    <!-- 하단 슬라이드 팝업 -->
-    <div id="bottomPopup" class="bottom-popup">
-      <div class="popup-container">
-        <div class="popup-content">
-          <span class="popup-badge">사직직영점</span>
-          <div class="popup-title">수강등록 조기마감 예상!</div>
-          <div class="popup-desc">레테 문의가 빠르게 증가하고 있습니다.</div>
-        </div>
-        <div class="popup-actions">
-          <a href="admission.html" class="popup-btn">입학 문의하기</a>
-          <button class="popup-close" onclick="closeBottomPopup()" aria-label="닫기">&times;</button>
-        </div>
-      </div>
-    </div>
+    <!-- 플로팅 설명회 신청 버튼 -->
+    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-cta">
+      설명회 신청하기
+    </a>
 
     <script src="assets/js/main.js"></script>
   </body>
