@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="사직 수리탐구 수학학원 신학기 특별설명회 - 2032 대입개편과 중학교 평가의 진실"
+    />
+    <title>신학기 특별설명회 | 사직 수리탐구 수학학원</title>
+
+    <!-- Open Graph 메타태그 -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="신학기 특별설명회 | 사직 수리탐구 수학학원" />
+    <meta property="og:description" content="대치동 입시컨설턴트가 전하는 초·중등 입시의 진실 - 이시용 대표 특강" />
+    <meta property="og:image" content="https://www.suritamgu.co.kr/assets/images/og-image.png" />
+    <meta property="og:url" content="https://www.suritamgu.co.kr/notice.html" />
+    <meta property="og:site_name" content="사직 수리탐구 수학학원" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .notice-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #6b7280;
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .back-link:hover {
+        color: #1a365d;
+      }
+
+      /* 히어로 헤더 */
+      .special-header {
+        text-align: center;
+        padding: 48px 24px;
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+        color: white;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .special-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b);
+      }
+
+      .special-tag {
+        display: inline-block;
+        background: #ef4444;
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .special-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .special-subtitle {
+        font-size: 16px;
+        opacity: 0.85;
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      .special-speaker {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      .special-date-box {
+        display: inline-block;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 24px;
+        border-radius: 8px;
+      }
+
+      .special-date {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fbbf24;
+      }
+
+      .special-time {
+        font-size: 14px;
+        opacity: 0.9;
+        margin-top: 4px;
+      }
+
+      /* 이미지 섹션 */
+      .notice-image-section {
+        margin-bottom: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .notice-image-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* 공통 섹션 */
+      .notice-section {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .notice-section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a365d;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      /* Q. 알고 계신가요? 섹션 */
+      .qa-section {
+        background: #faf5ff;
+        border-radius: 12px;
+        padding: 28px 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .qa-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #7c3aed;
+        margin-bottom: 20px;
+      }
+
+      .qa-block {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 16px;
+        border-left: 3px solid #e5e7eb;
+      }
+
+      .qa-block-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .qa-block-title::before {
+        content: '💡';
+        flex-shrink: 0;
+      }
+
+      .qa-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .qa-list li {
+        padding: 6px 0 6px 20px;
+        font-size: 14px;
+        color: #4b5563;
+        line-height: 1.6;
+        position: relative;
+      }
+
+      .qa-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 8px;
+        height: 8px;
+        background: #7c3aed;
+        border-radius: 50%;
+        opacity: 0.5;
+      }
+
+      .qa-highlight {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        color: white;
+        padding: 16px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        border-left: 4px solid #fbbf24;
+      }
+
+      .qa-highlight:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 강연 주제 섹션 */
+      .topic-section {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .topic-header {
+        background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+        color: white;
+        padding: 16px 20px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
+
+      .topic-header-title {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .topic-header-desc {
+        font-size: 13px;
+        opacity: 0.85;
+      }
+
+      .topic-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .topic-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+        font-size: 14px;
+        color: #374151;
+        line-height: 1.6;
+      }
+
+      .topic-list li:last-child {
+        border-bottom: none;
+      }
+
+      .topic-list li::before {
+        content: "✔";
+        color: #2563eb;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+
+      .topic-arrow {
+        padding: 10px 0 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a365d;
+      }
+
+      .topic-arrow::before {
+        content: "→ ";
+        color: #2563eb;
+      }
+
+      /* 특전 섹션 */
+      .benefit-section {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        border-radius: 12px;
+        padding: 28px 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .benefit-section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #92400e;
+        margin-bottom: 4px;
+      }
+
+      .benefit-section-note {
+        font-size: 13px;
+        color: #b45309;
+        margin-bottom: 20px;
+      }
+
+      .benefit-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      }
+
+      .benefit-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .benefit-label {
+        display: inline-block;
+        background: #f59e0b;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .benefit-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 4px;
+      }
+
+      .benefit-desc {
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      /* 특전 이미지 */
+      .benefit-image-section {
+        margin-top: 12px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .benefit-image-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* 설명회 정보 */
+      .info-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px;
+        background: #f9fafb;
+        border-radius: 8px;
+      }
+
+      .info-icon {
+        width: 40px;
+        height: 40px;
+        background: #1a365d;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .info-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+      }
+
+      .info-content {
+        flex: 1;
+      }
+
+      .info-label {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 2px;
+      }
+
+      .info-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .info-value-sub {
+        font-size: 13px;
+        color: #6b7280;
+        margin-top: 2px;
+      }
+
+      /* CTA */
+      .cta-section {
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .cta-button-large {
+        display: inline-block;
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+        padding: 18px 48px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .cta-button-large:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+      }
+
+      .cta-note {
+        margin-top: 16px;
+        font-size: 14px;
+        color: #ef4444;
+        font-weight: 600;
+      }
+
+      /* 연락처 */
+      .contact-info {
+        text-align: center;
+        padding: 20px;
+        background: #f9fafb;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      .contact-info p {
+        margin: 4px 0;
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      .contact-phone {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a365d;
+      }
+
+      /* 반응형 */
+      @media (max-width: 640px) {
+        .special-title {
+          font-size: 22px;
+        }
+
+        .special-header {
+          padding: 36px 20px;
+        }
+
+        .qa-title {
+          font-size: 20px;
+        }
+
+        .qa-section,
+        .topic-section,
+        .benefit-section,
+        .notice-section {
+          padding: 20px 16px;
+        }
+
+        .cta-button-large {
+          padding: 16px 32px;
+          font-size: 16px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notice-container">
+      <!-- 뒤로가기 -->
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        홈으로 돌아가기
+      </a>
+
+      <!-- 히어로 헤더 -->
+      <div class="special-header">
+        <span class="special-tag">오픈설명회 참석자 한정</span>
+        <h1 class="special-title">신학기 특별설명회</h1>
+        <p class="special-subtitle">"대치동 입시컨설턴트가 전하는<br>초·중등 입시의 진실"</p>
+        <p class="special-speaker">- 이시용 대표 특강 -</p>
+        <div class="special-date-box">
+          <div class="special-date">2/26(목)</div>
+          <div class="special-time">오전 11시 / 오후 7시</div>
+        </div>
+      </div>
+
+      <!-- 메인 비주얼 이미지 (업로드 필요) -->
+      <!-- <div class="notice-image-section">
+        <img src="assets/images/special-main.webp" alt="2026 중학교 분석 특목고 입시 - 입시전략 설명회">
+      </div> -->
+
+      <!-- 강연 1: 2032 대입개편 -->
+      <div class="topic-section">
+        <div class="topic-header">
+          <div class="topic-header-title">2032 대입개편, 두려움인가 기회인가</div>
+          <div class="topic-header-desc">"본질을 알면 두려움이 특별한 기회가 됩니다"</div>
+        </div>
+        <ul class="topic-list">
+          <li>수능 절대평가, 서·논술형 도입</li>
+          <li>고등내신 절대평가, 서·논술형 도입</li>
+          <li>수시·정시 통합 및 수능 폐지 논의</li>
+          <li>학생부 중심전형 전면 확대</li>
+        </ul>
+        <div class="topic-arrow">이 모든 쟁점의 방향성과 우리 아이 준비 전략</div>
+      </div>
+
+      <!-- 강연 2: 중학교 평가의 진실 -->
+      <div class="topic-section">
+        <div class="topic-header">
+          <div class="topic-header-title">학부모의 "상식을 파괴"하는 중학교 평가의 진실</div>
+          <div class="topic-header-desc">"입시는 모르는 사람에게 공평하지 않습니다"</div>
+        </div>
+        <ul class="topic-list">
+          <li>중간고사 54점인데 성취도 A가 나오는 이유</li>
+          <li>전교 1등은 떨어지고, 전교 50등이 전사고에 붙는 이유</li>
+          <li>국제중 학생들이 외고가 아닌 전사고에 더 많이 진학하는 이유</li>
+          <li>중학교 올A 학생이 일반고에서 3등급이 되는 이유</li>
+          <li>과고 합격생의 중등 동아리가 과학 동아리가 아닌 이유</li>
+        </ul>
+        <div class="topic-arrow">입시 데이터로 확인하는 "당연한" 진실들</div>
+      </div>
+
+      <!-- Q. 알고 계신가요? -->
+      <div class="qa-section">
+        <div class="qa-title">Q. 알고 계신가요?</div>
+        <div class="qa-block">
+          <div class="qa-block-title">"2032 대입개편안" 핵심쟁점</div>
+          <ul class="qa-list">
+            <li>수능 절대평가, 서논술형 도입</li>
+            <li>고등내신 절대평가, 서논술형 도입</li>
+            <li>수시, 정시 통합</li>
+            <li>수능 폐지</li>
+            <li>학생부 중심전형으로 전면</li>
+          </ul>
+        </div>
+        <div class="qa-highlight">
+          이 모든 쟁점은 한가지 방향성을 가지고 있습니다. 본질을 확인하시면 "두려움"이 아닌 "특별한 기회"가 됩니다.
+        </div>
+      </div>
+
+      <div class="qa-section">
+        <div class="qa-title" style="margin-bottom: 20px;"></div>
+        <div class="qa-block">
+          <div class="qa-block-title">학부모의 "상식을 파괴"하는 "중학교 평가기준"</div>
+          <ul class="qa-list">
+            <li>"중간고사 54"점인데, "성취도 A"가 나오는 이유</li>
+            <li>"전교 1등"은 떨어지고, "전교 50등"은 "전사고"에 붙는 이유</li>
+            <li>"국제중" 아이들이 "외고"가 아닌 "전사고"에 더 많이 진학하는 이유</li>
+            <li>"중학교 올A"인 아이가 "일반고 3등급"이 되는 이유</li>
+            <li>"과고 합격생"의 중등 동아리가 "과학 동아리"가 아닌 "영자 신문반"인 이유</li>
+          </ul>
+        </div>
+        <div class="qa-highlight">
+          이 모든 이유는 "입시 데이터"를 확인해 보면 "너무 당연한" 것이 됩니다. "입시"는 모르는 사람에게는 "공평하지 않습니다."
+        </div>
+      </div>
+
+      <!-- 전좌석 마감 설명회 이미지 (업로드 필요) -->
+      <!-- <div class="notice-image-section">
+        <img src="assets/images/special-seminar-hall.webp" alt="대치, 서초, 분당 등 주요 교육특구 전좌석 마감 설명회">
+      </div> -->
+
+      <!-- 극찬 릴레이 이미지 (업로드 필요) -->
+      <!-- <div class="notice-image-section">
+        <img src="assets/images/special-reviews.webp" alt="설명회 극찬 릴레이 - 댓글 2,861개">
+      </div> -->
+
+      <!-- Q. 확보하셨나요? - 프리미엄 특전 -->
+      <div class="benefit-section">
+        <div class="benefit-section-title">Q. 확보하셨나요?</div>
+        <div class="benefit-section-note">※ 유료 컨설팅에서 제공하는 고급 정보 무료 제공</div>
+
+        <div class="benefit-card">
+          <span class="benefit-label">특전 1</span>
+          <div class="benefit-title">3월 신학기 행동지침</div>
+          <div class="benefit-desc">학기 시작 전 반드시 확보해야 할 필수 가이드</div>
+          <!-- 특전1 이미지 (업로드 필요) -->
+          <!-- <div class="benefit-image-section">
+            <img src="assets/images/special-benefit1.webp" alt="초,중등을 위한 신학기 행동 지침">
+          </div> -->
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-label">특전 2</span>
+          <div class="benefit-title">상위 1% 학생부 설계 워크시트</div>
+          <div class="benefit-desc">학년별 학생부 로드맵 설계 도구</div>
+          <!-- 특전2 이미지 (업로드 필요) -->
+          <!-- <div class="benefit-image-section">
+            <img src="assets/images/special-benefit2.webp" alt="초,중등을 위한 학생부 설계 워크시트">
+          </div> -->
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-label">특전 3</span>
+          <div class="benefit-title">수행평가·서논술 자료 7종</div>
+          <div class="benefit-desc">실제 학교 선생님들의 평가 도구 공개</div>
+          <!-- 특전3 이미지 (업로드 필요) -->
+          <!-- <div class="benefit-image-section">
+            <img src="assets/images/special-benefit3.webp" alt="수행평가, 서논술 평가도구 자료집 7종">
+          </div> -->
+        </div>
+      </div>
+
+      <!-- 설명회 상세 안내 -->
+      <div class="notice-section">
+        <h2 class="notice-section-title">설명회 상세 안내</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            </div>
+            <div class="info-content">
+              <div class="info-label">일시</div>
+              <div class="info-value">2026년 2월 26일 (목)</div>
+              <div class="info-value-sub">오전 11시 / 오후 7시</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="info-content">
+              <div class="info-label">장소</div>
+              <div class="info-value">추후 예약자 개별 문자 공지</div>
+              <div class="info-value-sub">외부 설명회장</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="info-content">
+              <div class="info-label">대상</div>
+              <div class="info-value">초·중등 학부모님</div>
+              <div class="info-value-sub">1·2·3차 오픈설명회 참석자 우선 예약</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+            </div>
+            <div class="info-content">
+              <div class="info-label">예약 안내</div>
+              <div class="info-value">2/12(목) 문자로 예약링크 발송</div>
+              <div class="info-value-sub">2/13(금)부터 미참석자 예약 가능</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div class="info-content">
+              <div class="info-label">강연자</div>
+              <div class="info-value">이시용 대표</div>
+              <div class="info-value-sub">대치 입시컨설턴트 19년</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="cta-button-large">
+          예약 문의하기
+        </a>
+        <p class="cta-note">※ 본 설명회는 조기 마감될 수 있습니다.</p>
+      </div>
+
+      <!-- 연락처 -->
+      <div class="contact-info">
+        <p>문의 및 예약</p>
+        <p class="contact-phone">051-715-1580</p>
+      </div>
+    </div>
+
+    <!-- 플로팅 카카오톡 버튼 -->
+    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
+      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
+      <span class="kakao-text">상담하기</span>
+    </a>
+
+    <!-- 하단 슬라이드 팝업 -->
+    <div id="bottomPopup" class="bottom-popup">
+      <div class="popup-container">
+        <div class="popup-content">
+          <span class="popup-badge">사직직영점</span>
+          <div class="popup-title">수강등록 조기마감 예상!</div>
+          <div class="popup-desc">레테 문의가 빠르게 증가하고 있습니다.</div>
+        </div>
+        <div class="popup-actions">
+          <a href="admission.html" class="popup-btn">입학 문의하기</a>
+          <button class="popup-close" onclick="closeBottomPopup()" aria-label="닫기">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
