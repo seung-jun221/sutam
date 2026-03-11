@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="사직 수리탐구 수학학원 개원 특별설명회 - 2032 대입개편과 중학교 평가의 진실"
+      content="사직 수리탐구 수학학원 - 동래구·연제구 중학교 분석 설명회 안내"
     />
-    <title>개원 특별설명회 | 사직 수리탐구 수학학원</title>
+    <title>설명회 안내 | 사직 수리탐구 수학학원</title>
 
     <!-- Open Graph 메타태그 -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="개원 특별설명회 | 사직 수리탐구 수학학원" />
-    <meta property="og:description" content="대치동 입시컨설턴트가 전하는 초·중등 입시의 진실 - 이시용 대표 특강" />
+    <meta property="og:title" content="설명회 안내 | 사직 수리탐구 수학학원" />
+    <meta property="og:description" content="동래구·연제구 중학교 분석 설명회 - Coming Soon" />
     <meta property="og:image" content="https://www.suritamgu.co.kr/assets/images/og-image.png" />
     <meta property="og:url" content="https://www.suritamgu.co.kr/notice.html" />
     <meta property="og:site_name" content="사직 수리탐구 수학학원" />
@@ -27,375 +27,246 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-      .notice-container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 20px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
+        color: white;
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+
+      .coming-soon-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      /* 배경 장식 */
+      .bg-decoration {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .bg-decoration-1 {
+        width: 400px;
+        height: 400px;
+        background: #2563eb;
+        top: -100px;
+        right: -100px;
+      }
+
+      .bg-decoration-2 {
+        width: 300px;
+        height: 300px;
+        background: #f59e0b;
+        bottom: -50px;
+        left: -50px;
+      }
+
+      /* 뒤로가기 */
       .back-link {
+        position: absolute;
+        top: 24px;
+        left: 24px;
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        color: #6b7280;
+        color: rgba(255, 255, 255, 0.6);
         text-decoration: none;
         font-size: 14px;
-        margin-bottom: 20px;
+        transition: color 0.3s;
+        z-index: 10;
       }
 
       .back-link:hover {
-        color: #1a365d;
+        color: white;
       }
 
-      /* 히어로 헤더 */
-      .special-header {
-        text-align: center;
-        padding: 48px 24px;
-        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
-        color: white;
-        border-radius: 16px;
-        margin-bottom: 24px;
+      /* 메인 콘텐츠 */
+      .content {
         position: relative;
-        overflow: hidden;
+        z-index: 1;
+        max-width: 600px;
       }
 
-      .special-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b);
-      }
-
-      .special-tag {
+      .badge {
         display: inline-block;
-        background: #ef4444;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         color: white;
-        padding: 6px 16px;
-        border-radius: 20px;
+        padding: 8px 20px;
+        border-radius: 30px;
         font-size: 13px;
         font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.3;
         margin-bottom: 16px;
+        background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
-      .special-title {
-        font-size: 26px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        line-height: 1.4;
-      }
-
-      .special-subtitle {
-        font-size: 16px;
-        opacity: 0.85;
-        margin-bottom: 8px;
-        line-height: 1.5;
-      }
-
-      .special-speaker {
-        font-size: 14px;
-        opacity: 0.7;
-      }
-
-      .special-date-box {
-        display: inline-block;
-        margin-top: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 12px 24px;
-        border-radius: 8px;
-      }
-
-      .special-date {
-        font-size: 18px;
-        font-weight: 700;
-        color: #fbbf24;
-      }
-
-      .special-time {
-        font-size: 14px;
-        opacity: 0.9;
-        margin-top: 4px;
-      }
-
-      /* 이미지 섹션 */
-      .notice-image-section {
-        margin-bottom: 24px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .notice-image-section img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* 공통 섹션 */
-      .notice-section {
-        background: white;
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .notice-section-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #1a365d;
-        margin-bottom: 16px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid #e5e7eb;
-      }
-
-      /* 강연 주제 섹션 */
-      .topic-section {
-        background: white;
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .topic-header {
-        background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
-        color: white;
-        padding: 16px 20px;
-        border-radius: 8px;
-        margin-bottom: 16px;
-      }
-
-      .topic-header-title {
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 4px;
-      }
-
-      .topic-header-desc {
-        font-size: 13px;
-        opacity: 0.85;
-      }
-
-      .topic-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .topic-list li {
-        padding: 10px 0;
-        border-bottom: 1px solid #e5e7eb;
-        font-size: 14px;
-        color: #374151;
-        line-height: 1.6;
-      }
-
-      .topic-list li:last-child {
-        border-bottom: none;
-      }
-
-      .topic-list li::before {
-        content: "✔";
-        color: #2563eb;
-        font-weight: 700;
-        margin-right: 8px;
-      }
-
-      .topic-arrow {
-        padding: 10px 0 0;
-        font-size: 14px;
+      .subtitle {
+        font-size: 20px;
         font-weight: 600;
-        color: #1a365d;
+        color: #fbbf24;
+        margin-bottom: 24px;
       }
 
-      .topic-arrow::before {
-        content: "→ ";
-        color: #2563eb;
+      .description {
+        font-size: 16px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 48px;
       }
 
-      /* 특전 섹션 */
-      .benefit-section {
-        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-        border-radius: 12px;
-        padding: 28px 24px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      /* 일정 박스 */
+      .schedule-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 32px;
+        margin-bottom: 40px;
+        backdrop-filter: blur(10px);
       }
 
-      .benefit-section-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #92400e;
-        margin-bottom: 4px;
-      }
-
-      .benefit-section-note {
-        font-size: 13px;
-        color: #b45309;
-        margin-bottom: 20px;
-      }
-
-      .benefit-card {
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 12px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-      }
-
-      .benefit-card:last-child {
-        margin-bottom: 0;
-      }
-
-      .benefit-label {
-        display: inline-block;
-        background: #f59e0b;
-        color: white;
-        padding: 4px 10px;
-        border-radius: 4px;
+      .schedule-label {
         font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+      }
+
+      .schedule-date {
+        font-size: 28px;
         font-weight: 700;
+        color: white;
         margin-bottom: 8px;
       }
 
-      .benefit-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 4px;
-      }
-
-      .benefit-desc {
+      .schedule-note {
         font-size: 14px;
-        color: #6b7280;
+        color: rgba(255, 255, 255, 0.6);
       }
 
-      /* 특전 이미지 */
-      .benefit-image-section {
-        margin-top: 12px;
-        border-radius: 8px;
-        overflow: hidden;
+      /* 구분선 */
+      .divider {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+        margin: 0 auto 40px;
       }
 
-      .benefit-image-section img {
-        width: 100%;
-        height: auto;
-        display: block;
+      /* 안내 문구 */
+      .notice-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 32px;
       }
 
-      /* 설명회 정보 */
-      .info-grid {
-        display: grid;
-        gap: 12px;
-      }
-
-      .info-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 12px;
-        background: #f9fafb;
-        border-radius: 8px;
-      }
-
-      .info-icon {
-        width: 40px;
-        height: 40px;
-        background: #1a365d;
-        border-radius: 8px;
-        display: flex;
+      /* CTA 버튼 */
+      .cta-button {
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .info-icon svg {
-        width: 20px;
-        height: 20px;
-        fill: white;
-      }
-
-      .info-content {
-        flex: 1;
-      }
-
-      .info-label {
-        font-size: 12px;
-        color: #6b7280;
-        margin-bottom: 2px;
-      }
-
-      .info-value {
+        gap: 10px;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
         font-size: 15px;
         font-weight: 600;
-        color: #1f2937;
-      }
-
-      .info-value-sub {
-        font-size: 13px;
-        color: #6b7280;
-        margin-top: 2px;
-      }
-
-      /* 플로팅 설명회 신청 버튼 */
-      .floating-cta {
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-        color: white;
-        padding: 16px 48px;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 700;
         text-decoration: none;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 4px 20px rgba(239, 68, 68, 0.4);
-        z-index: 99;
         transition: all 0.3s ease;
-        white-space: nowrap;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .floating-cta:hover {
-        transform: translateX(-50%) translateY(-3px);
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 6px 25px rgba(239, 68, 68, 0.5);
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+      }
+
+      .cta-button svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      /* 푸터 */
+      .footer {
+        text-align: center;
+        padding: 24px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 13px;
+      }
+
+      .footer a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: white;
       }
 
       /* 반응형 */
       @media (max-width: 640px) {
-        .special-title {
+        .title {
+          font-size: 28px;
+        }
+
+        .subtitle {
+          font-size: 17px;
+        }
+
+        .description {
+          font-size: 14px;
+        }
+
+        .schedule-box {
+          padding: 24px;
+        }
+
+        .schedule-date {
           font-size: 22px;
         }
 
-        .special-header {
-          padding: 36px 20px;
-        }
-
-        .topic-section,
-        .benefit-section,
-        .notice-section {
-          padding: 20px 16px;
-        }
-
-        .floating-cta {
-          bottom: 16px;
-          padding: 14px 36px;
-          font-size: 15px;
-        }
-
-        .floating-kakao {
-          bottom: 76px;
+        .back-link {
+          top: 16px;
+          left: 16px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="notice-container">
+    <!-- 배경 장식 -->
+    <div class="bg-decoration bg-decoration-1"></div>
+    <div class="bg-decoration bg-decoration-2"></div>
+
+    <div class="coming-soon-container">
       <!-- 뒤로가기 -->
       <a href="index.html" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -404,164 +275,42 @@
         홈으로 돌아가기
       </a>
 
-      <!-- 히어로 헤더 -->
-      <div class="special-header">
-        <span class="special-tag">오픈설명회 참석자 우선예약</span>
-        <h1 class="special-title">수리탐구학원 사직직영점<br>개원 특별설명회</h1>
-        <p class="special-subtitle">"대치동 입시컨설턴트가 전하는<br>초·중등 입시의 진실"</p>
-        <p class="special-speaker">- 이시용 대표 특강 -</p>
-        <div class="special-date-box">
-          <div class="special-date">2/26(목)</div>
-          <div class="special-time">오전 11시</div>
-        </div>
-      </div>
+      <div class="content">
+        <span class="badge">Coming Soon</span>
 
-      <!-- 메인 비주얼 이미지 -->
-      <div class="notice-image-section">
-        <img src="assets/images/special-main.webp" alt="2026 중학교 분석 특목고 입시 - 입시전략 설명회">
-      </div>
+        <h1 class="title">동래구·연제구<br>중학교 분석 설명회</h1>
 
-      <!-- 강연 1: 2032 대입개편 -->
-      <div class="topic-section">
-        <div class="topic-header">
-          <div class="topic-header-title">2032 대입개편, 두려움인가 기회인가</div>
-          <div class="topic-header-desc">"본질을 알면 두려움이 특별한 기회가 됩니다"</div>
-        </div>
-        <ul class="topic-list">
-          <li>수능 절대평가, 서·논술형 도입</li>
-          <li>고등내신 절대평가, 서·논술형 도입</li>
-          <li>수시·정시 통합 및 수능 폐지 논의</li>
-          <li>학생부 중심전형 전면 확대</li>
-        </ul>
-        <div class="topic-arrow">이 모든 쟁점의 방향성과 우리 아이 준비 전략</div>
-      </div>
+        <p class="subtitle">우리 아이 학교의 입시 데이터를 공개합니다</p>
 
-      <!-- 강연 2: 중학교 평가의 진실 -->
-      <div class="topic-section">
-        <div class="topic-header">
-          <div class="topic-header-title">학부모의 "상식을 파괴"하는 중학교 평가의 진실</div>
-          <div class="topic-header-desc">"입시는 모르는 사람에게 공평하지 않습니다"</div>
-        </div>
-        <ul class="topic-list">
-          <li>중간고사 54점인데 성취도 A가 나오는 이유</li>
-          <li>전교 1등은 떨어지고, 전교 50등이 전사고에 붙는 이유</li>
-          <li>국제중 학생들이 외고가 아닌 전사고에 더 많이 진학하는 이유</li>
-          <li>중학교 올A 학생이 일반고에서 3등급이 되는 이유</li>
-          <li>과고 합격생의 중등 동아리가 과학 동아리가 아닌 이유</li>
-        </ul>
-        <div class="topic-arrow">입시 데이터로 확인하는 "당연한" 진실들</div>
-      </div>
+        <p class="description">
+          동래구, 연제구 주요 중학교의 내신 분포, 특목고·자사고 진학 현황,<br>
+          그리고 학교별 맞춤 입시 전략을 상세히 안내드립니다.
+        </p>
 
-      <!-- 전좌석 마감 설명회 이미지 -->
-      <div class="notice-image-section">
-        <img src="assets/images/special-seminar-hall.webp" alt="대치, 서초, 분당 등 주요 교육특구 전좌석 마감 설명회">
-      </div>
-
-      <!-- 극찬 릴레이 이미지 -->
-      <div class="notice-image-section">
-        <img src="assets/images/special-reviews.webp" alt="설명회 극찬 릴레이 - 댓글 2,861개">
-      </div>
-
-      <!-- Q. 확보하셨나요? - 프리미엄 특전 -->
-      <div class="benefit-section">
-        <div class="benefit-section-title">Q. 확보하셨나요?</div>
-        <div class="benefit-section-note">※ 유료 컨설팅에서 제공하는 고급 정보 무료 제공</div>
-
-        <div class="benefit-card">
-          <span class="benefit-label">특전 1</span>
-          <div class="benefit-title">3월 신학기 행동지침</div>
-          <div class="benefit-desc">학기 시작 전 반드시 확보해야 할 필수 가이드</div>
-          <div class="benefit-image-section">
-            <img src="assets/images/special-benefit1.webp" alt="초,중등을 위한 신학기 행동 지침">
-          </div>
+        <div class="schedule-box">
+          <div class="schedule-label">예정 일정</div>
+          <div class="schedule-date">2026년 4월 말</div>
+          <div class="schedule-note">정확한 일정은 추후 공지됩니다</div>
         </div>
 
-        <div class="benefit-card">
-          <span class="benefit-label">특전 2</span>
-          <div class="benefit-title">상위 1% 학생부 설계 워크시트</div>
-          <div class="benefit-desc">학년별 학생부 로드맵 설계 도구</div>
-          <div class="benefit-image-section">
-            <img src="assets/images/special-benefit2.webp" alt="초,중등을 위한 학생부 설계 워크시트">
-          </div>
-        </div>
+        <div class="divider"></div>
 
-        <div class="benefit-card">
-          <span class="benefit-label">특전 3</span>
-          <div class="benefit-title">수행평가·서논술 자료 7종</div>
-          <div class="benefit-desc">실제 학교 선생님들의 평가 도구 공개</div>
-          <div class="benefit-image-section">
-            <img src="assets/images/special-benefit3.webp" alt="수행평가, 서논술 평가도구 자료집 7종">
-          </div>
-        </div>
-      </div>
+        <p class="notice-text">
+          설명회 일정이 확정되면 카카오톡으로 안내드립니다
+        </p>
 
-      <!-- 설명회 상세 안내 -->
-      <div class="notice-section">
-        <h2 class="notice-section-title">설명회 상세 안내</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
-            </div>
-            <div class="info-content">
-              <div class="info-label">일시</div>
-              <div class="info-value">2026년 2월 26일 (목)</div>
-              <div class="info-value-sub">오전 11시</div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="info-content">
-              <div class="info-label">장소</div>
-              <div class="info-value">거제종합사회복지관</div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            </div>
-            <div class="info-content">
-              <div class="info-label">대상</div>
-              <div class="info-value">초·중등 학부모님</div>
-              <div class="info-value-sub">1·2·3차 오픈설명회 참석자 우선 예약</div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
-            </div>
-            <div class="info-content">
-              <div class="info-label">예약 안내</div>
-              <div class="info-value">2/12(목) 문자로 예약링크 발송</div>
-              <div class="info-value-sub">2/13(금)부터 미참석자 예약 가능</div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-            <div class="info-content">
-              <div class="info-label">강연자</div>
-              <div class="info-value">이시용 대표</div>
-              <div class="info-value-sub">대치 입시컨설턴트 19년</div>
-            </div>
-          </div>
-        </div>
+        <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="cta-button">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+          </svg>
+          카카오톡 알림 받기
+        </a>
       </div>
     </div>
 
-    <!-- 플로팅 카카오톡 버튼 -->
-    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
-      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
-      <span class="kakao-text">상담하기</span>
-    </a>
-
-    <!-- 플로팅 설명회 신청 버튼 -->
-    <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="floating-cta">
-      설명회 신청하기
-    </a>
+    <footer class="footer">
+      <p>사직 수리탐구 수학학원 | <a href="tel:051-715-1580">051-715-1580</a></p>
+    </footer>
 
     <script src="assets/js/main.js"></script>
   </body>
