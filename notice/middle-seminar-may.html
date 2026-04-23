@@ -28,14 +28,14 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <style>
       body {
-        background: #f8f7f3;
+        background: #f5f5f5;
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       }
 
       .lp-container {
         max-width: 600px;
         margin: 0 auto;
-        padding: 0 0 120px;
+        padding: 0 0 100px;
         background: white;
         min-height: 100vh;
         box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
@@ -59,9 +59,9 @@
         color: white;
       }
 
-      /* 히어로 섹션 (다크 + 골드) */
+      /* 히어로 섹션 (다크 네이비) */
       .hero {
-        background: linear-gradient(135deg, #1a1410 0%, #2d2114 50%, #3a2818 100%);
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
         color: white;
         padding: 80px 24px 48px;
         text-align: center;
@@ -75,36 +75,31 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #d4a76a, #f5d68a, #d4a76a);
+        height: 4px;
+        background: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b);
       }
 
       .hero-tag {
         display: inline-block;
-        background: rgba(212, 167, 106, 0.15);
-        color: #f5d68a;
+        background: #ef4444;
+        color: white;
         padding: 6px 16px;
-        border-radius: 30px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-        border: 1px solid rgba(212, 167, 106, 0.3);
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 16px;
       }
 
       .hero-title {
         font-size: 26px;
-        font-weight: 800;
+        font-weight: 700;
         line-height: 1.4;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         word-break: keep-all;
       }
 
       .hero-title .highlight {
-        background: linear-gradient(135deg, #f5d68a 0%, #d4a76a 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #fbbf24;
       }
 
       .hero-title .danger {
@@ -112,15 +107,15 @@
       }
 
       .hero-subtitle {
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.6;
+        font-size: 14px;
+        opacity: 0.85;
+        line-height: 1.5;
       }
 
       /* 위기 인식 섹션 */
       .crisis-section {
         padding: 48px 24px;
-        background: #1f1812;
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
         color: white;
       }
 
@@ -135,8 +130,8 @@
       }
 
       .crisis-stats {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(212, 167, 106, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
         padding: 28px 24px;
         margin-bottom: 24px;
@@ -159,7 +154,7 @@
 
       .crisis-stat-detail {
         font-size: 16px;
-        color: #f5d68a;
+        color: #fbbf24;
         font-weight: 600;
         padding-top: 16px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -182,13 +177,13 @@
       /* 핵심 메시지 섹션 */
       .key-section {
         padding: 56px 24px;
-        background: #faf8f3;
+        background: #f8fafc;
       }
 
       .section-label {
         text-align: center;
         font-size: 12px;
-        color: #b08a4f;
+        color: #2563eb;
         letter-spacing: 3px;
         margin-bottom: 12px;
         font-weight: 600;
@@ -198,7 +193,7 @@
         text-align: center;
         font-size: 24px;
         font-weight: 800;
-        color: #1a1410;
+        color: #1a365d;
         margin-bottom: 36px;
         word-break: keep-all;
       }
@@ -215,13 +210,13 @@
       .key-statement-title {
         font-size: 18px;
         font-weight: 700;
-        color: #1a1410;
+        color: #1a365d;
         line-height: 1.6;
         word-break: keep-all;
       }
 
       .key-statement-title .accent {
-        color: #b08a4f;
+        color: #2563eb;
       }
 
       .key-comparison {
@@ -246,7 +241,7 @@
       .key-row-score {
         font-size: 32px;
         font-weight: 900;
-        color: #b91c1c;
+        color: #ef4444;
         min-width: 80px;
         text-align: center;
       }
@@ -255,12 +250,12 @@
         flex: 1;
         font-size: 14px;
         line-height: 1.6;
-        color: #2d2114;
+        color: #1f2937;
         word-break: keep-all;
       }
 
       .key-row-text strong {
-        color: #b91c1c;
+        color: #ef4444;
         font-weight: 700;
       }
 
@@ -268,25 +263,25 @@
         text-align: center;
         font-size: 17px;
         font-weight: 700;
-        color: #1a1410;
+        color: #1a365d;
         line-height: 1.7;
         padding: 20px;
         background: #fffbeb;
         border-radius: 12px;
-        border-left: 4px solid #d4a76a;
+        border-left: 4px solid #f59e0b;
         word-break: keep-all;
       }
 
       /* 타이밍 경고 섹션 */
       .timing-section {
         padding: 56px 24px;
-        background: linear-gradient(135deg, #2d2114 0%, #1a1410 100%);
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         color: white;
       }
 
       .timing-compare {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(212, 167, 106, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
         padding: 28px 24px;
         margin-bottom: 24px;
@@ -314,8 +309,8 @@
       }
 
       .timing-row-label.gangnam {
-        background: rgba(212, 167, 106, 0.2);
-        color: #f5d68a;
+        background: rgba(245, 158, 11, 0.2);
+        color: #fbbf24;
       }
 
       .timing-row-label.sajik {
@@ -330,7 +325,7 @@
       }
 
       .timing-row-text strong {
-        color: #f5d68a;
+        color: #fbbf24;
         font-weight: 700;
       }
 
@@ -347,7 +342,7 @@
       }
 
       .timing-message strong {
-        color: #f5d68a;
+        color: #fbbf24;
         font-weight: 700;
       }
 
@@ -361,32 +356,32 @@
       .invite-divider {
         width: 40px;
         height: 2px;
-        background: #d4a76a;
+        background: #f59e0b;
         margin: 0 auto 24px;
       }
 
       .invite-presenter {
         font-size: 17px;
         line-height: 1.7;
-        color: #1a1410;
+        color: #1a365d;
         font-weight: 500;
         word-break: keep-all;
       }
 
       .invite-presenter strong {
-        color: #b08a4f;
+        color: #2563eb;
         font-weight: 700;
       }
 
       /* 일정 정보 섹션 */
       .schedule-section {
         padding: 56px 24px;
-        background: #faf8f3;
+        background: #f8fafc;
       }
 
       .schedule-card {
         background: white;
-        border: 1px solid #e8dcc4;
+        border: 1px solid #e5e7eb;
         border-radius: 12px;
         padding: 28px 24px;
       }
@@ -395,7 +390,7 @@
         display: flex;
         gap: 16px;
         padding: 14px 0;
-        border-bottom: 1px solid #ede2cc;
+        border-bottom: 1px solid #e5e7eb;
       }
 
       .schedule-row:last-child {
@@ -405,7 +400,7 @@
       .schedule-icon {
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, #d4a76a 0%, #b08a4f 100%);
+        background: #1a365d;
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -425,7 +420,7 @@
 
       .schedule-label {
         font-size: 12px;
-        color: #b08a4f;
+        color: #6b7280;
         font-weight: 600;
         margin-bottom: 4px;
         letter-spacing: 0.5px;
@@ -433,47 +428,33 @@
 
       .schedule-value {
         font-size: 15px;
-        color: #1a1410;
+        color: #1f2937;
         font-weight: 600;
         line-height: 1.5;
       }
 
       .schedule-value-sub {
         font-size: 13px;
-        color: #6b5a3f;
+        color: #6b7280;
         margin-top: 2px;
       }
 
       /* CTA 섹션 */
       .cta-section {
         padding: 48px 24px;
-        background: white;
+        background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
         text-align: center;
       }
 
-      .cta-button-large {
-        display: inline-block;
-        background: linear-gradient(135deg, #d4a76a 0%, #b08a4f 100%);
-        color: white;
-        padding: 20px 48px;
-        border-radius: 50px;
-        font-size: 17px;
-        font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 8px 24px rgba(176, 138, 79, 0.35);
-        transition: all 0.3s ease;
-        width: 100%;
-        max-width: 400px;
-        box-sizing: border-box;
-      }
-
-      .cta-button-large:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 28px rgba(176, 138, 79, 0.45);
+      .cta-message {
+        font-size: 16px;
+        color: #7c3aed;
+        font-weight: 600;
+        line-height: 1.6;
+        margin-bottom: 24px;
       }
 
       .cta-contact {
-        margin-top: 24px;
         display: flex;
         gap: 12px;
         justify-content: center;
@@ -485,10 +466,10 @@
         align-items: center;
         gap: 6px;
         padding: 10px 20px;
-        background: #faf8f3;
-        border: 1px solid #e8dcc4;
+        background: white;
+        border: 1px solid #e5e7eb;
         border-radius: 30px;
-        color: #6b5a3f;
+        color: #6b7280;
         text-decoration: none;
         font-size: 13px;
         font-weight: 500;
@@ -496,8 +477,8 @@
       }
 
       .cta-contact-link:hover {
-        border-color: #d4a76a;
-        color: #b08a4f;
+        border-color: #2563eb;
+        color: #2563eb;
       }
 
       .cta-contact-link svg {
@@ -509,7 +490,7 @@
       /* 학원 정보 푸터 */
       .academy-footer {
         padding: 40px 24px;
-        background: #1a1410;
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
         color: white;
         text-align: center;
       }
@@ -518,11 +499,7 @@
         font-size: 20px;
         font-weight: 800;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, #f5d68a 0%, #d4a76a 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: inline-block;
+        color: #fbbf24;
       }
 
       .academy-tagline {
@@ -538,32 +515,29 @@
         font-weight: 500;
       }
 
-      /* 하단 고정 CTA */
-      .fixed-cta {
+      /* 플로팅 CTA 버튼 */
+      .floating-cta {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 14px 16px;
-        background: rgba(26, 20, 16, 0.95);
-        backdrop-filter: blur(12px);
-        border-top: 1px solid rgba(212, 167, 106, 0.3);
-        z-index: 100;
-      }
-
-      .fixed-cta-button {
-        display: block;
-        background: linear-gradient(135deg, #d4a76a 0%, #b08a4f 100%);
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         color: white;
-        text-align: center;
-        padding: 16px;
+        padding: 16px 48px;
         border-radius: 50px;
         font-size: 16px;
         font-weight: 700;
         text-decoration: none;
-        max-width: 568px;
-        margin: 0 auto;
-        box-shadow: 0 4px 16px rgba(212, 167, 106, 0.4);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 4px 20px rgba(239, 68, 68, 0.4);
+        z-index: 99;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .floating-cta:hover {
+        transform: translateX(-50%) translateY(-3px);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 6px 25px rgba(239, 68, 68, 0.5);
       }
 
       /* 반응형 */
@@ -602,6 +576,12 @@
         .key-statement-title {
           font-size: 16px;
         }
+
+        .floating-cta {
+          bottom: 16px;
+          padding: 14px 36px;
+          font-size: 15px;
+        }
       }
     </style>
   </head>
@@ -627,7 +607,7 @@
       <section class="crisis-section">
         <p class="crisis-question">
           사직동 중학생들이<br>
-          <strong style="color:#f5d68a;">고등 준비보다 중등 내신 준비</strong>에<br>
+          <strong style="color:#fbbf24;">고등 준비보다 중등 내신 준비</strong>에<br>
           매몰될 수밖에 없는 이유?
         </p>
 
@@ -668,14 +648,14 @@
 
         <div class="key-question">
           우리 아이의 A등급이<br>
-          <span style="color:#b08a4f;">진짜 A등급</span>인지<br>
+          <span style="color:#2563eb;">진짜 A등급</span>인지<br>
           확인해 보신 적 있으십니까?
         </div>
       </section>
 
       <!-- 타이밍 경고 -->
       <section class="timing-section">
-        <div class="section-label" style="color:#f5d68a;">TIMING WARNING</div>
+        <div class="section-label" style="color:#fbbf24;">TIMING WARNING</div>
         <h2 class="section-title" style="color:white;">시기를 놓치면 늦습니다</h2>
 
         <div class="timing-compare">
@@ -767,7 +747,7 @@
             </div>
             <div class="schedule-content">
               <div class="schedule-label">정원</div>
-              <div class="schedule-value">회차당 선착순 <strong style="color:#b91c1c;">25명</strong></div>
+              <div class="schedule-value">회차당 선착순 <strong style="color:#ef4444;">25명</strong></div>
             </div>
           </div>
         </div>
@@ -775,9 +755,9 @@
 
       <!-- CTA -->
       <section class="cta-section">
-        <a href="http://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="cta-button-large">
-          간담회 참석 신청하기
-        </a>
+        <p class="cta-message">
+          지금 바로 간담회에 참석 신청해주세요.
+        </p>
         <div class="cta-contact">
           <a href="tel:051-715-1580" class="cta-contact-link">
             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -800,11 +780,9 @@
       </footer>
     </div>
 
-    <!-- 하단 고정 CTA -->
-    <div class="fixed-cta">
-      <a href="http://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="fixed-cta-button">
-        간담회 참석 신청하기
-      </a>
-    </div>
+    <!-- 플로팅 간담회 신청 버튼 -->
+    <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="floating-cta">
+      간담회 신청하기
+    </a>
   </body>
 </html>
