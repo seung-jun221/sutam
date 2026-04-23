@@ -63,7 +63,7 @@
       .hero {
         background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
         color: white;
-        padding: 80px 24px 48px;
+        padding: 80px 24px 56px;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -87,48 +87,119 @@
         border-radius: 20px;
         font-size: 13px;
         font-weight: 700;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
+      }
+
+      .hero-lead {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
       }
 
       .hero-title {
-        font-size: 26px;
-        font-weight: 700;
-        line-height: 1.4;
-        margin-bottom: 12px;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.35;
+        margin-bottom: 18px;
         word-break: keep-all;
+        color: white;
       }
 
       .hero-title .highlight {
         color: #fbbf24;
       }
 
+      .hero-underline {
+        display: inline-block;
+        position: relative;
+      }
+
+      .hero-underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background: #ef4444;
+        opacity: 0.9;
+      }
+
       .hero-subtitle {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .hero-speaker {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 24px;
+      }
+
+      .hero-date-box {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 14px 28px;
+        border-radius: 10px;
+      }
+
+      .hero-date {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fbbf24;
+        line-height: 1.3;
+      }
+
+      .hero-time {
         font-size: 14px;
-        opacity: 0.85;
-        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 4px;
       }
 
       /* 위기 인식 섹션 */
       .crisis-section {
-        padding: 48px 24px;
-        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
-        color: white;
+        padding: 56px 24px;
+        background: #ffffff;
+        color: #1f2937;
+      }
+
+      .crisis-intro {
+        text-align: center;
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: #ef4444;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .crisis-heading {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 800;
+        color: #1a365d;
+        margin-bottom: 32px;
+        word-break: keep-all;
+        line-height: 1.4;
       }
 
       .crisis-stats {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 28px 24px;
-        margin-bottom: 24px;
+        background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+        border: 1px solid #fecaca;
+        border-radius: 14px;
+        padding: 24px;
+        margin-bottom: 28px;
       }
 
       .crisis-stat {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(185, 28, 28, 0.12);
       }
 
       .crisis-stat:last-child {
@@ -137,12 +208,14 @@
 
       .crisis-stat-label {
         font-size: 15px;
-        color: rgba(255, 255, 255, 0.85);
+        color: #374151;
+        font-weight: 600;
       }
 
       .crisis-stat-value {
-        font-size: 24px;
-        font-weight: 800;
+        font-size: 26px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
       }
 
       .crisis-stat-value.danger {
@@ -150,24 +223,25 @@
       }
 
       .crisis-stat-value.normal {
-        color: rgba(255, 255, 255, 0.6);
+        color: #9ca3af;
       }
 
       .crisis-stat-value.gold {
-        color: #fbbf24;
+        color: #d97706;
       }
 
       .crisis-message {
         text-align: center;
         font-size: 17px;
         line-height: 1.7;
-        color: white;
-        font-weight: 500;
+        color: #1a365d;
+        font-weight: 600;
+        word-break: keep-all;
       }
 
       .crisis-message strong {
-        color: #fbbf24;
-        font-weight: 700;
+        color: #ef4444;
+        font-weight: 800;
       }
 
       /* 핵심 메시지 섹션 */
@@ -454,11 +528,15 @@
       /* 반응형 */
       @media (max-width: 480px) {
         .hero {
-          padding: 70px 20px 40px;
+          padding: 70px 20px 44px;
         }
 
         .hero-title {
-          font-size: 22px;
+          font-size: 25px;
+        }
+
+        .hero-date {
+          font-size: 16px;
         }
 
         .crisis-section,
@@ -470,8 +548,9 @@
           padding-right: 20px;
         }
 
-        .section-title {
-          font-size: 21px;
+        .section-title,
+        .crisis-heading {
+          font-size: 20px;
         }
 
         .invite-answer {
@@ -479,7 +558,11 @@
         }
 
         .crisis-stat-value {
-          font-size: 20px;
+          font-size: 22px;
+        }
+
+        .crisis-stat-label {
+          font-size: 14px;
         }
 
         .floating-cta {
@@ -501,15 +584,25 @@
           홈으로
         </a>
         <span class="hero-tag">초등 학부모 간담회</span>
+        <p class="hero-lead">사직동 일반초 학부모님께</p>
         <h1 class="hero-title">
-          사직동 일반초 학부모님,<br>
-          <span class="highlight">이 사실을 알고 계셨나요?</span>
+          이 사실을<br>
+          <span class="hero-underline">알고 계셨나요?</span>
         </h1>
-        <p class="hero-subtitle">대치동 입시전문가가 사직동에서 직접 전합니다</p>
+        <p class="hero-subtitle">사직동 A비율이 대치동보다 낮은 이유</p>
+        <p class="hero-speaker">- 대치 입시전문가 이시용 대표 -</p>
+
+        <div class="hero-date-box">
+          <div class="hero-date">5/3(일) · 5/10(일)</div>
+          <div class="hero-time">오후 12:00</div>
+        </div>
       </section>
 
       <!-- 위기 인식 -->
       <section class="crisis-section">
+        <div class="crisis-intro">REALITY</div>
+        <h2 class="crisis-heading">지역별 A비율 격차</h2>
+
         <div class="crisis-stats">
           <div class="crisis-stat">
             <span class="crisis-stat-label">사직동 A비율 평균</span>
