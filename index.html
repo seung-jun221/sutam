@@ -27,6 +27,36 @@
     <!-- 네이버 사이트 소유확인 -->
     <meta name="naver-site-verification" content="3f1d1b40ffa598c93d1b5e2d0a81179d3ffde988" />
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '941704082060046');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5Z2TTYE4X', {
+      send_page_view: true
+    });
+    </script>
+    <!-- End Google Analytics 4 -->
+
     <!-- 파비콘 -->
     <link
       rel="icon"
@@ -440,7 +470,7 @@
             <div class="popup-desc">5/3(일), 5/10(일) | 이시용 대표 직접 진행</div>
           </div>
           <div class="popup-actions">
-            <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="popup-btn">간담회 신청하기</a>
+            <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="popup-btn" onclick="trackSeminarClick('home_popup')">간담회 신청하기</a>
             <button class="popup-close" onclick="closeBottomPopup()" aria-label="닫기">&times;</button>
           </div>
         </div>
@@ -449,5 +479,24 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+
+    <!-- CTA 클릭 이벤트 추적 스크립트 -->
+    <script>
+    function trackSeminarClick(buttonLocation) {
+      // Meta Pixel Lead 이벤트
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+          content_name: '간담회 신청',
+          content_category: 'seminar_apply'
+        });
+      }
+      // GA4 커스텀 이벤트
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'seminar_apply_click', {
+          button_location: buttonLocation
+        });
+      }
+    }
+    </script>
   </body>
 </html>

@@ -18,6 +18,42 @@
     <meta property="og:site_name" content="사직 수리탐구 수학학원" />
     <meta property="og:locale" content="ko_KR" />
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '941704082060046');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: '중등 학부모 간담회',
+      content_category: 'middle_seminar'
+    });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5Z2TTYE4X', {
+      send_page_view: true,
+      page_title: '중등 학부모 간담회',
+      content_group: 'middle_seminar'
+    });
+    </script>
+    <!-- End Google Analytics 4 -->
+
     <!-- 파비콘 -->
     <link
       rel="icon"
@@ -848,8 +884,28 @@
     </div>
 
     <!-- 플로팅 간담회 신청 버튼 -->
-    <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="floating-cta">
+    <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="floating-cta" onclick="trackSeminarClick('middle')">
       간담회 신청하기
     </a>
+
+    <!-- CTA 클릭 이벤트 추적 스크립트 -->
+    <script>
+    function trackSeminarClick(seminarType) {
+      // Meta Pixel Lead 이벤트
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+          content_name: '간담회 신청',
+          content_category: seminarType + '_seminar'
+        });
+      }
+      // GA4 커스텀 이벤트
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'seminar_apply_click', {
+          seminar_type: seminarType,
+          button_location: 'floating_cta'
+        });
+      }
+    }
+    </script>
   </body>
 </html>
