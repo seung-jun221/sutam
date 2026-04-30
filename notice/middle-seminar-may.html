@@ -607,6 +607,61 @@
         font-weight: 500;
       }
 
+      /* 히어로 CTA 버튼 */
+      .hero-cta {
+        display: inline-block;
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 24px;
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+      }
+
+      /* 스크롤 유도 화살표 */
+      .scroll-indicator {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .scroll-text {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 1px;
+      }
+
+      .scroll-arrow {
+        width: 24px;
+        height: 24px;
+        fill: rgba(255, 255, 255, 0.6);
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(8px);
+        }
+        60% {
+          transform: translateY(4px);
+        }
+      }
+
       /* 플로팅 CTA 버튼 */
       .floating-cta {
         position: fixed;
@@ -632,6 +687,11 @@
         box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 6px 25px rgba(239, 68, 68, 0.5);
       }
 
+      /* 하단 여백 (플로팅 버튼 가림 방지) */
+      .bottom-spacer {
+        height: 100px;
+      }
+
       /* 반응형 */
       @media (max-width: 480px) {
         .hero {
@@ -644,6 +704,11 @@
 
         .hero-date {
           font-size: 16px;
+        }
+
+        .hero-cta {
+          padding: 12px 28px;
+          font-size: 14px;
         }
 
         .crisis-section,
@@ -678,6 +743,10 @@
           padding: 14px 36px;
           font-size: 15px;
         }
+
+        .bottom-spacer {
+          height: 90px;
+        }
       }
     </style>
   </head>
@@ -704,14 +773,24 @@
           <div class="hero-date">5/3(일) · 5/10(일)</div>
           <div class="hero-time">오후 1:30</div>
         </div>
+
+        <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="hero-cta" onclick="trackSeminarClick('middle')">
+          간담회 신청하기
+        </a>
+
+        <div class="scroll-indicator">
+          <span class="scroll-text">자세히 보기</span>
+          <svg class="scroll-arrow" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </div>
       </section>
 
       <!-- 위기 인식 -->
       <section class="crisis-section">
         <p class="crisis-question">
-          왜 사직동 중학생들은<br>
-          <strong>고등 준비보다 중등 내신</strong>에<br>
-          매달릴 수밖에 없을까요?
+          우리 아이 A등급,<br>
+          <strong>진짜 A등급</strong>이 맞을까요?
         </p>
 
         <div class="crisis-stats">
@@ -721,15 +800,15 @@
         </div>
 
         <p class="crisis-message">
-          이 환경에서<br>
-          내신에 매달리지 않을 수 있을까요?
+          A등급이 쉽게 나오는 환경,<br>
+          그래서 더 위험합니다.
         </p>
       </section>
 
       <!-- 핵심 메시지 -->
       <section class="key-section">
-        <div class="section-label">REALITY CHECK</div>
-        <h2 class="section-title">A등급의 진실</h2>
+        <div class="section-label">A등급의 착각</div>
+        <h2 class="section-title">같은 A, 다른 실력</h2>
 
         <div class="key-statement">
           <p class="key-statement-title">
@@ -881,6 +960,9 @@
         </p>
         <p class="academy-motto">교재를 만든 사람이 직접 가르칩니다.</p>
       </footer>
+
+      <!-- 하단 여백 (플로팅 버튼 가림 방지) -->
+      <div class="bottom-spacer"></div>
     </div>
 
     <!-- 플로팅 간담회 신청 버튼 -->
