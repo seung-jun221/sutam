@@ -648,15 +648,18 @@
 
       /* 히어로 CTA 버튼 */
       .hero-cta {
-        display: inline-block;
+        display: block;
+        width: calc(100% - 48px);
+        max-width: 320px;
+        margin: 24px auto 0;
         background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         color: white;
-        padding: 14px 32px;
+        padding: 16px 24px;
         border-radius: 50px;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 700;
         text-decoration: none;
-        margin-top: 24px;
+        text-align: center;
         box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
         transition: all 0.3s ease;
         border: 2px solid rgba(255, 255, 255, 0.2);
@@ -728,7 +731,12 @@
 
       /* 하단 여백 (플로팅 버튼 가림 방지) */
       .bottom-spacer {
-        height: 100px;
+        height: 120px;
+      }
+
+      /* 푸터 하단 여백 추가 */
+      .academy-footer {
+        padding-bottom: 40px;
       }
 
       /* 반응형 */
@@ -746,8 +754,10 @@
         }
 
         .hero-cta {
-          padding: 12px 28px;
-          font-size: 14px;
+          width: calc(100% - 40px);
+          max-width: 100%;
+          padding: 16px 20px;
+          font-size: 15px;
         }
 
         .crisis-section,
