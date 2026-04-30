@@ -49,8 +49,47 @@
     gtag('config', 'G-F5Z2TTYE4X', {
       send_page_view: true,
       page_title: '중등 학부모 간담회',
-      content_group: 'middle_seminar'
+      content_group: 'middle_seminar',
+      // 인앱 브라우저 engagement 문제 해결
+      transport_url: 'https://www.google-analytics.com/g/collect',
+      first_party_collection: true
     });
+
+    // 인앱 브라우저 engagement_time 0초 문제 해결
+    // 스크롤 깊이 및 체류시간 수동 추적
+    (function() {
+      var startTime = Date.now();
+      var maxScroll = 0;
+      var engaged = false;
+
+      function trackEngagement() {
+        if (engaged) return;
+        var timeSpent = Math.round((Date.now() - startTime) / 1000);
+        if (timeSpent >= 10 || maxScroll >= 25) {
+          engaged = true;
+          gtag('event', 'user_engagement_manual', {
+            engagement_time_sec: timeSpent,
+            scroll_depth: maxScroll
+          });
+        }
+      }
+
+      window.addEventListener('scroll', function() {
+        var scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercent > maxScroll) maxScroll = scrollPercent;
+        trackEngagement();
+      });
+
+      // 페이지 이탈 시 sendBeacon으로 전송
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') {
+          var timeSpent = Math.round((Date.now() - startTime) / 1000);
+          navigator.sendBeacon && navigator.sendBeacon(
+            'https://www.google-analytics.com/g/collect?v=2&tid=G-F5Z2TTYE4X&en=page_exit&ep.time_spent=' + timeSpent + '&ep.scroll_depth=' + maxScroll
+          );
+        }
+      });
+    })();
     </script>
     <!-- End Google Analytics 4 -->
 
