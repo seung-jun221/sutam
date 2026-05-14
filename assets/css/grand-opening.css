@@ -611,3 +611,44 @@
     font-size: 1rem;
   }
 }
+
+/* Sticky CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 100;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 -4px 20px rgba(26, 54, 93, 0.15);
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sticky-cta:hover {
+  background: #15294a;
+}
+
+/* 카톡 버튼 숨김 상태 */
+.floating-kakao.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+.floating-kakao {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
