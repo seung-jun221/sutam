@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i.study 사직 직영점 7월 GRAND OPEN | 사직동 학부모님께</title>
     <meta
       name="description"
-      content="i.study 사직수리탐구학원 7월 GRAND OPEN - 대치 컨설턴트 직강 사전 알림 신청"
+      content="20년 대치 입시 전문가의 직강 수업이 사직동에 도착합니다. 7월 사직 직영점 GRAND OPEN, 대형 설명회 사전 알림 신청 안내"
     />
-    <title>7월 사직 GRAND OPEN | 사직 수리탐구 수학학원</title>
 
     <!-- Open Graph 메타태그 -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="7월 사직 직영점 GRAND OPEN | 사직 수리탐구 수학학원" />
-    <meta property="og:description" content="대치 컨설턴트 직강이 사직동에 도착합니다. 7월 대형 설명회 사전 알림 신청" />
+    <meta property="og:title" content="i.study 사직 직영점 7월 GRAND OPEN" />
+    <meta property="og:description" content="사직동에서 만나는 대치 컨설턴트, 7월 사직 직영점 안내" />
     <meta property="og:image" content="https://www.suritamgu.co.kr/assets/images/og-image.png" />
-    <meta property="og:url" content="https://www.suritamgu.co.kr/notice/grand-opening.html" />
+    <meta property="og:url" content="https://www.suritamgu.co.kr/notice/grand-opening" />
     <meta property="og:site_name" content="사직 수리탐구 수학학원" />
     <meta property="og:locale" content="ko_KR" />
 
@@ -30,10 +30,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '941704082060046');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent', {
-      content_name: '7월 GRAND OPEN',
-      content_category: 'grand_opening_lp'
-    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
@@ -49,44 +45,8 @@
     gtag('config', 'G-F5Z2TTYE4X', {
       send_page_view: true,
       page_title: '7월 GRAND OPEN 랜딩',
-      content_group: 'grand_opening_lp',
-      transport_url: 'https://www.google-analytics.com/g/collect',
-      first_party_collection: true
+      content_group: 'grand_opening_lp'
     });
-
-    // 인앱 브라우저 engagement_time 0초 문제 해결
-    (function() {
-      var startTime = Date.now();
-      var maxScroll = 0;
-      var engaged = false;
-
-      function trackEngagement() {
-        if (engaged) return;
-        var timeSpent = Math.round((Date.now() - startTime) / 1000);
-        if (timeSpent >= 10 || maxScroll >= 25) {
-          engaged = true;
-          gtag('event', 'user_engagement_manual', {
-            engagement_time_sec: timeSpent,
-            scroll_depth: maxScroll
-          });
-        }
-      }
-
-      window.addEventListener('scroll', function() {
-        var scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-        if (scrollPercent > maxScroll) maxScroll = scrollPercent;
-        trackEngagement();
-      });
-
-      document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'hidden') {
-          var timeSpent = Math.round((Date.now() - startTime) / 1000);
-          navigator.sendBeacon && navigator.sendBeacon(
-            'https://www.google-analytics.com/g/collect?v=2&tid=G-F5Z2TTYE4X&en=page_exit&ep.time_spent=' + timeSpent + '&ep.scroll_depth=' + maxScroll
-          );
-        }
-      });
-    })();
     </script>
     <!-- End Google Analytics 4 -->
 
@@ -101,293 +61,542 @@
     <link rel="stylesheet" href="../assets/css/grand-opening.css" />
   </head>
   <body>
-    <div class="lp-container">
-      <!-- 히어로 -->
-      <section class="hero">
-        <a href="index.html" class="back-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-          </svg>
-          학원 안내 모음
-        </a>
-        <span class="hero-tag">7월 사직 직영점 GRAND OPEN</span>
-        <p class="hero-lead">사직동 학부모님께</p>
-        <h1 class="hero-title">
-          사직동에서 만나는<br>
-          <span class="hero-underline">대치 컨설턴트</span>
-        </h1>
-        <p class="hero-subtitle">20년 대치 입시전문가의<br>직강 수업이 도착합니다</p>
-        <p class="hero-speaker">- i.study 사직 직영점 -</p>
-        <div class="hero-date-box">
-          <div class="hero-date">7월 대형 설명회</div>
-          <div class="hero-time">사전 알림 신청자 우선 안내</div>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="../index.html" class="logo">
+            <img src="../assets/images/logo.png" alt="i.study" class="logo-img" />
+          </a>
+          <a href="index.html" class="header-link">← 학원 안내 모음</a>
         </div>
-        <a href="#cta-section" class="hero-cta" onclick="trackCTA('hero_button')">
-          사전 알림 신청하기
-        </a>
-        <div class="scroll-indicator">
-          <span class="scroll-text">학원 소개 보기</span>
-          <svg class="scroll-arrow" viewBox="0 0 24 24">
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-          </svg>
-        </div>
-      </section>
+      </div>
+    </header>
 
-      <!-- 신뢰 후킹 (375·28·2000) -->
-      <section class="trust-section-lp">
-        <div class="section-label">학원 소개</div>
-        <h2 class="section-title">이 학원을 설명하는<br>3가지 숫자</h2>
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-number-lp">375<span class="trust-unit-lp">명</span></div>
-            <div class="trust-label-lp">대치·서초·분당·목동<br>TOP반 수강중</div>
-          </div>
-          <div class="trust-card">
-            <div class="trust-number-lp">28<span class="trust-unit-lp">%</span></div>
-            <div class="trust-label-lp">입시 전문가<br>자녀 수강율</div>
-          </div>
-          <div class="trust-card">
-            <div class="trust-number-lp">2,000<span class="trust-unit-lp">강좌</span></div>
-            <div class="trust-label-lp">온라인 VOD 판매<br>8개월만에 돌파</div>
-          </div>
-        </div>
-        <div class="trust-message">
-          입시를 가장 잘 아는 사람들이<br>
-          자기 아이를 보내는 학원
-        </div>
-      </section>
-
-      <!-- 학원 정체성 -->
-      <section class="identity-section">
-        <div class="section-label">정체성</div>
-        <h2 class="section-title">국내 유일<br>고등 연계 중등 수학 교재</h2>
-        <div class="identity-card">
-          <p class="identity-text">
-            초등 저학년부터 성실히 공부한 수학이<br>
-            고등 과정에 이르러 흔들리는 학생들을<br>
-            현장에서 수없이 지켜보아 왔습니다.
+    <main>
+      <!-- 히어로 섹션 -->
+      <section class="hero-grand-opening">
+        <div class="container">
+          <span class="hero-badge">2026년 7월 GRAND OPEN</span>
+          <h1 class="hero-title">
+            사직동 학부모님께 드리는<br>
+            <strong>7월 사직 직영점 안내</strong>
+          </h1>
+          <p class="hero-desc">
+            20년 대치 입시 전문가의<br>
+            직강 수업이 사직동에 도착합니다
           </p>
-          <p class="identity-highlight">
-            i.study 수리탐구는<br>
-            이 시행착오를 최소화하기 위해<br>
-            처음부터 다시 설계된 교재입니다.
-          </p>
-        </div>
-        <div class="timeline-visual-lp">
-          <div class="timeline-item-lp">
-            <span class="timeline-label-lp">MONO</span>
-            <span class="timeline-duration-lp">4개월</span>
-          </div>
-          <div class="timeline-arrow-lp">→</div>
-          <div class="timeline-item-lp">
-            <span class="timeline-label-lp">DI</span>
-            <span class="timeline-duration-lp">4개월</span>
-          </div>
-          <div class="timeline-arrow-lp">→</div>
-          <div class="timeline-item-lp">
-            <span class="timeline-label-lp">TRI</span>
-            <span class="timeline-duration-lp">4개월</span>
-          </div>
-          <div class="timeline-arrow-lp">→</div>
-          <div class="timeline-item-lp highlight">
-            <span class="timeline-label-lp">TETRA</span>
-            <span class="timeline-duration-lp">6개월</span>
+          <div class="hero-cta-wrap">
+            <a href="https://istudy-edu.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" id="hero-cta">
+              7월 대형 설명회 사전 알림 신청
+            </a>
+            <p class="hero-cta-sub">사전 신청자께 우선 안내드립니다</p>
           </div>
         </div>
-        <p class="identity-footer">
-          48권, 18개월로 완성하는<br>
-          체계적 누적 학습 시스템
-        </p>
-        <a href="../suritamgu-signature.html" class="learn-more-link">
-          수리탐구 교재 자세히 보기 →
-        </a>
       </section>
 
-      <!-- 인적 자산 (Dark) -->
-      <section class="people-section">
-        <div class="section-label-dark">대치 컨설턴트 직강</div>
-        <h2 class="section-title-dark">교재를 만든 사람이<br>직접 가르칩니다</h2>
-        <div class="people-cards">
-          <div class="person-card">
-            <div class="person-role">이시용 대표</div>
-            <div class="person-credentials">
-              대치 입시컨설팅 21년<br>
-              수리탐구 교재 메인 집필<br>
-              사직 직영점 직강
+      <!-- 이시용 대표 소개 섹션 -->
+      <section class="ceo-section">
+        <div class="container">
+          <h2 class="section-title">교재를 만든 사람이 직접 가르칩니다</h2>
+          <a href="../ceo-profile.html" class="ceo-profile-link">
+            <div class="ceo-profile">
+              <div class="ceo-image">
+                <picture>
+                  <source srcset="../assets/images/profile.webp" type="image/webp" />
+                  <img src="../assets/images/profile.png" alt="이시용 대표" />
+                </picture>
+              </div>
+              <div class="ceo-info">
+                <h3 class="ceo-name">이시용 대표</h3>
+                <p class="ceo-title">대치 입시컨설팅 19년 | 수학학원 운영 20년</p>
+                <p class="ceo-youtube-summary">유튜브 출연 (가든패밀리, 정전부부 등) 누적 조회수 <strong>100만+</strong></p>
+                <div class="ceo-highlight">
+                  "부산 직영점에서<br>직강 수업을 진행합니다"
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="person-card">
-            <div class="person-role">학원장</div>
-            <div class="person-credentials">
-              대치·송파·잠실 22년<br>
-              수리탐구 교재 서브 집필<br>
-              사직 직영점 운영
+            <div class="ceo-more">
+              <span>상세 이력 보기 →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 신뢰 지표 -->
+      <section class="trust-section">
+        <div class="container">
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <div class="trust-number">375<span class="trust-unit">명</span></div>
+              <div class="trust-label">대치·서초·분당·목동<br>TOP반 수강중</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">28<span class="trust-unit">%</span></div>
+              <div class="trust-label">입시 전문가<br>자녀 수강율</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">2000<span class="trust-unit">강좌</span></div>
+              <div class="trust-label">온라인 VOD 판매<br>8개월만에 돌파</div>
             </div>
           </div>
         </div>
-        <div class="people-highlight">
-          사직 직영점에 모인<br>
-          <strong>43년의 입시 노하우</strong>
-        </div>
-        <a href="../ceo-profile.html" class="learn-more-link-dark">
-          이시용 대표 자세히 보기 →
-        </a>
       </section>
 
-      <!-- 학원 시스템 -->
-      <section class="system-section">
-        <div class="section-label">학원 시스템</div>
-        <h2 class="section-title">단기 성과가 아닌<br>지속 가능한 실력</h2>
-        <div class="system-grid">
-          <div class="system-card">
-            <div class="system-number">1</div>
-            <h3 class="system-card-title">누적테스트</h3>
-            <p class="system-card-desc">매월 마지막 주<br>전 과정 누적 평가</p>
-          </div>
-          <div class="system-card">
-            <div class="system-number">2</div>
-            <h3 class="system-card-title">6개월 모듈</h3>
-            <p class="system-card-desc">누적 평균 75점 이상<br>객관적 승급 기준</p>
-          </div>
-          <div class="system-card">
-            <div class="system-number">3</div>
-            <h3 class="system-card-title">서논술 관리</h3>
-            <p class="system-card-desc">풀이 한 줄까지<br>6영역 정밀 채점</p>
-          </div>
-          <div class="system-card">
-            <div class="system-number">4</div>
-            <h3 class="system-card-title">학부모 소통</h3>
-            <p class="system-card-desc">매월 학습 결과 리포트<br>카톡 채널 1:1 소통</p>
+      <!-- 학원 활동 기록 -->
+      <section class="activity-record">
+        <div class="container">
+          <span class="section-label">RECENT ACTIVITIES</span>
+          <h2 class="go-section-title">학원 운영 기록</h2>
+          <p class="go-section-desc">
+            개원 전부터 학부모님들과<br>
+            적극적으로 소통해 왔습니다
+          </p>
+
+          <div class="activity-feed">
+            <!-- 활동 1: 2월 개원 특별설명회 -->
+            <a href="../notice-special.html" class="activity-card">
+              <div class="activity-meta">
+                <span class="activity-date">2026.02</span>
+                <span class="activity-badge">개원 설명회</span>
+              </div>
+              <h3 class="activity-title">개원 특별설명회</h3>
+              <p class="activity-summary">11차 전석 매진 · 500여 명 참석</p>
+              <span class="activity-link">설명회 자료 보기 →</span>
+            </a>
+
+            <!-- 활동 2: 4월 사직동 중학교 분석 설명회 -->
+            <a href="../notice.html" class="activity-card activity-card-featured">
+              <div class="activity-image">
+                <img
+                  src="../assets/images/insta-feed/insta-01-seminar.jpg"
+                  alt="2026.04 사직동 설명회 현장 - 216석 전좌석 마감"
+                  loading="lazy"
+                  onerror="this.parentElement.style.display='none'"
+                />
+              </div>
+              <div class="activity-meta">
+                <span class="activity-date">2026.04</span>
+                <span class="activity-badge">설명회</span>
+              </div>
+              <h3 class="activity-title">사직동 중학교 분석 설명회</h3>
+              <p class="activity-summary">거제종합사회복지관 · 216석 전좌석 마감 · 220명 참석</p>
+              <span class="activity-link">설명회 자료 보기 →</span>
+            </a>
+
+            <!-- 활동 3: 5월 학부모 간담회 -->
+            <article class="activity-card">
+              <div class="activity-meta">
+                <span class="activity-date">2026.05</span>
+                <span class="activity-badge">간담회</span>
+              </div>
+              <h3 class="activity-title">학부모 간담회</h3>
+              <p class="activity-summary">초·중등 별도 진행 · 각 25명 만석</p>
+              <div class="activity-links">
+                <a href="elementary-seminar-may.html" class="activity-link">초등 간담회 →</a>
+                <a href="middle-seminar-may.html" class="activity-link">중등 간담회 →</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- 학원의 약속 -->
-      <section class="promise-section">
-        <div class="section-label">학원의 약속</div>
-        <h2 class="section-title">신뢰에 보답하는 교육으로<br>증명해 나가겠습니다</h2>
-        <div class="promise-card">
-          <p class="promise-text">
-            i.study 수리탐구 학원은<br>
-            단기간의 성과나 보여주기식 결과보다,
+      <!-- 시그니처 교재 섹션 -->
+      <section class="signature-section">
+        <div class="container">
+          <span class="section-label">SIGNATURE</span>
+          <h2 class="go-section-title">국내 유일<br>고등 연계 중등 수학 교재</h2>
+
+          <div class="signature-image">
+            <img
+              src="../assets/images/insta-feed/insta-02-textbook.jpg"
+              alt="수리탐구 MONO 교재 실물"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+
+          <div class="signature-content">
+            <p class="signature-quote">
+              초등 저학년부터 성실히 공부한 수학이<br>
+              고등 과정에 이르러 흔들리는 학생들을<br>
+              현장에서 수없이 지켜보아 왔습니다.
+            </p>
+            <p class="signature-quote">
+              <strong>i.study 수리탐구는</strong><br>
+              이 시행착오를 최소화하기 위해<br>
+              처음부터 다시 설계된 교재입니다.
+            </p>
+          </div>
+
+          <div class="curriculum-stages">
+            <div class="stage-card">
+              <div class="stage-name">MONO</div>
+              <div class="stage-period">4개월</div>
+            </div>
+            <span class="stage-arrow">→</span>
+            <div class="stage-card">
+              <div class="stage-name">DI</div>
+              <div class="stage-period">4개월</div>
+            </div>
+            <span class="stage-arrow">→</span>
+            <div class="stage-card">
+              <div class="stage-name">TRI</div>
+              <div class="stage-period">4개월</div>
+            </div>
+            <span class="stage-arrow">→</span>
+            <div class="stage-card">
+              <div class="stage-name">TETRA</div>
+              <div class="stage-period">6개월</div>
+            </div>
+          </div>
+
+          <a href="../suritamgu-signature.html" class="signature-more-link">
+            교재 상세 보기 →
+          </a>
+        </div>
+      </section>
+
+      <!-- 누적 테스트 섹션 -->
+      <section class="cumulative-section">
+        <div class="container">
+          <span class="section-label">CUMULATIVE TEST</span>
+          <h2 class="go-section-title">매달 진행되는<br>25문항 누적 테스트</h2>
+          <p class="go-section-desc">
+            매월 마지막 주, 학습 내용을 점검합니다
           </p>
-          <p class="promise-highlight">
-            학생 한 명 한 명이<br>
-            고등 과정까지 흔들리지 않는<br>
-            <strong>수학의 힘</strong>을 갖추는 것을<br>
-            가장 중요하게 생각합니다.
-          </p>
-          <p class="promise-text">
-            입학 테스트와 상담은<br>
-            학생을 선별하기 위한 절차가 아니라,<br>
-            아이에게 가장 맞는<br>
-            학습 방향과 시기를 함께 고민하기 위한 과정입니다.
+
+          <div class="cumulative-image">
+            <img
+              src="../assets/images/insta-feed/insta-03-cumulative.jpg"
+              alt="수리탐구 누적테스트 시험지"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+
+          <div class="cumulative-features">
+            <div class="feature-item">
+              <span class="feature-icon">📝</span>
+              <div class="feature-text">
+                <strong>25문항</strong>
+                <p>매달 마지막 주 진행</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔄</span>
+              <div class="feature-text">
+                <strong>100% 연동</strong>
+                <p>고등 연계 심화 48권과 완벽 연동</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📊</span>
+              <div class="feature-text">
+                <strong>누적 평가</strong>
+                <p>이전 학습 내용도 함께 점검</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="../cumulative-test.html" class="cumulative-more-link">
+            누적 테스트 자세히 보기 →
+          </a>
+        </div>
+      </section>
+
+      <!-- 풀이 관리 섹션 -->
+      <section class="management-section">
+        <div class="container">
+          <span class="section-label">MANAGEMENT</span>
+          <h2 class="go-section-title">풀이 한 줄까지 관리하는<br>서논술 평가</h2>
+
+          <div class="management-image">
+            <img
+              src="../assets/images/insta-feed/insta-04-management.jpg"
+              alt="학생 풀이 관리 - 서논술 평가"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+
+          <p class="management-desc">
+            답만 맞히는 것이 아니라,<br>
+            <strong>풀이 과정의 논리</strong>까지 평가합니다.<br><br>
+            학생이 어디서 막히는지,<br>
+            어떤 개념을 놓쳤는지<br>
+            한 줄 한 줄 점검합니다.
           </p>
         </div>
       </section>
 
-      <!-- 3가지 CTA -->
-      <section id="cta-section" class="cta-final-section">
-        <div class="section-label">다음 단계</div>
-        <h2 class="section-title">학부모님께<br>가장 편한 방법으로</h2>
-        <div class="cta-options">
-          <!-- 1순위: 설명회 사전 알림 (메인) -->
+      <!-- 전국 제휴 학원 섹션 -->
+      <section class="partners-section">
+        <div class="container">
+          <h2 class="section-title">전국 유명 학원이 먼저 선택한 커리큘럼</h2>
+          <div class="partners-grid">
+            <div class="partner-card">
+              <h4 class="partner-name">대치 넥스트닥</h4>
+              <p class="partner-desc">초등 의대전문 입시학원</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">분당 수학의아침</h4>
+              <p class="partner-desc">분당 최대 규모</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">광교 수학의아침</h4>
+              <p class="partner-desc">광교 최대 규모</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">울산 에이블수학</h4>
+              <p class="partner-desc">울산 대표 수학학원</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">부산센텀 포엠학원</h4>
+              <p class="partner-desc">부산센텀 명문학원</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">일산 혜윰수학</h4>
+              <p class="partner-desc">일산 수학전문학원</p>
+            </div>
+            <div class="partner-card">
+              <h4 class="partner-name">인천송도 바른생각학원</h4>
+              <p class="partner-desc">송도 대표 학원</p>
+            </div>
+          </div>
+          <div class="partners-highlight">
+            "그 첫 번째 직영점이 부산에 문을 엽니다"
+          </div>
+        </div>
+      </section>
+
+      <!-- 학부모 후기 섹션 -->
+      <section class="parent-reviews">
+        <div class="container">
+          <span class="section-label">PARENT REVIEW</span>
+          <h2 class="go-section-title">수업 직후 쏟아진<br>진심 어린 후기들</h2>
+          <p class="go-section-desc">
+            학원에 다닌 자녀의<br>
+            실제 학부모 후기입니다
+          </p>
+
+          <div class="review-image">
+            <img
+              src="../assets/images/insta-feed/insta-05-review.jpg"
+              alt="학부모 실제 후기"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+
+          <div class="review-highlight">
+            <p>
+              "원장님~ OO이가 저한테 말을 잘 안해서<br>
+              이런 다짐이 있는지 몰랐네요"
+            </p>
+            <p class="review-author">— 학부모 카톡 후기 중</p>
+          </div>
+
+          <p class="review-note">
+            ※ 학생·학부모 개인정보 보호를 위해 일부 정보는 가려져 있습니다
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA 섹션 -->
+      <section class="go-cta-section" id="cta-section">
+        <div class="container">
+          <span class="section-label">사전 신청</span>
+          <h2 class="go-section-title">먼저 안내받고 싶으시다면</h2>
+          <p class="go-section-desc">
+            가장 편하신 방법으로 연락해주세요
+          </p>
+
+          <!-- CTA 1: 메인 (7월 설명회 사전 알림) -->
           <a
             href="https://istudy-edu.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            class="cta-card-lp primary"
-            onclick="trackCTA('seminar_alert')"
+            class="cta-card cta-card-primary"
+            id="main-cta"
           >
-            <div class="cta-icon">📅</div>
-            <div class="cta-content-lp">
-              <div class="cta-title-lp">7월 대형 설명회 사전 알림 신청</div>
-              <div class="cta-desc-lp">
-                ✅ 오픈 즉시 우선 안내<br>
-                ✅ 사전 신청자 좌석 우선 보장<br>
-                ✅ 설명회 자료 사전 발송
-              </div>
+            <div class="cta-card-content">
+              <div class="cta-card-label">PRIMARY</div>
+              <h3 class="cta-card-title">7월 대형 설명회 사전 알림 신청</h3>
+              <p class="cta-card-desc">신청자께 우선 안내드립니다</p>
             </div>
-            <span class="cta-arrow-lp">→</span>
+            <span class="cta-card-arrow">→</span>
           </a>
-          <!-- 2순위: 카톡 채널 -->
+
+          <!-- CTA 2: 카톡 채널 -->
           <a
             href="https://pf.kakao.com/_bxovxon/chat"
             target="_blank"
             rel="noopener noreferrer"
-            class="cta-card-lp secondary"
-            onclick="trackCTA('kakao_channel')"
+            class="cta-card cta-card-kakao"
+            id="kakao-cta"
           >
-            <div class="cta-icon">💬</div>
-            <div class="cta-content-lp">
-              <div class="cta-title-lp">학원 카톡 채널 친구 추가</div>
-              <div class="cta-desc-lp">
-                학원 소식·설명회 안내를<br>
-                카톡으로 받아보세요
-              </div>
+            <div class="cta-card-content">
+              <div class="cta-card-label">KAKAO</div>
+              <h3 class="cta-card-title">학원 카톡 채널 친구 추가</h3>
+              <p class="cta-card-desc">공지·이벤트 알림을 받아보세요</p>
             </div>
-            <span class="cta-arrow-lp">→</span>
+            <span class="cta-card-arrow">→</span>
           </a>
-          <!-- 3순위: 1:1 안내 통화 -->
+
+          <!-- CTA 3: 1:1 학원 안내 통화 -->
           <a
             href="https://naver.me/FP8BPITb"
             target="_blank"
             rel="noopener noreferrer"
-            class="cta-card-lp tertiary"
-            onclick="trackCTA('phone_consult')"
+            class="cta-card cta-card-secondary"
+            id="call-cta"
           >
-            <div class="cta-icon">📞</div>
-            <div class="cta-content-lp">
-              <div class="cta-title-lp">1:1 학원 안내 통화 (10~15분)</div>
-              <div class="cta-desc-lp">
-                학원 안내가 필요하시면<br>
-                편한 시간에 연락주세요
-              </div>
+            <div class="cta-card-content">
+              <div class="cta-card-label">CALL</div>
+              <h3 class="cta-card-title">1:1 학원 안내 통화 (10~15분)</h3>
+              <p class="cta-card-desc">궁금한 점을 통화로 안내드립니다</p>
             </div>
-            <span class="cta-arrow-lp">→</span>
+            <span class="cta-card-arrow">→</span>
           </a>
         </div>
       </section>
 
-      <!-- 학원 정보 푸터 -->
-      <footer class="academy-footer">
-        <div class="academy-name">i.study 사직수리탐구학원</div>
-        <p class="academy-tagline">
-          대치·분당 학군지 검증 커리큘럼<br>부산 최초 직영점
-        </p>
-        <p class="academy-motto">교재를 만든 사람이 직접 가르칩니다.</p>
-        <div class="footer-info">
-          <p>부산광역시 동래구 사직동 71-3 대영빌딩 3층</p>
-          <p>사직역 3번 출구 도보 1분</p>
-          <p>T. 051-715-1580</p>
+      <!-- 오시는 길 -->
+      <section class="location-section">
+        <div class="container">
+          <h2 class="section-title">오시는 길</h2>
+          <div class="location-content">
+            <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%82%AC%EC%A7%81%EB%8F%99%2071-3" target="_blank" rel="noopener noreferrer" class="location-map-link">
+              <picture>
+                <source srcset="../assets/images/map.webp" type="image/webp" />
+                <img src="../assets/images/map.png" alt="사직 수리탐구 수학학원 위치" class="location-map-img" />
+              </picture>
+              <div class="map-overlay">
+                <span class="map-overlay-text">클릭하여 지도 보기</span>
+              </div>
+            </a>
+            <div class="location-info">
+              <div class="location-address">
+                <h3>사직 수리탐구 수학학원</h3>
+                <p>부산광역시 동래구 사직동 71-3 대영빌딩 3층</p>
+              </div>
+              <div class="location-directions">
+                <div class="direction-item">
+                  <span class="direction-icon-svg">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-6H6V6h5v5zm2 0V6h5v5h-5zm3.5 6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                  </span>
+                  <span>사직역 3번 출구에서 도보 1분</span>
+                </div>
+                <div class="direction-item">
+                  <span class="direction-icon-svg">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                  </span>
+                  <span>주차 불가 (대중교통 이용 권장)</span>
+                </div>
+              </div>
+              <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%82%AC%EC%A7%81%EB%8F%99%2071-3" target="_blank" rel="noopener noreferrer" class="location-naver-btn">
+                네이버 지도에서 보기 →
+              </a>
+            </div>
+          </div>
         </div>
-      </footer>
-      <div class="bottom-spacer"></div>
-    </div>
+      </section>
+    </main>
 
-    <!-- 플로팅 CTA -->
-    <a href="#cta-section" class="floating-cta" onclick="trackCTA('floating_button')">
-      사전 알림 신청 →
+    <!-- 푸터 -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-content">
+          <h3>사직 수리탐구 수학학원</h3>
+          <p>부산광역시 동래구 사직동 71-3 대영빌딩 3층</p>
+          <p>(사직역 3번 출구 도보 1분)</p>
+          <p>문의: 051-715-1580</p>
+          <div class="footer-buttons">
+            <a href="tel:051-715-1580" class="footer-btn phone-btn">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+              전화 상담
+            </a>
+            <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="footer-btn kakao-btn">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
+              카카오톡 상담
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 플로팅 카카오톡 버튼 -->
+    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
+      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
+      <span class="kakao-text">상담하기</span>
     </a>
 
-    <!-- 트래킹 스크립트 -->
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- CTA 클릭 이벤트 트래킹 -->
     <script>
-      function trackCTA(ctaType) {
-        // Meta Pixel Lead 이벤트
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead', {
-            content_name: ctaType,
-            content_category: 'grand_opening_lp'
+    document.addEventListener('DOMContentLoaded', function() {
+      // 메인 CTA 클릭 트래킹
+      var heroCta = document.getElementById('hero-cta');
+      var mainCta = document.getElementById('main-cta');
+
+      [heroCta, mainCta].forEach(function(el) {
+        if (el) {
+          el.addEventListener('click', function() {
+            if (typeof fbq !== 'undefined') {
+              fbq('track', 'Lead', { content_name: '7월 설명회 사전 알림' });
+            }
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'cta_click', {
+                'cta_type': 'pre_register',
+                'cta_location': el === heroCta ? 'hero' : 'main'
+              });
+            }
           });
         }
-        // GA4 커스텀 이벤트
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'cta_click', {
-            cta_type: ctaType,
-            page_location: 'grand_opening_landing'
-          });
-        }
+      });
+
+      // 카톡 채널 CTA 클릭 트래킹
+      var kakaoCta = document.getElementById('kakao-cta');
+      if (kakaoCta) {
+        kakaoCta.addEventListener('click', function() {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact', { content_name: '카톡 채널 친구 추가' });
+          }
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'cta_click', { 'cta_type': 'kakao' });
+          }
+        });
       }
+
+      // 1:1 통화 CTA 클릭 트래킹
+      var callCta = document.getElementById('call-cta');
+      if (callCta) {
+        callCta.addEventListener('click', function() {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', { content_name: '1:1 학원 안내 통화' });
+          }
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'cta_click', { 'cta_type': 'call' });
+          }
+        });
+      }
+
+      // Engagement Time 수동 트래킹 (30초 단위)
+      var engagementTime = 0;
+      setInterval(function() {
+        if (!document.hidden) {
+          engagementTime += 30;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'engagement_time', {
+              'time_seconds': engagementTime
+            });
+          }
+        }
+      }, 30000);
+    });
     </script>
   </body>
 </html>
