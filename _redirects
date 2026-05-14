@@ -1,6 +1,14 @@
 # .html 확장자 제거 리다이렉트 (301 영구 리다이렉트)
 /notice/elementary-seminar-may.html  /notice/elementary-seminar-may  301
 /notice/middle-seminar-may.html      /notice/middle-seminar-may      301
+/notice/grand-opening.html           /notice/grand-opening           301
+
+# 노티스 허브 단축 URL
+/notice/index  /notice/  301
+
+# 5주 광고 랜딩페이지 단축 URL
+/grand-opening  /notice/grand-opening  301
+/preview        /notice/grand-opening  301
 
 # Netlify Pretty URLs 활성화를 위한 설정
 # Netlify는 기본적으로 .html을 제거한 URL을 지원하므로
