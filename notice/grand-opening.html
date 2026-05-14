@@ -161,7 +161,7 @@
                 <span class="activity-badge">개원 설명회</span>
               </div>
               <h3 class="activity-title">개원 특별설명회</h3>
-              <p class="activity-summary">11차 전석 매진 · 500여 명 참석</p>
+              <p class="activity-summary">14회차 전석 매진 · 600여 명 참석</p>
               <span class="activity-link">설명회 자료 보기 →</span>
             </a>
 
@@ -232,7 +232,7 @@
           <div class="curriculum-stages">
             <div class="stage-card">
               <div class="stage-name">MONO</div>
-              <div class="stage-period">4개월</div>
+              <div class="stage-period">3개월</div>
             </div>
             <span class="stage-arrow">→</span>
             <div class="stage-card">
@@ -242,7 +242,7 @@
             <span class="stage-arrow">→</span>
             <div class="stage-card">
               <div class="stage-name">TRI</div>
-              <div class="stage-period">4개월</div>
+              <div class="stage-period">5개월</div>
             </div>
             <span class="stage-arrow">→</span>
             <div class="stage-card">
@@ -527,21 +527,81 @@
     </footer>
 
     <!-- 플로팅 카카오톡 버튼 -->
-    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
+    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao" id="floating-kakao">
       <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
       <span class="kakao-text">상담하기</span>
+    </a>
+
+    <!-- Sticky CTA -->
+    <a
+      href="https://istudy-edu.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="sticky-cta"
+      id="sticky-cta"
+    >
+      7월 대형 설명회 사전 알림 신청 →
     </a>
 
     <!-- JavaScript -->
     <script src="../assets/js/main.js"></script>
 
-    <!-- CTA 클릭 이벤트 트래킹 -->
+    <!-- CTA 클릭 이벤트 트래킹 + Sticky CTA 로직 -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 메인 CTA 클릭 트래킹
+      // 요소 참조
       var heroCta = document.getElementById('hero-cta');
       var mainCta = document.getElementById('main-cta');
+      var kakaoCta = document.getElementById('kakao-cta');
+      var callCta = document.getElementById('call-cta');
+      var stickyCta = document.getElementById('sticky-cta');
+      var floatingKakao = document.getElementById('floating-kakao');
+      var heroSection = document.querySelector('.hero-grand-opening');
+      var ctaSection = document.getElementById('cta-section');
 
+      // Sticky CTA 스크롤 핸들러
+      function handleStickyVisibility() {
+        if (!heroSection || !ctaSection || !stickyCta || !floatingKakao) return;
+
+        var heroBottom = heroSection.getBoundingClientRect().bottom;
+        var ctaTop = ctaSection.getBoundingClientRect().top;
+        var ctaBottom = ctaSection.getBoundingClientRect().bottom;
+        var windowHeight = window.innerHeight;
+
+        // 히어로 통과 후 && CTA 섹션 진입 전 → sticky 표시
+        var showSticky = heroBottom < 0 && ctaTop > windowHeight * 0.5;
+
+        // CTA 섹션 내부 → sticky 숨김
+        var inCtaSection = ctaTop < windowHeight * 0.8 && ctaBottom > 0;
+
+        if (showSticky && !inCtaSection) {
+          stickyCta.classList.add('visible');
+          floatingKakao.classList.add('hidden');
+        } else {
+          stickyCta.classList.remove('visible');
+          floatingKakao.classList.remove('hidden');
+        }
+      }
+
+      window.addEventListener('scroll', handleStickyVisibility, { passive: true });
+      handleStickyVisibility();
+
+      // Sticky CTA 클릭 트래킹
+      if (stickyCta) {
+        stickyCta.addEventListener('click', function() {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', { content_name: '7월 설명회 사전 알림' });
+          }
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'cta_click', {
+              'cta_type': 'pre_register',
+              'cta_location': 'sticky'
+            });
+          }
+        });
+      }
+
+      // 메인 CTA 클릭 트래킹
       [heroCta, mainCta].forEach(function(el) {
         if (el) {
           el.addEventListener('click', function() {
@@ -559,7 +619,6 @@
       });
 
       // 카톡 채널 CTA 클릭 트래킹
-      var kakaoCta = document.getElementById('kakao-cta');
       if (kakaoCta) {
         kakaoCta.addEventListener('click', function() {
           if (typeof fbq !== 'undefined') {
@@ -572,7 +631,6 @@
       }
 
       // 1:1 통화 CTA 클릭 트래킹
-      var callCta = document.getElementById('call-cta');
       if (callCta) {
         callCta.addEventListener('click', function() {
           if (typeof fbq !== 'undefined') {
