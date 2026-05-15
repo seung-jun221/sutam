@@ -3,8 +3,11 @@
 /notice/middle-seminar-may.html      /notice/middle-seminar-may      301
 /notice/grand-opening.html           /notice/grand-opening           301
 
+# 노티스 허브로 리다이렉트 (중요: /notice → /notice/index.html)
+/notice  /notice/index.html  301
+
 # 노티스 허브 단축 URL
-/notice/index  /notice/  301
+/notice/index  /notice/index.html  301
 
 # 5주 광고 랜딩페이지 단축 URL
 /grand-opening  /notice/grand-opening  301
