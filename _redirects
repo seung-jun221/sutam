@@ -1,7 +1,11 @@
 # .html 확장자 제거 리다이렉트 (301 영구 리다이렉트)
-/notice/elementary-seminar-may.html  /notice/elementary-seminar-may  301
-/notice/middle-seminar-may.html      /notice/middle-seminar-may      301
-/notice/grand-opening.html           /notice/grand-opening           301
+/notice/elementary-seminar-may.html    /notice/elementary-seminar-may    301
+/notice/middle-seminar-may.html        /notice/middle-seminar-may        301
+/notice/grand-opening.html             /notice/grand-opening             301
+/notice/middle-school-analysis.html    /notice/middle-school-analysis    301
+
+# 기존 notice.html URL 리다이렉트 (파일 이동됨)
+/notice.html  /notice/middle-school-analysis  301
 
 # 노티스 허브로 리다이렉트 (중요: /notice → /notice/index.html)
 /notice  /notice/index.html  301
