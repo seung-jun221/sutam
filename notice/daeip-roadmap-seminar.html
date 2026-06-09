@@ -326,12 +326,6 @@
               </div>
             </div>
           </div>
-
-          <div class="seminar-cta">
-            <a href="#" class="hero-cta" id="seminar-cta">
-              설명회 신청하기 →
-            </a>
-          </div>
         </div>
       </section>
 
@@ -345,8 +339,9 @@
           </div>
 
           <div class="trust-cta-wrap">
-            <a href="#" class="hero-cta" id="main-cta">
-              설명회 신청하기 →
+            <a href="#" class="cta-card-main" id="main-cta">
+              <span class="cta-card-main-text">설명회 신청하기</span>
+              <span class="cta-card-main-arrow">→</span>
             </a>
           </div>
         </div>
@@ -406,7 +401,7 @@
       var targetUrl = baseUrl + utmString;
 
       // 모든 신청 버튼에 URL 설정
-      var ctaButtons = ['hero-cta', 'seminar-cta', 'main-cta', 'floating-cta-btn'];
+      var ctaButtons = ['hero-cta', 'main-cta', 'floating-cta-btn'];
       ctaButtons.forEach(function(id) {
         var btn = document.getElementById(id);
         if (btn) {
@@ -455,10 +450,6 @@
 
       document.getElementById('hero-cta').addEventListener('click', function() {
         trackCtaClick('hero');
-      });
-
-      document.getElementById('seminar-cta').addEventListener('click', function() {
-        trackCtaClick('seminar');
       });
 
       document.getElementById('main-cta').addEventListener('click', function() {

@@ -588,11 +588,41 @@
 
 .trust-cta-wrap {
   text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.trust-cta-wrap .hero-cta {
-  padding: 1.25rem 2.5rem;
-  font-size: 1.15rem;
+.cta-card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: var(--daeip-green-dark);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(13, 59, 46, 0.25);
+}
+
+.cta-card-main:hover {
+  background: var(--daeip-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(13, 59, 46, 0.35);
+}
+
+.cta-card-main-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cta-card-main-arrow {
+  font-size: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.cta-card-main:hover .cta-card-main-arrow {
+  transform: translateX(4px);
 }
 
 .cta-grid {
