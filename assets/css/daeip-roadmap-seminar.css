@@ -80,6 +80,13 @@
   color: var(--daeip-gold);
 }
 
+.hero-speaker {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.25rem;
+  font-weight: 500;
+}
+
 .hero-desc {
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.85);
@@ -306,18 +313,33 @@
 }
 
 .proof-card {
-  padding: 1.5rem;
+  padding: 0;
   background: var(--daeip-cream);
   border-radius: 12px;
   border: 1px solid var(--daeip-border);
+  overflow: hidden;
+}
+
+.proof-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.proof-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .proof-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin: 1rem 1.5rem 0;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--daeip-border);
 }
 
@@ -340,13 +362,13 @@
   font-size: 0.95rem;
   color: var(--daeip-green-dark);
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  margin: 0.75rem 1.5rem 0.5rem;
 }
 
 .proof-comment {
   font-size: 0.85rem;
   color: var(--daeip-text-sub);
-  margin: 0;
+  margin: 0 1.5rem 1.5rem;
   line-height: 1.5;
   font-style: italic;
 }
@@ -356,6 +378,135 @@
   color: var(--daeip-text-mute);
   text-align: center;
   margin: 0;
+}
+
+/* ===== 대표 소개 섹션 ===== */
+.speaker-section {
+  padding: 3.5rem 0;
+  background: var(--daeip-cream);
+}
+
+.speaker-section .section-label {
+  color: var(--daeip-green);
+}
+
+.speaker-section .section-title {
+  margin-bottom: 2rem;
+}
+
+.speaker-profile-link {
+  display: block;
+  text-decoration: none;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--daeip-border);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.speaker-profile-link:hover {
+  border-color: var(--daeip-green);
+  box-shadow: 0 4px 16px rgba(13, 59, 46, 0.12);
+  transform: translateY(-2px);
+}
+
+.speaker-profile {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  align-items: flex-start;
+}
+
+.speaker-image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--daeip-bg-soft);
+}
+
+.speaker-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.speaker-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.speaker-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--daeip-green-dark);
+  margin: 0 0 0.35rem;
+}
+
+.speaker-title {
+  font-size: 0.9rem;
+  color: var(--daeip-text-sub);
+  margin: 0 0 0.75rem;
+}
+
+.speaker-youtube {
+  font-size: 0.85rem;
+  color: var(--daeip-text);
+  margin: 0 0 0.25rem;
+  line-height: 1.5;
+}
+
+.speaker-youtube strong {
+  color: var(--daeip-green-dark);
+}
+
+.speaker-youtube-sub {
+  font-size: 0.8rem;
+  color: var(--daeip-text-mute);
+  margin: 0 0 0.75rem;
+}
+
+.speaker-highlight {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--daeip-green-dark);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.speaker-more {
+  padding: 0.85rem 1.5rem;
+  background: var(--daeip-bg-soft);
+  border-top: 1px solid var(--daeip-border);
+  text-align: center;
+}
+
+.speaker-more span {
+  font-size: 0.85rem;
+  color: var(--daeip-green);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .speaker-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .speaker-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .speaker-highlight {
+    display: block;
+  }
 }
 
 /* ===== 설명회 안내 섹션 ===== */
@@ -603,6 +754,7 @@
   .problem-section,
   .solution-section,
   .proof-section,
+  .speaker-section,
   .seminar-section,
   .trust-cta-section {
     padding: 3rem 0;
