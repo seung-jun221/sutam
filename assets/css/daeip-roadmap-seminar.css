@@ -586,6 +586,15 @@
   font-weight: 500;
 }
 
+.trust-cta-wrap {
+  text-align: center;
+}
+
+.trust-cta-wrap .hero-cta {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.15rem;
+}
+
 .cta-grid {
   display: grid;
   gap: 1rem;
