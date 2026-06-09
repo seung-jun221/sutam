@@ -1,0 +1,633 @@
+/* ============================================
+   대입 로드맵 설명회 랜딩페이지 전용 스타일
+   - 딥그린 베이스 + 골드 포인트
+   ============================================ */
+
+/* ===== 색상 변수 ===== */
+:root {
+  --daeip-green-dark: #0d3b2e;
+  --daeip-green: #15543f;
+  --daeip-green-light: #1a6b4f;
+  --daeip-gold: #d4a84b;
+  --daeip-gold-light: #e8c97d;
+  --daeip-cream: #faf8f3;
+  --daeip-text: #1a1a1a;
+  --daeip-text-sub: #4b5563;
+  --daeip-text-mute: #6b7280;
+  --daeip-border: #e5e7eb;
+  --daeip-bg-soft: #f3f4f6;
+}
+
+/* ===== 히어로 섹션 ===== */
+.hero-daeip {
+  padding: 4rem 0 3.5rem;
+  background: linear-gradient(135deg, var(--daeip-green-dark) 0%, var(--daeip-green) 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-daeip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--daeip-gold), var(--daeip-gold-light), var(--daeip-gold));
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--daeip-gold);
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--daeip-gold);
+  border-radius: 999px;
+}
+
+.hero-hook {
+  font-size: 1rem;
+  color: var(--daeip-gold-light);
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.hero-schedule {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-item {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+}
+
+.hero-target {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--daeip-gold);
+  color: var(--daeip-green-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(212, 168, 75, 0.3);
+}
+
+.hero-cta:hover {
+  background: var(--daeip-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 168, 75, 0.4);
+}
+
+.scroll-indicator {
+  margin-top: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* ===== 공감/문제 제기 섹션 ===== */
+.problem-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--daeip-green);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--daeip-text);
+  margin: 0 0 2rem;
+  letter-spacing: -0.01em;
+}
+
+.problem-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.problem-card {
+  padding: 1.5rem;
+  background: var(--daeip-bg-soft);
+  border-radius: 12px;
+  border-left: 4px solid var(--daeip-green);
+}
+
+.problem-card p {
+  font-size: 1rem;
+  color: var(--daeip-text);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.problem-insight {
+  padding: 1.5rem;
+  background: var(--daeip-green-dark);
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.problem-insight p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===== 해결/차별점 섹션 (5단계) ===== */
+.solution-section {
+  padding: 4rem 0;
+  background: var(--daeip-cream);
+}
+
+.solution-lead {
+  font-size: 1.05rem;
+  color: var(--daeip-text-sub);
+  margin: 0 0 2.5rem;
+  line-height: 1.7;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--daeip-border);
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--daeip-green) 0%, var(--daeip-green-light) 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  letter-spacing: 0.05em;
+}
+
+.step-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--daeip-green-dark);
+  margin: 0 0 0.35rem;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  color: var(--daeip-text-sub);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.curriculum-summary {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid var(--daeip-green);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.curriculum-summary p {
+  font-size: 1rem;
+  color: var(--daeip-text);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.curriculum-summary strong {
+  color: var(--daeip-green-dark);
+}
+
+.solution-closing {
+  font-size: 1.1rem;
+  color: var(--daeip-green-dark);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* ===== 증거 섹션 ===== */
+.proof-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.proof-card {
+  padding: 1.5rem;
+  background: var(--daeip-cream);
+  border-radius: 12px;
+  border: 1px solid var(--daeip-border);
+}
+
+.proof-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--daeip-border);
+}
+
+.proof-grade {
+  padding: 0.35rem 0.75rem;
+  background: var(--daeip-green);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.proof-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--daeip-text);
+}
+
+.proof-topic {
+  font-size: 0.95rem;
+  color: var(--daeip-green-dark);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.proof-comment {
+  font-size: 0.85rem;
+  color: var(--daeip-text-sub);
+  margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.proof-note {
+  font-size: 0.8rem;
+  color: var(--daeip-text-mute);
+  text-align: center;
+  margin: 0;
+}
+
+/* ===== 설명회 안내 섹션 ===== */
+.seminar-section {
+  padding: 4rem 0;
+  background: var(--daeip-green-dark);
+  color: white;
+}
+
+.seminar-section .section-label {
+  color: var(--daeip-gold);
+}
+
+.seminar-section .section-title {
+  color: white;
+}
+
+.seminar-info-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.seminar-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.seminar-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--daeip-gold);
+  color: var(--daeip-green-dark);
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.seminar-info-content h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--daeip-gold-light);
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+.seminar-info-content p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.seminar-cta {
+  text-align: center;
+}
+
+.seminar-cta .hero-cta {
+  margin-top: 1rem;
+}
+
+/* ===== 신뢰 보강 + CTA 섹션 ===== */
+.trust-cta-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.trust-badge {
+  padding: 0.75rem 1.25rem;
+  background: var(--daeip-bg-soft);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--daeip-text);
+  font-weight: 500;
+}
+
+.cta-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.cta-card-primary {
+  background: var(--daeip-green-dark);
+  color: white;
+  box-shadow: 0 4px 16px rgba(13, 59, 46, 0.2);
+}
+
+.cta-card-primary:hover {
+  background: var(--daeip-green);
+  transform: translateY(-2px);
+}
+
+.cta-card-kakao {
+  background: #FEE500;
+  color: #1a1a1a;
+}
+
+.cta-card-kakao:hover {
+  background: #ffd900;
+  transform: translateY(-2px);
+}
+
+.cta-card-secondary {
+  background: white;
+  color: var(--daeip-green-dark);
+  border-color: var(--daeip-border);
+}
+
+.cta-card-secondary:hover {
+  border-color: var(--daeip-green);
+  transform: translateY(-2px);
+}
+
+.cta-card-content {
+  flex: 1;
+}
+
+.cta-card-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+}
+
+.cta-card-primary .cta-card-label {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.cta-card-kakao .cta-card-label {
+  background: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
+.cta-card-secondary .cta-card-label {
+  background: var(--daeip-bg-soft);
+  color: var(--daeip-green);
+}
+
+.cta-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+}
+
+.cta-card-desc {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.cta-card-arrow {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.cta-card:hover .cta-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ===== 플로팅 CTA ===== */
+.floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+}
+
+.floating-cta.visible {
+  transform: translateY(0);
+}
+
+.floating-cta-inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.floating-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--daeip-green-dark);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.floating-cta-btn:hover {
+  background: var(--daeip-green);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  .hero-daeip {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .problem-section,
+  .solution-section,
+  .proof-section,
+  .seminar-section,
+  .trust-cta-section {
+    padding: 3rem 0;
+  }
+
+  .step-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.7rem;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-schedule {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .schedule-item {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trust-badge {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
