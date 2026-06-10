@@ -513,34 +513,39 @@
     <script>
     function selectBranch(branch) {
       if (branch === 'sajik') {
-        // 사직점 선택 시 선택 화면 숨기고 메인 콘텐츠 표시
         var branchSelector = document.getElementById('branchSelector');
         var mainContainer = document.getElementById('mainContainer');
+
+        // 히스토리에 상태 추가 (뒤로가기 지원)
+        history.pushState({ branch: 'sajik' }, '', window.location.href);
 
         branchSelector.classList.add('hidden');
         mainContainer.style.opacity = '1';
 
-        // 선택 기록 저장 (7일간)
-        localStorage.setItem('selectedBranch', 'sajik');
-        localStorage.setItem('branchSelectedAt', Date.now());
-
-        return false; // 링크 이동 방지
+        return false;
       }
-      // 검단점은 그냥 외부 링크로 이동
       return true;
     }
 
-    // 페이지 로드 시 이전 선택 확인
-    document.addEventListener('DOMContentLoaded', function() {
-      var selectedBranch = localStorage.getItem('selectedBranch');
-      var selectedAt = localStorage.getItem('branchSelectedAt');
-      var sevenDays = 7 * 24 * 60 * 60 * 1000;
+    function showBranchSelector() {
+      var branchSelector = document.getElementById('branchSelector');
+      var mainContainer = document.getElementById('mainContainer');
 
-      // 7일 이내에 사직점을 선택한 적이 있으면 바로 표시
-      if (selectedBranch === 'sajik' && selectedAt && (Date.now() - selectedAt) < sevenDays) {
-        document.getElementById('branchSelector').classList.add('hidden');
-        document.getElementById('mainContainer').style.opacity = '1';
+      branchSelector.classList.remove('hidden');
+      mainContainer.style.opacity = '0';
+    }
+
+    // 뒤로가기 버튼 처리
+    window.addEventListener('popstate', function(event) {
+      if (!event.state || !event.state.branch) {
+        showBranchSelector();
       }
+    });
+
+    // 페이지 로드 시 초기 상태 설정
+    document.addEventListener('DOMContentLoaded', function() {
+      // 초기 히스토리 상태 설정 (지점 선택 화면)
+      history.replaceState({ branch: null }, '', window.location.href);
     });
     </script>
 
