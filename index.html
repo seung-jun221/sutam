@@ -75,6 +75,33 @@
       <div class="loading-spinner"></div>
     </div>
 
+    <!-- 지점 선택 화면 -->
+    <div id="branchSelector" class="branch-selector">
+      <div class="branch-selector-inner">
+        <div class="branch-logo">
+          <img src="assets/images/logo.png" alt="i.study" />
+        </div>
+        <h1 class="branch-title">i.study 수리탐구 학원</h1>
+        <p class="branch-subtitle">방문하실 지점을 선택해 주세요</p>
+
+        <div class="branch-cards">
+          <a href="#" class="branch-card" id="branch-sajik" onclick="selectBranch('sajik')">
+            <span class="branch-badge">운영중</span>
+            <h2 class="branch-name">부산 사직</h2>
+            <p class="branch-location">직영점</p>
+            <p class="branch-date">2026년 3월 개원</p>
+          </a>
+
+          <a href="https://lsy0510.oopy.io/" class="branch-card branch-card-new" id="branch-geomdan" target="_blank" rel="noopener noreferrer">
+            <span class="branch-badge branch-badge-new">NEW</span>
+            <h2 class="branch-name">인천 검단</h2>
+            <p class="branch-location">직영점</p>
+            <p class="branch-date">2026년 7월 오픈</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- 메인 컨테이너 -->
     <div id="mainContainer" style="opacity: 0; transition: opacity 0.3s ease">
       <!-- 헤더 -->
@@ -481,6 +508,41 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+
+    <!-- 지점 선택 스크립트 -->
+    <script>
+    function selectBranch(branch) {
+      if (branch === 'sajik') {
+        // 사직점 선택 시 선택 화면 숨기고 메인 콘텐츠 표시
+        var branchSelector = document.getElementById('branchSelector');
+        var mainContainer = document.getElementById('mainContainer');
+
+        branchSelector.classList.add('hidden');
+        mainContainer.style.opacity = '1';
+
+        // 선택 기록 저장 (7일간)
+        localStorage.setItem('selectedBranch', 'sajik');
+        localStorage.setItem('branchSelectedAt', Date.now());
+
+        return false; // 링크 이동 방지
+      }
+      // 검단점은 그냥 외부 링크로 이동
+      return true;
+    }
+
+    // 페이지 로드 시 이전 선택 확인
+    document.addEventListener('DOMContentLoaded', function() {
+      var selectedBranch = localStorage.getItem('selectedBranch');
+      var selectedAt = localStorage.getItem('branchSelectedAt');
+      var sevenDays = 7 * 24 * 60 * 60 * 1000;
+
+      // 7일 이내에 사직점을 선택한 적이 있으면 바로 표시
+      if (selectedBranch === 'sajik' && selectedAt && (Date.now() - selectedAt) < sevenDays) {
+        document.getElementById('branchSelector').classList.add('hidden');
+        document.getElementById('mainContainer').style.opacity = '1';
+      }
+    });
+    </script>
 
     <!-- CTA 클릭 이벤트 추적 스크립트 -->
     <script>

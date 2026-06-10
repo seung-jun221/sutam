@@ -116,6 +116,7 @@ function showLoadingScreen() {
 function hideLoadingScreen() {
   const loadingScreen = document.getElementById('loadingScreen');
   const mainContainer = document.getElementById('mainContainer');
+  const branchSelector = document.getElementById('branchSelector');
 
   if (loadingScreen) {
     loadingScreen.style.opacity = '0';
@@ -124,6 +125,16 @@ function hideLoadingScreen() {
     }, 300);
   }
 
+  // 지점 선택 화면이 있고, 숨겨지지 않은 경우 메인 컨테이너를 바로 표시하지 않음
+  if (branchSelector && !branchSelector.classList.contains('hidden')) {
+    if (mainContainer) {
+      mainContainer.style.display = 'block';
+      // opacity는 지점 선택 후에 설정됨
+    }
+    return;
+  }
+
+  // 지점 선택 화면이 없거나 이미 숨겨진 경우 메인 컨테이너 표시
   if (mainContainer) {
     mainContainer.style.display = 'block';
     setTimeout(() => {
