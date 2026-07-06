@@ -494,12 +494,12 @@
       <div id="bottomPopup" class="bottom-popup">
         <div class="popup-container">
           <div class="popup-content">
-            <span class="popup-badge">6/28-29</span>
-            <div class="popup-title">대입 로드맵 특별설명회</div>
-            <div class="popup-desc">초4~중1 학부모 대상 · 이시용 대표 직강</div>
+            <span class="popup-badge">접수 중</span>
+            <div class="popup-title">7월 수강신청 안내</div>
+            <div class="popup-desc">우리 아이 진도에 맞는 과정을 확인하고 신청하세요</div>
           </div>
           <div class="popup-actions">
-            <a href="notice/daeip-roadmap-seminar.html" class="popup-btn" onclick="trackSeminarClick('home_popup')">자세히 보기</a>
+            <a href="https://istudy-edu.netlify.app/course-enrollment" target="_blank" rel="noopener noreferrer" class="popup-btn" onclick="trackSeminarClick('home_popup')">수강신청 하러 가기</a>
             <button class="popup-close" onclick="closeBottomPopup()" aria-label="닫기">&times;</button>
           </div>
         </div>
@@ -555,8 +555,8 @@
       // Meta Pixel Lead 이벤트
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead', {
-          content_name: '대입 로드맵 특별설명회',
-          content_category: 'seminar_apply'
+          content_name: '7월 수강신청',
+          content_category: 'course_enrollment'
         });
       }
       // GA4 커스텀 이벤트
