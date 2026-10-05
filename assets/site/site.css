@@ -116,6 +116,67 @@ html.sem-ended .when-open { display: none !important; }
 }
 html.sem-on .s-pill.when-sem,
 html.sem-ended .s-pill.when-ended { display: inline-flex !important; }
+html.sem-ended .s-brand.when-ended { display: flex !important; }
+
+/* 메뉴가 있는 공통 머리 (랜딩을 뺀 모든 새 화면)
+   폰: 마크·이름과 "학부모 서비스" 한 줄, 그 아래 메뉴 한 줄 / PC: 한 줄(높이 76) */
+.s-header--nav { position: relative; border-bottom: 0; }
+.s-header--nav .s-header__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "brand pill" "nav nav";
+  align-items: center;
+  height: auto;
+  padding-top: 16px;
+}
+.s-header--nav .s-header__row::before {   /* 두 줄 사이의 가는 선(화면 폭 전체) */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 66px;
+  height: 1px;
+  background: rgba(245, 241, 232, 0.12);
+}
+.s-header--nav .s-brand { grid-area: brand; }
+.s-header--nav .s-pill { grid-area: pill; height: 38px; padding: 0 15px; font-size: 13px; }
+.s-brand__name { font-size: 17px; line-height: 1; font-weight: 400; letter-spacing: -0.02em; white-space: nowrap; }
+.s-brand__name b { font-weight: 700; }
+.s-nav {
+  grid-area: nav;
+  display: flex;
+  gap: 22px;
+  margin-top: 13px;      /* 16 + 38 + 13 = 67: 선 바로 아래 */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.s-nav::-webkit-scrollbar { display: none; }
+.s-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  color: rgba(245, 241, 232, 0.78);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.s-nav a[aria-current="page"] { color: var(--s-ivory); font-weight: 600; }
+.s-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--s-ivory);
+}
+
+/* 화면 머리글 (소식 같은 목록 화면의 딥그린 머리) */
+.s-pagehead { background: var(--s-green); color: var(--s-ivory); padding: 31px 0 38px; }
+.s-pagehead__title { font-size: 29px; line-height: 40px; font-weight: 700; }
+.s-pagehead__sub { margin-top: 12px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 24px; }
 
 /* ---------- 버튼 (화면마다 주 버튼 하나) ---------- */
 .s-btn {
@@ -162,6 +223,8 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
 .s-shape--tri { clip-path: polygon(0 0, 0 100%, 100% 100%); }
 .s-shape--quarter { border-radius: 100% 0 0 0; }
 .s-shape--circle { border-radius: 50%; }
+.s-shape--hollow { background: none; border: 1px solid var(--s-sub); }
+.s-arrow { flex: none; width: 1em; height: 1em; }
 
 /* ---------- 딥그린 띠 ---------- */
 .s-band { background: var(--s-green); color: var(--s-ivory); }
@@ -190,11 +253,12 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
   display: flex;
   flex-wrap: wrap;
   gap: 4px 16px;
-  margin-top: 19px;
+  margin-top: 18px;
   font-size: 13px;
   line-height: 1.4;
 }
 .s-footer__links a:first-child { font-weight: 600; }
+.s-footer__links a { display: inline-flex; align-items: center; gap: 5px; }
 .s-footer__biz {
   margin: 18px 0 0;
   color: rgba(245, 241, 232, 0.62);
@@ -355,6 +419,74 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
 .lp-cta .lp-ended__text { margin-top: 0; color: var(--s-ink); }
 
 /* ==========================================================================
+   소식 (/notice) — 목록은 news.js 에서 그린다
+   ========================================================================== */
+.nw-main { padding: 34px 0 73px; }
+/* 스크립트가 목록을 다시 그릴 때까지 잠깐 가려 둔다(지난 일정이 "예정"에 비치지 않게).
+   스크립트가 막힌 환경에서는 js 표시가 붙지 않으므로 HTML 의 기본 목록이 그대로 보인다 */
+html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
+.nw-sec + .nw-sec { margin-top: 53px; }
+.nw-sec[hidden] + .nw-sec { margin-top: 0; }
+.nw-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-left: var(--s-inset);
+  color: var(--s-ink);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+.nw-label--past { color: var(--s-sub); font-weight: 600; }
+.nw-label .s-shape { width: 10px; height: 10px; }
+.nw-cards { display: grid; gap: 12px; margin-top: 12px; }
+.nw-card {
+  padding: 21px 20px 22px;
+  background: #fff;
+  border: 1px solid var(--s-green);
+  border-radius: 16px;
+}
+.nw-card__date { color: var(--s-green); font-size: 14px; line-height: 18px; font-weight: 700; }
+.nw-card__title { margin-top: 7px; color: var(--s-ink); font-size: 20px; line-height: 28px; font-weight: 700; letter-spacing: -0.02em; }
+.nw-card__desc { margin-top: 8px; font-size: 15px; line-height: 24px; }
+.nw-card__more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--s-line);
+  color: var(--s-green);
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nw-card__more .s-arrow { font-size: 18px; }
+.nw-list { margin-top: 12px; padding: 0; list-style: none; border-top: 1px solid var(--s-green); }
+.nw-item {
+  display: grid;
+  grid-template-columns: 98px minmax(0, 1fr);
+  padding: 17px var(--s-inset) 18px;
+  border-bottom: 1px solid var(--s-line);
+}
+.nw-item__date { padding-right: 10px; color: var(--s-sub); font-size: 14px; line-height: 24px; font-weight: 600; }
+.nw-item__title { color: var(--s-ink); font-size: 16px; line-height: 26px; font-weight: 700; }
+.nw-item__title a { text-decoration: none; }
+.nw-item__title a:hover { text-decoration: underline; }
+.nw-item__desc { margin-top: 4px; font-size: 15px; line-height: 24px; }
+.nw-item__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 13px;
+  aspect-ratio: 244 / 150;
+  object-fit: cover;
+  border-radius: 14px;
+  grid-column: 2;
+}
+
+/* ==========================================================================
    PC (시안 1440 기준. 본문 폭 1200)
    ========================================================================== */
 @media (min-width: 960px) {
@@ -439,4 +571,49 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
   .lp-cta { padding-top: 160px; padding-bottom: 158px; }
   .lp-cta .s-btn { height: 64px; min-width: 214px; }
   .lp-cta__note { margin-top: 18px; font-size: 16px; line-height: 25.6px; }
+
+  /* 공통 머리 — 한 줄 */
+  .s-header--nav { border-bottom: 1px solid rgba(245, 241, 232, 0.12); }
+  .s-header--nav .s-header__row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand nav pill";
+    height: 76px;
+    padding-top: 0;
+  }
+  .s-header--nav .s-header__row::before { content: none; }
+  .s-header--nav .s-brand { gap: 12px; }
+  .s-header--nav .s-pill { height: 44px; padding: 0 20px; font-size: 14px; }
+  .s-brand__name { font-size: 19px; }
+  .s-nav { gap: 36px; margin: 0 0 0 56px; }
+  .s-nav a { height: 76px; font-size: 15px; }
+  .s-nav a[aria-current="page"]::after { bottom: 16px; }
+
+  .s-pagehead { padding: 69px 0 73px; }
+  .s-pagehead__title { font-size: 50px; line-height: 67px; }
+  .s-pagehead__sub { margin-top: 16px; font-size: 19px; line-height: 32px; }
+
+  /* 소식 */
+  .nw-main { padding: 80px 0 158px; }
+  .nw-sec { display: grid; grid-template-columns: 264px minmax(0, 1fr); align-items: start; }
+  .nw-sec + .nw-sec { margin-top: 96px; }
+  .nw-label { padding-top: 26px; font-size: 17px; line-height: 24px; }
+  .nw-label .s-shape { width: 12px; height: 12px; }
+  .nw-cards, .nw-list { margin-top: 0; }
+  .nw-card {
+    display: grid;
+    grid-template-columns: 212px minmax(0, 1fr);
+    padding: 28px 32px 26px;
+    border-radius: 18px;
+  }
+  .nw-card__date { margin-top: 6.5px; font-size: 16px; }
+  .nw-card__title { margin-top: 0; font-size: 26px; line-height: 34px; }
+  .nw-card__desc { grid-column: 2; margin-top: 10px; font-size: 18px; line-height: 32px; }
+  .nw-card__more { grid-column: 1 / -1; margin-top: 19px; padding-top: 17px; font-size: 16px; line-height: 22.4px; }
+  .nw-item { grid-template-columns: 212px minmax(0, 1fr); padding: 27px 32px; }
+  .nw-item--photo { grid-template-columns: 212px minmax(0, 1fr) 319px; column-gap: 0; padding-bottom: 28px; }
+  .nw-item__date { padding-right: 0; font-size: 16px; line-height: 27px; }
+  .nw-item__title { font-size: 20px; line-height: 32px; }
+  .nw-item__desc { margin-top: 4px; font-size: 17px; line-height: 29px; }
+  .nw-item__body { min-width: 0; }
+  .nw-item__photo { grid-column: 3; grid-row: 1; width: 319px; margin-top: 1px; aspect-ratio: 319 / 176; border-radius: 18px; }
 }

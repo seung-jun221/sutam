@@ -41,11 +41,15 @@
     <!-- 머리: 랜딩은 메뉴 없이 마크와 버튼만 -->
     <header class="s-header">
       <div class="s-wrap s-header__row">
-        <a class="s-brand" href="/">
+        <!-- 예약 상태에서는 마크를 눌러도 이동하지 않는다. 종료 상태에서만 홈으로 간다 -->
+        <span class="s-brand when-open">
+          <img src="/assets/images/site/mark-ivory.png" alt="수리탐구 사직직영점" width="30" height="30" />
+        </span>
+        <a class="s-brand when-ended" href="/">
           <img src="/assets/images/site/mark-ivory.png" alt="수리탐구 사직직영점" width="30" height="30" />
         </a>
-        <a class="s-pill when-open" data-go="reserve" data-pos="header">설명회 예약</a>
-        <a class="s-pill when-ended" data-go="consult" data-pos="header">입학 상담</a>
+        <a class="s-pill when-open" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="header">설명회 예약</a>
+        <a class="s-pill when-ended" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="header">입학 상담</a>
       </div>
     </header>
 
@@ -58,11 +62,11 @@
             <h1 class="lp-hero__title">[대치동표 수학]<br />대치의 지도가 바뀌었다</h1>
             <p class="lp-hero__sub">경시형 심화에서 고등 연계 심화로 — <br class="lp-pc" />사직동의 수학은 지금 어디에 서 있을까</p>
             <p class="lp-hero__line">진짜 누테학원의 커리큘럼을 공개합니다</p>
-            <a class="s-btn s-btn--ivory when-open" data-go="reserve" data-pos="hero">설명회 예약</a>
+            <a class="s-btn s-btn--ivory when-open" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="hero">설명회 예약</a>
             <!-- 설명회가 끝난 뒤(종료 시각은 news.js, 문구는 config.js) -->
             <div class="lp-ended when-ended">
               <p class="lp-ended__text" data-text="seminarEndedText"></p>
-              <a class="s-btn s-btn--ivory" data-go="consult" data-pos="hero">입학 상담</a>
+              <a class="s-btn s-btn--ivory" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="hero">입학 상담</a>
             </div>
           </div>
           <picture class="lp-hero__photo">
@@ -176,12 +180,12 @@
       <section class="lp-cta">
         <div class="s-wrap">
           <div class="when-open">
-            <a class="s-btn s-btn--green" data-go="reserve" data-pos="bottom">설명회 예약</a>
+            <a class="s-btn s-btn--green" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="bottom">설명회 예약</a>
             <p class="lp-cta__note">설명회 뒤에 진단검사와 대표 컨설팅으로 이어집니다.</p>
           </div>
           <div class="lp-ended when-ended">
             <p class="lp-ended__text" data-text="seminarEndedText"></p>
-            <a class="s-btn s-btn--green" data-go="consult" data-pos="bottom">입학 상담</a>
+            <a class="s-btn s-btn--green" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
           </div>
         </div>
       </section>
@@ -196,7 +200,7 @@
             <span>수리탐구 사직직영점</span>
           </a>
           <p class="s-footer__links">
-            <a data-go="privacy">개인정보 처리방침</a>
+            <a data-go="privacy" href="https://edu.suritamgu.co.kr/privacy?branch=sajik" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a>
           </p>
         </div>
         <p class="s-footer__biz">사직수리탐구 · 대표 오승준 · 사업자등록번호 725-96-02003 · 부산 동래구 아시아드대로 175 대영빌딩 3층 · 051-715-1580</p>

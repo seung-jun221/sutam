@@ -90,7 +90,8 @@ window.SITE_NEWS = [
 
   {
     date: '2026.04',
-    title: '사직동 중학교 분석 설명회, 210명 참석'
+    title: '사직동 중학교 분석 설명회, 210명 참석',
+    photo: '/assets/images/site/seminar-apr-hall-thumb.jpg'
   },
 
   {
