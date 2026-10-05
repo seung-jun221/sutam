@@ -1,473 +1,236 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-page="suritamgu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="수리탐구 사직직영점 교육과정 - 초중등부터 고등까지 체계적인 커리큘럼"
-    />
-    <title>교육과정 | 수리탐구 사직직영점</title>
+    <title>수리탐구 | 수리탐구 사직직영점</title>
+    <meta name="description" content="교과 진도와 수리탐구, 두 수업을 함께 합니다" />
+    <link rel="canonical" href="https://suritamgu.co.kr/curriculum" />
+    <meta name="theme-color" content="#0D3B2E" />
 
-    <!-- Open Graph 메타태그 -->
+    <!-- 링크 미리보기 카드 -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="교육과정 | 수리탐구 사직직영점" />
-    <meta property="og:description" content="EA·ES·EF·MS·MD·TI·TE 7단계 체계적 커리큘럼으로 초등부터 고등까지 완성" />
+    <meta property="og:title" content="수리탐구 | 수리탐구 사직직영점" />
+    <meta property="og:description" content="교과 진도와 수리탐구, 두 수업을 함께 합니다" />
     <meta property="og:image" content="https://suritamgu.co.kr/og-card-common-1200x630.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://www.suritamgu.co.kr/curriculum.html" />
+    <meta property="og:url" content="https://suritamgu.co.kr/curriculum" />
     <meta property="og:site_name" content="수리탐구 사직직영점" />
     <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '941704082060046');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5Z2TTYE4X');
-    </script>
-    <!-- End Google Analytics 4 -->
-
-    <!-- 파비콘 -->
+    <!-- 탭 아이콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
     <link rel="manifest" href="/manifest.json">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/curriculum.css" />
-  </head>
-  <body>
-    <!-- 알림 요소 -->
-    <div id="notification" class="notification"></div>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Bold.subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Regular.subset.woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/site/site.css" />
 
-    <!-- 헤더 -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <a href="index.html" class="logo">
-            <img src="assets/images/mark-green.png" alt="수리탐구 사직직영점" class="logo-img" />
-          </a>
-          <div class="header-info">
-            <span class="header-title">수리탐구 사직직영점</span>
-          </div>
-        </div>
+    <!-- 설정 · 소식 · 화면 동작 · 측정 (이 순서대로) -->
+    <script src="/assets/site/config.js"></script>
+    <script src="/assets/site/news.js"></script>
+    <script src="/assets/site/site.js"></script>
+    <script src="/assets/site/track.js"></script>
+  </head>
+  <body class="s-page">
+    <!-- 공통 머리 -->
+    <header class="s-header s-header--nav">
+      <div class="s-wrap s-header__row">
+        <a class="s-brand" href="/">
+          <img src="/assets/images/site/mark-ivory.png" alt="" width="30" height="30" />
+          <span class="s-brand__name"><b>수리탐구</b> 사직직영점</span>
+        </a>
+        <nav class="s-nav" aria-label="주 메뉴">
+          <a href="/curriculum" aria-current="page">수리탐구</a>
+          <a href="/notice">소식</a>
+          <a href="/admission">입학 안내</a>
+          <a href="/#location">오시는 길</a>
+        </nav>
+        <a class="s-pill" data-go="parents" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer">학부모 서비스</a>
       </div>
     </header>
 
-    <!-- 메인 컨텐츠 -->
-    <main class="curriculum-main">
-      <!-- 페이지 타이틀 -->
-      <section class="page-title">
-        <div class="container">
-          <p class="title-label">CURRICULUM</p>
-          <h1 class="title">체계적인 7단계 수학 교육 시스템</h1>
-          <p class="subtitle">
-            초등 기초부터 고등 등급 완성까지, 누적테스트로 완성하는<br />
-            i.study만의 검증된 수학 커리큘럼
-          </p>
-        </div>
-      </section>
-
-      <!-- 커리큘럼 개요 -->
-      <section class="curriculum-overview">
-        <div class="container">
-          <div class="overview-grid">
-            <div class="overview-item">
-              <div class="level-circle">초등<br />과정</div>
-              <div class="stage-flow">
-                <span class="stage">EA</span>
-                <span class="arrow">→</span>
-                <span class="stage">ES</span>
-                <span class="arrow">→</span>
-                <span class="stage">EF</span>
-              </div>
-              <p class="level-desc">기초 개념부터 심화 경시까지</p>
-            </div>
-
-            <div class="overview-item">
-              <div class="level-circle">중등<br />과정</div>
-              <div class="stage-flow">
-                <span class="stage">MS</span>
-                <span class="arrow">→</span>
-                <span class="stage">MD</span>
-              </div>
-              <p class="level-desc">중등 심화와 고등 준비</p>
-            </div>
-
-            <div class="overview-item">
-              <div class="level-circle">고등<br />과정</div>
-              <div class="stage-flow">
-                <span class="stage">TI</span>
-                <span class="arrow">→</span>
-                <span class="stage">TE</span>
-              </div>
-              <p class="level-desc">고1 등급 완성</p>
-            </div>
+    <main>
+      <!-- 1. 머리 -->
+      <section class="cu-hero">
+        <div class="s-wrap cu-hero__grid">
+          <div>
+            <p class="s-eyebrow cu-hero__eyebrow">수리탐구</p>
+            <h1 class="cu-hero__title">교과 진도와 수리탐구,<br />두 수업을 함께 합니다</h1>
+          </div>
+          <div>
+            <p class="cu-hero__body">교과 진도는 주 2회, 수리탐구는 주 1회입니다. 초등 과정은 교과 진도만 하고, 중등 과정부터 수리탐구를 함께 듣습니다. 수리탐구만 따로 들을 수도 있습니다.</p>
+            <!-- 머리의 버튼은 설명회 기간에도 "입학 상담" -->
+            <a class="s-btn s-btn--ivory" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="hero">입학 상담</a>
           </div>
         </div>
       </section>
 
-      <!-- 초등 과정 -->
-      <section class="curriculum-section">
-        <div class="container">
-          <h2 class="section-title">초등 과정</h2>
-          <div class="course-list">
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code elementary">EA반</span>
-                <span class="course-duration">6개월 과정</span>
-                <span class="course-optional">선택</span>
-              </div>
-              <h3 class="course-title">초등교과 입문 과정</h3>
-              <div class="course-content">
-                <div class="content-group">
-                  <div class="content-row">
-                    <span class="content-label">학습내용</span>
-                    <span class="content-text"
-                      >초4-1, 초4-2 (응용, 최상위S)</span
-                    >
-                    <div class="content-text-mobile">
-                      <div>초4-1, 초4-2</div>
-                      <div>(응용, 최상위S)</div>
-                    </div>
-                  </div>
-                  <div class="content-row">
-                    <span class="content-label">특화프로그램</span>
-                    <span class="content-special">영재성 토론 수업</span>
-                  </div>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">초4과정 첫 시작 학생</span>
-                  <div class="content-text-mobile">초4과정 첫 시작 학생</div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">예비 초4</span>
-                  </div>
-                </div>
+      <!-- 도식: 두 수업 -->
+      <section class="cu-diagram">
+        <div class="s-wrap">
+          <div class="cu-dg">
+            <p class="cu-dg__head cu-dg__head--a"><b>교과 진도</b> 주 2회</p>
+            <p class="cu-dg__head cu-dg__head--b"><b>수리탐구</b> 주 1회</p>
+            <p class="cu-dg__box" style="grid-row: 2">EA반</p>
+            <p class="cu-dg__box" style="grid-row: 3">ES반</p>
+            <p class="cu-dg__box" style="grid-row: 4">MS반</p>
+            <p class="cu-dg__box" style="grid-row: 5">MD반</p>
+            <p class="cu-dg__box" style="grid-row: 6">TI반</p>
+            <p class="cu-dg__box" style="grid-row: 7">TE반</p>
+            <p class="cu-dg__none">초등 과정은 교과 진도만 합니다</p>
+            <p class="cu-dg__box cu-dg__box--fill cu-dg__box--top" style="grid-row: 4">모노-다이</p>
+            <p class="cu-dg__box cu-dg__box--fill" style="grid-row: 5">다이-트라이</p>
+            <p class="cu-dg__box cu-dg__box--fill cu-dg__box--end" style="grid-row: 6">테트라</p>
+          </div>
+          <p class="cu-dg__note">보통 이렇게 함께 듣습니다. 시작 과정은 진단검사 결과로 정합니다.</p>
+        </div>
+      </section>
+
+      <!-- 2. 수리탐구란 -->
+      <section class="cu-about">
+        <div class="s-wrap">
+          <h2 class="cu-label"><span class="s-shape"></span>수리탐구란</h2>
+          <p class="cu-lead">일반 문제집은 답을 구하는 데 목적을 둡니다. 수리탐구는 고등 원리를 중등 과정에서 탐구하고 사고하는 훈련을 합니다. 중등 과정에서 고등 개념의 확장과 디테일을 집중해서 다루는 48권, 18개월 과정입니다.</p>
+          <p class="cu-sub"><b>세 과정</b> (각 6개월)</p>
+          <div class="cu-courses">
+            <div class="cu-course">
+              <h3 class="cu-course__name">모노-다이 과정</h3>
+              <p class="cu-course__range">MONO 01 ~ DI 09 · 21권</p>
+              <p class="cu-course__desc">중1-1 연계 고등개념 전체, 중2-1 연계 <br />고등개념 연립방정식까지</p>
+            </div>
+            <div class="cu-course">
+              <h3 class="cu-course__name">다이-트라이 과정</h3>
+              <p class="cu-course__range">DI 10 ~ TRI 12 · 15권</p>
+              <p class="cu-course__desc">중2-1 연계 고등개념 일차함수 그래프 해석, 중3-1 연계 고등개념 전체</p>
+            </div>
+            <div class="cu-course">
+              <h3 class="cu-course__name">테트라 과정</h3>
+              <p class="cu-course__range">TETRA 01 ~ 12 · 12권</p>
+              <p class="cu-course__desc">공통수학1 파이널 과정</p>
+            </div>
+          </div>
+          <picture class="cu-photo cu-photo--wide">
+            <source media="(min-width: 960px)" type="image/webp" srcset="/assets/images/site/book-48-pc.webp" />
+            <source media="(min-width: 960px)" srcset="/assets/images/site/book-48-pc.jpg" />
+            <source type="image/webp" srcset="/assets/images/site/book-48-phone.webp" />
+            <img src="/assets/images/site/book-48-phone.jpg" alt="" width="1050" height="600" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+      </section>
+
+      <!-- 3. 문제로 보는 차이 — 딥그린 띠 -->
+      <section class="s-band cu-diff">
+        <div class="s-wrap">
+          <h2 class="s-title">문제로 보는 차이</h2>
+          <div class="cu-ex-grid">
+            <div class="cu-ex">
+              <h3 class="cu-ex__no">예시 1</h3>
+              <div class="cu-flow">
+                <p class="cu-flow__tag">중1 · MONO 02</p>
+                <p class="cu-flow__q"><i>a</i>×<i>b</i>가 소수일 때, 순서쌍 (<i>a</i>, <i>b</i>)를 모두 구하시오</p>
+                <p class="cu-flow__key">원리: 한 인수는 1이고 나머지가 소수다</p>
+                <p class="cu-flow__tag cu-flow__tag--gap">고1</p>
+                <p class="cu-flow__q"><i>n</i>²−6<i>n</i>+8이 소수가 되는 자연수 <i>n</i>을 모두 구하시오</p>
               </div>
             </div>
-
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code elementary">ES반</span>
-                <span class="course-duration">6개월 과정</span>
-              </div>
-              <h3 class="course-title">초등교과 집중 과정</h3>
-              <div class="course-content">
-                <div class="content-group">
-                  <div class="content-row">
-                    <span class="content-label">학습내용</span>
-                    <span class="content-text"
-                      >초5-1 ~ 초6-2 (기응, 최상위S) 총 8권</span
-                    >
-                    <div class="content-text-mobile">
-                      <div>초5-1 ~ 초6-2</div>
-                      <div>(기응, 최상위S) 총 8권</div>
-                    </div>
-                  </div>
-                  <div class="content-row">
-                    <span class="content-label">특화프로그램</span>
-                    <span class="content-special">주간테스트 관리</span>
-                  </div>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">초5과정 이상 시작 학생</span>
-                  <div class="content-text-mobile">초5과정 이상 시작 학생</div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초4</span>
-                    <span class="grade-badge">초5</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code elementary">EF반</span>
-                <span class="course-duration">6개월 과정</span>
-                <span class="course-optional">선택</span>
-              </div>
-              <h3 class="course-title">초등교과 심화/경시 과정</h3>
-              <div class="course-content">
-                <div class="content-group">
-                  <div class="content-row">
-                    <span class="content-label">학습내용</span>
-                    <span class="content-text"
-                      >초5 경시 2개월 / 초6 경시 2개월 / 실전경시 2개월</span
-                    >
-                    <div class="content-text-mobile">
-                      <div>초5 경시 2개월 / 초6 경시 2개월</div>
-                      <div>실전경시 2개월</div>
-                    </div>
-                  </div>
-                  <div class="content-row">
-                    <span class="content-label">특화프로그램</span>
-                    <span class="content-special">외부경시 참가</span>
-                  </div>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">초등과정 완료 학생</span>
-                  <div class="content-text-mobile">초등과정 완료 학생</div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초4</span>
-                    <span class="grade-badge">초5</span>
-                    <span class="grade-badge">초6</span>
-                  </div>
-                </div>
+            <div class="cu-ex">
+              <h3 class="cu-ex__no">예시 2</h3>
+              <div class="cu-flow cu-flow--hollow">
+                <p class="cu-flow__tag">일반 문제집</p>
+                <p class="cu-flow__q"><i>x</i>²−5<i>x</i>+6=0을 풀어라</p>
+                <p class="cu-flow__tag cu-flow__tag--strong">수리탐구</p>
+                <p class="cu-flow__q"><i>x</i>²−5<i>x</i>+<i>a</i>=0이 정수해를 가질 때, 가능한 정수 <i>a</i>를 모두 구하고 이유를 설명하시오</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <div class="cu-photos">
+        <div class="s-wrap cu-photos__grid">
+          <picture class="cu-photo cu-photo--notes">
+            <source type="image/webp" srcset="/assets/images/site/book-notes-700.webp 700w, /assets/images/site/book-notes-1176.webp 1176w" sizes="(min-width: 960px) 588px, 100vw" />
+            <img src="/assets/images/site/book-notes-1176.jpg" alt="" width="1176" height="1008" loading="lazy" decoding="async" />
+          </picture>
+          <picture class="cu-photo cu-photo--spread">
+            <source type="image/webp" srcset="/assets/images/site/book-spread-700.webp 700w, /assets/images/site/book-spread-1176.webp 1176w" sizes="(min-width: 960px) 588px, 100vw" />
+            <img src="/assets/images/site/book-spread-1176.jpg" alt="" width="1176" height="745" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+      </div>
 
-      <!-- 중등 과정 -->
-      <section class="curriculum-section alt-bg">
-        <div class="container">
-          <h2 class="section-title">중등 과정</h2>
-          <div class="course-list">
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code middle">MS반</span>
-                <span class="course-duration">6개월 과정</span>
-              </div>
-              <h3 class="course-title">중등 교과 입문 과정</h3>
-              <div class="course-content">
-                <div class="content-row">
-                  <span class="content-label">학습내용</span>
-                  <span class="content-text"
-                    >중1-1 기본 2개월, 심화 2개월 / 중1-2 2개월</span
-                  >
-                  <div class="content-text-mobile">
-                    <div>중1-1 기본 2개월, 심화 2개월</div>
-                    <div>중1-2 2개월</div>
-                  </div>
-                </div>
-                <div class="suritamgu-highlight">
-                  <span class="suritamgu-label">수리탐구</span>
-                  <span class="suritamgu-text">시그니처 과정 - 프리모노</span>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">초등과정 완료 학생</span>
-                  <div class="content-text-mobile">초등과정 완료 학생</div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초4</span>
-                    <span class="grade-badge">초5</span>
-                    <span class="grade-badge">초6</span>
-                    <span class="grade-badge">중1</span>
-                  </div>
-                </div>
-              </div>
+      <!-- 4. 교과 진도 여섯 과정 -->
+      <section class="cu-steps">
+        <div class="s-wrap cu-grid">
+          <div>
+            <h2 class="s-title">교과 진도 <br class="s-pc" />여섯 과정</h2>
+            <p class="cu-steps__sub">(각 6개월)</p>
+          </div>
+          <div>
+            <dl class="cu-table">
+              <div><dt>EA반</dt><dd>초등 4-1, 4-2, 5-1</dd></div>
+              <div><dt>ES반</dt><dd>초등 5-2, 6-1, 6-2</dd></div>
+              <div><dt>MS반</dt><dd>중등 1-1, 1-2</dd></div>
+              <div><dt>MD반</dt><dd>중등 2-1, 2-2, 3-1</dd></div>
+              <div><dt>TI반</dt><dd>중등 3-2, 공통수학1</dd></div>
+              <div><dt>TE반</dt><dd>공통수학2</dd></div>
+            </dl>
+            <p class="cu-steps__note">난이도는 교과서 수준을 넘기지 않고, 기본서와 심화서를 함께 진행합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 함께 운영하는 것 -->
+      <section class="cu-more">
+        <div class="s-wrap cu-grid">
+          <h2 class="s-title">함께 <br class="s-pc" />운영하는 것</h2>
+          <div class="cu-more__list">
+            <div class="cu-more__item">
+              <h3>누적테스트</h3>
+              <p>매달 봅니다. 지난 내용이 남아 있는지 확인합니다.</p>
             </div>
-
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code middle">MD반</span>
-                <span class="course-duration">6개월 과정</span>
-              </div>
-              <h3 class="course-title">중등 교과 완성 과정</h3>
-              <div class="course-content">
-                <div class="content-row">
-                  <span class="content-label">학습내용</span>
-                  <span class="content-text"
-                    >중2-1, 중2-2, 중3-1 교과 진도</span
-                  >
-                  <div class="content-text-mobile">
-                    중2-1, 중2-2, 중3-1 교과 진도
-                  </div>
-                </div>
-                <div class="suritamgu-highlight">
-                  <span class="suritamgu-label">수리탐구</span>
-                  <span class="suritamgu-text">시그니처 과정 - 모노, 다이</span>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">중1 심화과정 완료 학생</span>
-                  <div class="content-text-mobile">중1 심화과정 완료 학생</div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초5</span>
-                    <span class="grade-badge">초6</span>
-                    <span class="grade-badge">중1</span>
-                  </div>
-                </div>
-              </div>
+            <div class="cu-more__item">
+              <h3>중등 내신대비</h3>
+              <p>시험 전 5회차 특강. 서술형 대비와 기출 취약유형 정리, 실전 모의고사 순서로 진행합니다.</p>
+            </div>
+            <div class="cu-more__item">
+              <h3>방학특강</h3>
+              <p>방학에는 수리탐구 개별 리커버리 특강을 엽니다.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 고등 과정 -->
-      <section class="curriculum-section">
-        <div class="container">
-          <h2 class="section-title">고등 과정</h2>
-          <div class="course-list">
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code high">TI반</span>
-                <span class="course-duration">6개월 과정</span>
-              </div>
-              <h3 class="course-title">고등 입문 과정</h3>
-              <div class="course-content">
-                <div class="content-row">
-                  <span class="content-label">학습내용</span>
-                  <span class="content-text">중3-2, 공통수학1 교과 진도</span>
-                  <div class="content-text-mobile">
-                    중3-2, 공통수학1 교과 진도
-                  </div>
-                </div>
-                <div class="suritamgu-highlight">
-                  <span class="suritamgu-label">수리탐구</span>
-                  <span class="suritamgu-text"
-                    >시그니처 과정 - 다이, 트라이</span
-                  >
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text">중등 전과정 심화 완료 학생</span>
-                  <div class="content-text-mobile">
-                    중등 전과정 심화 완료 학생
-                  </div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초6</span>
-                    <span class="grade-badge">중1</span>
-                    <span class="grade-badge">중2</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <div class="course-header">
-                <span class="course-code high">TE반</span>
-                <span class="course-duration">6개월 과정</span>
-              </div>
-              <h3 class="course-title">고1 등급 완성 과정</h3>
-              <div class="course-content">
-                <div class="content-row">
-                  <span class="content-label">학습내용</span>
-                  <span class="content-text"
-                    >공통수학2 교과 진도 / 파이널 실전 모의고사</span
-                  >
-                  <div class="content-text-mobile">
-                    <div>공통수학2 교과 진도</div>
-                    <div>파이널 실전 모의고사</div>
-                  </div>
-                </div>
-                <div class="suritamgu-highlight">
-                  <span class="suritamgu-label">수리탐구</span>
-                  <span class="suritamgu-text">시그니처 과정 - 테트라</span>
-                </div>
-                <div class="content-row">
-                  <span class="content-label">입학대상</span>
-                  <span class="content-text"
-                    >공통수학1 2회독 이상 완료 학생</span
-                  >
-                  <div class="content-text-mobile">
-                    공통수학1 2회독 이상 완료 학생
-                  </div>
-                </div>
-                <div class="target-grade">
-                  <span class="grade-label">대상 학년</span>
-                  <div class="grade-badges">
-                    <span class="grade-badge">초6</span>
-                    <span class="grade-badge">중1</span>
-                    <span class="grade-badge">중2</span>
-                    <span class="grade-badge">중3</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 문의 섹션 -->
-      <section class="contact-section">
-        <div class="container">
-          <div class="contact-content">
-            <h2 class="contact-title">상담 문의</h2>
-            <p class="contact-desc">우리 아이에게 맞는 과정을 찾고 계신가요?</p>
-            <div class="contact-info">
-              <span class="contact-number">051-715-1580</span>
-              <span class="contact-time">평일 10:00 - 19:00</span>
-            </div>
-          </div>
+      <!-- 6. 시작 — 끝의 버튼만 설명회 기간에 "설명회 예약"으로 바뀐다 -->
+      <section class="cu-start">
+        <div class="s-wrap cu-start__row">
+          <p class="cu-start__text">시작 과정은 진단검사 결과로 정합니다.</p>
+          <a class="s-btn s-btn--green when-normal" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
+          <a class="s-btn s-btn--green when-sem" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="bottom">설명회 예약</a>
         </div>
       </section>
     </main>
 
-    <!-- 푸터 (메인페이지와 동일) -->
-    <footer class="footer-section">
-      <div class="container">
-        <div class="footer-content">
-          <h3>사직 수리탐구 수학학원</h3>
-          <p>부산 동래구 아시아드대로 175 대영빌딩 3층</p>
-          <p>(사직역 3번 출구 도보 1분)</p>
-          <p>문의: 051-715-1580</p>
-          <div class="footer-buttons">
-            <a href="tel:051-715-1580" class="footer-btn phone-btn">
-              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
-              전화 상담
-            </a>
-            <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="footer-btn kakao-btn">
-              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
-              카카오톡 상담
-            </a>
-          </div>
+    <!-- 공통 바닥 -->
+    <footer class="s-footer">
+      <div class="s-wrap">
+        <div class="s-footer__top">
+          <a class="s-footer__brand" href="/">
+            <img src="/assets/images/site/mark-ivory.png" alt="" width="20" height="20" />
+            <span>수리탐구 사직직영점</span>
+          </a>
+          <p class="s-footer__links">
+            <a data-go="privacy" href="https://edu.suritamgu.co.kr/privacy?branch=sajik" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a>
+            <a data-go="geomdan" href="https://lsy0510.oopy.io/" target="_blank" rel="noopener noreferrer">수리탐구 검단직영점<svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </p>
         </div>
+        <p class="s-footer__biz">사직수리탐구 · 대표 오승준 · 사업자등록번호 725-96-02003 · 부산 동래구 아시아드대로 175 대영빌딩 3층 · 051-715-1580</p>
       </div>
     </footer>
-
-    <!-- 플로팅 카카오톡 버튼 -->
-    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
-      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
-      <span class="kakao-text">상담하기</span>
-    </a>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
   </body>
 </html>

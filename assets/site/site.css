@@ -313,7 +313,7 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
   object-fit: cover;
   border-radius: 14px;
 }
-.lp-pc { display: none; }   /* PC에서만 줄을 바꾸는 자리 */
+.lp-pc, .s-pc { display: none; }   /* PC에서만 줄을 바꾸는 자리 */
 
 /* 2. 일정 */
 .lp-schedule { padding-top: 39px; padding-bottom: 48px; }
@@ -466,11 +466,11 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
 .nw-list { margin-top: 12px; padding: 0; list-style: none; border-top: 1px solid var(--s-green); }
 .nw-item {
   display: grid;
-  grid-template-columns: 98px minmax(0, 1fr);
+  grid-template-columns: 104px minmax(0, 1fr);   /* 가장 긴 날짜(2026.11.01~02)가 한 줄에 들어가는 폭 */
   padding: 17px var(--s-inset) 18px;
   border-bottom: 1px solid var(--s-line);
 }
-.nw-item__date { padding-right: 10px; color: var(--s-sub); font-size: 14px; line-height: 24px; font-weight: 600; }
+.nw-item__date { color: var(--s-sub); font-size: 14px; line-height: 24px; font-weight: 600; white-space: nowrap; }
 .nw-item__title { color: var(--s-ink); font-size: 16px; line-height: 26px; font-weight: 700; }
 .nw-item__title a { text-decoration: none; }
 .nw-item__title a:hover { text-decoration: underline; }
@@ -485,6 +485,151 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
   border-radius: 14px;
   grid-column: 2;
 }
+
+/* ==========================================================================
+   수리탐구 (/curriculum)
+   ========================================================================== */
+.s-page i { font-family: 'Times New Roman', Times, 'Cambria Math', serif; font-style: italic; font-size: 1.08em; }   /* 수식의 문자 */
+
+/* 1. 머리 */
+.cu-hero { background: var(--s-green); color: var(--s-ivory); padding: 31px 0 36px; }
+.cu-hero__eyebrow { color: rgba(245, 241, 232, 0.82); font-weight: 400; }
+.cu-hero__title { margin-top: 10px; font-size: 26px; line-height: 37px; font-weight: 700; }
+.cu-hero__body { margin-top: 17px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 27px; }
+.cu-hero .s-btn { margin-top: 22px; height: 52px; }
+
+/* 도식: 왼쪽 교과 진도 여섯 과정, 오른쪽 수리탐구 세 과정 */
+.cu-diagram { padding-top: 38px; }
+.cu-dg { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10px; row-gap: 4px; }
+.cu-dg__head { grid-row: 1; margin-bottom: 6px; color: var(--s-sub); font-size: 13px; line-height: 20px; }
+.cu-dg__head b { margin-right: 4px; color: var(--s-ink); font-weight: 700; }
+.cu-dg__head--a { grid-column: 1; }
+.cu-dg__head--b { grid-column: 2; }
+.cu-dg__box {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--s-green);
+  border-radius: 8px;
+  color: var(--s-ink);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+}
+.cu-dg__box--fill { grid-column: 2; padding: 0 11px; border-radius: 2px; background: var(--s-green); color: var(--s-ivory); font-size: 14px; }
+.cu-dg__box--top { border-radius: 8px 8px 2px 2px; }
+.cu-dg__box--end { border-radius: 2px 2px 8px 8px; }
+.cu-dg__none {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border: 1px dashed #B5AE9A;
+  border-radius: 8px;
+  color: var(--s-sub);
+  font-size: 13px;
+  line-height: 19px;
+  text-align: center;
+}
+.cu-dg__note { max-width: 310px; margin-top: 15px; font-size: 15px; line-height: 26px; }
+
+/* 2. 수리탐구란 */
+.cu-about { padding-top: 95px; }
+.cu-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: var(--s-inset);
+  color: var(--s-sub);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+}
+.cu-label .s-shape { width: 10px; height: 10px; }
+.cu-lead { margin-top: 16px; padding: 0 16px 0 var(--s-inset); color: var(--s-ink); font-size: 19px; line-height: 33.3px; letter-spacing: -0.02em; }
+.cu-sub { margin-top: 46px; padding-left: var(--s-inset); color: var(--s-sub); font-size: 15px; line-height: 21px; }
+.cu-sub b { color: var(--s-ink); font-weight: 700; }
+.cu-courses { margin-top: 12px; border-top: 1px solid var(--s-green); }
+.cu-course { padding: 18px var(--s-inset) 20px; border-bottom: 1px solid var(--s-line); }
+.cu-course:last-child { padding-bottom: 21px; }
+.cu-course__name { color: var(--s-ink); font-size: 18px; line-height: 26px; font-weight: 700; }
+.cu-course__range { margin-top: 2px; color: var(--s-sub); font-size: 13px; line-height: 18px; font-weight: 600; }
+.cu-course__desc { margin-top: 7px; font-size: 15px; line-height: 26px; }
+.cu-photo { display: block; }
+.cu-photo img { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 14px; }
+.cu-photo--wide { margin-top: 24px; }
+.cu-photo--wide img { aspect-ratio: 7 / 4; }
+
+/* 3. 문제로 보는 차이 — 딥그린 띠(시안 확정 뒤 원장 수정). 글자색·선은 랜딩 "참석자 특전" 띠를 따른다 */
+.cu-diff { margin-top: 60px; padding: 36px 0; }
+.cu-diff .s-title { padding-left: var(--s-inset); }
+.cu-ex-grid { margin-top: 28px; }
+.cu-ex { padding: 19px 0 41px; border-top: 1px solid var(--s-line-on-green); }
+.cu-ex:last-child { padding-bottom: 0; }
+.cu-ex__no { margin: 0; color: var(--s-gold); font-size: 13px; line-height: 18px; font-weight: 700; }
+.cu-flow { position: relative; margin-top: 12px; padding-left: 28px; }
+.cu-flow::before {   /* 세로 선 */
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--s-ivory);
+}
+.cu-flow::after {    /* 점 */
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--s-ivory);
+}
+.cu-flow--hollow::after { border: 1px solid var(--s-ivory); background: var(--s-green); }
+.cu-flow__tag { color: rgba(245, 241, 232, 0.7); font-size: 12px; line-height: 18px; font-weight: 600; }
+.cu-flow__tag--gap { margin-top: 15px; }
+.cu-flow__tag--strong { margin-top: 17px; }
+.cu-flow__tag--strong { color: var(--s-gold); font-weight: 700; }
+.cu-flow__q { margin-top: 4px; font-size: 16px; line-height: 27px; }
+.cu-flow__key { margin-top: 18px; font-size: 15px; line-height: 22px; font-weight: 700; }
+.cu-photos { padding-top: 38px; }
+.cu-photos__grid { display: grid; gap: 8px; }
+.cu-photo--notes img { aspect-ratio: 7 / 6; }
+.cu-photo--spread img { aspect-ratio: 350 / 222; }
+
+/* 4. 교과 진도 여섯 과정 */
+.cu-steps, .cu-more { padding-top: 96px; }
+.cu-steps .s-title, .cu-more .s-title { padding-left: var(--s-inset); }
+.cu-steps__sub { margin-top: 3px; padding-left: var(--s-inset); color: var(--s-sub); font-size: 14px; line-height: 24px; }
+.cu-table { margin-top: 15px; border-top: 1px solid var(--s-green); }
+.cu-table > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  padding: 13px var(--s-inset) 11px;
+  border-bottom: 1px solid var(--s-line);
+  font-size: 16px;
+  line-height: 27px;
+}
+.cu-table dt { color: var(--s-green); font-weight: 700; }
+.cu-steps__note { margin-top: 17px; padding-left: var(--s-inset); font-size: 15px; line-height: 26px; }
+
+/* 5. 함께 운영하는 것 */
+.cu-more__list { margin-top: 24px; border-top: 1px solid var(--s-green); }
+.cu-more__item { padding: 17px var(--s-inset) 21px; border-bottom: 1px solid var(--s-line); }
+.cu-more__item:last-child { padding-bottom: 20px; }
+.cu-more__item h3 { margin: 0; color: var(--s-ink); font-size: 17px; line-height: 26px; font-weight: 700; }
+.cu-more__item p { margin-top: 5px; font-size: 15px; line-height: 25px; }
+
+/* 6. 시작 */
+.cu-start { padding: 96px 0 72px; }
+.cu-start__text { padding-left: var(--s-inset); color: var(--s-ink); font-size: 19px; line-height: 28px; font-weight: 700; }
+.cu-start .s-btn { margin-top: 23px; }
 
 /* ==========================================================================
    PC (시안 1440 기준. 본문 폭 1200)
@@ -513,8 +658,8 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
   .s-footer__links { margin-top: 0; gap: 4px 28px; font-size: 14px; }
   .s-footer__biz { margin-top: 27px; }
 
-  .lp-pc { display: inline; }
-  .lp-ph { display: none; }
+  .lp-pc, .s-pc { display: inline; }
+  .lp-ph, .s-ph { display: none; }
 
   .lp-hero { background: var(--s-green); padding: 88px 0 22px; }
   .lp-hero__grid {
@@ -611,9 +756,87 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
   .nw-card__more { grid-column: 1 / -1; margin-top: 19px; padding-top: 17px; font-size: 16px; line-height: 22.4px; }
   .nw-item { grid-template-columns: 212px minmax(0, 1fr); padding: 27px 32px; }
   .nw-item--photo { grid-template-columns: 212px minmax(0, 1fr) 319px; column-gap: 0; padding-bottom: 28px; }
-  .nw-item__date { padding-right: 0; font-size: 16px; line-height: 27px; }
+  .nw-item__date { font-size: 16px; line-height: 27px; }
   .nw-item__title { font-size: 20px; line-height: 32px; }
   .nw-item__desc { margin-top: 4px; font-size: 17px; line-height: 29px; }
   .nw-item__body { min-width: 0; }
   .nw-item__photo { grid-column: 3; grid-row: 1; width: 319px; margin-top: 1px; aspect-ratio: 319 / 176; border-radius: 18px; }
+
+  /* 수리탐구 */
+  .cu-hero { padding: 80px 0 88px; }
+  .cu-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) 500px; align-items: start; }
+  .cu-hero__eyebrow { margin-top: 25px; }
+  .cu-hero__title { margin-top: 15.5px; font-size: 44px; line-height: 59px; }
+  .cu-hero__body { margin-top: 0; font-size: 18px; line-height: 32.5px; }
+  .cu-hero .s-btn { margin-top: 27.5px; height: 56px; min-width: 143px; padding: 0 36px; }
+
+  .cu-diagram { padding-top: 93px; }
+  .cu-dg { width: 880px; max-width: 100%; margin-inline: auto; column-gap: 24px; row-gap: 6px; }
+  .cu-dg__head { margin-bottom: 7px; font-size: 15.5px; line-height: 26px; }
+  .cu-dg__head b { margin-right: 6px; font-size: 18px; }
+  .cu-dg__box { height: 60px; padding: 0 21px; border-radius: 10px; font-size: 18px; }
+  .cu-dg__box--fill { padding: 0 20px; border-radius: 3px; }
+  .cu-dg__box--top { border-radius: 10px 10px 3px 3px; }
+  .cu-dg__box--end { border-radius: 3px 3px 10px 10px; }
+  .cu-dg__none { border-radius: 10px; font-size: 16px; line-height: 24px; }
+  .cu-dg__note { width: 880px; max-width: 100%; margin: 23px auto 0; font-size: 18px; line-height: 32px; }
+
+  .cu-about { padding-top: 199px; }
+  .cu-label { font-size: 15px; line-height: 21px; }
+  .cu-label .s-shape { width: 12px; height: 12px; }
+  .cu-lead { max-width: 960px; margin-top: 22px; padding-right: 0; font-size: 31.6px; line-height: 50.75px; }
+  .cu-sub { margin-top: 95px; font-size: 18px; line-height: 26px; }
+  .cu-courses { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; margin-top: 17px; border-top: 0; }
+  .cu-course, .cu-course:last-child { padding: 22px 0 0; border-top: 1px solid var(--s-green); border-bottom: 0; }
+  .cu-course__name { font-size: 24px; line-height: 34px; }
+  .cu-course__range { margin-top: 4px; font-size: 15px; line-height: 21px; }
+  .cu-course__desc { margin-top: 13px; font-size: 18px; line-height: 31px; }
+  .cu-photo img { border-radius: 18px; }
+  .cu-photo--wide { margin-top: 65px; }
+  .cu-photo--wide img { aspect-ratio: 1200 / 480; }
+
+  .cu-diff { margin-top: 128px; padding: 72px 0; }
+  .cu-ex-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; margin-top: 56px; }
+  .cu-ex, .cu-ex:last-child { padding: 27px 0 0; }
+  .cu-ex__no { font-size: 15px; line-height: 21px; }
+  .cu-flow { margin-top: 17px; padding-left: 34px; }
+  .cu-flow::before { left: 8px; }
+  .cu-flow::after { width: 10px; height: 10px; }
+  .cu-flow__tag--gap { margin-top: 21px; }
+  .cu-flow__tag--strong { margin-top: 22px; }
+  .cu-flow__tag { font-size: 13px; }
+  .cu-flow__q { max-width: 500px; margin-top: 3px; font-size: 19px; line-height: 33px; }
+  .cu-flow__key { margin-top: 22px; font-size: 17px; line-height: 24px; }
+  .cu-photos { padding-top: 73px; }
+  .cu-photos__grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .cu-photo--notes img, .cu-photo--spread img { aspect-ratio: 588 / 440; }
+
+  .cu-steps { padding-top: 200px; }
+  .cu-more { padding-top: 201px; }
+  .cu-grid { display: grid; grid-template-columns: 398px minmax(0, 1fr); align-items: start; }
+  .cu-steps__sub { margin-top: 6px; font-size: 18px; line-height: 28px; }
+  .cu-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    margin-top: 0;
+    padding-bottom: 24px;
+    border-top: 0;
+    border-bottom: 1px solid var(--s-line);
+  }
+  .cu-table > div { display: block; padding: 20px 0 17px; border-top: 1px solid var(--s-line); border-bottom: 0; font-size: 18px; line-height: 28px; }
+  .cu-table > div:nth-child(-n+3) { border-top-color: var(--s-green); }
+  .cu-table dt { font-size: 19px; }
+  .cu-table dd { margin-top: 3px; font-size: 17px; }
+  .cu-steps__note { margin-top: 25px; font-size: 18px; line-height: 28px; }
+
+  .cu-more__list { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; margin-top: 0; border-top: 0; }
+  .cu-more__item, .cu-more__item:last-child { padding: 20px 0 0; border-top: 1px solid var(--s-green); border-bottom: 0; }
+  .cu-more__item h3 { font-size: 20px; line-height: 28px; }
+  .cu-more__item p { margin-top: 9px; font-size: 17px; line-height: 30px; }
+
+  .cu-start { padding: 201px 0 159px; }
+  .cu-start__row { display: flex; align-items: center; justify-content: space-between; }
+  .cu-start__text { font-size: 29px; line-height: 40px; }
+  .cu-start .s-btn { margin-top: 0; min-width: 162px; }
 }

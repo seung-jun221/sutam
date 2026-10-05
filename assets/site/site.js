@@ -122,9 +122,7 @@
   }
   function pastItem(it) {
     var li = el('li', 'nw-item' + (it.photo ? ' nw-item--photo' : ''));
-    /* 긴 날짜(2026.11.01~02)가 좁은 폰 날짜 칸을 넘칠 때 "~" 뒤에서 줄을 바꿀 수 있게
-       보이지 않는 줄바꿈 자리(8203)를 끼운다 */
-    li.appendChild(el('p', 'nw-item__date', String(it.date || '').replace('~', '~' + String.fromCharCode(8203))));
+    li.appendChild(el('p', 'nw-item__date', it.date));
     var body = el('div', 'nw-item__body');
     var title = el('p', 'nw-item__title');
     if (it.link) {
