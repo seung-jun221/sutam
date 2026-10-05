@@ -224,10 +224,23 @@
   margin-bottom: 8px;
 }
 
+.step-title:last-child {
+  margin-bottom: 0;
+}
+
 .step-desc {
   font-size: 14px;
   color: #6b7280;
   line-height: 1.5;
+}
+
+.process-note {
+  max-width: 700px;
+  margin: 32px auto 0;
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
 }
 
 /* 설명회 혜택 배너 */
