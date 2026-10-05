@@ -58,10 +58,14 @@
   window.fbq('init', PIXEL_ID);
   window.fbq('track', 'PageView');
   window.gtag('js', new Date());
-  window.gtag('config', GA_ID);
+  /* 옛 페이지 가운데 GA 설정 값(page_title 등)이 따로 있던 곳은
+     이 파일을 부르기 전에 window.SITE_TRACK_GA_CONFIG 에 적어 둔다. 설정은 여기서 한 번만 보낸다 */
+  if (window.SITE_TRACK_GA_CONFIG) window.gtag('config', GA_ID, window.SITE_TRACK_GA_CONFIG);
+  else window.gtag('config', GA_ID);
 
   window.SiteTrack = {
     live: live,
+    gaId: GA_ID,
     /* kind: 'reserve' | 'consult', page: 화면 이름, position: 버튼 자리 */
     click: function (kind, page, position) {
       var e = EVENTS[kind];

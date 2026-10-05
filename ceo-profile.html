@@ -20,33 +20,11 @@
     <meta property="og:site_name" content="수리탐구 사직직영점" />
     <meta property="og:locale" content="ko_KR" />
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '941704082060046');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5Z2TTYE4X');
-    </script>
-    <!-- End Google Analytics 4 -->
+    <!-- 측정(메타 픽셀 · GA4): 공통 파일 하나만 부른다. 기본 코드는 assets/site/track.js 에 있다 -->
+    <script src="/assets/site/config.js"></script>
+    <script src="/assets/site/news.js"></script>
+    <script src="/assets/site/site.js"></script>
+    <script src="/assets/site/track.js"></script>
 
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -61,19 +39,24 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
+    <!-- 새 공통 머리·바닥의 스타일 -->
+    <link rel="stylesheet" href="/assets/site/site.css" />
   </head>
   <body>
-    <!-- 헤더 -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <a href="index.html" class="logo">
-            <img src="assets/images/mark-green.png" alt="수리탐구 사직직영점" class="logo-img" />
-          </a>
-          <div class="header-info">
-            <span class="header-title">수리탐구 사직직영점</span>
-          </div>
-        </div>
+    <!-- 공통 머리 -->
+    <header class="s-header s-header--nav">
+      <div class="s-wrap s-header__row">
+        <a class="s-brand" href="/">
+          <img src="/assets/images/site/mark-ivory.png" alt="" width="30" height="30" />
+          <span class="s-brand__name"><b>수리탐구</b> 사직직영점</span>
+        </a>
+        <nav class="s-nav" aria-label="주 메뉴">
+          <a href="/curriculum">수리탐구</a>
+          <a href="/notice">소식</a>
+          <a href="/admission">입학 안내</a>
+          <a href="/#location">오시는 길</a>
+        </nav>
+        <a class="s-pill" data-go="parents" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer">학부모 서비스</a>
       </div>
     </header>
 
@@ -239,25 +222,20 @@
       </section>
     </main>
 
-    <!-- 푸터 -->
-    <footer class="footer-section">
-      <div class="container">
-        <div class="footer-content">
-          <h3>사직 수리탐구 수학학원</h3>
-          <p>부산 동래구 아시아드대로 175 대영빌딩 3층</p>
-          <p>(사직역 3번 출구 도보 1분)</p>
-          <p>문의: 051-715-1580</p>
-          <div class="footer-buttons">
-            <a href="tel:051-715-1580" class="footer-btn phone-btn">
-              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
-              전화 상담
-            </a>
-            <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="footer-btn kakao-btn">
-              <span class="btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
-              카카오톡 상담
-            </a>
-          </div>
+    <!-- 공통 바닥 -->
+    <footer class="s-footer">
+      <div class="s-wrap">
+        <div class="s-footer__top">
+          <a class="s-footer__brand" href="/">
+            <img src="/assets/images/site/mark-ivory.png" alt="" width="20" height="20" />
+            <span>수리탐구 사직직영점</span>
+          </a>
+          <p class="s-footer__links">
+            <a data-go="privacy" href="https://edu.suritamgu.co.kr/privacy?branch=sajik" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a>
+            <a data-go="geomdan" href="https://lsy0510.oopy.io/" target="_blank" rel="noopener noreferrer">수리탐구 검단직영점<svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </p>
         </div>
+        <p class="s-footer__biz">사직수리탐구 · 대표 오승준 · 사업자등록번호 725-96-02003 · 부산 동래구 아시아드대로 175 대영빌딩 3층 · 051-715-1580</p>
       </div>
     </footer>
 
