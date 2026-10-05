@@ -1,0 +1,442 @@
+/* ==========================================================================
+   수리탐구 사직직영점 홈페이지 — 새 화면 공통 스타일
+   색·글꼴·부품은 시안 "부품 장"을 따른다. 클래스는 s-(공통), lp-(설명회 랜딩)로 시작한다.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/site/fonts/Pretendard-Regular.subset.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/site/fonts/Pretendard-SemiBold.subset.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/site/fonts/Pretendard-Bold.subset.woff2') format('woff2');
+}
+
+:root {
+  --s-green: #0D3B2E;
+  --s-gold: #D4A537;
+  --s-ivory: #F5F1E8;
+  --s-ink: #1A2620;
+  --s-ink2: #2E3A34;
+  --s-sub: #56615B;
+  --s-line: #DDD5C3;
+  --s-line-on-green: rgba(245, 241, 232, 0.22);
+  --s-font: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --s-gutter: 20px;
+  --s-inset: 4px;      /* 줄로 묶인 목록 안에서 글자가 줄보다 들어가는 폭(폰) */
+}
+
+/* ---------- 새 화면의 바탕 ---------- */
+.s-page {
+  margin: 0;
+  background: var(--s-ivory);
+  color: var(--s-ink2);
+  font-family: var(--s-font);
+  font-size: 16px;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+.s-page *,
+.s-page *::before,
+.s-page *::after,
+.s-header, .s-header *,
+.s-footer, .s-footer * { box-sizing: border-box; }
+/* :where 로 묶어 우선순위를 0으로 둔다(아래 부품의 여백이 이 초기화에 지워지지 않게) */
+:where(.s-page) :where(h1, h2, h3, p, dl, dd, ol, ul, figure) { margin: 0; }
+:where(.s-page) img { max-width: 100%; }
+:where(.s-page) a { color: inherit; }
+[hidden] { display: none !important; }
+
+.s-wrap {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: var(--s-gutter);
+}
+
+/* ---------- 상태에 따라 보이는 것 ----------
+   기본(스크립트 없음): 평소 상태 / 랜딩은 예약 상태 */
+.when-sem, .when-ended { display: none !important; }
+html.sem-on .when-sem { display: revert !important; }
+html.sem-on .when-normal { display: none !important; }
+html.sem-ended .when-ended { display: revert !important; }
+html.sem-ended .when-open { display: none !important; }
+
+/* ---------- 머리 ---------- */
+.s-header {
+  background: var(--s-green);
+  color: var(--s-ivory);
+  font-family: var(--s-font);
+  border-bottom: 1px solid rgba(245, 241, 232, 0.12);
+}
+.s-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.s-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.s-brand img { display: block; width: 26px; height: 26px; }
+.s-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 17px;
+  border: 1px solid rgba(245, 241, 232, 0.45);
+  border-radius: 999px;
+  color: var(--s-ivory);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+html.sem-on .s-pill.when-sem,
+html.sem-ended .s-pill.when-ended { display: inline-flex !important; }
+
+/* ---------- 버튼 (화면마다 주 버튼 하나) ---------- */
+.s-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+.s-btn--ivory { background: var(--s-ivory); color: var(--s-green); }
+.s-btn--green { background: var(--s-green); color: var(--s-ivory); }
+html.sem-on .s-btn.when-sem,
+html.sem-ended .s-btn.when-ended { display: flex !important; }
+
+/* ---------- 글 ---------- */
+.s-eyebrow { font-size: 13px; line-height: 1.4; font-weight: 600; }
+.s-eyebrow--gold { color: var(--s-gold); }
+
+/* 일반 구획 제목 */
+.s-title {
+  color: var(--s-ink);
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+/* 작은 도형이 붙는 구획 제목 (도형은 구획 순서대로 사각·삼각·사분원·원) */
+.s-mark-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--s-ink);
+  font-size: 22px;
+  line-height: 1.38;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.s-shape { flex: none; width: 11px; height: 11px; background: var(--s-green); }
+.s-shape--tri { clip-path: polygon(0 0, 0 100%, 100% 100%); }
+.s-shape--quarter { border-radius: 100% 0 0 0; }
+.s-shape--circle { border-radius: 50%; }
+
+/* ---------- 딥그린 띠 ---------- */
+.s-band { background: var(--s-green); color: var(--s-ivory); }
+.s-band .s-mark-title, .s-band .s-title { color: var(--s-ivory); }
+.s-band .s-shape { background: var(--s-ivory); }
+
+/* ---------- 바닥 ---------- */
+.s-footer {
+  background: var(--s-green);
+  color: var(--s-ivory);
+  font-family: var(--s-font);
+  padding: 28px 0 36px;
+  word-break: keep-all;
+}
+.s-footer a { color: inherit; text-decoration: none; }
+.s-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.s-footer__brand img { display: block; width: 20px; height: 20px; }
+.s-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 19px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.s-footer__links a:first-child { font-weight: 600; }
+.s-footer__biz {
+  margin: 18px 0 0;
+  color: rgba(245, 241, 232, 0.62);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   설명회 랜딩 (/seminar/2026-11)
+   ========================================================================== */
+
+/* 1. 첫 화면 — 사진이 딥그린 바탕 아래로 걸쳐 내려온다(폰) */
+.lp-hero {
+  --lp-hang: calc((min(100vw, 640px) - 2 * var(--s-gutter)) * 0.3054);
+  background: linear-gradient(var(--s-green) 0, var(--s-green) calc(100% - var(--lp-hang)), var(--s-ivory) calc(100% - var(--lp-hang)));
+  color: var(--s-ivory);
+  padding-top: 31px;
+}
+.lp-hero__title {
+  margin-top: 12px;
+  font-size: 29px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.lp-hero__sub {
+  margin-top: 16px;
+  color: rgba(245, 241, 232, 0.82);
+  font-size: 16px;
+  line-height: 28px;
+}
+.lp-hero__line {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.lp-hero .s-btn { margin-top: 24px; }
+.lp-ended__text {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.lp-ended .s-btn { margin-top: 14px; }
+.lp-hero__photo { display: block; margin-top: 28px; }
+.lp-hero__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.lp-pc { display: none; }   /* PC에서만 줄을 바꾸는 자리 */
+
+/* 2. 일정 */
+.lp-schedule { padding-top: 39px; padding-bottom: 48px; }
+.lp-schedule .s-mark-title { padding-left: var(--s-inset); }
+.lp-sessions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 17px;
+  border-top: 1px solid var(--s-green);
+  border-bottom: 1px solid var(--s-green);
+}
+.lp-session { padding: 15px var(--s-inset) 12px; }
+.lp-session + .lp-session { border-left: 1px solid var(--s-line); padding-left: 15px; }
+.lp-session__no { color: var(--s-green); font-size: 13px; line-height: 1.4; font-weight: 600; }
+.lp-session__date {
+  margin-top: 4px;
+  color: var(--s-ink);
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.lp-session__time { margin-top: 3px; font-size: 15px; line-height: 24px; }
+.lp-info { padding: 14px var(--s-inset) 0; }
+.lp-info > div {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  font-size: 15px;
+  line-height: 24px;
+}
+.lp-info > div + div { margin-top: 10px; }
+.lp-info dt { color: var(--s-sub); font-weight: 600; }
+.lp-info dd strong { color: var(--s-ink); font-weight: 600; }
+.lp-info dd span { display: block; }
+.lp-note {
+  margin-top: 18px;
+  padding: 12px var(--s-inset) 0;
+  border-top: 1px solid var(--s-line);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* 3. 참석자 특전 — 딥그린 띠 */
+.lp-benefits { padding: 36px 0 37px; }
+.lp-benefits__in { padding-inline: var(--s-inset); }
+.lp-benefit-list { margin-top: 20px; }
+.lp-benefit { border-top: 1px solid var(--s-line-on-green); padding: 17px 0 18px; }
+.lp-benefit:last-child { padding-bottom: 0; }
+.lp-benefit__no { color: var(--s-gold); font-size: 13px; line-height: 1.4; font-weight: 600; }
+.lp-benefit__title { margin-top: 5px; font-size: 18px; line-height: 26px; font-weight: 600; }
+.lp-benefit__sub { margin-top: 7px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 22px; }
+
+/* 4. 이 설명회에서 다루는 것 */
+.lp-topics { padding-top: 88px; }
+.lp-topics .s-title, .lp-past .s-title { padding-left: var(--s-inset); }
+.lp-topic-list {
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--s-green);
+  counter-reset: lp-topic;
+}
+.lp-topic-list li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  padding: 18px var(--s-inset) 18px;
+  border-bottom: 1px solid var(--s-line);
+  font-size: 16px;
+  line-height: 27px;
+}
+.lp-topic-list li::before {
+  counter-increment: lp-topic;
+  content: counter(lp-topic);
+  color: var(--s-green);
+  font-weight: 700;
+}
+.lp-figure { margin-top: 28px; }
+.lp-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* 5. 지난 설명회 */
+.lp-past { padding-top: 88px; }
+.lp-past-list { margin-top: 20px; border-top: 1px solid var(--s-green); }
+.lp-past-list > div {
+  display: grid;
+  grid-template-columns: 102px minmax(0, 1fr);
+  padding: 18px var(--s-inset) 19px;
+  border-bottom: 1px solid var(--s-line);
+  font-size: 16px;
+  line-height: 25px;
+}
+.lp-past-list dt { color: var(--s-green); font-size: 14px; font-weight: 700; }
+
+/* 6. 버튼 */
+.lp-cta { padding-top: 72px; padding-bottom: 72px; text-align: center; }
+.lp-cta__note { margin-top: 14px; color: var(--s-sub); font-size: 14px; line-height: 22px; }
+.lp-cta .lp-ended__text { margin-top: 0; color: var(--s-ink); }
+
+/* ==========================================================================
+   PC (시안 1440 기준. 본문 폭 1200)
+   ========================================================================== */
+@media (min-width: 960px) {
+  :root { --s-gutter: 40px; --s-inset: 0px; }
+  .s-wrap { max-width: calc(1200px + 2 * var(--s-gutter)); }
+
+  .s-header__row { height: 76px; }
+  .s-brand img { width: 30px; height: 30px; }
+  .s-pill { height: 44px; padding: 0 20px; font-size: 15px; }
+
+  .s-btn { display: inline-flex; height: 60px; padding: 0 44px; border-radius: 14px; font-size: 18px; }
+  html.sem-on .s-btn.when-sem,
+  html.sem-ended .s-btn.when-ended { display: inline-flex !important; }
+
+  .s-eyebrow { font-size: 15px; }
+  .s-title { font-size: 40px; line-height: 52px; }
+  .s-mark-title { font-size: 28px; }
+  .s-shape { width: 12px; height: 12px; }
+
+  .s-footer { padding: 52px 0 48px; }
+  .s-footer__top { display: flex; align-items: center; gap: 40px; }
+  .s-footer__brand { gap: 10px; font-size: 15px; }
+  .s-footer__brand img { width: 21px; height: 21px; }
+  .s-footer__links { margin-top: 0; gap: 4px 28px; font-size: 14px; }
+  .s-footer__biz { margin-top: 27px; }
+
+  .lp-pc { display: inline; }
+  .lp-ph { display: none; }
+
+  .lp-hero { background: var(--s-green); padding: 88px 0 22px; }
+  .lp-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 46.5%;
+    column-gap: 40px;
+    align-items: start;
+  }
+  .lp-hero__text { padding-top: 15px; }
+  .lp-hero__title { margin-top: 16.5px; font-size: 50px; line-height: 67px; }
+  .lp-hero__sub { margin-top: 24.5px; font-size: 19px; line-height: 32px; }
+  .lp-hero__line { margin-top: 20px; font-size: 19px; line-height: 32px; }
+  .lp-hero .s-btn { margin-top: 39px; min-width: 178px; }
+  .lp-ended__text { margin-top: 40px; font-size: 18px; line-height: 32px; }
+  .lp-ended .s-btn { margin-top: 16px; }
+  .lp-hero__photo { margin-top: 0; }
+  .lp-hero__photo img { aspect-ratio: 558 / 460; border-radius: 18px; }
+
+  .lp-grid { display: grid; grid-template-columns: 264px minmax(0, 1fr); align-items: start; }
+  .lp-grid--wide { grid-template-columns: 398px minmax(0, 1fr); }
+
+  .lp-schedule { padding-top: 160px; padding-bottom: 119px; }
+  .lp-sessions { margin-top: 0; }
+  .lp-session { padding: 24px 0 25px; }
+  .lp-session + .lp-session { padding-left: 41px; }
+  .lp-session__no { font-size: 15px; }
+  .lp-session__date { margin-top: 8.5px; font-size: 31px; letter-spacing: -0.01em; }
+  .lp-session__time { margin-top: 5.5px; font-size: 20px; line-height: 30px; }
+  .lp-info { padding-top: 18px; }
+  .lp-info > div { grid-template-columns: 78px minmax(0, 1fr); font-size: 18px; line-height: 32px; }
+  .lp-info > div + div { margin-top: 9px; }
+  .lp-info dd span { display: inline; }
+  .lp-note { margin-top: 22px; padding-top: 16px; font-size: 16px; line-height: 25.6px; }
+
+  .lp-benefits { padding: 72px 0 73px; }
+  .lp-benefit-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; margin-top: 0; }
+  .lp-benefit, .lp-benefit:last-child { padding: 23px 0 0; }
+  .lp-benefit__no { font-size: 15px; }
+  .lp-benefit__title { margin-top: 8px; font-size: 24px; line-height: 34px; }
+  .lp-benefit__sub { margin-top: 12px; font-size: 17px; line-height: 25.6px; }
+
+  .lp-topics { padding-top: 160px; }
+  .lp-topic-list { margin-top: 0; }
+  .lp-topic-list li { grid-template-columns: 47px minmax(0, 1fr); padding: 24px 0; font-size: 19px; line-height: 32px; }
+  .lp-topic-list li:first-child { padding-bottom: 25px; }
+  .lp-figure { margin-top: 48px; }
+  .lp-figure img { border-radius: 18px; }
+
+  .lp-past { padding-top: 160px; }
+  .lp-past-list { margin-top: 0; }
+  .lp-past-list > div { grid-template-columns: 180px minmax(0, 1fr); padding: 22.5px 0 23.5px; font-size: 19px; line-height: 32px; }
+  .lp-past-list dt { font-size: 17px; }
+
+  .lp-cta { padding-top: 160px; padding-bottom: 158px; }
+  .lp-cta .s-btn { height: 64px; min-width: 214px; }
+  .lp-cta__note { margin-top: 18px; font-size: 16px; line-height: 25.6px; }
+}
