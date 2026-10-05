@@ -145,16 +145,40 @@
     }
     return li;
   }
+  /* 메인의 "최근 소식" 한 줄: 예정은 제목만, 지난 안내는 제목과 설명을 이어 쓴다(시안) */
+  function recentItem(it) {
+    var li = el('li', 'mn-news__item');
+    var meta = el('p', 'mn-news__meta');
+    if (it.upcoming) {
+      meta.appendChild(el('b', '', '예정'));
+      meta.appendChild(document.createTextNode(' · ' + it.date));
+    } else {
+      meta.textContent = '지난 안내 · ' + it.date;
+    }
+    li.appendChild(meta);
+    var text = it.upcoming || !it.desc ? it.title : it.title + ' ' + it.desc;
+    var title = el('p', 'mn-news__title');
+    if (it.link) {
+      var a = el('a', '', text);
+      a.href = it.link;
+      title.appendChild(a);
+    } else {
+      title.textContent = text;
+    }
+    li.appendChild(title);
+    return li;
+  }
   function renderNews() {
     each('[data-news]', function (box) {
-      var kind = box.getAttribute('data-news');
+      var kind = box.getAttribute('data-news');   // upcoming | past | recent(위에서 3건)
       var list = [];
       for (var k = 0; k < NEWS.length; k++) {
-        if ((kind === 'upcoming') === (NEWS[k].upcoming === true)) list.push(NEWS[k]);
+        if (kind === 'recent') { if (list.length < 3) list.push(NEWS[k]); }
+        else if ((kind === 'upcoming') === (NEWS[k].upcoming === true)) list.push(NEWS[k]);
       }
       box.textContent = '';
       for (var n = 0; n < list.length; n++) {
-        box.appendChild(kind === 'upcoming' ? upcomingCard(list[n]) : pastItem(list[n]));
+        box.appendChild(kind === 'upcoming' ? upcomingCard(list[n]) : kind === 'recent' ? recentItem(list[n]) : pastItem(list[n]));
       }
       var section = box.closest ? box.closest('[data-news-section]') : null;
       if (section) section.hidden = list.length === 0;
