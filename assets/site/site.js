@@ -193,13 +193,19 @@
       each('[data-news-root]', function (box) { box.setAttribute('data-ready', ''); });
     }
 
-    /* 버튼·링크의 도착지: HTML 에 적힌 기본 주소를 설정 파일의 값으로 덮는다 */
+    /* 버튼·링크의 도착지: HTML 에 적힌 기본 주소를 설정 파일의 값으로 덮는다.
+       설정에서 값을 비워 둔 링크는 내지 않는다(주소를 넣으면 다시 나온다) */
     each('a[data-go]', function (a) {
-      var href = linkFor(a.getAttribute('data-go'));
-      if (!href) return;
+      var kind = a.getAttribute('data-go');
+      var href = linkFor(kind);
+      if (!href) {
+        if (C.links && kind in C.links) { a.hidden = true; a.removeAttribute('href'); }
+        return;
+      }
       a.href = href;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
+      a.hidden = false;
     });
 
     /* 설정 파일의 문구가 들어갈 자리 */

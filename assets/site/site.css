@@ -634,7 +634,6 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
 /* ==========================================================================
    메인 (/)
    ========================================================================== */
-.mn-only-pc { display: none !important; }
 .mn-narrow { max-width: 314px; }   /* 폰에서 시안과 같은 자리에서 줄이 바뀌게 */
 .mn-goal__body, .mn-point__body, .mn-cumul__body, .mn-cumul__note { text-wrap: pretty; }   /* 마지막 줄에 낱말 하나만 남지 않게 */
 .mn-label {
@@ -716,9 +715,19 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 .mn-bars span:first-child::before { border-radius: 3px 0 0 3px; }
 .mn-bars span:last-child::before { border-radius: 0 3px 3px 0; }
 .mn-dg--bars .mn-dg__cap { margin-top: 8px; line-height: 23px; }
-/* 예시 문제 묶음 — 딥그린 띠(시안 확정 뒤 원장 수정) */
-.mn-exband { margin-top: 36px; padding: 36px 0; }
-.mn-exband .cu-flow { margin-top: 0; }
+/* 예시 문제 상자 — 둘째에 딸린 예시(2026-10-06 원장 수정). 상자 틀은 결과의 보고서 카드(.mn-card)를 그대로 쓴다 */
+.mn-point .mn-ex { margin: 32px 0 0; }
+.mn-ex .cu-flow { margin-top: 0; }
+.mn-ex .cu-flow::before { background: var(--s-line); }
+.mn-ex .cu-flow::after { background: var(--s-green); }
+.mn-ex .cu-flow__tag { color: var(--s-sub); }
+.mn-ex .cu-flow__q { color: var(--s-ink); }
+.mn-ex .cu-flow__key { color: var(--s-green); }
+/* [임시] 주소 끝의 ?ex=b — 연한 골드 판. 원장이 고른 뒤 쓰지 않는 판과 index.html <head> 의 한 줄을 지운다 */
+html[data-ex="b"] .mn-ex { background: rgba(212, 165, 55, 0.16); border-color: transparent; }
+html[data-ex="b"] .mn-ex .cu-flow::before { background: rgba(13, 59, 46, 0.28); }
+html[data-ex="b"] .mn-ex .cu-flow__tag { color: rgba(13, 59, 46, 0.74); }
+html[data-ex="b"] .mn-ex .cu-flow__q { color: var(--s-green); }
 .mn-photo--notes { margin-top: 36px; }
 .mn-photo--notes img { aspect-ratio: 350 / 340; object-position: top; }
 .mn-photo--test { margin-top: 22px; }
@@ -795,9 +804,7 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 /* 5. 가르치는 사람 */
 .mn-people { padding-top: 102px; }
 .mn-people__cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; margin-top: 28px; }
-.mn-person { padding-top: 6px; border-top: 1px solid var(--s-green); }
-.mn-person__head { display: flex; align-items: center; gap: 9px; min-height: 36px; }   /* 두 칸의 글줄이 같은 높이에서 시작하게 */
-.mn-person__photo { display: block; width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.mn-person { padding-top: 16px; border-top: 1px solid var(--s-green); }
 .mn-person h3 { margin: 0; color: var(--s-ink); font-size: 18px; line-height: 26px; font-weight: 700; }
 .mn-person ul { margin: 9px 0 0; padding: 0; list-style: none; font-size: 15px; line-height: 24px; }
 .mn-person li + li { margin-top: 6px; }
@@ -1068,8 +1075,6 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
   .cu-start .s-btn { margin-top: 0; min-width: 162px; }
 
   /* 메인 */
-  .mn-only-pc { display: block !important; }
-  .mn-only-ph { display: none !important; }
   .mn-point__body.mn-narrow { max-width: none; }
   .mn-label { font-size: 15px; line-height: 21px; }
   .mn-label .s-shape { width: 12px; height: 12px; }
@@ -1114,9 +1119,10 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
   .mn-bars { margin-top: 13px; font-size: 15px; line-height: 21px; }
   .mn-bars span::before { margin-bottom: 8px; }
   .mn-dg--bars .mn-dg__cap { margin-top: 11px; }
-  .mn-exband { margin-top: 72px; padding: 72px 0; }
-  .mn-photo--notes { margin-top: 1px; }
-  .mn-photo--notes img { aspect-ratio: 588 / 440; }
+  .mn-point .mn-ex { margin-top: 41px; }
+  /* 둘째의 사진: 글 열의 높이에 맞춘다(사진이 줄 높이를 정하지 않게 띄워 놓는다) */
+  .mn-photo--notes { position: relative; align-self: stretch; margin-top: 1px; }
+  .mn-photo--notes img { position: absolute; top: 0; left: 0; height: 100%; aspect-ratio: auto; }
   .mn-photo--test { margin-top: 1px; }
   .mn-photo--test img { aspect-ratio: 588 / 300; }
   .mn-more { margin-top: 72px; padding: 20px 0; font-size: 17px; line-height: 24px; }
@@ -1154,11 +1160,9 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 
   .mn-people { padding-top: 199px; }
   .mn-people__cols { column-gap: 50px; margin-top: 0; }
-  .mn-person { padding-top: 8px; }
-  .mn-person__head { gap: 12px; min-height: 44px; }
-  .mn-person__photo { width: 44px; height: 44px; }
+  .mn-person { padding-top: 22px; }
   .mn-person h3 { font-size: 22px; line-height: 30px; }
-  .mn-person ul { margin-top: 13px; font-size: 18px; line-height: 28px; }
+  .mn-person ul { margin-top: 14px; font-size: 18px; line-height: 28px; }
   .mn-person li + li { margin-top: 9px; }
   .mn-person .mn-link { margin-top: 20px; }
 

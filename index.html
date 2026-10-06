@@ -39,6 +39,8 @@
     <script src="/assets/site/news.js"></script>
     <script src="/assets/site/site.js"></script>
     <script src="/assets/site/track.js"></script>
+    <!-- [임시] 예시 문제 상자 두 판 보기: 주소 끝의 ?ex=b → 연한 골드. 원장이 고른 뒤 이 줄을 지운다 -->
+    <script>if (/[?&]ex=b(&|$)/.test(location.search)) document.documentElement.setAttribute('data-ex', 'b');</script>
   </head>
   <body class="s-page">
     <!-- 공통 머리 -->
@@ -121,34 +123,24 @@
                 <div class="mn-bars"><span>모노-다이</span><span>다이-트라이</span><span>테트라</span></div>
                 <p class="mn-dg__cap">모노-다이 과정 → 다이-트라이 과정 → 테트라 과정, 6개월씩 18개월, 48권</p>
               </div>
+              <!-- 예시 문제 상자 — 둘째에 딸린 예시. 흰 바탕(가)이 기본이고, 주소 끝에 ?ex=b 를 붙이면 연한 골드(나)로 보인다.
+                   [임시] 원장이 고른 뒤 다른 판과 이 장치(<head> 의 한 줄, site.css 의 data-ex 줄)를 지운다 -->
+              <div class="mn-card mn-ex">
+                <div class="cu-flow">
+                  <p class="cu-flow__tag">중1 · MONO 02</p>
+                  <p class="cu-flow__q"><i>a</i>×<i>b</i>가 소수일 때, 순서쌍 (<i>a</i>, <i>b</i>)를 모두 구하시오</p>
+                  <p class="cu-flow__key">원리: 한 인수는 1이고 나머지가 소수다</p>
+                  <p class="cu-flow__tag cu-flow__tag--gap">고1</p>
+                  <p class="cu-flow__q"><i>n</i>²−6<i>n</i>+8이 소수가 되는 자연수 <i>n</i>을 모두 구하시오</p>
+                </div>
+              </div>
             </div>
-            <!-- PC: 둘째 옆의 사진 (폰에서는 띠 뒤에 나온다) -->
-            <picture class="mn-photo mn-photo--notes mn-only-pc">
-              <source type="image/webp" srcset="/assets/images/site/main-notes-1176.webp" />
+            <!-- 폰에서는 상자 아래, PC에서는 글 옆(높이는 글 열에 맞춘다) -->
+            <picture class="mn-photo mn-photo--notes">
+              <source type="image/webp" srcset="/assets/images/site/main-notes-700.webp 700w, /assets/images/site/main-notes-1176.webp 1176w" sizes="(min-width: 960px) 588px, 100vw" />
               <img src="/assets/images/site/main-notes-1176.jpg" alt="" width="1176" height="1241" loading="lazy" decoding="async" />
             </picture>
           </div>
-        </div>
-
-        <!-- 예시 문제 묶음 — 딥그린 띠 -->
-        <div class="s-band mn-exband">
-          <div class="s-wrap">
-            <div class="cu-flow">
-              <p class="cu-flow__tag">중1 · MONO 02</p>
-              <p class="cu-flow__q"><i>a</i>×<i>b</i>가 소수일 때, 순서쌍 (<i>a</i>, <i>b</i>)를 모두 구하시오</p>
-              <p class="cu-flow__key">원리: 한 인수는 1이고 나머지가 소수다</p>
-              <p class="cu-flow__tag cu-flow__tag--gap">고1</p>
-              <p class="cu-flow__q"><i>n</i>²−6<i>n</i>+8이 소수가 되는 자연수 <i>n</i>을 모두 구하시오</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="s-wrap">
-          <!-- 폰: 띠 뒤의 사진 -->
-          <picture class="mn-photo mn-photo--notes mn-only-ph">
-            <source type="image/webp" srcset="/assets/images/site/main-notes-700.webp 700w, /assets/images/site/main-notes-1176.webp 1176w" sizes="100vw" />
-            <img src="/assets/images/site/main-notes-1176.jpg" alt="" width="1176" height="1241" loading="lazy" decoding="async" />
-          </picture>
 
           <div class="mn-point mn-point--3">
             <div class="mn-point__text">
@@ -222,13 +214,7 @@
           <h2 class="s-title">가르치는 사람</h2>
           <div class="mn-people__cols">
             <div class="mn-person">
-              <div class="mn-person__head">
-                <picture>
-                  <source type="image/webp" srcset="/assets/images/site/ceo-face.webp" />
-                  <img class="mn-person__photo" src="/assets/images/site/ceo-face.jpg" alt="" width="192" height="192" loading="lazy" decoding="async" />
-                </picture>
-                <h3>이시용 대표</h3>
-              </div>
+              <h3>이시용 대표</h3>
               <ul>
                 <li>수리탐구 교재 집필</li>
                 <li>대치 입시컨설턴트 21년</li>
@@ -237,9 +223,7 @@
               <a class="mn-link" href="/ceo-profile">대표 이력 보기</a>
             </div>
             <div class="mn-person">
-              <div class="mn-person__head">
-                <h3>오승준 원장</h3>
-              </div>
+              <h3>오승준 원장</h3>
               <ul>
                 <li>잠실·송파·대치 수학학원 원장 10년</li>
                 <li>울산 옥동 수학학원 운영</li>
@@ -327,7 +311,7 @@
           </a>
           <p class="s-footer__links">
             <a data-go="privacy" href="https://edu.suritamgu.co.kr/privacy?branch=sajik" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a>
-            <a data-go="geomdan" href="https://lsy0510.oopy.io/" target="_blank" rel="noopener noreferrer">수리탐구 검단직영점<svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a data-go="geomdan" hidden>수리탐구 검단직영점<svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </p>
         </div>
         <p class="s-footer__biz">사직수리탐구 · 대표 오승준 · 사업자등록번호 725-96-02003 · 부산 동래구 아시아드대로 175 대영빌딩 3층 · 051-715-1580</p>

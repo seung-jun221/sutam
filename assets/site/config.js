@@ -7,14 +7,15 @@
 
 window.SITE_CONFIG = {
 
-  /* 1. 버튼과 링크의 도착지 — 주소는 화면마다 적지 않고 여기 한 곳에만 둔다 */
+  /* 1. 버튼과 링크의 도착지 — 주소는 화면마다 적지 않고 여기 한 곳에만 둔다
+        값을 '' 로 비워 두면 그 링크는 화면에 나오지 않는다. 주소를 넣으면 다시 나온다. */
   links: {
     reserve: 'https://edu.suritamgu.co.kr/',                      // "설명회 예약" 버튼
     parents: 'https://edu.suritamgu.co.kr/',                      // 머리의 "학부모 서비스" 버튼
     consult: 'https://edu.suritamgu.co.kr/course-enrollment',     // "입학 상담" 버튼
     privacy: 'https://edu.suritamgu.co.kr/privacy?branch=sajik',  // 바닥의 "개인정보 처리방침"
     kakao:   'https://pf.kakao.com/_bxovxon/chat',                // 오시는 길의 "카카오톡 상담"
-    geomdan: 'https://lsy0510.oopy.io/'                           // 바닥의 "수리탐구 검단직영점"
+    geomdan: ''                                                   // 바닥의 "수리탐구 검단직영점" (지금은 비워 둠 = 링크 없음)
   },
 
   /* 2. 광고 주소에 붙어 들어온 utm_ 값을 "설명회 예약" 도착 주소에 이어 붙인다.
