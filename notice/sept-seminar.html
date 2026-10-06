@@ -20,41 +20,21 @@
     <meta property="og:site_name" content="수리탐구 사직직영점" />
     <meta property="og:locale" content="ko_KR" />
 
-    <!-- Meta Pixel Code -->
+    <!-- 측정(메타 픽셀 · GA4): 공통 파일 하나만 부른다. 기본 코드는 assets/site/track.js 에 있다 -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '941704082060046');
-    fbq('track', 'PageView');
+    window.SITE_TRACK_GA_CONFIG = {
+      page_title: '9월 정규 개강 설명회',
+      content_group: 'sept_seminar_lp'
+    };
+    </script>
+    <script src="/assets/site/track.js"></script>
+    <script>
+    /* 이 페이지에만 있는 측정 */
     fbq('track', 'ViewContent', {
       content_name: '9월 정규 개강 설명회',
       content_category: 'sept_seminar_lp'
     });
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5Z2TTYE4X', {
-      send_page_view: true,
-      page_title: '9월 정규 개강 설명회',
-      content_group: 'sept_seminar_lp'
-    });
-    </script>
-    <!-- End Google Analytics 4 -->
 
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -255,7 +235,7 @@
               <ul>
                 <li>대치 현직 수리탐구 강사</li>
                 <li>수리탐구 48권 교재 직접 집필</li>
-                <li>유튜브 누적 조회수 200만+</li>
+                <li>유튜브 200만 조회</li>
               </ul>
             </div>
           </div>
@@ -328,7 +308,7 @@
     <footer class="footer-section">
       <div class="container">
         <div class="footer-content">
-          <h3>사직 수리탐구 수학학원</h3>
+          <h3>수리탐구 사직직영점</h3>
           <p>부산 동래구 아시아드대로 175 대영빌딩 3층</p>
           <p>(사직역 3번 출구 도보 1분)</p>
           <p>문의: 051-715-1580</p>
