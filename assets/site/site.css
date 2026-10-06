@@ -729,11 +729,6 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 .mn-ex .cu-flow__tag { color: var(--s-sub); }
 .mn-ex .cu-flow__q { color: var(--s-ink); }
 .mn-ex .cu-flow__key { color: var(--s-green); }
-/* [임시] 주소 끝의 ?ex=b — 연한 골드 판. 원장이 고른 뒤 쓰지 않는 판과 index.html <head> 의 한 줄을 지운다 */
-html[data-ex="b"] .mn-ex { background: rgba(212, 165, 55, 0.16); border-color: transparent; }
-html[data-ex="b"] .mn-ex .cu-flow::before { background: rgba(13, 59, 46, 0.28); }
-html[data-ex="b"] .mn-ex .cu-flow__tag { color: rgba(13, 59, 46, 0.74); }
-html[data-ex="b"] .mn-ex .cu-flow__q { color: var(--s-green); }
 .mn-photo--notes { margin-top: 36px; }
 .mn-photo--notes img { aspect-ratio: 350 / 340; object-position: top; }
 .mn-photo--test { margin-top: 22px; }
