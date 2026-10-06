@@ -214,6 +214,13 @@
       if (typeof text === 'string') el.textContent = text;
     });
 
+    /* 바닥의 측정 안내 한 줄: 글자는 설정 파일에, 자리는 여기 한 곳에 둔다("개인정보 처리방침" 줄 아래, 사업자 정보 위) */
+    if (typeof C.footerNotice === 'string' && C.footerNotice) {
+      each('.s-footer__top', function (top) {
+        top.parentNode.insertBefore(el('p', 's-footer__notice', C.footerNotice), top.nextSibling);
+      });
+    }
+
     /* 설명회 기간의 묶음 글자(메인 첫 화면) */
     if (active) {
       each('[data-seminar-text]', function (el) {

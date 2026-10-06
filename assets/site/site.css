@@ -259,7 +259,9 @@ html.sem-ended .s-btn.when-ended { display: flex !important; }
 }
 .s-footer__links a:first-child { font-weight: 600; }
 .s-footer__links a { display: inline-flex; align-items: center; gap: 5px; }
-.s-footer__biz {
+.s-footer__notice + .s-footer__biz { margin-top: 6px; }   /* 측정 안내 줄이 있으면 사업자 정보를 바로 아래에 붙인다 */
+.s-footer__notice { text-wrap: balance; }   /* 폰에서 두 줄이 될 때 "Google Analytics"가 갈라지지 않게 줄 길이를 고르게 */
+.s-footer__biz, .s-footer__notice {
   margin: 18px 0 0;
   color: rgba(245, 241, 232, 0.62);
   font-size: 13px;
@@ -498,36 +500,40 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
 .cu-hero__body { margin-top: 17px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 27px; }
 .cu-hero .s-btn { margin-top: 22px; height: 52px; }
 
-/* 도식: 왼쪽 교과 진도 여섯 과정, 오른쪽 수리탐구 세 과정 */
+/* 도식: 왼쪽 교과 진도 여섯 과정, 오른쪽 수리탐구 세 과정. 짝이 되는 세 줄은 가운데 칸에 "+" */
 .cu-diagram { padding-top: 38px; }
-.cu-dg { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10px; row-gap: 4px; }
+.cu-dg { display: grid; grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr); column-gap: 3px; row-gap: 4px; }
 .cu-dg__head { grid-row: 1; margin-bottom: 6px; color: var(--s-sub); font-size: 13px; line-height: 20px; }
 .cu-dg__head b { margin-right: 4px; color: var(--s-ink); font-weight: 700; }
 .cu-dg__head--a { grid-column: 1; }
-.cu-dg__head--b { grid-column: 2; }
+.cu-dg__head--b { grid-column: 3; }
 .cu-dg__box {
   grid-column: 1;
   display: flex;
-  align-items: center;
-  height: 46px;
-  padding: 0 12px;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 58px;
+  padding: 8px 12px;
   border: 1px solid var(--s-green);
   border-radius: 8px;
   color: var(--s-ink);
-  font-size: 15px;
-  line-height: 1;
-  font-weight: 700;
 }
-.cu-dg__box--fill { grid-column: 2; padding: 0 11px; border-radius: 2px; background: var(--s-green); color: var(--s-ivory); font-size: 14px; }
+.cu-dg__name { font-size: 15px; line-height: 20px; font-weight: 700; }
+.cu-dg__sub { margin-top: 2px; color: var(--s-sub); font-size: 12px; line-height: 17px; }   /* 이름 아래 작은 글 */
+.cu-nb { white-space: nowrap; }   /* 좁은 화면에서 줄이 바뀔 자리를 정한다 */
+.cu-dg__box--fill { grid-column: 3; padding: 8px 10px; border-radius: 2px; background: var(--s-green); color: var(--s-ivory); }
+.cu-dg__box--fill .cu-dg__name { font-size: 14px; }
+.cu-dg__box--fill .cu-dg__sub { color: rgba(245, 241, 232, 0.78); }
 .cu-dg__box--top { border-radius: 8px 8px 2px 2px; }
 .cu-dg__box--end { border-radius: 2px 2px 8px 8px; }
+.cu-dg__plus { grid-column: 2; display: flex; align-items: center; justify-content: center; color: var(--s-green); font-size: 16px; line-height: 1; font-weight: 700; }
 .cu-dg__none {
-  grid-column: 2;
-  grid-row: 2 / span 2;
+  grid-column: 3;
+  grid-row: 2 / span 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 22px;
+  padding: 0 16px;
   border: 1px dashed #B5AE9A;
   border-radius: 8px;
   color: var(--s-sub);
@@ -535,7 +541,7 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
   line-height: 19px;
   text-align: center;
 }
-.cu-dg__note { max-width: 310px; margin-top: 15px; font-size: 15px; line-height: 26px; }
+.cu-dg__note { margin-top: 15px; font-size: 15px; line-height: 26px; }
 
 /* 2. 수리탐구란 */
 .cu-about { padding-top: 95px; }
@@ -890,7 +896,7 @@ html[data-ex="b"] .mn-ex .cu-flow__q { color: var(--s-green); }
   .s-footer__brand { gap: 10px; font-size: 15px; }
   .s-footer__brand img { width: 21px; height: 21px; }
   .s-footer__links { margin-top: 0; gap: 4px 28px; font-size: 14px; }
-  .s-footer__biz { margin-top: 27px; }
+  .s-footer__biz, .s-footer__notice { margin-top: 27px; }
 
   .lp-pc, .s-pc { display: inline; }
   .lp-ph, .s-ph { display: none; }
@@ -1005,11 +1011,14 @@ html[data-ex="b"] .mn-ex .cu-flow__q { color: var(--s-green); }
   .cu-hero .s-btn { margin-top: 27.5px; height: 56px; min-width: 143px; padding: 0 36px; }
 
   .cu-diagram { padding-top: 93px; }
-  .cu-dg { width: 880px; max-width: 100%; margin-inline: auto; column-gap: 24px; row-gap: 6px; }
+  .cu-dg { width: 880px; max-width: 100%; margin-inline: auto; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); column-gap: 8px; row-gap: 6px; }
   .cu-dg__head { margin-bottom: 7px; font-size: 15.5px; line-height: 26px; }
   .cu-dg__head b { margin-right: 6px; font-size: 18px; }
-  .cu-dg__box { height: 60px; padding: 0 21px; border-radius: 10px; font-size: 18px; }
-  .cu-dg__box--fill { padding: 0 20px; border-radius: 3px; }
+  .cu-dg__box { min-height: 74px; padding: 10px 21px; border-radius: 10px; }
+  .cu-dg__name, .cu-dg__box--fill .cu-dg__name { font-size: 18px; line-height: 24px; }
+  .cu-dg__sub { margin-top: 3px; font-size: 14px; line-height: 20px; }
+  .cu-dg__box--fill { padding: 10px 20px; border-radius: 3px; }
+  .cu-dg__plus { font-size: 20px; }
   .cu-dg__box--top { border-radius: 10px 10px 3px 3px; }
   .cu-dg__box--end { border-radius: 3px 3px 10px 10px; }
   .cu-dg__none { border-radius: 10px; font-size: 16px; line-height: 24px; }
