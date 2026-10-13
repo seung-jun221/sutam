@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-page="ceo">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +8,12 @@
       content="이시용 대표 - 21년 입시컨설팅 경력, 수리탐구 시리즈 48권 저자, 유튜브 200만 조회"
     />
     <title>이시용 대표 소개 | 수리탐구 사직직영점</title>
+    <meta name="theme-color" content="#0D3B2E" />
 
-    <!-- Open Graph 메타태그 -->
+    <!-- 링크 미리보기 카드 -->
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="이시용 대표 소개 | 수리탐구 사직직영점" />
-    <meta property="og:description" content="교재를 만든 사람이 직접 가르칩니다. 21년 입시컨설팅, 수리탐구 48권 저자" />
+    <meta property="og:description" content="수리탐구 저자 직강. 대치 입시컨설턴트 21년, 수리탐구 48권 집필." />
     <meta property="og:image" content="https://suritamgu.co.kr/og-card-common-1200x630.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -20,29 +21,24 @@
     <meta property="og:site_name" content="수리탐구 사직직영점" />
     <meta property="og:locale" content="ko_KR" />
 
-    <!-- 측정(메타 픽셀 · GA4): 공통 파일 하나만 부른다. 기본 코드는 assets/site/track.js 에 있다 -->
-    <script src="/assets/site/config.js"></script>
-    <script src="/assets/site/news.js"></script>
-    <script src="/assets/site/site.js"></script>
-    <script src="/assets/site/track.js"></script>
-
-    <!-- 파비콘 -->
+    <!-- 탭 아이콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
     <link rel="manifest" href="/manifest.json">
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/ceo-profile.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-    />
-    <!-- 새 공통 머리·바닥의 스타일 -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Bold.subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Regular.subset.woff2" crossorigin />
     <link rel="stylesheet" href="/assets/site/site.css" />
+
+    <!-- 설정 · 소식 · 화면 동작 · 측정 (이 순서대로) -->
+    <script src="/assets/site/config.js"></script>
+    <script src="/assets/site/news.js"></script>
+    <script src="/assets/site/site.js"></script>
+    <script src="/assets/site/track.js"></script>
   </head>
-  <body>
+  <body class="s-page">
     <!-- 공통 머리 -->
     <header class="s-header s-header--nav">
       <div class="s-wrap s-header__row">
@@ -60,88 +56,96 @@
       </div>
     </header>
 
-    <!-- 메인 컨텐츠 -->
-    <main class="ceo-profile-main">
-      <!-- 히어로 배너 -->
-      <section class="ceo-hero">
-        <div class="container">
-          <p class="ceo-hero-text">대치 입시컨설턴트 21년 / 교육회사 운영 12년 / 수학학원 운영 20년</p>
-          <p class="ceo-hero-text">학원장, 수학강사 교육 10년 / 연세대 교육학 석사과정</p>
+    <main>
+      <!-- 머리 — 사진은 PC에서 딥그린 바탕 아래로 걸쳐 내려온다 -->
+      <section class="ce-hero">
+        <div class="s-wrap ce-hero__grid">
+          <div class="ce-hero__text">
+            <p class="s-eyebrow ce-hero__eyebrow">대치동 입시전문가</p>
+            <h1 class="ce-hero__title">이시용 대표</h1>
+          </div>
+          <picture class="ce-hero__photo">
+            <source type="image/webp" srcset="/assets/images/profile.webp" />
+            <img src="/assets/images/profile.png" alt="이시용 대표" width="600" height="875" fetchpriority="high" />
+          </picture>
+          <p class="ce-hero__line">수리탐구 교재 집필 · 대치 입시컨설턴트 21년 · 사직직영점 직강</p>
         </div>
       </section>
 
-      <!-- 프로필 섹션 -->
-      <section class="ceo-detail-section">
-        <div class="container">
-          <div class="ceo-detail-grid">
-            <!-- 왼쪽: 이미지 및 기본 정보 -->
-            <div class="ceo-left">
-              <div class="ceo-basic-info">
-                <p class="ceo-subtitle">대치동 입시전문가</p>
-                <p class="ceo-role">i.Study Director</p>
-                <h1 class="ceo-name-large">이시용</h1>
+      <!-- 1. 수리탐구 저자 직강 — 버튼은 평소 "입학 상담", 설명회 기간에는 "설명회 예약" 하나로 바뀐다(news.js) -->
+      <section class="ce-author">
+        <div class="s-wrap">
+          <div class="ce-author__in">
+            <h2 class="s-title">수리탐구 저자 직강</h2>
+            <p class="ce-author__body">수리탐구 48권을 집필한 이시용 대표가 사직직영점에서 직접 수업합니다. 설명회에 참석하시면 이시용 대표의 1:1 입시 컨설팅을 받으실 수 있습니다.</p>
+            <a class="s-btn s-btn--green when-normal" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="author">입학 상담</a>
+            <a class="s-btn s-btn--green when-sem" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="author">설명회 예약</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 이력 -->
+      <section class="ce-cv">
+        <div class="s-wrap ce-cv__grid">
+          <h2 class="s-title">이력</h2>
+          <div class="ce-cv__cols">
+            <div class="ce-cv__col">
+              <div class="ce-cv__group">
+                <h3 class="ce-cv__head">경력 요약</h3>
+                <ul class="ce-cv__list ce-cv__list--sum">
+                  <li>대치 입시컨설턴트 21년</li>
+                  <li>교육회사 운영 13년</li>
+                  <li>수학학원 운영 21년</li>
+                  <li>학원장·수학강사 교육 11년</li>
+                  <li>연세대 교육학 석사과정</li>
+                </ul>
               </div>
-              <div class="ceo-photo">
-                <picture>
-                  <source srcset="assets/images/profile.webp" type="image/webp" />
-                  <img src="assets/images/profile.png" alt="이시용 대표" />
-                </picture>
+              <div class="ce-cv__group">
+                <h3 class="ce-cv__head">교육회사 이력</h3>
+                <ul class="ce-cv__list ce-cv__list--era">
+                  <li><span>전)</span> <span>대교 에듀피아 강사아카데미 교수</span></li>
+                  <li><span>전)</span> <span>에이블 에듀케이션 부대표</span></li>
+                  <li><span>전)</span> <span>에이블 에듀테크 이사</span></li>
+                  <li><span>전)</span> <span>아이작 교육그룹 이사</span></li>
+                  <li><span>현)</span> <span>드림런 교육 대표이사</span></li>
+                  <li><span>현)</span> <span>아이닷에듀 대표</span></li>
+                </ul>
+              </div>
+              <div class="ce-cv__group">
+                <h3 class="ce-cv__head">학원 운영 이력</h3>
+                <ul class="ce-cv__list ce-cv__list--era">
+                  <li><span>전)</span> <span>송파 페르마 원장</span></li>
+                  <li><span>전)</span> <span>대치 수학의 눈 원장</span></li>
+                  <li><span>전)</span> <span>대치 매쓰랭귀지 원장</span></li>
+                  <li><span>전)</span> <span>대치 에이블 수학 학원 원장</span></li>
+                  <li><span>전)</span> <span>대치 아이작 본원 원장</span></li>
+                </ul>
               </div>
             </div>
-
-            <!-- 오른쪽: 상세 이력 -->
-            <div class="ceo-right">
-              <!-- 교육회사 이력 -->
-              <div class="career-section">
-                <h3 class="career-title">교육회사 이력</h3>
-                <ul class="career-list">
-                  <li>전) 대교 에듀피아 강사아카데미 교수</li>
-                  <li>전) 에이블 에듀케이션 부대표</li>
-                  <li>전) 에이블 에듀테크 이사</li>
-                  <li>전) 아이작 교육그룹 이사</li>
-                  <li>현) 드림런 교육 대표이사</li>
-                  <li>현) 아이스터디 대표</li>
-                </ul>
-              </div>
-
-              <!-- 학원 운영 이력 -->
-              <div class="career-section">
-                <h3 class="career-title">학원 운영 이력</h3>
-                <ul class="career-list">
-                  <li>전) 송파 페르마 원장</li>
-                  <li>전) 대치 수학의 눈 원장</li>
-                  <li>전) 대치 매쓰랭귀지 원장</li>
-                  <li>전) 대치 에이블 수학 학원 원장</li>
-                  <li>전) 대치 아이작 본원 원장</li>
-                  <li>현) 대치 넥스트닥 원장</li>
-                </ul>
-              </div>
-
-              <!-- 저서 및 제작 컨텐츠 -->
-              <div class="career-section">
-                <h3 class="career-title">저서 및 제작 컨텐츠</h3>
-                <ul class="career-list">
-                  <li>초,중등위한 학습 전략서 [ 특별한 교육 ]</li>
-                  <li>학교를 배우다. [ 중학교 분석 자료집 ]</li>
-                  <li>수학 전략서 [ 대외비 수와식 12종 ]</li>
-                  <li>수학 전략서 [ 대외비 방부함 10종 ]</li>
-                  <li>수학 등급 만들기 [ 대외비 실전기출 12종 ]</li>
-                  <li>수능사고력 연산 과정 [ CP 12종 ]</li>
-                  <li>수능사고력 등급만들기 과정 [ AP 18종 ]</li>
-                  <li>수학개별맞춤 프로그램 [ 에이블 ACL ]</li>
-                  <li>비교과 영재교육 프로그램 [ 수리과학부 ]</li>
-                  <li>학습이력 점검 자동화 앱 [ 대외비 APP ]</li>
-                  <li>등급 환산 및 분석 프로그램 [ 시크릿 정보 공개 ]</li>
+            <div class="ce-cv__col">
+              <div class="ce-cv__group">
+                <h3 class="ce-cv__head">저서 및 제작 콘텐츠</h3>
+                <ul class="ce-cv__list">
+                  <li>수리탐구 시리즈 48권</li>
+                  <li>초·중등을 위한 학습 전략서 [특별한 교육]</li>
+                  <li>학교를 배우다 [중학교 분석 자료집]</li>
+                  <li>수학 전략서 [대외비 수와식 12종]</li>
+                  <li>수학 전략서 [대외비 방부함 10종]</li>
+                  <li>수학 등급 만들기 [대외비 실전기출 12종]</li>
+                  <li>수능사고력 연산 과정 [CP 12종]</li>
+                  <li>수능사고력 등급만들기 과정 [AP 18종]</li>
+                  <li>수학 개별맞춤 프로그램 [에이블 ACL]</li>
+                  <li>비교과 영재교육 프로그램 [수리과학부]</li>
+                  <li>학습이력 점검 자동화 앱 [대외비 APP]</li>
+                  <li>등급 환산 및 분석 프로그램 [시크릿 정보 공개]</li>
                   <li>IPT 수능사고력 진단검사 프로그램</li>
                 </ul>
               </div>
-
-              <!-- 기타이력 -->
-              <div class="career-section">
-                <h3 class="career-title">기타이력</h3>
-                <ul class="career-list">
-                  <li>최근 10년간 학원장 교육 약 300회</li>
-                  <li>최근 16년간 학부모 설명회 약 500회</li>
+              <div class="ce-cv__group">
+                <h3 class="ce-cv__head">기타 이력</h3>
+                <ul class="ce-cv__list">
+                  <li>최근 11년간 학원장 교육 약 300회</li>
+                  <li>최근 17년간 학부모 설명회 약 500회</li>
                   <li>최근 21년간 학부모 입시 컨설팅 약 2000회</li>
                 </ul>
               </div>
@@ -150,74 +154,36 @@
         </div>
       </section>
 
-      <!-- 유튜브 영상 섹션 -->
-      <section class="youtube-section">
-        <div class="container">
-          <h2 class="section-title">유튜브 출연 영상</h2>
-          <div class="youtube-grid">
-            <div class="youtube-item">
-              <div class="youtube-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/JsfcnyobLwk"
-                  title="이시용 대표 유튜브 영상 1"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+      <!-- 3. 유튜브 출연 영상 — 재생 화면은 조회수가 가장 높은 영상 하나(2026-10-13 확인). 제목은 유튜브의 실제 제목이다.
+           재생 화면은 화면에 들어올 때 불러온다(site.js). 스크립트가 꺼진 화면에서는 유튜브로 가는 링크로 남는다 -->
+      <section class="ce-yt">
+        <div class="s-wrap">
+          <div class="ce-yt__head">
+            <h2 class="s-title">유튜브 출연 영상</h2>
+            <p class="ce-yt__count">유튜브 200만 조회</p>
+          </div>
+          <div class="ce-yt__body">
+            <div class="ce-yt__main">
+              <div class="ce-yt__player" data-video="JsfcnyobLwk">
+                <a href="https://www.youtube.com/watch?v=JsfcnyobLwk" target="_blank" rel="noopener noreferrer" aria-labelledby="ce-yt-title"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18 14 L30 22 L18 30 Z" fill="currentColor"/></svg></a>
               </div>
+              <p class="ce-yt__title" id="ce-yt-title">"학원? 학교? 이분들은 이것부터 과감하게 빼요. 돈이 얼만데.." | 초등, 중등 수학 1등급 로드맵 (대치동 일타 강사 이시용 님)</p>
             </div>
-            <div class="youtube-item">
-              <div class="youtube-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/U_gof5o7r0Q"
-                  title="이시용 대표 유튜브 영상 2"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </div>
-            <div class="youtube-item">
-              <div class="youtube-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/wpefDngkPiE"
-                  title="이시용 대표 유튜브 영상 3"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </div>
-            <div class="youtube-item">
-              <div class="youtube-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/a0K6sUsL2ww"
-                  title="이시용 대표 유튜브 영상 4"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </div>
-            <div class="youtube-item">
-              <div class="youtube-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/8NnmUaZgmy4"
-                  title="이시용 대표 유튜브 영상 5"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </div>
+            <ul class="ce-yt__list">
+              <li><a href="https://www.youtube.com/watch?v=U_gof5o7r0Q" target="_blank" rel="noopener noreferrer"><span>초중등수학, 대치동 상위권 부모들은 모두 아는 이걸 모르는 분이 의외로 많습니다! feat.이시용 대표</span><svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              <li><a href="https://www.youtube.com/watch?v=wpefDngkPiE" target="_blank" rel="noopener noreferrer"><span>”대부분의 아이들이 이걸 몰라서 수학을 포기해요, 학군지 상관없이 수학 잘하는 아이들은 이런 공통점이 있어요“ | 20년동안 대치동에서 본 수학 잘하는 아이들 특징</span><svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              <li><a href="https://www.youtube.com/watch?v=a0K6sUsL2ww" target="_blank" rel="noopener noreferrer"><span>대치 최상위권도 빠져버린 심각한 선행붕괴 현상.( 초,중등 아이들 99%가 겪고 있는 미친 현실)</span><svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              <li><a href="https://www.youtube.com/watch?v=8NnmUaZgmy4" target="_blank" rel="noopener noreferrer"><span>"초등/중등때는 몰라요" 고등 엄마들이 후회하고 있습니다｜겨울 방학 선행 붕괴를 막기위한 수학 학습 가이드[초등/중등 학부모 필수시청]_최지아의 대치피티 EP.04 이시용 컨설턴트</span><svg class="s-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- 돌아가기 버튼 -->
-      <section class="back-section">
-        <div class="container">
-          <a href="index.html" class="back-button">← 메인으로 돌아가기</a>
+      <!-- 4. 버튼 — 평소 "입학 상담", 설명회 기간에는 "설명회 예약" -->
+      <section class="ce-end">
+        <div class="s-wrap">
+          <a class="s-btn s-btn--green when-normal" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
+          <a class="s-btn s-btn--green when-sem" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="bottom">설명회 예약</a>
         </div>
       </section>
     </main>
@@ -238,14 +204,5 @@
         <p class="s-footer__biz">사직수리탐구 · 대표 오승준 · 사업자등록번호 725-96-02003 · 부산 동래구 아시아드대로 175 대영빌딩 3층 · 051-715-1580</p>
       </div>
     </footer>
-
-    <!-- 플로팅 카카오톡 버튼 -->
-    <a href="https://pf.kakao.com/_bxovxon/chat" target="_blank" rel="noopener noreferrer" class="floating-kakao">
-      <span class="kakao-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.73L5.5 21l4.1-2.05c.78.13 1.58.2 2.4.2 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg></span>
-      <span class="kakao-text">상담하기</span>
-    </a>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -195,6 +195,14 @@ html.sem-ended .s-brand.when-ended { display: flex !important; }
 .s-btn--green { background: var(--s-green); color: var(--s-ivory); }
 html.sem-on .s-btn.when-sem,
 html.sem-ended .s-btn.when-ended { display: flex !important; }
+/* 보조 버튼 — 주 버튼과 같은 높이에 면 없이 테두리만 둔다. 주 버튼 옆에만 쓴다.
+   딥그린 바탕에서는 아이보리 테두리(기본), 아이보리 바탕에서는 딥그린 테두리(--line-green) */
+.s-btn--line { border: 1px solid rgba(245, 241, 232, 0.45); color: var(--s-ivory); font-size: 16px; }
+.s-btn--line-green { border-color: var(--s-green); color: var(--s-green); }
+/* 버튼 자리 — 평소에는 버튼 하나, 설명회 기간에는 주 버튼과 보조 버튼 둘(입학 안내) */
+.s-btns { display: grid; gap: 8px; }
+.s-btns .s-btn { padding: 0 12px; }
+html.sem-on .s-btns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
 
 /* ---------- 글 ---------- */
 .s-eyebrow { font-size: 13px; line-height: 1.4; font-weight: 600; }
@@ -867,6 +875,157 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 .mn-loc__row .s-arrow { color: var(--s-green); font-size: 18px; }
 
 /* ==========================================================================
+   입학 안내 (/admission)
+   ========================================================================== */
+
+/* 머리 */
+.ad-hero { background: var(--s-green); color: var(--s-ivory); padding: 31px 0 36px; }
+.ad-hero__eyebrow { color: rgba(245, 241, 232, 0.82); font-weight: 400; }
+.ad-hero__title { margin-top: 12px; font-size: 29px; line-height: 39px; font-weight: 700; letter-spacing: -0.03em; }
+.ad-hero__sub { margin-top: 14px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 25px; }
+.ad-hero .s-btns { margin-top: 24px; }
+
+/* 1. 입학 시기 */
+.ad-when { padding-top: 44px; }
+.ad-when__list { display: grid; gap: 32px; margin-top: 20px; }
+.ad-when__item { padding-top: 18px; border-top: 1px solid var(--s-green); }
+.ad-when__title { color: var(--s-ink); font-size: 20px; line-height: 29px; font-weight: 700; letter-spacing: -0.02em; }
+.ad-when__title span { color: var(--s-sub); font-weight: 400; }
+.ad-when__body { margin-top: 10px; font-size: 16px; line-height: 28px; text-wrap: pretty; }
+.ad-when__note {
+  margin-top: 28px;
+  padding: 16px var(--s-inset) 0;
+  border-top: 1px solid var(--s-line);
+  color: var(--s-sub);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* 2. 입학 절차 */
+.ad-steps { padding-top: 88px; }
+.ad-steps .s-title, .ad-contact .s-title { padding-left: var(--s-inset); }
+.ad-steps__sub { margin-top: 8px; padding-left: var(--s-inset); color: var(--s-sub); font-size: 14px; line-height: 22px; }
+.ad-steps .s-steps { margin-top: 28px; }
+
+/* 단계 설명 목록 — 도형(순서대로 사각·삼각·사분원·원)과 번호·이름, 그 설명. 도형에서 다음 단계까지 선이 내려간다
+   기본: 도형 옆에 이름, 그 아래 설명 / 넓은 PC(1200 이상): 도형·이름·설명이 한 줄 */
+.s-steps { margin: 0; padding: 0; list-style: none; }
+.s-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 16px;
+  padding-bottom: 36px;
+}
+.s-step:last-child { padding-bottom: 0; }
+.s-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 12.5px;
+  top: 26px;
+  bottom: 0;
+  width: 1px;
+  background: #B9B09C;
+}
+.s-step .s-shape { grid-row: 1 / span 2; width: 26px; height: 26px; }
+.s-step__name {
+  grid-column: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--s-ink);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+.s-step__name span { color: var(--s-green); font-size: 13px; }
+.s-step__body { grid-column: 2; margin-top: 10px; font-size: 16px; line-height: 28px; text-wrap: pretty; }
+
+/* 3. 문의 — 링크 두 줄은 메인 "오시는 길"의 줄(.mn-loc__rows)을 그대로 쓴다. 그 아래가 맨 아래 버튼 */
+.ad-contact { padding: 88px 0 72px; }
+.ad-contact .s-btns { margin-top: 56px; }
+
+/* ==========================================================================
+   대표 이력 (/ceo-profile)
+   ========================================================================== */
+
+/* 머리 — 이름 옆에 인물 사진, 그 아래 한 줄 */
+.ce-hero { background: var(--s-green); color: var(--s-ivory); padding: 28px 0 32px; }
+.ce-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) 132px; column-gap: 20px; align-items: end; }
+.ce-hero__text { padding-bottom: 4px; }
+.ce-hero__eyebrow { color: rgba(245, 241, 232, 0.82); font-weight: 400; }
+.ce-hero__title { margin-top: 10px; font-size: 32px; line-height: 40px; font-weight: 700; letter-spacing: -0.03em; }
+.ce-hero__photo { display: block; }
+.ce-hero__photo img {
+  display: block;
+  width: 132px;
+  height: 176px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 14px;
+}
+.ce-hero__line {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--s-line-on-green);
+  color: rgba(245, 241, 232, 0.88);
+  font-size: 15px;
+  line-height: 25px;
+  text-wrap: pretty;   /* 마지막 줄에 낱말 하나만 남지 않게 */
+}
+
+/* 1. 수리탐구 저자 직강 — 구획 바로 아래의 버튼은 맨 아래 버튼과 같은 부품 */
+.ce-author { padding-top: 40px; }
+.ce-author .s-title, .ce-author__body { padding-inline: var(--s-inset); }
+.ce-author__body { margin-top: 16px; font-size: 17px; line-height: 30.6px; text-wrap: pretty; }
+.ce-author .s-btn { margin-top: 28px; }
+
+/* 2. 이력 — 묶음 다섯: 경력 요약(큰 글), 전)·현)이 붙는 두 묶음, 줄 목록 두 묶음 */
+.ce-cv { padding-top: 96px; }
+.ce-cv .s-title, .ce-yt__head { padding-left: var(--s-inset); }
+.ce-cv__cols { margin-top: 28px; }
+.ce-cv__col + .ce-cv__col, .ce-cv__group + .ce-cv__group { margin-top: 40px; }
+.ce-cv__group { padding-top: 16px; border-top: 1px solid var(--s-green); }
+.ce-cv__head { padding-left: var(--s-inset); color: var(--s-green); font-size: 13px; line-height: 18px; font-weight: 700; }
+.ce-cv__list { margin: 5px 0 0; padding: 0; list-style: none; color: var(--s-ink); font-size: 16px; line-height: 25px; }
+.ce-cv__list li { padding: 11px var(--s-inset); border-bottom: 1px solid var(--s-line); }
+.ce-cv__list--era li { display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 6px; }
+.ce-cv__list--era li span:first-child { color: var(--s-sub); }
+.ce-cv__list--sum { margin-top: 7px; font-size: 18px; line-height: 27px; font-weight: 600; }
+.ce-cv__list--sum li { padding: 10px var(--s-inset); border-bottom: 0; }
+
+/* 3. 유튜브 출연 영상 — 재생 화면 하나와 제목 링크 줄 */
+.ce-yt { padding-top: 96px; }
+.ce-yt__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.ce-yt__count { color: var(--s-sub); font-size: 14px; line-height: 20px; font-weight: 600; }
+.ce-yt__body { margin-top: 20px; }
+.ce-yt__player { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: var(--s-ink); }
+.ce-yt__player a { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--s-ivory); }
+.ce-yt__player svg { width: 44px; height: 44px; }
+.ce-yt__player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ce-yt__title { margin-top: 12px; padding-inline: var(--s-inset); color: var(--s-ink); font-size: 15px; line-height: 22.5px; font-weight: 600; }
+.ce-yt__list { margin: 20px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--s-green); }
+.ce-yt__list li { border-bottom: 1px solid var(--s-line); }
+.ce-yt__list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px var(--s-inset);
+  color: var(--s-ink);
+  font-size: 15px;
+  line-height: 22.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.ce-yt__list .s-arrow { color: var(--s-green); font-size: 18px; }
+
+/* 4. 버튼 */
+.ce-end { padding: 72px 0; }
+
+/* ==========================================================================
    PC (시안 1440 기준. 본문 폭 1200)
    ========================================================================== */
 @media (min-width: 960px) {
@@ -1192,4 +1351,89 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
   .mn-loc__sub { margin-top: 13px; font-size: 18px; line-height: 28px; }
   .mn-loc__rows { margin-top: 32px; }
   .mn-loc__row { height: 61px; font-size: 17px; }
+
+  /* 버튼 자리와 보조 버튼 */
+  .s-btns { display: flex; flex: none; gap: 12px; }
+  .s-btns .s-btn { padding: 0 44px; }
+  html.sem-on .s-btns .s-btn { padding: 0 40px; }
+  html.sem-on .s-btns .s-btn--line { padding: 0 32px; font-size: 17px; }
+
+  /* 입학 안내 */
+  .ad-hero { padding: 80px 0 88px; }
+  .ad-hero__row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px 64px; }
+  .ad-hero__text { flex: 1 1 600px; min-width: 0; }
+  .ad-hero__title { margin-top: 18px; font-size: 50px; line-height: 65px; letter-spacing: -0.035em; }
+  .ad-hero__sub { margin-top: 24px; font-size: 19px; line-height: 32px; }
+  .ad-hero .s-btns { margin-top: 0; }
+
+  .ad-when { padding-top: 72px; }
+  .ad-when__list { grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 28px; }
+  .ad-when__item { padding-top: 28px; }
+  .ad-when__title { font-size: 28px; line-height: 39px; letter-spacing: -0.025em; }
+  .ad-when__body { margin-top: 16px; font-size: 18px; line-height: 32px; }
+  .ad-when__note { margin-top: 40px; padding-top: 20px; font-size: 16px; line-height: 26px; }
+
+  .ad-steps { padding-top: 160px; }
+  .ad-steps__sub { margin-top: 12px; font-size: 16px; line-height: 26px; }
+  .ad-steps .s-steps { margin-top: 8px; }
+  .s-step { column-gap: 28px; grid-template-columns: 32px minmax(0, 1fr); padding-bottom: 48px; }
+  .s-step:not(:last-child)::before { left: 15.5px; top: 32px; }
+  .s-step .s-shape { width: 32px; height: 32px; }
+  .s-step__name { padding-top: 2px; gap: 12px; font-size: 20px; line-height: 29px; }
+  .s-step__name span { font-size: 15px; }
+  .s-step__body { font-size: 18px; line-height: 32.4px; }
+
+  .ad-contact { padding: 160px 0; }
+  .ad-contact__body { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 40px 64px; }
+  .ad-contact .mn-loc__rows { flex: 1 1 360px; min-width: 0; margin-top: 0; }
+  .ad-contact .s-btns { margin-top: 0; }
+
+  /* 대표 이력 */
+  .ce-hero { padding: 88px 0 0; }
+  .ce-hero__grid { grid-template-columns: minmax(0, 1fr) 400px; column-gap: 64px; align-items: start; }
+  .ce-hero__text { padding: 24px 0 0; }
+  .ce-hero__title { margin-top: 18px; font-size: 56px; line-height: 67px; letter-spacing: -0.04em; }
+  /* 사진은 딥그린 바탕 아래로 234px 걸쳐 내려온다. 그 옆자리가 "수리탐구 저자 직강" */
+  .ce-hero__photo { grid-column: 2; grid-row: 1 / span 2; margin-bottom: -234px; }
+  .ce-hero__photo img { width: 400px; height: 520px; border-radius: 18px; }
+  .ce-hero__line { grid-column: 1; max-width: 600px; margin: 28px 0 72px; padding-top: 22px; font-size: 19px; line-height: 31px; }
+
+  .ce-author { min-height: 332px; padding-top: 72px; }
+  .ce-author__in { padding-right: 464px; }
+  .ce-author__body { margin-top: 24px; font-size: 21px; line-height: 38.85px; }
+  .ce-author .s-btn { margin-top: 40px; }
+
+  .ce-cv { padding-top: 120px; }
+  .ce-cv__grid { display: grid; grid-template-columns: 291px minmax(0, 1fr); align-items: start; }
+  .ce-cv__cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; align-items: start; margin-top: 0; }
+  .ce-cv__col + .ce-cv__col { margin-top: 0; }
+  .ce-cv__group + .ce-cv__group { margin-top: 56px; }
+  .ce-cv__group { padding-top: 20px; }
+  .ce-cv__head { font-size: 15px; line-height: 21px; }
+  .ce-cv__list { margin-top: 6px; font-size: 18px; line-height: 28px; }
+  .ce-cv__list li { padding: 13px 0; }
+  .ce-cv__list--era li { grid-template-columns: 34px minmax(0, 1fr); column-gap: 8px; }
+  .ce-cv__list--sum { margin-top: 8px; font-size: 21px; line-height: 31.5px; }
+  .ce-cv__list--sum li { padding: 10px 0; }
+
+  .ce-yt { padding-top: 160px; }
+  .ce-yt__head { gap: 8px 20px; }
+  .ce-yt__count { font-size: 16px; line-height: 24px; }
+  .ce-yt__body { display: flex; align-items: flex-start; gap: 56px; margin-top: 40px; }
+  .ce-yt__main { flex: 2 1 560px; min-width: 0; }
+  .ce-yt__player { border-radius: 18px; }
+  .ce-yt__player svg { width: 60px; height: 60px; }
+  .ce-yt__title { margin-top: 16px; font-size: 18px; line-height: 27px; }
+  .ce-yt__list { flex: 1 1 320px; min-width: 0; margin-top: 0; }
+  .ce-yt__list a { gap: 16px; min-height: 72px; padding: 18px 0; font-size: 17px; line-height: 25.5px; }
+  .ce-yt__list .s-arrow { font-size: 20px; }
+
+  .ce-end { padding: 120px 0 160px; }
+}
+
+/* 넓은 PC(1200 이상): 단계 설명 목록의 도형·이름·설명을 한 줄에 둔다. 그보다 좁으면 이름 아래에 설명 */
+@media (min-width: 1200px) {
+  .s-step { grid-template-columns: 32px minmax(0, 220px) minmax(0, 1fr); }
+  .s-step .s-shape { grid-row: 1; }
+  .s-step__body { grid-column: 3; margin-top: 0; padding-top: 2px; }
 }
