@@ -468,7 +468,7 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
 .nw-list { margin-top: 12px; padding: 0; list-style: none; border-top: 1px solid var(--s-green); }
 .nw-item {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);   /* 가장 긴 날짜(2026.11.01~02)가 한 줄에 들어가는 폭 */
+  grid-template-columns: 104px minmax(0, 1fr);   /* 가장 긴 날짜(2026.11.08~09)가 한 줄에 들어가는 폭 */
   padding: 17px var(--s-inset) 18px;
   border-bottom: 1px solid var(--s-line);
 }

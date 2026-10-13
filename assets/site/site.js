@@ -13,7 +13,7 @@
   var NEWS = window.SITE_NEWS || [];
   var root = document.documentElement;
 
-  /* '2026-11-02 10:30' (한국 시간) → 시각. 기기 시간대와 상관없이 같은 순간을 가리킨다 */
+  /* '2026-11-09 10:30' (한국 시간) → 시각. 기기 시간대와 상관없이 같은 순간을 가리킨다 */
   function kst(text) {
     var m = /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?$/.exec(String(text || '').trim());
     if (!m) return NaN;
@@ -27,7 +27,8 @@
   for (var i = 0; i < NEWS.length; i++) {
     var it = NEWS[i];
     var start = kst(it.start), end = kst(it.end);
-    it.upcoming = !isNaN(end) && now < end;              // "예정"에 둘 것
+    it.waiting = it.seminar === true && !isNaN(start) && now < start;   // 시작 전의 설명회: 소식 어디에도 내지 않는다
+    it.upcoming = !it.waiting && !isNaN(end) && now < end;              // "예정"에 둘 것
     it.ended = !isNaN(end) && now >= end;
     it.on = it.seminar === true && !isNaN(end) && now < end && (isNaN(start) || now >= start);
     if (it.on && !active) active = it;
@@ -84,7 +85,8 @@
        <... data-news-root>            목록 전체를 감싼 곳
          <section data-news-section>   항목이 하나도 없으면 구획째 숨긴다
            <... data-news="upcoming">  예정 (end 가 아직 지나지 않은 것)
-           <... data-news="past">      지난 안내 (그 밖의 것)                              */
+           <... data-news="past">      지난 안내 (그 밖의 것)
+     start 가 아직 오지 않은 설명회 항목(waiting)은 어느 목록에도 넣지 않는다.              */
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -173,6 +175,7 @@
       var kind = box.getAttribute('data-news');   // upcoming | past | recent(위에서 3건)
       var list = [];
       for (var k = 0; k < NEWS.length; k++) {
+        if (NEWS[k].waiting) continue;
         if (kind === 'recent') { if (list.length < 3) list.push(NEWS[k]); }
         else if ((kind === 'upcoming') === (NEWS[k].upcoming === true)) list.push(NEWS[k]);
       }
