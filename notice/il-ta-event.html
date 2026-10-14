@@ -46,6 +46,10 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
     <link rel="manifest" href="/manifest.json">
 
+    <!-- 새 화면과 같은 묶음 글꼴 -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Bold.subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Regular.subset.woff2" crossorigin />
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/il-ta-event.css" />
@@ -78,7 +82,6 @@
       <!-- 히어로 섹션 -->
       <section class="hero-event">
         <div class="container">
-          <span class="event-label">STUDENT EVENT</span>
           <h1 class="event-title">나도 일타강사다</h1>
           <p class="event-subtitle">2026.04 누테날 이벤트</p>
           <p class="event-tagline">"설명할 수 있어야 진짜 아는 것"</p>
@@ -93,7 +96,6 @@
       <!-- 이벤트 소개 -->
       <section class="event-intro">
         <div class="container">
-          <span class="section-label">ABOUT</span>
           <h2 class="section-title">이벤트 소개</h2>
           <div class="intro-content">
             <p>
@@ -121,7 +123,6 @@
       <!-- 하이라이트 1: 1등 단독 영상 -->
       <section class="video-feature">
         <div class="container">
-          <span class="section-label">HIGHLIGHT 1</span>
           <h2 class="section-title">1등 김** 학생 단독 영상</h2>
           <p class="video-caption">
             중1 소인수분해 단원, 자연수의 제곱이 되는 조건을 활용한 풀이.<br>
@@ -168,7 +169,6 @@
       <!-- 하이라이트 2: 참여자 전체 영상 -->
       <section class="video-feature alt">
         <div class="container">
-          <span class="section-label">HIGHLIGHT 2</span>
           <h2 class="section-title">참여 학생 전체 하이라이트</h2>
           <p class="video-caption">
             칠판 앞에서 당당하게 논리를 펼치는
@@ -218,7 +218,6 @@
       <!-- 채점 기준 -->
       <section class="grading-section">
         <div class="container">
-          <span class="section-label">EVALUATION</span>
           <h2 class="section-title">100점 만점 채점 기준</h2>
           <p class="section-desc">
             단순한 정답 도출이 아닌,
@@ -269,7 +268,6 @@
       <!-- 시상 명단 -->
       <section class="awards-section">
         <div class="container">
-          <span class="section-label">AWARDS</span>
           <h2 class="section-title">시상 명단</h2>
           <p class="section-desc">
             참여한 19명 학생 모두에게 박수를 보냅니다
@@ -392,21 +390,6 @@
           </p>
 
           <a
-            href="https://edu.suritamgu.co.kr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-card cta-card-primary"
-            id="main-cta"
-          >
-            <div class="cta-card-content">
-              <div class="cta-card-label">PRIMARY</div>
-              <h3 class="cta-card-title">7월 대형 설명회 사전 알림 신청</h3>
-              <p class="cta-card-desc">신청자께 우선 안내드립니다</p>
-            </div>
-            <span class="cta-card-arrow">→</span>
-          </a>
-
-          <a
             href="https://pf.kakao.com/_bxovxon/chat"
             target="_blank"
             rel="noopener noreferrer"
@@ -414,7 +397,6 @@
             id="kakao-cta"
           >
             <div class="cta-card-content">
-              <div class="cta-card-label">KAKAO</div>
               <h3 class="cta-card-title">학원 카톡 채널 친구 추가</h3>
               <p class="cta-card-desc">공지·이벤트 알림을 받아보세요</p>
             </div>
@@ -429,7 +411,6 @@
             id="call-cta"
           >
             <div class="cta-card-content">
-              <div class="cta-card-label">CALL</div>
               <h3 class="cta-card-title">학원 안내 통화 신청 (5~10분)</h3>
               <p class="cta-card-desc">원하시는 시간대로 학원에서 연락드립니다</p>
             </div>
@@ -462,23 +443,8 @@
     <!-- CTA 클릭 이벤트 트래킹 -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var mainCta = document.getElementById('main-cta');
       var kakaoCta = document.getElementById('kakao-cta');
       var callCta = document.getElementById('call-cta');
-
-      if (mainCta) {
-        mainCta.addEventListener('click', function() {
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', { content_name: '7월 설명회 사전 알림' });
-          }
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'cta_click', {
-              'cta_type': 'pre_register',
-              'cta_location': 'il_ta_event'
-            });
-          }
-        });
-      }
 
       if (kakaoCta) {
         kakaoCta.addEventListener('click', function() {
