@@ -102,13 +102,15 @@ window.SITE_NEWS = [
   {
     date: '2026.04',
     title: '사직동 중학교 분석 설명회, 210명 참석',
+    link: '/notice/middle-school-analysis',
     photo: '/assets/images/site/seminar-apr-hall-thumb.jpg'
   },
 
   {
     date: '2026.04',
     title: '누테날 "나도 일타강사다".',
-    desc: '수리탐구 문제 하나를 부모님께 설명하는 영상을 찍었습니다.'
+    desc: '수리탐구 문제 하나를 부모님께 설명하는 영상을 찍었습니다.',
+    link: '/notice/il-ta-event'
   },
 
   {
