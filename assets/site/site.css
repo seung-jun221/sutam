@@ -195,6 +195,9 @@ html.sem-ended .s-brand.when-ended { display: flex !important; }
 .s-btn--green { background: var(--s-green); color: var(--s-ivory); }
 html.sem-on .s-btn.when-sem,
 html.sem-ended .s-btn.when-ended { display: flex !important; }
+/* 설정(config.js links)에서 주소를 비워 숨긴 버튼은 설명회 기간에도 숨긴다 */
+html.sem-on .s-btn.when-sem[hidden],
+html.sem-ended .s-btn.when-ended[hidden] { display: none !important; }
 /* 보조 버튼 — 주 버튼과 같은 높이에 면 없이 테두리만 둔다. 주 버튼 옆에만 쓴다.
    딥그린 바탕에서는 아이보리 테두리(기본), 아이보리 바탕에서는 딥그린 테두리(--line-green) */
 .s-btn--line { border: 1px solid rgba(245, 241, 232, 0.45); color: var(--s-ivory); font-size: 16px; }
