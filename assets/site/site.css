@@ -774,6 +774,8 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
   font-weight: 600;
 }
 .mn-cumul__note { margin-top: 16px; color: rgba(245, 241, 232, 0.82); font-size: 15px; line-height: 24px; }
+/* 띠 끝의 "누적테스트 자세히 보기" — "수리탐구 자세히 보기"(.mn-more)와 같은 모양을 딥그린 바탕의 색으로 */
+.mn-cumul .mn-more { grid-column: 1 / -1; margin-inline: var(--s-inset); color: var(--s-ivory); border-color: var(--s-line-on-green); }
 
 /* 4. 결과 */
 .mn-result { padding-top: 88px; }
@@ -1024,6 +1026,102 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
 
 /* 4. 버튼 */
 .ce-end { padding: 72px 0; }
+
+/* ==========================================================================
+   특장점 (/features) 과 상세 세 장 (/cumulative-test, /reading-training, /metacognition-training)
+   머리와 버튼 두 상태는 입학 안내(.ad-hero, .s-btns)를 그대로 쓴다
+   ========================================================================== */
+
+/* 머리의 꼬리 글 — 상세 세 장은 앞에 프로그램의 도형이 붙는다 */
+.ft-eyebrow { display: flex; align-items: center; gap: 10px; }
+.ft-eyebrow .s-shape { width: 14px; height: 14px; background: rgba(245, 241, 232, 0.72); }
+
+/* 허브: 도입 */
+.ft-intro { padding-top: 56px; }
+.ft-intro__body { padding-inline: var(--s-inset); color: var(--s-ink); font-size: 18px; line-height: 33.3px; }
+
+/* 허브: 세 칸 — "자세히 보기"만 링크다(칸 전체가 링크가 아니다) */
+.ft-cards { display: grid; gap: 16px; margin-top: 48px; }
+.ft-card { display: flex; flex-direction: column; padding: 28px 24px 0; background: #fff; border-top: 3px solid var(--s-green); }
+.ft-card__name { display: flex; align-items: center; gap: 10px; color: var(--s-green); font-size: 15px; line-height: 20px; font-weight: 700; }
+.ft-card__name .s-shape { width: 20px; height: 20px; }
+.ft-card__title { margin-top: 18px; color: var(--s-ink); font-size: 20px; line-height: 30px; font-weight: 700; letter-spacing: -0.02em; }
+.ft-card__sub { margin: 12px 0 24px; color: var(--s-sub); font-size: 15px; line-height: 24px; }
+.ft-card__more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 18px 0;
+  border-top: 1px solid var(--s-line);
+  color: var(--s-green);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ft-card__more .s-arrow { font-size: 20px; }
+
+/* 상세 1번: 인용 — 메인 "결과"의 인용 블록(.mn-quote)을 흰 띠에 놓는다. 이름 줄은 두지 않는다(원장 결정) */
+.ft-quote { padding: 67px 0 64px; background: #fff; }
+.ft-quote .mn-quote { padding: 0 28px; }
+.ft-quote .mn-quote__mark { width: 31px; height: 24px; }
+.ft-quote .mn-quote blockquote { margin-top: 34px; font-size: 18.5px; line-height: 34px; }
+
+/* 상세 구획 1·2·3 — 딥그린 선 아래에 도형(사각·삼각·사분원)·번호·제목, 그 아래 본문. 그림이 있으면 본문 아래(PC 는 오른쪽) */
+.ft-secs { padding-top: 64px; }
+.ft-sec + .ft-sec { margin-top: 56px; }
+.ft-sec__text { padding-top: 23px; border-top: 2px solid var(--s-green); }
+.ft-sec__head {
+  display: grid;
+  grid-template-columns: 20px 32px minmax(0, 1fr);
+  align-items: center;
+  color: var(--s-ink);
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.ft-sec__head .s-shape { width: 20px; height: 20px; }
+.ft-sec__no { padding-left: 14px; color: var(--s-green); font-size: 14px; line-height: 20px; }
+.ft-sec__body { margin-top: 17px; font-size: 16px; line-height: 29.6px; }
+
+/* 그림 상자 — 연한 바탕 카드에 둥근 모서리, 오른쪽 아래 꼬리표 */
+.ft-fig { position: relative; margin-top: 28px; overflow: hidden; border-radius: 16px; background: #ECE6D9; }
+.ft-fig picture, .ft-fig img { display: block; width: 100%; height: auto; }
+.ft-fig__tag {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 1px 9px;
+  border: 1px solid #E2DCCF;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--s-ink2);
+  font-size: 11px;
+  line-height: 16px;
+}
+/* 채점 시험지 사진(가로로 긴 사진) — 폰에서는 좌우를 조금 잘라 높이를 확보한다. 위아래는 자르지 않는다 */
+.ft-fig--paper img { aspect-ratio: 16 / 9; object-fit: cover; }
+/* 폰 화면 캡처 — 카드 안 가운데에 세운다 */
+.ft-fig--shot { aspect-ratio: 4 / 3; }
+.ft-fig--shot img {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  width: auto;
+  height: 82%;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(26, 38, 32, 0.14);
+  transform: translateX(-50%);
+}
+/* 메타인지 그림 — 카드와 꼬리표가 그림 안에 그려져 있다 */
+.ft-fig--art { background: none; }
+
+/* 맨 아래 버튼 — 가는 선 아래. 머리의 버튼과 같다 */
+.ft-end { padding: 72px 0; }
+.ft-end--hub { padding-top: 56px; }
+.ft-end__in { padding-top: 32px; border-top: 1px solid var(--s-line); }
 
 /* ==========================================================================
    PC (시안 1440 기준. 본문 폭 1200)
@@ -1429,6 +1527,41 @@ html.sem-on .mn-sem.when-sem { display: block !important; }
   .ce-yt__list .s-arrow { font-size: 20px; }
 
   .ce-end { padding: 120px 0 160px; }
+
+  /* 특장점과 상세 세 장 */
+  .ft-intro { padding-top: 112px; }
+  .ft-intro__body { max-width: 980px; font-size: 24px; line-height: 43px; }
+  .ft-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 88px; }
+  .ft-card { padding: 36px 32px 0; }
+  .ft-card__name { font-size: 16px; }
+  .ft-card__name .s-shape { width: 22px; height: 22px; }
+  .ft-card__title { margin-top: 26px; font-size: 23px; line-height: 34px; }
+  .ft-card__sub { margin: 16px 0 36px; line-height: 26px; }
+  .ft-card__more { padding: 22px 0 23px; }
+
+  .ft-quote { padding: 128px 0; }
+  .ft-quote .mn-quote { display: block; padding: 0; }
+  .ft-quote .mn-quote__mark { width: 42px; height: 33px; margin-top: 0; }
+  .ft-quote .mn-quote blockquote { max-width: 880px; margin-top: 48px; font-size: 26px; line-height: 48px; }
+
+  /* 그림이 없는 구획은 두 칸에 나란히, 그림이 있는 구획은 한 줄을 다 쓰고 글 왼쪽·그림 오른쪽 */
+  .ft-secs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 104px 64px; align-items: start; padding-top: 120px; }
+  .ft-sec + .ft-sec { margin-top: 0; }
+  .ft-sec--fig { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) 560px; column-gap: 88px; align-items: start; }
+  .ft-sec__text { padding-top: 32px; }
+  .ft-sec__head { grid-template-columns: 24px 40px minmax(0, 1fr); font-size: 25px; line-height: 32px; }
+  .ft-sec__head .s-shape { width: 24px; height: 24px; }
+  .ft-sec__no { padding-left: 19px; font-size: 15px; }
+  .ft-sec__body { margin-top: 23px; font-size: 17px; line-height: 33.3px; }
+  .ft-fig { margin-top: 34px; border-radius: 20px; }
+  .ft-fig__tag { right: 14px; bottom: 12px; }
+  .ft-fig--paper img { aspect-ratio: auto; }
+  .ft-fig--shot img { border-radius: 12px; }
+
+  .ft-end { padding: 120px 0 128px; }
+  .ft-end--hub { padding-top: 72px; }
+  .ft-end__in { padding-top: 48px; }
+  .ft-end .s-btns { justify-content: flex-end; }
 }
 
 /* 넓은 PC(1200 이상): 단계 설명 목록의 도형·이름·설명을 한 줄에 둔다. 그보다 좁으면 이름 아래에 설명 */

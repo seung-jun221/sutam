@@ -37,3 +37,10 @@
 # (파일 suritamgu-signature.html 은 지우지 않으므로 끝의 ! 로 강제한다)
 /suritamgu-signature       /curriculum  301!
 /suritamgu-signature.html  /curriculum  301!
+
+# 특장점 네 화면은 확장자 없는 주소로 쓴다
+# (파일이 있는 주소라 끝의 ! 로 강제한다. ! 가 없으면 파일이 먼저 나가 넘어가지 않는다)
+/features.html                 /features                 301!
+/reading-training.html         /reading-training         301!
+/metacognition-training.html   /metacognition-training   301!
+/cumulative-test.html          /cumulative-test          301!
