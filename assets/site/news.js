@@ -69,7 +69,7 @@ window.SITE_NEWS = [
     link: '/seminar/2026-11',
     seminar: true,
     periodLabel: '11월 설명회 · 11월 8일(일), 9일(월)',
-    start: '2026-10-24 00:00',
+    start: '2026-10-15 00:00',
     end:   '2026-11-09 10:30'
   },
 
