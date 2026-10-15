@@ -4,7 +4,7 @@
    config.js(설정)와 news.js(소식)를 읽어 화면에 반영한다.
    <head> 에서 바로 실행해 <html> 에 상태 표시를 먼저 붙인다(화면이 깜빡이지 않게).
      js         : 이 스크립트가 돌고 있다 (목록을 다시 그릴 때까지 잠깐 가려 둔다)
-     sem-on     : 지금이 설명회 기간이다 (메인·수리탐구의 버튼과 설명회 묶음)
+     sem-on     : 지금이 설명회 기간이다 (메인·수리탐구·입학 안내·대표 이력의 버튼, 메인의 설명회 묶음)
      sem-ended  : 이 랜딩의 설명회가 끝났다 (<html data-seminar="소식 id">)
    스크립트가 막힌 환경에서는 HTML 에 적힌 기본 상태와 기본 주소가 그대로 쓰인다.
    ========================================================================== */
@@ -232,6 +232,31 @@
       });
       each('a[data-seminar-link]', function (a) { if (active.link) a.href = active.link; });
     }
+
+    /* 영상 재생 화면(대표 이력): 화면에 들어올 때 불러온다(첫 로드를 가볍게).
+       <div data-video="유튜브 영상 ID"> 안에는 유튜브로 가는 링크가 기본으로 들어 있고, 불러올 때 재생 화면으로 바꾼다.
+       스크립트가 꺼진 화면에서는 그 링크가 그대로 남는다 */
+    each('[data-video]', function (box) {
+      function load() {
+        var link = box.querySelector('a[aria-labelledby]');
+        var label = link ? document.getElementById(link.getAttribute('aria-labelledby')) : null;
+        var frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube.com/embed/' + encodeURIComponent(box.getAttribute('data-video'));
+        frame.title = label ? label.textContent : '';
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.allowFullscreen = true;
+        box.textContent = '';
+        box.appendChild(frame);
+      }
+      if (!('IntersectionObserver' in window)) { load(); return; }
+      var seen = new IntersectionObserver(function (entries) {
+        for (var k = 0; k < entries.length; k++) {
+          if (entries[k].isIntersecting) { seen.disconnect(); load(); return; }
+        }
+      }, { rootMargin: '200px 0px' });
+      seen.observe(box);
+    });
 
     /* 랜딩의 그림: 설정에서 켠 때에만 넣는다 */
     var figure = C.landingFigure || {};
