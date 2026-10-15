@@ -20,41 +20,21 @@
     <meta property="og:site_name" content="수리탐구 사직직영점" />
     <meta property="og:locale" content="ko_KR" />
 
-    <!-- Meta Pixel Code -->
+    <!-- 측정(메타 픽셀 · GA4): 공통 파일 하나만 부른다. 기본 코드는 assets/site/track.js 에 있다 -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '941704082060046');
-    fbq('track', 'PageView');
+    window.SITE_TRACK_GA_CONFIG = {
+      page_title: '5주 광고 랜딩 (사전 알림)',
+      content_group: 'grand_opening_lp'
+    };
+    </script>
+    <script src="/assets/site/track.js"></script>
+    <script>
+    /* 이 페이지에만 있는 측정 */
     fbq('track', 'ViewContent', {
       content_name: '7월 대형 설명회 사전 알림',
       content_category: 'grand_opening_lp'
     });
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=941704082060046&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5Z2TTYE4X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5Z2TTYE4X', {
-      send_page_view: true,
-      page_title: '5주 광고 랜딩 (사전 알림)',
-      content_group: 'grand_opening_lp'
-    });
-    </script>
-    <!-- End Google Analytics 4 -->
 
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -117,7 +97,7 @@
               <div class="ceo-info">
                 <h3 class="ceo-name">이시용 대표</h3>
                 <p class="ceo-title">대치 입시컨설턴트 21년 | 수학학원 운영 20년</p>
-                <p class="ceo-youtube-summary">유튜브 출연 (가든패밀리, 정전부부 등) 누적 조회수 <strong>200만+</strong></p>
+                <p class="ceo-youtube-summary">유튜브 출연 (가든패밀리, 정전부부 등) <strong>200만</strong> 조회</p>
                 <div class="ceo-highlight">
                   "부산 직영점에서<br>직강 수업을 진행합니다"
                 </div>
@@ -281,7 +261,7 @@
           <span class="section-label">CUMULATIVE TEST</span>
           <h2 class="go-section-title">매달 진행되는<br>25문항 누적 테스트</h2>
           <p class="go-section-desc">
-            매월 마지막 주, 학습 내용을 점검합니다
+            매달 첫 수업일, 학습 내용을 점검합니다
           </p>
 
           <div class="cumulative-image">
@@ -298,7 +278,7 @@
               <span class="feature-icon">📝</span>
               <div class="feature-text">
                 <strong>25문항</strong>
-                <p>매달 마지막 주 진행</p>
+                <p>매달 첫 수업일 진행</p>
               </div>
             </div>
             <div class="feature-item">
@@ -488,7 +468,7 @@
             <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%82%AC%EC%A7%81%EB%8F%99%2071-3" target="_blank" rel="noopener noreferrer" class="location-map-link">
               <picture>
                 <source srcset="../assets/images/map.webp" type="image/webp" />
-                <img src="../assets/images/map.png" alt="사직 수리탐구 수학학원 위치" class="location-map-img" />
+                <img src="../assets/images/map.png" alt="수리탐구 사직직영점 위치" class="location-map-img" />
               </picture>
               <div class="map-overlay">
                 <span class="map-overlay-text">클릭하여 지도 보기</span>
@@ -496,7 +476,7 @@
             </a>
             <div class="location-info">
               <div class="location-address">
-                <h3>사직 수리탐구 수학학원</h3>
+                <h3>수리탐구 사직직영점</h3>
                 <p>부산 동래구 아시아드대로 175 대영빌딩 3층</p>
               </div>
               <div class="location-directions">
@@ -526,7 +506,7 @@
     <footer class="footer-section">
       <div class="container">
         <div class="footer-content">
-          <h3>사직 수리탐구 수학학원</h3>
+          <h3>수리탐구 사직직영점</h3>
           <p>부산 동래구 아시아드대로 175 대영빌딩 3층</p>
           <p>(사직역 3번 출구 도보 1분)</p>
           <p>문의: 051-715-1580</p>
