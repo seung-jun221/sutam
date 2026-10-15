@@ -1,7 +1,4 @@
 # .html 확장자 제거 리다이렉트 (301 영구 리다이렉트)
-/notice/elementary-seminar-may.html    /notice/elementary-seminar-may    301
-/notice/middle-seminar-may.html        /notice/middle-seminar-may        301
-/notice/grand-opening.html             /notice/grand-opening             301
 /notice/middle-school-analysis.html    /notice/middle-school-analysis    301
 
 # 기존 notice.html URL 리다이렉트 (파일 이동됨)
@@ -13,13 +10,28 @@
 # 노티스 허브 단축 URL
 /notice/index  /notice/index.html  301
 
-# 5주 광고 랜딩페이지 단축 URL
-/grand-opening  /notice/grand-opening  301
-/preview        /notice/grand-opening  301
+# 지난 행사 페이지 6개의 주소는 소식 화면으로 넘긴다
+# (파일은 지우지 않으므로 끝의 ! 로 강제한다. 확장자 있는 주소와 없는 주소를 모두 적는다)
+/notice-special                        /notice  301!
+/notice-special.html                   /notice  301!
+/notice/daeip-roadmap-seminar          /notice  301!
+/notice/daeip-roadmap-seminar.html     /notice  301!
+/notice/elementary-seminar-may         /notice  301!
+/notice/elementary-seminar-may.html    /notice  301!
+/notice/middle-seminar-may             /notice  301!
+/notice/middle-seminar-may.html        /notice  301!
+/notice/grand-opening                  /notice  301!
+/notice/grand-opening.html             /notice  301!
+/notice/sept-seminar                   /notice  301!
+/notice/sept-seminar.html              /notice  301!
+
+# 5주 광고 랜딩페이지 단축 URL (넘기던 페이지가 위에서 소식으로 가므로 바로 소식으로)
+/grand-opening  /notice  301
+/preview        /notice  301
 
 # Netlify Pretty URLs 활성화를 위한 설정
 # Netlify는 기본적으로 .html을 제거한 URL을 지원하므로
-# /notice/elementary-seminar-may → /notice/elementary-seminar-may.html 파일 서빙
+# /notice/middle-school-analysis → /notice/middle-school-analysis.html 파일 서빙
 
 # 옛 시그니처 페이지의 주소는 새 수리탐구 화면으로 넘긴다
 # (파일 suritamgu-signature.html 은 지우지 않으므로 끝의 ! 로 강제한다)
