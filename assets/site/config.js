@@ -10,7 +10,8 @@ window.SITE_CONFIG = {
   /* 1. 버튼과 링크의 도착지 — 주소는 화면마다 적지 않고 여기 한 곳에만 둔다
         값을 '' 로 비워 두면 그 링크는 화면에 나오지 않는다. 주소를 넣으면 다시 나온다. */
   links: {
-    reserve: 'https://edu.suritamgu.co.kr/',                      // "설명회 예약" 버튼
+    reserve: 'https://edu.suritamgu.co.kr/',                      // 랜딩의 "설명회 예약" 버튼 (예약 입구는 랜딩 한 곳)
+    seminar: '/seminar/2026-11',                                  // 홈페이지 화면의 "11월 설명회 안내" 버튼 → 설명회 랜딩 (설명회마다 주소를 바꾼다)
     parents: 'https://edu.suritamgu.co.kr/',                      // 머리의 "학부모 서비스" 버튼
     consult: 'https://edu.suritamgu.co.kr/course-enrollment',     // "입학 상담" 버튼
     privacy: 'https://edu.suritamgu.co.kr/privacy?branch=sajik',  // 바닥의 "개인정보 처리방침"

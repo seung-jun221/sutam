@@ -206,8 +206,14 @@
         return;
       }
       a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
+      /* 사이트 밖 주소만 새 탭으로 연다. 사이트 안 주소(설명회 랜딩)는 같은 탭 */
+      if (/^https?:\/\//i.test(href)) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      } else {
+        a.removeAttribute('target');
+        a.removeAttribute('rel');
+      }
       a.hidden = false;
     });
 
@@ -273,7 +279,7 @@
     }
   }
 
-  /* 버튼 클릭 측정: "설명회 예약", "입학 상담" */
+  /* 버튼 클릭 측정: "설명회 예약"(랜딩), "입학 상담". 홈페이지 화면의 "11월 설명회 안내"(data-go="seminar")는 보내지 않는다 */
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[data-go]') : null;
     if (!a || !window.SiteTrack) return;
