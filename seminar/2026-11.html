@@ -38,16 +38,21 @@
     <script src="/assets/site/track.js"></script>
   </head>
   <body class="s-page">
-    <!-- 머리: 랜딩은 메뉴 없이 마크와 버튼만 -->
-    <header class="s-header">
+    <!-- 공통 머리(다른 화면과 같은 구조, 2026-10-16 원장 결정). 메뉴의 현재 표시는 두지 않는다(설명회는 메뉴 항목이 아니다).
+         우상단 버튼만 "학부모 서비스" 대신 예약 상태 "설명회 예약", 종료 상태 "입학 상담" -->
+    <header class="s-header s-header--nav">
       <div class="s-wrap s-header__row">
-        <!-- 예약 상태에서는 마크를 눌러도 이동하지 않는다. 종료 상태에서만 홈으로 간다 -->
-        <span class="s-brand when-open">
-          <img src="/assets/images/site/mark-ivory.png" alt="수리탐구 사직직영점" width="30" height="30" />
-        </span>
-        <a class="s-brand when-ended" href="/">
-          <img src="/assets/images/site/mark-ivory.png" alt="수리탐구 사직직영점" width="30" height="30" />
+        <a class="s-brand" href="/">
+          <img src="/assets/images/site/mark-ivory.png" alt="" width="30" height="30" />
+          <span class="s-brand__name"><b>수리탐구</b> 사직직영점</span>
         </a>
+        <nav class="s-nav" aria-label="주 메뉴">
+          <a href="/curriculum">수리탐구</a>
+          <a href="/features">특장점</a>
+          <a href="/notice">소식</a>
+          <a href="/admission">입학 안내</a>
+          <a href="/#location">오시는 길</a>
+        </nav>
         <a class="s-pill when-open" data-go="reserve" href="https://edu.suritamgu.co.kr/" target="_blank" rel="noopener noreferrer" data-pos="header">설명회 예약</a>
         <a class="s-pill when-ended" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="header">입학 상담</a>
       </div>
