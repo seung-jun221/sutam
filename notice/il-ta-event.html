@@ -31,13 +31,6 @@
     <script src="/assets/site/news.js"></script>
     <script src="/assets/site/site.js"></script>
     <script src="/assets/site/track.js"></script>
-    <script>
-    /* 이 페이지에만 있는 측정 */
-    fbq('track', 'ViewContent', {
-      content_name: '나도 일타강사다 이벤트',
-      content_category: 'student_event_lp'
-    });
-    </script>
 
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -440,55 +433,5 @@
 
     <!-- JavaScript -->
     <script src="../assets/js/main.js"></script>
-
-    <!-- CTA 클릭 이벤트 트래킹 -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var kakaoCta = document.getElementById('kakao-cta');
-      var callCta = document.getElementById('call-cta');
-
-      if (kakaoCta) {
-        kakaoCta.addEventListener('click', function() {
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Contact', { content_name: '카톡 채널 친구 추가' });
-          }
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'cta_click', {
-              'cta_type': 'kakao',
-              'cta_location': 'il_ta_event'
-            });
-          }
-        });
-      }
-
-      if (callCta) {
-        callCta.addEventListener('click', function() {
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', { content_name: '학원 안내 통화 신청' });
-          }
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'cta_click', {
-              'cta_type': 'call',
-              'cta_location': 'il_ta_event'
-            });
-          }
-        });
-      }
-
-      // Engagement Time 수동 트래킹 (30초 단위)
-      var engagementTime = 0;
-      setInterval(function() {
-        if (!document.hidden) {
-          engagementTime += 30;
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'engagement_time', {
-              'time_seconds': engagementTime,
-              'page_type': 'il_ta_event'
-            });
-          }
-        }
-      }, 30000);
-    });
-    </script>
   </body>
 </html>
