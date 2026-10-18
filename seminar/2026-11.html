@@ -88,7 +88,9 @@
         <div class="s-wrap lp-grid">
           <h2 class="s-mark-title"><span class="s-shape"></span>일정</h2>
           <div>
-            <div class="lp-sessions">
+            <!-- 회차 칸: 아래 1·2차는 스크립트가 꺼진 화면의 기본 글자다. 스크립트가 켜지면 news.js 의 sessions(show: true 인 회차)로 다시 그린다.
+                 마감(soldOut) 회차의 "예약 마감 · 대기 접수" 버튼과 아래 안내 줄도 그때 붙는다 -->
+            <div class="lp-sessions" data-sessions>
               <div class="lp-session">
                 <p class="lp-session__no">1차</p>
                 <p class="lp-session__date">11월 8일(일)</p>
@@ -100,6 +102,7 @@
                 <p class="lp-session__time">오전 10시 30분</p>
               </div>
             </div>
+            <p class="lp-session__note" data-text="waitlistNote" hidden>예약 홈에서 마감된 회차를 고르시면 대기 예약이 됩니다.</p>
             <dl class="lp-info">
               <div>
                 <dt>장소</dt>
@@ -111,7 +114,7 @@
               </div>
               <div>
                 <dt>대상</dt>
-                <dd>초3~중2 학부모</dd>
+                <dd>예비 초3~예비 중3 학부모</dd>
               </div>
               <div>
                 <dt>강연</dt>
