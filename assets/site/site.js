@@ -24,8 +24,43 @@
   var active = null;   // 지금 기간 중인 설명회
   var byId = {};
 
+  /* 회차 목록(sessions)이 있는 설명회: 공개(show: true) 회차로 날짜(date)·묶음 줄(periodLabel)·종료 시각(end)을 만든다.
+     show: false 인 회차는 어디에도 쓰지 않는다. sessions 가 없는 항목은 적힌 값을 그대로 쓴다 */
+  function ymd(text) { return String(text || '').trim().slice(0, 10).split('-'); }
+  function useSessions(it) {
+    if (!it.sessions || !it.sessions.length) return;
+    var shown = [], first = null, last = null, days = [], month = '';
+    for (var k = 0; k < it.sessions.length; k++) {
+      var s = it.sessions[k];
+      if (!s || s.show !== true) continue;
+      var at = kst(s.start), no = parseInt(s.no, 10);
+      shown.push({
+        no: s.no, date: s.date, time: s.time,
+        soldOut: s.soldOut === true,
+        past: !isNaN(at) && now >= at,                              // 시작 시각이 지난 회차: "종료"
+        extra: (isNaN(no) ? k + 1 : no) >= it.extraFrom             // 추가 회차 묶음
+      });
+      if (!isNaN(at)) {
+        if (!first || at < first.at) first = { at: at, start: s.start };
+        if (!last || at > last.at) last = { at: at, start: s.start };
+      }
+      /* 앞 회차와 달이 같으면 달을 뺀다: 11월 8일(일), 9일(월) */
+      var m = /^(\d+월)\s*/.exec(s.date || '');
+      days.push(m && m[1] === month ? s.date.slice(m[0].length) : s.date);
+      month = m ? m[1] : '';
+    }
+    it.shown = shown;
+    if (!first) return;
+    var a = ymd(first.start), b = ymd(last.start);
+    it.date = a.join('.') + (b.join('.') === a.join('.') ? '' :
+      '~' + (b[0] !== a[0] ? b.join('.') : b[1] !== a[1] ? b[1] + '.' + b[2] : b[2]));
+    it.periodLabel = it.title + ' · ' + days.join(', ');
+    it.end = last.start;
+  }
+
   for (var i = 0; i < NEWS.length; i++) {
     var it = NEWS[i];
+    useSessions(it);
     var start = kst(it.start), end = kst(it.end);
     it.waiting = it.seminar === true && !isNaN(start) && now < start;   // 시작 전의 설명회: 소식 어디에도 내지 않는다
     it.upcoming = !it.waiting && !isNaN(end) && now < end;              // "예정"에 둘 것
@@ -62,10 +97,11 @@
   }
   var utm = readUtm();
 
+  /* utm_ 값은 예약 사이트로 가는 두 버튼("설명회 예약", 마감 회차의 "예약 마감 · 대기 접수")에만 이어 붙인다 */
   function linkFor(kind) {
     var href = (C.links || {})[kind];
     if (!href) return '';
-    if (kind === 'reserve' && C.utmPassThrough && utm.length) {
+    if ((kind === 'reserve' || kind === 'waitlist') && C.utmPassThrough && utm.length) {
       try {
         var u = new URL(href);
         for (var k = 0; k < utm.length; k++) u.searchParams.set(utm[k][0], utm[k][1]);
@@ -188,12 +224,76 @@
     });
   }
 
+  /* ---------- 랜딩의 일정(회차) 그리기 ----------
+     <div data-sessions> 안의 회차 칸을 news.js 의 sessions 가운데 show: true 인 회차로(적힌 순서대로) 다시 그린다.
+     HTML 에 적힌 1·2차 두 칸은 스크립트가 꺼진 화면의 기본 글자다.
+       추가 회차(extraFrom 번호부터)가 하나라도 있으면 그 묶음 위에 머리글 한 줄(extraNotices 의 extraNoticeKey 값)
+       시작 시각이 지난 회차: "종료" 표시
+       soldOut 회차: "예약 마감 · 대기 접수" 버튼(config.js links.waitlist, 비면 버튼이 빠진다)
+       대기 안내 한 줄(config.js waitlistNote): 버튼이 하나라도 있을 때 첫 버튼 옆(폰은 아래)에 한 번만 */
+  function renderSessions(it) {
+    var box = document.querySelector('[data-sessions]');
+    if (!box) return;
+    var list = it.shown || [];
+    var wait = linkFor('waitlist');
+    var noteText = typeof C.waitlistNote === 'string' ? C.waitlistNote : '';
+    var note = document.querySelector('[data-text="waitlistNote"]');   // HTML 에 숨겨 둔 안내 줄
+    var frag = document.createDocumentFragment();
+    var inExtra = false, col = 0, noted = false;
+    for (var k = 0; k < list.length; k++) {
+      var s = list[k];
+      if (s.extra && !inExtra) {
+        inExtra = true;
+        col = 0;
+        var head = (it.extraNotices || {})[it.extraNoticeKey];
+        if (head) frag.appendChild(el('p', 'lp-sessions__extra', head));
+      }
+      /* 줄의 첫 칸(묶음마다 두 칸씩): 왼쪽 선 없이 새 줄에서 시작한다 */
+      var cell = el('div', 'lp-session' + (k > 0 && col % 2 === 0 ? ' lp-session--row' : ''));
+      col++;
+      cell.appendChild(el('p', 'lp-session__no', s.no));
+      cell.appendChild(el('p', 'lp-session__date', s.date));
+      cell.appendChild(el('p', 'lp-session__time', s.time));
+      var tag = null;
+      if (s.past) {
+        tag = el('span', 'lp-session__tag', '종료');
+      } else if (s.soldOut && wait) {
+        tag = el('a', 'lp-session__tag', '예약 마감 · 대기 접수');
+        tag.setAttribute('data-go', 'waitlist');
+        tag.href = wait;
+        tag.target = '_blank';
+        tag.rel = 'noopener noreferrer';
+      }
+      if (tag) {
+        var mark = el('div', 'lp-session__mark');
+        mark.appendChild(tag);
+        if (tag.tagName === 'A' && !noted && noteText) {
+          noted = true;
+          var p = note || el('p', 'lp-session__note');
+          p.textContent = noteText;
+          p.hidden = false;
+          mark.appendChild(p);
+        }
+        cell.appendChild(mark);
+      }
+      frag.appendChild(cell);
+    }
+    box.textContent = '';
+    box.appendChild(frag);
+    box.hidden = list.length === 0;
+  }
+
   function setup() {
     /* 소식 목록: 그리다 문제가 생겨도 가려 둔 목록은 반드시 다시 보이게 한다 */
     try {
       if (NEWS.length) renderNews();
     } finally {
       each('[data-news-root]', function (box) { box.setAttribute('data-ready', ''); });
+    }
+
+    /* 랜딩의 일정(회차): 그리다 문제가 생기면 HTML 의 기본 글자(1·2차)가 남고, 아래 버튼 처리는 그대로 이어진다 */
+    if (pageSeminar && pageSeminar.shown) {
+      try { renderSessions(pageSeminar); } catch (e) { /* 기본 글자 그대로 */ }
     }
 
     /* 버튼·링크의 도착지: HTML 에 적힌 기본 주소를 설정 파일의 값으로 덮는다.
@@ -279,7 +379,9 @@
     }
   }
 
-  /* 버튼 클릭 측정: "설명회 예약"(랜딩), "입학 상담". 홈페이지 화면의 "11월 설명회 안내"(data-go="seminar")는 보내지 않는다 */
+  /* 버튼 클릭 측정: "설명회 예약"(랜딩), "입학 상담". 홈페이지 화면의 "11월 설명회 안내"(data-go="seminar")와
+     랜딩 일정의 "예약 마감 · 대기 접수"(data-go="waitlist")는 보내지 않는다.
+     (대기 접수를 "설명회 예약"과 같이 세려면 아래 return 줄 앞에 if (kind === 'waitlist') kind = 'reserve'; 한 줄을 넣는다) */
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[data-go]') : null;
     if (!a || !window.SiteTrack) return;
