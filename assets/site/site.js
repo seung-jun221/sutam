@@ -228,8 +228,8 @@
      <div data-sessions> 안의 회차 칸을 news.js 의 sessions 가운데 show: true 인 회차로(적힌 순서대로) 다시 그린다.
      HTML 에 적힌 1·2차 두 칸은 스크립트가 꺼진 화면의 기본 글자다.
        추가 회차(extraFrom 번호부터)가 하나라도 있으면 그 묶음 위에 머리글 한 줄(extraNotices 의 extraNoticeKey 값)
-       시작 시각이 지난 회차: "종료" 표시
-       soldOut 회차: "예약 마감 · 대기 접수" 버튼(config.js links.waitlist, 비면 버튼이 빠진다)
+       상태는 회차 번호 옆 칩: 시작 시각이 지난 회차 "종료", soldOut 회차 "마감" (그 칸의 날짜·시각 글자는 연하게)
+       행동은 버튼: 지나지 않은 soldOut 회차에 "예약 마감 · 대기 접수"(config.js links.waitlist, 비면 버튼이 빠진다)
        대기 안내 한 줄(config.js waitlistNote): 버튼이 하나라도 있을 때 첫 버튼 옆(폰은 아래)에 한 번만 */
   function renderSessions(it) {
     var box = document.querySelector('[data-sessions]');
@@ -249,25 +249,23 @@
         if (head) frag.appendChild(el('p', 'lp-sessions__extra', head));
       }
       /* 줄의 첫 칸(묶음마다 두 칸씩): 왼쪽 선 없이 새 줄에서 시작한다 */
-      var cell = el('div', 'lp-session' + (k > 0 && col % 2 === 0 ? ' lp-session--row' : ''));
+      var state = s.past ? '종료' : s.soldOut ? '마감' : '';
+      var cell = el('div', 'lp-session' + (state ? ' lp-session--off' : '') + (k > 0 && col % 2 === 0 ? ' lp-session--row' : ''));
       col++;
-      cell.appendChild(el('p', 'lp-session__no', s.no));
+      var no = el('p', 'lp-session__no', s.no);
+      if (state) no.appendChild(el('span', 'lp-session__chip', state));
+      cell.appendChild(no);
       cell.appendChild(el('p', 'lp-session__date', s.date));
       cell.appendChild(el('p', 'lp-session__time', s.time));
-      var tag = null;
-      if (s.past) {
-        tag = el('span', 'lp-session__tag', '종료');
-      } else if (s.soldOut && wait) {
-        tag = el('a', 'lp-session__tag', '예약 마감 · 대기 접수');
+      if (!s.past && s.soldOut && wait) {
+        var tag = el('a', 'lp-session__tag', '예약 마감 · 대기 접수');
         tag.setAttribute('data-go', 'waitlist');
         tag.href = wait;
         tag.target = '_blank';
         tag.rel = 'noopener noreferrer';
-      }
-      if (tag) {
         var mark = el('div', 'lp-session__mark');
         mark.appendChild(tag);
-        if (tag.tagName === 'A' && !noted && noteText) {
+        if (!noted && noteText) {
           noted = true;
           var p = note || el('p', 'lp-session__note');
           p.textContent = noteText;
