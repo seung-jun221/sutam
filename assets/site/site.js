@@ -341,11 +341,18 @@
 
     /* 영상 재생 화면(대표 이력): 화면에 들어올 때 불러온다(첫 로드를 가볍게).
        <div data-video="유튜브 영상 ID"> 안에는 유튜브로 가는 링크가 기본으로 들어 있고, 불러올 때 재생 화면으로 바꾼다.
-       스크립트가 꺼진 화면에서는 그 링크가 그대로 남는다 */
+       data-video-config="설정 이름" 이 있으면 영상 ID 와 영상 아래 문구는 config.js 의 그 값(id·label)을 쓴다.
+       스크립트가 꺼진 화면에서는 HTML 에 적힌 링크와 문구가 그대로 남는다 */
     each('[data-video]', function (box) {
+      var link = box.querySelector('a[aria-labelledby]');
+      var label = link ? document.getElementById(link.getAttribute('aria-labelledby')) : null;
+      var conf = C[box.getAttribute('data-video-config')];
+      if (conf && conf.id) {
+        box.setAttribute('data-video', conf.id);
+        if (link) link.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(conf.id);
+        if (label && typeof conf.label === 'string' && conf.label) label.textContent = conf.label;
+      }
       function load() {
-        var link = box.querySelector('a[aria-labelledby]');
-        var label = link ? document.getElementById(link.getAttribute('aria-labelledby')) : null;
         var frame = document.createElement('iframe');
         frame.src = 'https://www.youtube.com/embed/' + encodeURIComponent(box.getAttribute('data-video'));
         frame.title = label ? label.textContent : '';
