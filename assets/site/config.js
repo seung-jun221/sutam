@@ -47,6 +47,6 @@ window.SITE_CONFIG = {
 
   /* 7. 대표 이력 화면 "유튜브 출연 영상"의 재생 화면 — 영상 ID 와 영상 아래 문구("채널 · 주제")
         영상을 바꿀 때는 id 에 유튜브 주소의 영상 ID(youtu.be/ 뒤, 또는 watch?v= 뒤의 값)를 넣고 label 도 함께 고친다 */
-  ceoVideo: { id: 'JsfcnyobLwk', label: '가든패밀리 · 초등·중등 수학 로드맵' }
+  ceoVideo: { id: 'zi2UQjKHuBk', label: '국풀TV · 수학 선행의 함정' }
 
 };
