@@ -315,10 +315,17 @@
       a.hidden = false;
     });
 
-    /* 설정 파일의 문구가 들어갈 자리 */
+    /* 설정 파일의 문구가 들어갈 자리. 문구 안의 \n 자리에서 줄을 바꾼다(<br>, 글자는 텍스트로만 넣는다) */
     each('[data-text]', function (el) {
       var text = C[el.getAttribute('data-text')];
-      if (typeof text === 'string') el.textContent = text;
+      if (typeof text !== 'string') return;
+      if (text.indexOf('\n') < 0) { el.textContent = text; return; }
+      el.textContent = '';
+      var parts = text.split('\n');
+      for (var k = 0; k < parts.length; k++) {
+        if (k) el.appendChild(document.createElement('br'));
+        el.appendChild(document.createTextNode(parts[k]));
+      }
     });
 
     /* 바닥의 측정 안내 한 줄: 글자는 설정 파일에, 자리는 여기 한 곳에 둔다("개인정보 처리방침" 줄 아래, 사업자 정보 위) */
