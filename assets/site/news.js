@@ -103,10 +103,10 @@ window.SITE_NEWS = [
     start: '2026-10-15 00:00',
     // end 는 sessions 에서 계산
     sessions: [
-      { no: '1차', date: '11월 8일(일)', time: '낮 12시', start: '2026-11-08 12:00', show: true, soldOut: false },
-      { no: '2차', date: '11월 9일(월)', time: '오전 10시 30분', start: '2026-11-09 10:30', show: true, soldOut: false },
-      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: false, soldOut: false },
-      { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: false, soldOut: false }
+      { no: '1차', date: '11월 8일(일)', time: '낮 12시', start: '2026-11-08 12:00', show: true, soldOut: true },
+      { no: '2차', date: '11월 9일(월)', time: '오전 10시 30분', start: '2026-11-09 10:30', show: true, soldOut: true },
+      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: false },
+      { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: true, soldOut: false }
     ],
     extraFrom: 3,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계)
     extraNoticeKey: '34',   // '34' 또는 '56' — 3·4차를 켤 때 '34', 5·6차를 켤 때 '56'
