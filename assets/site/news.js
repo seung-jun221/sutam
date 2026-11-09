@@ -105,7 +105,7 @@ window.SITE_NEWS = [
     sessions: [
       { no: '1차', date: '11월 8일(일)', time: '낮 12시', start: '2026-11-08 12:00', show: true, soldOut: true },
       { no: '2차', date: '11월 9일(월)', time: '오전 10시 30분', start: '2026-11-09 10:30', show: true, soldOut: true },
-      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: false },
+      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: true },
       { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: true, soldOut: true },
       { no: '5차', date: '12월 7일(월)', time: '오전 10시 30분', start: '2026-12-07 10:30', show: true, soldOut: false },
       { no: '6차', date: '', time: '', start: '', show: false, soldOut: false }, // 날짜 미정 — 정해지면 채운다
