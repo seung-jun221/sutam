@@ -12,7 +12,7 @@ window.SITE_CONFIG = {
   links: {
     reserve: 'https://edu.suritamgu.co.kr/',                        // 랜딩의 "설명회 예약" 버튼 (예약 입구는 랜딩 한 곳)
     waitlist: 'https://edu.suritamgu.co.kr/',                       // 랜딩 일정의 마감 회차(news.js soldOut: true) "예약 마감 · 대기 접수" 버튼 → 예약 홈 (찬 회차 카드를 고르면 대기 예약)
-    seminar: '',                                                    // 설명회 랜딩 (검단은 랜딩이 없어 비워 둠 = "설명회 안내" 버튼 없음)
+    seminar: '/geomdan/seminar/2026-11',                            // 검단 화면의 "11월 설명회 안내" 버튼 → 검단 설명회 랜딩 (설명회마다 주소를 바꾼다)
     parents: 'https://edu.suritamgu.co.kr/',                        // 머리의 "학부모 서비스" 버튼
     consult: 'https://edu.suritamgu.co.kr/course-enrollment',       // "입학 상담" 버튼
     privacy: 'https://edu.suritamgu.co.kr/privacy?branch=geomdan',  // 바닥의 "개인정보 처리방침"

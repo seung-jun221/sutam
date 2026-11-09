@@ -16,7 +16,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://suritamgu.co.kr/geomdan/seminar" />
-    <meta property="og:site_name" content="설명회 | 수리탐구 검단직영점" />
+    <meta property="og:site_name" content="수리탐구 검단직영점" />
     <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -30,6 +30,12 @@
     <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Bold.subset.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/assets/site/fonts/Pretendard-Regular.subset.woff2" crossorigin />
     <link rel="stylesheet" href="/assets/site/site.css" />
+    <!-- 이 화면에만 있는 손질(site.css 는 사직과 함께 쓰므로 고치지 않는다):
+         설명회 기간의 묶음 줄은 아이보리 바탕이라 딥그린 글자로, 맨 아래 버튼 짝은 가운데로 -->
+    <style>
+      .gd-sem a { color: var(--s-green); text-decoration: none; }
+      .lp-cta .s-btns { justify-content: center; }
+    </style>
 
     <!-- 설정 · 소식 · 화면 동작 · 측정 (이 순서대로). 설정과 소식은 검단 것을 부른다 -->
     <script src="/assets/site/geomdan/config.js"></script>
@@ -64,13 +70,16 @@
         </div>
       </section>
 
-      <!-- 1. 다음 설명회 — 일정이 정해지기 전의 안내(글은 사직 랜딩의 종료 안내와 같은 부품) -->
+      <!-- 1. 다음 설명회 — 설명회 기간에는 묶음 줄과 "11월 설명회 안내"(검단 랜딩으로), 평소에는 일정 전 안내와 "입학 상담"(검단 news.js).
+           글은 사직 랜딩의 종료 안내와 같은 부품 -->
       <section class="lp-schedule">
         <div class="s-wrap lp-grid">
           <h2 class="s-mark-title"><span class="s-shape"></span>다음 설명회</h2>
           <div class="lp-ended">
-            <p class="lp-ended__text">다음 설명회 일정은 정해지면 소식에서 안내합니다. 그 사이에는 입학 상담을 신청해 주세요. 학원에서 연락드려 진단검사 일정을 안내합니다.</p>
-            <a class="s-btn s-btn--green" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="hero">입학 상담</a>
+            <p class="lp-ended__text gd-sem when-sem"><a href="/geomdan/seminar/2026-11" data-seminar-link><span data-seminar-text="periodLabel">11월 설명회 · 11월 24일(화), 25일(수)</span></a></p>
+            <a class="s-btn s-btn--green when-sem" data-go="seminar" href="/geomdan/seminar/2026-11" data-pos="hero">11월 설명회 안내</a>
+            <p class="lp-ended__text when-normal">다음 설명회 일정은 정해지면 소식에서 안내합니다. 그 사이에는 입학 상담을 신청해 주세요. 학원에서 연락드려 진단검사 일정을 안내합니다.</p>
+            <a class="s-btn s-btn--green when-normal" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="hero">입학 상담</a>
           </div>
         </div>
       </section>
@@ -118,10 +127,6 @@
           <h2 class="s-title">지난 설명회</h2>
           <dl class="lp-past-list">
             <div>
-              <dt>2026.11</dt>
-              <dd>초·중등 학부모 설명회</dd>
-            </div>
-            <div>
               <dt>2026.07</dt>
               <dd>2차 개원 설명회, 107명 참석</dd>
             </div>
@@ -133,10 +138,14 @@
         </div>
       </section>
 
-      <!-- 4. 버튼 -->
+      <!-- 4. 버튼 — 평소 "입학 상담", 설명회 기간에는 "11월 설명회 안내" + "입학 상담"(입학 안내 화면과 같은 짝) -->
       <section class="lp-cta">
         <div class="s-wrap">
-          <a class="s-btn s-btn--green" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
+          <div class="s-btns">
+            <a class="s-btn s-btn--green when-normal" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
+            <a class="s-btn s-btn--green when-sem" data-go="seminar" href="/geomdan/seminar/2026-11" data-pos="bottom">11월 설명회 안내</a>
+            <a class="s-btn s-btn--line s-btn--line-green when-sem" data-go="consult" href="https://edu.suritamgu.co.kr/course-enrollment" target="_blank" rel="noopener noreferrer" data-pos="bottom">입학 상담</a>
+          </div>
         </div>
       </section>
     </main>
