@@ -17,7 +17,7 @@ window.SITE_CONFIG = {
     consult: 'https://edu.suritamgu.co.kr/course-enrollment',     // "입학 상담" 버튼
     privacy: 'https://edu.suritamgu.co.kr/privacy?branch=sajik',  // 바닥의 "개인정보 처리방침"
     kakao:   'https://pf.kakao.com/_bxovxon/chat',                // 오시는 길의 "카카오톡 상담"
-    geomdan: ''                                                   // 바닥의 "수리탐구 검단직영점" (지금은 비워 둠 = 링크 없음)
+    geomdan: '/geomdan/'                                          // 바닥의 "수리탐구 검단직영점" (검단 홈. 비우면 링크 없음)
   },
 
   /* 2. 광고 주소에 붙어 들어온 utm_ 값을 "설명회 예약"과 "예약 마감 · 대기 접수" 도착 주소에 이어 붙인다.

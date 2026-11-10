@@ -77,6 +77,9 @@ html.sem-on .when-sem { display: revert !important; }
 html.sem-on .when-normal { display: none !important; }
 html.sem-ended .when-ended { display: revert !important; }
 html.sem-ended .when-open { display: none !important; }
+/* 지점 표시(공통 여섯 화면, branch.js): 사직 요소 .br-s, 검단 요소 .br-g. 기본(스크립트 없음 포함)은 사직 */
+html:not(.br-geomdan) .br-g { display: none !important; }
+html.br-geomdan .br-s { display: none !important; }
 
 /* ---------- 머리 ---------- */
 .s-header {
