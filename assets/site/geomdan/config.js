@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
     waitlist: 'https://edu.suritamgu.co.kr/',                       // 랜딩 일정의 마감 회차(news.js soldOut: true) "예약 마감 · 대기 접수" 버튼 → 예약 홈 (찬 회차 카드를 고르면 대기 예약)
     seminar: '/geomdan/seminar/2026-11',                            // 검단 화면의 "11월 설명회 안내" 버튼 → 검단 설명회 랜딩 (설명회마다 주소를 바꾼다)
     parents: 'https://edu.suritamgu.co.kr/',                        // 머리의 "학부모 서비스" 버튼
-    consult: 'https://edu.suritamgu.co.kr/course-enrollment',       // "입학 상담" 버튼
+    consult: 'https://pf.kakao.com/_xakzmX/chat',                   // "입학 상담" 버튼 → 검단 카카오톡 채널 상담 (예약 사이트 /course-enrollment 는 사직 전용, 원장 11/10)
     privacy: 'https://edu.suritamgu.co.kr/privacy?branch=geomdan',  // 바닥의 "개인정보 처리방침"
     kakao:   'https://pf.kakao.com/_xakzmX/chat',                   // 오시는 길·입학 안내의 "카카오톡 상담"
     sajik:   '/'                                                    // 바닥의 "수리탐구 사직직영점"
