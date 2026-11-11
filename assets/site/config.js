@@ -11,7 +11,7 @@ window.SITE_CONFIG = {
         값을 '' 로 비워 두면 그 링크는 화면에 나오지 않는다. 주소를 넣으면 다시 나온다. */
   links: {
     reserve: 'https://edu.suritamgu.co.kr/',                      // 랜딩의 "설명회 예약" 버튼 (예약 입구는 랜딩 한 곳)
-    waitlist: 'https://edu.suritamgu.co.kr/',                     // 랜딩 일정의 마감 회차(news.js soldOut: true) "예약 마감 · 대기 접수" 버튼 → 예약 홈 (찬 회차 카드를 고르면 대기 예약)
+    waitlist: '',                                                 // 랜딩 일정의 마감 회차(news.js soldOut: true) "예약 마감 · 대기 접수" 버튼. 비우면 버튼과 안내 줄이 빠지고 「마감」 칩만 남는다 (11/11 원장 대기 접수 마감. 다시 받으면 'https://edu.suritamgu.co.kr/')
     seminar: '/seminar/2026-11',                                  // 홈페이지 화면의 "11월 설명회 안내" 버튼 → 설명회 랜딩 (설명회마다 주소를 바꾼다)
     parents: 'https://edu.suritamgu.co.kr/',                      // 머리의 "학부모 서비스" 버튼
     consult: 'https://edu.suritamgu.co.kr/course-enrollment',     // "입학 상담" 버튼
