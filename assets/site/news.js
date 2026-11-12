@@ -108,16 +108,16 @@ window.SITE_NEWS = [
       { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: true },
       { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: true, soldOut: true },
       { no: '5차', date: '12월 7일(월)', time: '오전 10시 30분', start: '2026-12-07 10:30', show: true, soldOut: true },
-      { no: '6차', date: '12월 6일(일)', time: '낮 12시', start: '2026-12-06 12:00', show: true, soldOut: false },
-      { no: '7차', date: '12월 13일(일)', time: '낮 12시', start: '2026-12-13 12:00', show: false, soldOut: false },
-      { no: '8차', date: '12월 14일(월)', time: '오전 10시 30분', start: '2026-12-14 10:30', show: false, soldOut: false }
+      { no: '6차', date: '12월 6일(일)', time: '낮 12시', start: '2026-12-06 12:00', show: true, soldOut: true },
+      { no: '7차', date: '12월 14일(월)', time: '오전 10시 30분', start: '2026-12-14 10:30', show: true, soldOut: false },
+      { no: '8차', date: '', time: '', start: '', show: false, soldOut: false } // 날짜 미정 — 정해지면 채운다
     ],
-    extraFrom: 6,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계). 6차 바로 위에 머리글, 1~5차는 일반 회차
-    extraNoticeKey: '56',   // '34' · '56' · '78' — 지금은 6차를 열어 '56' (3·4차 '34', 7·8차 '78')
+    extraFrom: 7,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계). 7차 바로 위에 머리글, 1~6차는 일반 회차
+    extraNoticeKey: '78',   // '34' · '56' · '78' — 지금은 7차를 열어 '78' (3·4차 '34', 5·6차 '56')
     extraNotices: {         // 추가 회차가 하나라도 show: true 일 때 그 묶음 위에 나오는 머리글
       '34': '많은 학부모님의 문의로 3·4회차를 추가 오픈합니다',
       '56': '1~5차 예약이 모두 마감되어 6차를 추가 오픈합니다',
-      '78': '많은 학부모님의 문의로 7·8회차를 추가 오픈합니다'  // 문구 확정 전 — 켜기 전에 마케팅 방 문구로 바꾼다
+      '78': '1~6차 예약이 모두 마감되어 7차를 추가 오픈합니다'
     }
   },
 
