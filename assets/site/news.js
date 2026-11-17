@@ -64,6 +64,7 @@
                (랜딩 일정, 소식 날짜, 메인 묶음 줄, 종료 계산 모두에서 빠진다)
      soldOut : true 면 랜딩의 회차 번호 옆에 "마감" 표시, 그 칸에 "예약 마감 · 대기 접수" 버튼이 붙습니다
                (도착지는 config.js 의 links.waitlist, 안내 한 줄은 config.js 의 waitlistNote)
+     waitlist: false 면 마감이어도 대기 접수 버튼을 붙이지 않는다(속성이 없으면 config.js links.waitlist 값을 따른다)
    - show: true 인 회차로 화면이 만드는 값
        date        첫 회차 날짜~마지막 회차 날짜          예) 2026.11.08~09
        periodLabel 제목 · 회차 날짜를 쉼표로 이어 붙임     예) 11월 설명회 · 11월 8일(일), 9일(월)
@@ -77,7 +78,7 @@
    --------------------------------------------------------------------------
    1) 이 파일: 켤 회차 줄의 show: false 를 show: true 로
                머리글 extraNoticeKey — 3·4차를 켤 때 '34', 5·6차를 켤 때 '56'
-               (5~8차 줄은 숨김으로 들어가 있다(켤 때 show 만 바꾼다). extraFrom 은 3 그대로)
+               (5~8차 줄은 숨김으로 들어가 있다(켤 때 show 만 바꾼다))
    2) 스크립트가 꺼졌을 때 보이는 기본 글자 세 곳 — show: true 인 회차에 맞춰 함께 고친다
         index.html        첫 화면의 설명회 묶음 줄 "11월 설명회 · 11월 8일(일), 9일(월)"
         index.html        "최근 소식" 맨 위 줄의 날짜 "2026.11.08~09"
@@ -103,14 +104,14 @@ window.SITE_NEWS = [
     start: '2026-10-15 00:00',
     // end 는 sessions 에서 계산
     sessions: [
-      { no: '1차', date: '11월 8일(일)', time: '낮 12시', start: '2026-11-08 12:00', show: true, soldOut: true },
-      { no: '2차', date: '11월 9일(월)', time: '오전 10시 30분', start: '2026-11-09 10:30', show: true, soldOut: true },
-      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: true },
-      { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: true, soldOut: true },
-      { no: '5차', date: '12월 7일(월)', time: '오전 10시 30분', start: '2026-12-07 10:30', show: true, soldOut: true },
-      { no: '6차', date: '12월 6일(일)', time: '낮 12시', start: '2026-12-06 12:00', show: true, soldOut: true },
-      { no: '7차', date: '12월 14일(월)', time: '오전 10시 30분', start: '2026-12-14 10:30', show: true, soldOut: true },
-      { no: '8차', date: '12월 13일(일)', time: '낮 12시', start: '2026-12-13 12:00', show: true, soldOut: false }
+      { no: '1차', date: '11월 8일(일)', time: '낮 12시', start: '2026-11-08 12:00', show: true, soldOut: true, waitlist: false },
+      { no: '2차', date: '11월 9일(월)', time: '오전 10시 30분', start: '2026-11-09 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '3차', date: '11월 15일(일)', time: '낮 12시', start: '2026-11-15 12:00', show: true, soldOut: true, waitlist: false },
+      { no: '4차', date: '11월 16일(월)', time: '오전 10시 30분', start: '2026-11-16 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '5차', date: '12월 7일(월)', time: '오전 10시 30분', start: '2026-12-07 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '6차', date: '12월 6일(일)', time: '낮 12시', start: '2026-12-06 12:00', show: true, soldOut: true, waitlist: false },
+      { no: '7차', date: '12월 14일(월)', time: '오전 10시 30분', start: '2026-12-14 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '8차', date: '12월 13일(일)', time: '낮 12시', start: '2026-12-13 12:00', show: true, soldOut: false, waitlist: false }
     ],
     extraFrom: 8,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계). 8차 바로 위에 머리글, 1~7차는 일반 회차
     extraNoticeKey: '78',   // '34' · '56' · '78' — 7차 마감 뒤 8차를 열어 '78' (3·4차 '34', 5·6차 '56')

@@ -25,11 +25,12 @@
   var byId = {};
 
   /* 회차 목록(sessions)이 있는 설명회: 공개(show: true) 회차로 날짜(date)·묶음 줄(periodLabel)·종료 시각(end)을 만든다.
-     show: false 인 회차는 어디에도 쓰지 않는다. sessions 가 없는 항목은 적힌 값을 그대로 쓴다 */
+     show: false 인 회차는 어디에도 쓰지 않는다. sessions 가 없는 항목은 적힌 값을 그대로 쓴다.
+     랜딩 일정(shown)은 적힌 순서(번호순), 묶음 줄은 시작 시각 순 */
   function ymd(text) { return String(text || '').trim().slice(0, 10).split('-'); }
   function useSessions(it) {
     if (!it.sessions || !it.sessions.length) return;
-    var shown = [], first = null, last = null, days = [], month = '';
+    var shown = [], first = null, last = null, order = [], days = [], month = '';
     for (var k = 0; k < it.sessions.length; k++) {
       var s = it.sessions[k];
       if (!s || s.show !== true) continue;
@@ -37,6 +38,7 @@
       shown.push({
         no: s.no, date: s.date, time: s.time,
         soldOut: s.soldOut === true,
+        waitlist: s.waitlist !== false,                             // false 면 마감이어도 대기 접수 버튼을 붙이지 않는다
         past: !isNaN(at) && now >= at,                              // 시작 시각이 지난 회차: "종료"
         extra: (isNaN(no) ? k + 1 : no) >= it.extraFrom             // 추가 회차 묶음
       });
@@ -44,9 +46,14 @@
         if (!first || at < first.at) first = { at: at, start: s.start };
         if (!last || at > last.at) last = { at: at, start: s.start };
       }
-      /* 앞 회차와 달이 같으면 달을 뺀다: 11월 8일(일), 9일(월) */
-      var m = /^(\d+월)\s*/.exec(s.date || '');
-      days.push(m && m[1] === month ? s.date.slice(m[0].length) : s.date);
+      order.push({ at: isNaN(at) ? Infinity : at, k: k, date: s.date });
+    }
+    /* 묶음 줄: 시작 시각 순(같으면 적힌 순서)으로 늘어놓고, 앞 회차와 달이 같으면 달을 뺀다: 11월 8일(일), 9일(월) */
+    order.sort(function (x, y) { return x.at === y.at ? x.k - y.k : x.at < y.at ? -1 : 1; });
+    for (var j = 0; j < order.length; j++) {
+      var d = order[j].date;
+      var m = /^(\d+월)\s*/.exec(d || '');
+      days.push(m && m[1] === month ? d.slice(m[0].length) : d);
       month = m ? m[1] : '';
     }
     it.shown = shown;
@@ -230,6 +237,7 @@
        추가 회차(extraFrom 번호부터)가 하나라도 있으면 그 묶음 위에 머리글 한 줄(extraNotices 의 extraNoticeKey 값)
        상태는 회차 번호 옆 칩: 시작 시각이 지난 회차 "종료", soldOut 회차 "마감" (그 칸의 날짜·시각 글자는 연하게)
        행동은 버튼: 지나지 않은 soldOut 회차에 "예약 마감 · 대기 접수"(config.js links.waitlist, 비면 버튼이 빠진다)
+       회차 줄에 waitlist: false 가 있으면 그 회차에는 마감이어도 버튼을 붙이지 않는다(속성이 없으면 links.waitlist 를 따른다)
        대기 안내 한 줄(config.js waitlistNote): 버튼이 하나라도 있을 때 첫 버튼 옆(폰은 아래)에 한 번만 */
   function renderSessions(it) {
     var box = document.querySelector('[data-sessions]');
@@ -257,7 +265,7 @@
       cell.appendChild(no);
       cell.appendChild(el('p', 'lp-session__date', s.date));
       cell.appendChild(el('p', 'lp-session__time', s.time));
-      if (!s.past && s.soldOut && wait) {
+      if (!s.past && s.soldOut && s.waitlist && wait) {
         var tag = el('a', 'lp-session__tag', '예약 마감 · 대기 접수');
         tag.setAttribute('data-go', 'waitlist');
         tag.href = wait;
