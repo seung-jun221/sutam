@@ -111,14 +111,15 @@ window.SITE_NEWS = [
       { no: '5차', date: '12월 7일(월)', time: '오전 10시 30분', start: '2026-12-07 10:30', show: true, soldOut: true, waitlist: false },
       { no: '6차', date: '12월 6일(일)', time: '낮 12시', start: '2026-12-06 12:00', show: true, soldOut: true, waitlist: false },
       { no: '7차', date: '12월 14일(월)', time: '오전 10시 30분', start: '2026-12-14 10:30', show: true, soldOut: true, waitlist: false },
-      { no: '8차', date: '12월 13일(일)', time: '낮 12시', start: '2026-12-13 12:00', show: true, soldOut: false, waitlist: false }
+      { no: '8차', date: '12월 13일(일)', time: '낮 12시', start: '2026-12-13 12:00', show: true, soldOut: false, waitlist: false },
+      { no: '9차', date: '11월 30일(월)', time: '오전 10시 30분', start: '2026-11-30 10:30', show: true, soldOut: false, waitlist: false }
     ],
     extraFrom: 8,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계). 8차 바로 위에 머리글, 1~7차는 일반 회차
     extraNoticeKey: '78',   // '34' · '56' · '78' — 7차 마감 뒤 8차를 열어 '78' (3·4차 '34', 5·6차 '56')
     extraNotices: {         // 추가 회차가 하나라도 show: true 일 때 그 묶음 위에 나오는 머리글
       '34': '많은 학부모님의 문의로 3·4회차를 추가 오픈합니다',
       '56': '1~5차 예약이 모두 마감되어 6차를 추가 오픈합니다',
-      '78': '1~7차 예약이 모두 마감되어 8차를 추가 오픈합니다'
+      '78': '1~7차 예약이 모두 마감되어 8·9차를 추가 오픈합니다'
     }
   },
 
