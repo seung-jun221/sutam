@@ -62,6 +62,7 @@
     it.date = a.join('.') + (b.join('.') === a.join('.') ? '' :
       '~' + (b[0] !== a[0] ? b.join('.') : b[1] !== a[1] ? b[1] + '.' + b[2] : b[2]));
     it.periodLabel = it.title + ' · ' + days.join(', ');
+    it.periodDays = days;   // 묶음 줄을 그릴 때 날짜 하나를 한 덩어리로(줄은 쉼표 뒤에서만 바뀐다)
     it.end = last.start;
   }
 
@@ -343,11 +344,27 @@
       });
     }
 
-    /* 설명회 기간의 묶음 글자(메인 첫 화면) */
+    /* 설명회 기간의 묶음 글자(메인 첫 화면).
+       회차로 만든 묶음 줄(periodLabel)은 날짜마다 줄바꿈 없는 덩어리(span.s-nowrap)로 넣는다:
+       "12월 6일(일)" 안에서는 줄이 바뀌지 않고 쉼표 뒤에서만 바뀐다. 화면 글자(textContent)는 periodLabel 그대로 */
     if (active) {
       each('[data-seminar-text]', function (el) {
-        var text = active[el.getAttribute('data-seminar-text')];
-        if (typeof text === 'string') el.textContent = text;
+        var key = el.getAttribute('data-seminar-text');
+        var text = active[key];
+        if (typeof text !== 'string') return;
+        var days = active.periodDays;
+        if (key === 'periodLabel' && days && days.length && text === active.title + ' · ' + days.join(', ')) {
+          el.textContent = active.title + ' · ';
+          for (var d = 0; d < days.length; d++) {
+            if (d) el.appendChild(document.createTextNode(', '));
+            var chunk = document.createElement('span');
+            chunk.className = 's-nowrap';
+            chunk.textContent = days[d];
+            el.appendChild(chunk);
+          }
+        } else {
+          el.textContent = text;
+        }
       });
       each('a[data-seminar-link]', function (a) { if (active.link) a.href = active.link; });
     }

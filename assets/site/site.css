@@ -750,6 +750,7 @@ html.js [data-news-root]:not([data-ready]) { visibility: hidden; }
 }
 html.sem-on .mn-sem.when-sem { display: block !important; }
 .mn-sem__label { display: block; color: var(--s-gold); font-size: 13px; line-height: 20px; font-weight: 600; }
+.s-nowrap { white-space: nowrap; }   /* 묶음 줄의 날짜 한 덩어리(site.js 가 넣는다): 줄은 쉼표 뒤에서만 바뀐다 */
 .mn-sem__title { display: block; margin-top: 6px; font-size: 17.5px; line-height: 24px; font-weight: 700; }
 .mn-hero .mn-sem ~ .s-btn.when-sem { margin-top: 26px; }
 .mn-hero__photo { display: block; margin-top: 32px; }
