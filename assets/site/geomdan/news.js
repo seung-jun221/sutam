@@ -31,13 +31,17 @@ window.SITE_NEWS = [
     start: '2026-11-09 00:00',
     // end 는 sessions 에서 계산
     sessions: [
-      { no: '1차', date: '11월 24일(화)', time: '오전 10시 30분', start: '2026-11-24 10:30', show: true, soldOut: true },
-      { no: '2차', date: '11월 25일(수)', time: '오전 10시 30분', start: '2026-11-25 10:30', show: true, soldOut: false }
+      { no: '1차', date: '11월 24일(화)', time: '오전 10시 30분', start: '2026-11-24 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '2차', date: '11월 25일(수)', time: '오전 10시 30분', start: '2026-11-25 10:30', show: true, soldOut: true },
+      { no: '3차', date: '11월 26일(목)', time: '오전 10시 30분', start: '2026-11-26 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '4차', date: '11월 27일(금)', time: '오전 10시 30분', start: '2026-11-27 10:30', show: true, soldOut: true, waitlist: false },
+      { no: '5차', date: '12월 1일(화)', time: '오전 10시 30분', start: '2026-12-01 10:30', show: true, soldOut: false }
     ],
-    extraFrom: 2,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계)
-    extraNoticeKey: '2',
+    extraFrom: 5,           // 이 번호부터가 "추가 회차" (머리글이 붙는 경계)
+    extraNoticeKey: '5',
     extraNotices: {         // 추가 회차가 하나라도 show: true 일 때 그 묶음 위에 나오는 머리글
-      '2': '많은 학부모님의 문의로 2차를 추가 오픈합니다'
+      '2': '많은 학부모님의 문의로 2차를 추가 오픈합니다',
+      '5': '많은 학부모님의 문의로 5차를 추가 오픈합니다'
     }
   },
 
